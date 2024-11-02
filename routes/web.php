@@ -2,12 +2,22 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', \App\Http\Controllers\V1\HomeController::class)
-    ->name("home");
 
-Route::group([], function () {
-    Route::get('api/', function () {
-        return view('welcome');
-    });
+Route::group([
+    "prefix"=>"/"
+], function () {
+    Route::get('/', [\App\Http\Controllers\V1\HomeController::class,"index"])
+        ->name("home");
+
+    Route::get('contact', [\App\Http\Controllers\V1\HomeController::class,"contact"])
+        ->name("contact");
+
+    Route::get('category/{id}', [\App\Http\Controllers\V1\HomeController::class,"category"])
+        ->name("category");
+
+    Route::get('single/{id}', [\App\Http\Controllers\V1\HomeController::class,"single"])
+        ->name("single");
+
 });
+
 

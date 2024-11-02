@@ -6,15 +6,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Colo Shop Template">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
-<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
-<link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
-<link rel="stylesheet" type="text/css" href="plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="styles/single_styles.css">
-<link rel="stylesheet" type="text/css" href="styles/single_responsive.css">
+<link rel="stylesheet" type="text/css" href="{{asset("shop/styles/bootstrap4/bootstrap.min.css")}}">
+<link rel="stylesheet" type="text/css" href="{{asset("shop/plugins/font-awesome-4.7.0/css/font-awesome.min.css")}}">
+<link rel="stylesheet" type="text/css" href="{{asset("shop/plugins/OwlCarousel2-2.2.1/owl.carousel.css")}}">
+<link rel="stylesheet" type="text/css" href="{{asset("shop/plugins/OwlCarousel2-2.2.1/owl.theme.default.css")}}">
+<link rel="stylesheet" type="text/css" href="{{asset("shop/plugins/OwlCarousel2-2.2.1/animate.css")}}">
+<link rel="stylesheet" type="text/css" href="{{asset("shop/plugins/themify-icons/themify-icons.css")}}">
+<link rel="stylesheet" type="text/css" href="{{asset("shop/plugins/jquery-ui-1.12.1.custom/jquery-ui.css")}}">
+<link rel="stylesheet" type="text/css" href="{{asset("shop/styles/single_styles.css")}}">
+<link rel="stylesheet" type="text/css" href="{{asset("shop/styles/single_responsive.css")}}">
 </head>
 
 <body>
@@ -195,15 +195,15 @@
 						<div class="col-lg-3 thumbnails_col order-lg-1 order-2">
 							<div class="single_product_thumbnails">
 								<ul>
-									<li><img src="images/single_1_thumb.jpg" alt="" data-image="images/single_1.jpg"></li>
-									<li class="active"><img src="images/single_2_thumb.jpg" alt="" data-image="images/single_2.jpg"></li>
-									<li><img src="images/single_3_thumb.jpg" alt="" data-image="images/single_3.jpg"></li>
+									<li><img src="{{asset("shop/images/single_1_thumb.jpg")}}" alt="" data-image="images/single_1.jpg"></li>
+									<li class="active"><img src="{{asset("shop/images/single_2_thumb.jpg")}}" alt="" data-image="images/single_2.jpg"></li>
+									<li><img src="{{asset("shop/images/single_3_thumb.jpg")}}" alt="" data-image="images/single_3.jpg"></li>
 								</ul>
 							</div>
 						</div>
 						<div class="col-lg-9 image_col order-lg-2 order-1">
 							<div class="single_product_image">
-								<div class="single_product_image_background" style="background-image:url(images/single_2.jpg)"></div>
+								<div class="single_product_image_background" style="background-image:url({{asset("shop/images/single_2.jpg")}})"></div>
 							</div>
 						</div>
 					</div>
@@ -283,7 +283,7 @@
 									<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
 								</div>
 								<div class="tab_image">
-									<img src="images/desc_1.jpg" alt="">
+									<img src="{{asset("shop/images/desc_1.jpg")}}" alt="">
 								</div>
 								<div class="tab_text_block">
 									<h2>Pocket cotton sweatshirt</h2>
@@ -292,14 +292,14 @@
 							</div>
 							<div class="col-lg-5 offset-lg-2 desc_col">
 								<div class="tab_image">
-									<img src="images/desc_2.jpg" alt="">
+									<img src="{{asset("shop/images/desc_2.jpg")}}" alt="">
 								</div>
 								<div class="tab_text_block">
 									<h2>Pocket cotton sweatshirt</h2>
 									<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
 								</div>
 								<div class="tab_image desc_last">
-									<img src="images/desc_3.jpg" alt="">
+									<img src="{{asset("shop/images/desc_3.jpg")}}" alt="">
 								</div>
 							</div>
 						</div>
@@ -521,14 +521,14 @@
 
 </div>
 
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="styles/bootstrap4/popper.js"></script>
-<script src="styles/bootstrap4/bootstrap.min.js"></script>
-<script src="plugins/Isotope/isotope.pkgd.min.js"></script>
-<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-<script src="plugins/easing/easing.js"></script>
-<script src="plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
-<script src="js/single_custom.js"></script>
+<script src="{{asset("shop/js/jquery-3.2.1.min.js")}}"></script>
+<script src="{{asset("shop/styles/bootstrap4/popper.js")}}"></script>
+<script src="{{asset("shop/styles/bootstrap4/bootstrap.min.js")}}"></script>
+<script src="{{asset("shop/plugins/Isotope/isotope.pkgd.min.js")}}"></script>
+<script src="{{asset("shop/plugins/OwlCarousel2-2.2.1/owl.carousel.js")}}"></script>
+<script src="{{asset("shop/plugins/easing/easing.js")}}"></script>
+<script src="{{asset("shop/plugins/jquery-ui-1.12.1.custom/jquery-ui.js")}}"></script>
+<script src="{{asset("shop/js/single_custom.js")}}"></script>
 </body>
 
 </html>
