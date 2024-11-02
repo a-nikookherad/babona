@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
 <title>Colo Shop</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Colo Shop Template">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="{{asset("shop/styles/bootstrap4/bootstrap.min.css")}}">
+<link rel="stylesheet" type="text/css" href="{{asset("shop/styles/bootstrap_rtl/bootstrap.min.css")}}">
 <link rel="stylesheet" type="text/css" href="{{asset("shop/plugins/font-awesome-4.7.0/css/font-awesome.min.css")}}">
 <link rel="stylesheet" type="text/css" href="{{asset("shop/plugins/OwlCarousel2-2.2.1/owl.carousel.css")}}">
 <link rel="stylesheet" type="text/css" href="{{asset("shop/plugins/OwlCarousel2-2.2.1/owl.theme.default.css")}}">
@@ -25,7 +25,7 @@
 
 		<!-- Top Navigation -->
 
-		<div class="top_nav">
+		{{--<div class="top_nav">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
@@ -76,7 +76,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>--}}
 
 		<!-- Main Navigation -->
 
@@ -89,12 +89,12 @@
 						</div>
 						<nav class="navbar">
 							<ul class="navbar_menu">
-								<li><a href="#">home</a></li>
+								<li><a href="{{route("home")}}">home</a></li>
 								<li><a href="#">shop</a></li>
 								<li><a href="#">promotion</a></li>
 								<li><a href="#">pages</a></li>
 								<li><a href="#">blog</a></li>
-								<li><a href="{{route("home")}}">contact</a></li>
+								<li><a href="{{route("contact")}}">contact</a></li>
 							</ul>
 							<ul class="navbar_user">
 								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
@@ -188,23 +188,23 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
-					<div class="banner_item align-items-center" style="background-image:url({{asset("shop/images/banner_1.jpg")}})">
+					<div class="banner_item align-items-center" style="background-image:url({{asset("storage/categories/images/banner_1.jpg")}})">
 						<div class="banner_category">
-							<a href="categories.html">women's</a>
+							<a href="{{route("category.view",["id"=>1])}}">women's</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="banner_item align-items-center" style="background-image:url({{asset("shop/images/banner_2.jpg")}})">
+					<div class="banner_item align-items-center" style="background-image:url({{asset("storage/categories/images/banner_2.jpg")}})">
 						<div class="banner_category">
-							<a href="categories.html">accessories's</a>
+							<a href="{{route("category.view",["id"=>1])}}">accessories's</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="banner_item align-items-center" style="background-image:url({{asset("shop/images/banner_3.jpg")}})">
+					<div class="banner_item align-items-center" style="background-image:url({{asset("storage/categories/images/banner_3.jpg")}})">
 						<div class="banner_category">
-							<a href="categories.html">men's</a>
+							<a href="{{route("category.view",["id"=>1])}}">men's</a>
 						</div>
 					</div>
 				</div>
@@ -809,7 +809,7 @@
 
 <script src="{{asset("shop/js/jquery-3.2.1.min.js")}}"></script>
 <script src="{{asset("shop/styles/bootstrap4/popper.js")}}"></script>
-<script src="{{asset("shop/styles/bootstrap4/bootstrap.min.js")}}"></script>
+<script src="{{asset("shop/styles/bootstrap_rtl/bootstrap.min.js")}}"></script>
 <script src="{{asset("shop/plugins/Isotope/isotope.pkgd.min.js")}}"></script>
 <script src="{{asset("shop/plugins/OwlCarousel2-2.2.1/owl.carousel.js")}}"></script>
 <script src="{{asset("shop/plugins/easing/easing.js")}}"></script>
