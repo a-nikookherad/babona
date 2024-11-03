@@ -18,6 +18,10 @@ return new class extends Migration
             $table->string("description");
             $table->text("body");
             $table->json("jsonld");
+
+            $table->unsignedSmallInteger("category_id");
+            $table->foreign("category_id")->references("id")->on("categories");
+
             $table->timestamps();
         });
     }

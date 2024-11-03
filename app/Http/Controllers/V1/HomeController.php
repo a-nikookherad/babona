@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\V1;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
-use App\Models\Product;
+use App\Models\V1\Category;
+use App\Models\V1\Product;
 
 class HomeController extends Controller
 {
