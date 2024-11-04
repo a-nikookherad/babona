@@ -10,17 +10,19 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->string("slug");
-            $table->string("name");
-            $table->string("description");
-            $table->json("jsonld");
-            $table->unsignedBigInteger("parent_id");
-            $table->foreign("parent_id")
+            $table->unsignedBigInteger("order_id")
+                ->nullable();
+            $table->foreign("order_id")
                 ->references("id")
-                ->on("categories");
+                ->on("orders");
 
+            $table->unsignedBigInteger("payment_id")
+                ->nullable();
+            $table->foreign("payment_id")
+                ->references("id")
+                ->on("payments");
             $table->timestamps();
         });
     }
@@ -30,6 +32,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('transactions');
     }
 };

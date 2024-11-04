@@ -10,19 +10,16 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('storehouses', function (Blueprint $table) {
+        Schema::create('accounts', function (Blueprint $table) {
             $table->id();
-            $table->string("name")
+            $table->morphs("accountable");
+            $table->string("type")
                 ->nullable();
-            $table->float("total_price")
-                ->nullable();
-            $table->boolean("is_empty")
-                ->default(false);
-            $table->unsignedBigInteger("merchant_id")
+            $table->boolean("is_active")
+                ->default(true);
+            $table->unsignedBigInteger("wallet_id")
                 ->index();
-            $table->foreign("merchant_id")
-                ->references("id")
-                ->on("merchants");
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('storehouses');
+        Schema::dropIfExists('accounts');
     }
 };

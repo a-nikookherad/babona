@@ -10,7 +10,7 @@ class Storehouse extends Model
 {
     protected $fillable = [
         "name",
-        "is_active",
+        "is_empty",
         "merchant_id",
         "total_price",
     ];

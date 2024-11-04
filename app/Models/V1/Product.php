@@ -5,6 +5,7 @@ namespace App\Models\V1;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 
@@ -23,6 +24,11 @@ class Product extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class, "category_id");
+    }
+
+    public function prices(): HasMany
+    {
+        return $this->hasMany(Product::class, "product_id");
     }
 
     public function attachments(): MorphMany

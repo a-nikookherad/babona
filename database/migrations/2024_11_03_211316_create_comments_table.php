@@ -18,7 +18,8 @@ return new class extends Migration {
             $table->text("description");
             $table->boolean("is_published")
                 ->default(false);
-            $table->unsignedBigInteger("user_id");
+            $table->unsignedBigInteger("user_id")
+                ->index();
             $table->foreign("user_id")
                 ->references("id")
                 ->on("users");

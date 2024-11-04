@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->float("total_price");
             $table->float("each_one_price");
             $table->unsignedInteger("exist_count");
+            $table->string("color");
             $table->unsignedBigInteger("storehouse_id")
                 ->index();
             $table->foreign("storehouse_id")

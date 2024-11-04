@@ -10,19 +10,12 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('storehouses', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string("name")
+            $table->string("description")
                 ->nullable();
-            $table->float("total_price")
+            $table->unsignedBigInteger("paid_by_admin_user_id")
                 ->nullable();
-            $table->boolean("is_empty")
-                ->default(false);
-            $table->unsignedBigInteger("merchant_id")
-                ->index();
-            $table->foreign("merchant_id")
-                ->references("id")
-                ->on("merchants");
             $table->timestamps();
         });
     }
@@ -32,6 +25,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('storehouses');
+        Schema::dropIfExists('orders');
     }
 };

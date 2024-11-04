@@ -12,6 +12,7 @@ class StorehouseProduct extends Pivot
         "total_price",
         "each_one_price",
         "exist_count",
+        "color",
         "storehouse_id",
         "product_id",
     ];
