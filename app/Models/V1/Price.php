@@ -2,6 +2,7 @@
 
 namespace App\Models\V1;
 
+use App\Models\V1\Accounting\Wallet;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;

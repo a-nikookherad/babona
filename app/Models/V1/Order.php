@@ -2,8 +2,6 @@
 
 namespace App\Models\V1;
 
-use App\Models\Payment;
-use App\Models\Shipment;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;

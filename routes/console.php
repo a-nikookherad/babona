@@ -6,3 +6,10 @@ use Illuminate\Support\Facades\Artisan;
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote')->hourly();
+
+
+Artisan::command("migrate:custom", function () {
+    \Illuminate\Support\Facades\Schema::disableForeignKeyConstraints();
+    echo Artisan::call("migrate");
+    \Illuminate\Support\Facades\Schema::enableForeignKeyConstraints();
+});
