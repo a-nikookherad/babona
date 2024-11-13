@@ -5,7 +5,7 @@ namespace App\Http\Controllers\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
-use App\Models\V1\User;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
@@ -56,7 +56,7 @@ class AuthController extends Controller
     public function storeMember(RegisterRequest $request)
     {
         // Check user exists or not
-        $currentUser = User::query()
+        $currentUser = \App\Models\User::query()
             ->where("email", $request->email)
             ->first();
         if ($currentUser) {

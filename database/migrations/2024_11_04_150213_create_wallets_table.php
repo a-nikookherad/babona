@@ -15,6 +15,10 @@ return new class extends Migration {
             $table->string("instrument")
                 ->nullable();
             $table->string("name");
+            $table->string("fa_name")
+            ->nullable();
+            $table->boolean("transaction_accept_manual")
+                ->default(false);
             $table->unsignedSmallInteger("club_id");
             $table->timestamps();
         });

@@ -13,10 +13,12 @@ class CategoriesSeeder extends Seeder
     public function run(): void
     {
         foreach ($this->categories() as $category) {
-            $value = [];
-            $condition = [];
+            $condition = [
+                "slug" => $category["slug"],
+                "parent_id" => $category["parent_id"],
+            ];
             Category::query()
-                ->updateOrCreate($condition, $value);
+                ->updateOrCreate($condition, $category);
         }
     }
 
@@ -24,7 +26,36 @@ class CategoriesSeeder extends Seeder
     {
         return [
             [
-
+                "slug" => "fashion",
+                "name" => "fashion",
+                "fa_name" => "لباس",
+                "description" => "",
+                "jsonld" => "",
+                "parent_id" => null,
+            ],
+            [
+                "slug" => "women",
+                "name" => "women",
+                "fa_name" => "زنانه",
+                "description" => "",
+                "jsonld" => "",
+                "parent_id" => 1,
+            ],
+            [
+                "slug" => "children",
+                "name" => "children",
+                "fa_name" => "بچه گانه",
+                "description" => "",
+                "jsonld" => "",
+                "parent_id" => 1,
+            ],
+            [
+                "slug" => "men",
+                "name" => "men",
+                "fa_name" => "مردانه",
+                "description" => "",
+                "jsonld" => "",
+                "parent_id" => 1,
             ],
         ];
     }
