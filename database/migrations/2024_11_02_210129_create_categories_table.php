@@ -17,8 +17,10 @@ return new class extends Migration {
             $table->string("fa_name")
                 ->nullable();
             $table->string("description");
-            $table->json("jsonld");
-            $table->unsignedBigInteger("parent_id");
+            $table->json("jsonld")
+                ->nullable();
+            $table->unsignedBigInteger("parent_id")
+                ->nullable();
             $table->foreign("parent_id")
                 ->references("id")
                 ->on("categories");

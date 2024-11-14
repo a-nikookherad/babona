@@ -14,7 +14,7 @@ class UserObserver
     public function created(User $user): void
     {
         $account = new Account();
-        $account->type = "";
+        $account->type = "real_personality";
         $account->wallet_id = Wallet::query()->where("name", "toman")->first()->id;
         $user->accounts()->save($account);
     }

@@ -15,10 +15,11 @@ class WalletSeeder extends Seeder
     public function run(): void
     {
         foreach ($this->wallets() as $wallet) {
-            $wallet=Wallet::query()
+            $wallet = Wallet::query()
                 ->updateOrCreate($wallet, $wallet);
-            $account=new Account();
-            $account->wallet_id=$wallet->id;
+            $account = new Account();
+            $account->wallet_id = $wallet->id;
+            $account->type = "treasury";
             $wallet->treasuryAccount()->save($account);
 
         }
@@ -31,7 +32,7 @@ class WalletSeeder extends Seeder
                 "instrument" => "tmn",
                 "name" => "toman",
                 "fa_name" => "تومان",
-                "club_id" => "",
+                "club_id" => null,
             ],
         ];
     }

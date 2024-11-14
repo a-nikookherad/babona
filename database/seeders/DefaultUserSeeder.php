@@ -26,9 +26,9 @@ class DefaultUserSeeder extends Seeder
             [
                 "name" => "admin",
                 "family" => "admin",
-                "phone_number" => "09121112233",
+                "phone_number" => "09121111111",
                 "email" => "administrator@babona.com",
-                "email_verified_at" => now(),
+                "email_verified_at" => now()->format("Y:m:d H:i:s"),
                 "password" => Hash::make("babona_admin_123"),
             ],
         ];

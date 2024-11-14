@@ -30,7 +30,6 @@ class CategoriesSeeder extends Seeder
                 "name" => "fashion",
                 "fa_name" => "لباس",
                 "description" => "",
-                "jsonld" => "",
                 "parent_id" => null,
             ],
             [
@@ -38,7 +37,6 @@ class CategoriesSeeder extends Seeder
                 "name" => "women",
                 "fa_name" => "زنانه",
                 "description" => "",
-                "jsonld" => "",
                 "parent_id" => 1,
             ],
             [
@@ -46,7 +44,6 @@ class CategoriesSeeder extends Seeder
                 "name" => "children",
                 "fa_name" => "بچه گانه",
                 "description" => "",
-                "jsonld" => "",
                 "parent_id" => 1,
             ],
             [
@@ -54,7 +51,6 @@ class CategoriesSeeder extends Seeder
                 "name" => "men",
                 "fa_name" => "مردانه",
                 "description" => "",
-                "jsonld" => "",
                 "parent_id" => 1,
             ],
         ];

@@ -16,10 +16,13 @@ return new class extends Migration {
                 ->nullable();
             $table->string("name");
             $table->string("fa_name")
-            ->nullable();
+                ->nullable();
             $table->boolean("transaction_accept_manual")
                 ->default(false);
-            $table->unsignedSmallInteger("club_id");
+            $table->float("interest_rate")
+                ->nullable();
+            $table->unsignedSmallInteger("club_id")
+                ->nullable();
             $table->timestamps();
         });
     }

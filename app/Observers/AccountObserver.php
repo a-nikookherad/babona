@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Models\V1\Accounting\Account;
+use App\Models\V1\Accounting\Balance;
 
 class AccountObserver
 {
@@ -11,7 +12,10 @@ class AccountObserver
      */
     public function created(Account $account): void
     {
-        //
+        $balance = new Balance();
+        $balance->credit = 0;
+        $balance->started_at = null;
+        $balance->expired_at = null;
     }
 
     /**
