@@ -4,6 +4,7 @@ namespace Finance\Entities\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -19,7 +20,7 @@ class Wallet extends Model
         "club_id",
     ];
 
-    public function accounts(): HasMany
+    public function allAccounts(): HasMany
     {
         return $this->hasMany(Account::class, "wallet_id");
     }
@@ -29,12 +30,8 @@ class Wallet extends Model
         return $this->morphOne(Account::class, "accountable");
     }
 
-    /**
-     * this is the treasury's account
-     * @return MorphOne
-     */
-    public function account(): MorphOne
+    public function accounts(): MorphMany
     {
-        return $this->morphOne(Account::class, "accountable");
+        return $this->morphMany(Account::class, "accountable");
     }
 }

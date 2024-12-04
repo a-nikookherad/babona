@@ -27,7 +27,7 @@ trait AccountTrait
         if ($wallet_id) {
             $account = new Account();
             $account->wallet_id = $wallet_id;
-            $object->account()->save($account);
+            $object->accounts()->save($account);
         }
     }
 

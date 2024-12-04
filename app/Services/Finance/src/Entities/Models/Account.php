@@ -2,9 +2,10 @@
 
 namespace Finance\Entities\Models;
 
+use App\Services\Finance\src\Adapter\JalaliCalendar;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -30,8 +31,9 @@ class Account extends Model
         return $this->morphTo();
     }
 
-    public function balances(): HasMany
+    public function balance(): HasOne
     {
-        return $this->hasMany(Balance::class, "account_id");
+        return $this->hasOne(Balance::class, "account_id")
+            ->where("expired_at", ">", JalaliCalendar::endOfYear());
     }
 }

@@ -11,7 +11,12 @@ class Transaction extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        "payment_id",
+        "accept_by_id",
+        "is_done",
+        "from_account_id",
+        "to_account_id",
+        "amount",
+        "uuid",
     ];
 
     public function fromAccount(): BelongsTo

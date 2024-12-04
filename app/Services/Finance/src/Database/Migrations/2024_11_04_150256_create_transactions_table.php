@@ -12,6 +12,9 @@ return new class extends Migration {
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
+
+            $table->boolean("is_done")
+                ->default(true);
             $table->unsignedBigInteger("from_account_id");
             $table->foreign("from_account_id")
                 ->references("id")
@@ -21,6 +24,12 @@ return new class extends Migration {
             $table->foreign("to_account_id")
                 ->references("id")
                 ->on("accounts");
+
+            $table->unsignedBigInteger("accept_by_id")
+                ->nullable();
+            $table->foreign("accept_by_id")
+                ->references("id")
+                ->on("users");
 
             $table->float("amount");
             $table->uuid("uuid");

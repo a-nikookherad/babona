@@ -5,7 +5,7 @@ namespace App\Models;
 use Finance\Entities\Models\Account;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\MorphOne;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Bank extends Model
 {
@@ -18,8 +18,8 @@ class Bank extends Model
         return $this->hasMany(Payment::class, "bank_id");
     }
 
-    public function account(): MorphOne
+    public function accounts(): MorphMany
     {
-        return $this->morphOne(Account::class, "accountable");
+        return $this->morphMany(Account::class, "accountable");
     }
 }

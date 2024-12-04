@@ -3,6 +3,7 @@
 namespace Finance\Entities\Observers;
 
 
+use App\Services\Finance\src\Adapter\JalaliCalendar;
 use Finance\Entities\Models\Account;
 use Finance\Entities\Models\Balance;
 
@@ -21,12 +22,10 @@ class AccountObserver
             $balance->expired_at = null;
             $account->balances()->save($balance);
         } else {
-            $started_at = jdate(now())->getFirstDayOfYear()->format("Y-m-d H:i:s");
-            $expired_at = jdate(now())->getEndDayOfYear()->format("Y-m-d H:i:s");
             $balance = new Balance();
             $balance->credit = 0;
-            $balance->started_at = $started_at;
-            $balance->expired_at = $expired_at;
+            $balance->started_at = JalaliCalendar::startOfYear();
+            $balance->expired_at = JalaliCalendar::endOfYear();
             $account->balances()->save($balance);
         }
 
