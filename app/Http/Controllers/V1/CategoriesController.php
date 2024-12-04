@@ -5,20 +5,19 @@ namespace App\Http\Controllers\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Categories\CategoryCreateRequest;
 use App\Http\Requests\Categories\CategoryUpdateRequest;
-use App\Models\V1\Category;
 
 class CategoriesController extends Controller
 {
     public function index()
     {
-        $categories = Category::query()
+        $categories = \App\Models\Category::query()
             ->get();
         return view("shop/categories/list", compact("categories"));
     }
 
     public function details($id)
     {
-        $category = Category::query()
+        $category = \App\Models\Category::query()
             ->where("id", $id)
             ->first();
         return view("shop/categories/details", compact("category"));
@@ -26,7 +25,7 @@ class CategoriesController extends Controller
 
     public function view($id)
     {
-        $category = Category::query()
+        $category = \App\Models\Category::query()
             ->where("id", $id)
             ->first();
         return view("shop/categories/view", compact("category"));

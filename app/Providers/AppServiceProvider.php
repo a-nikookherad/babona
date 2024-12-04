@@ -21,13 +21,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Relation::enforceMorphMap([
-            'category' => 'App\Models\V1\Category',
-            'product' => 'App\Models\V1\Product',
-            'merchant' => 'App\Models\V1\Merchant',
-            'wallet' => 'App\Models\V1\Accounting\Wallet',
+            'category' => 'App\Models\Category',
+            'product' => 'App\Models\Product',
+            'merchant' => 'App\Models\Merchant',
             'user' => 'App\Models\User',
-            'bank' => 'App\Models\V1\Bank',
-            'campaign' => 'App\Models\V1\Campaign',
+            'bank' => 'App\Models\Bank',
+            'campaign' => 'App\Models\Campaign',
         ]);
     }
 }

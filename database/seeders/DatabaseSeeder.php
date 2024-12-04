@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Services\Finance\src\Database\Seeders\WalletSeeder;
 use Illuminate\Database\Seeder;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;

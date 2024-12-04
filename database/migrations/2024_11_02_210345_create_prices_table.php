@@ -20,6 +20,12 @@ return new class extends Migration {
             $table->foreign("product_id")
                 ->references("id")
                 ->on("products");
+
+            $table->unsignedBigInteger("wallet_id")
+                ->index();
+            $table->foreign("wallet_id")
+                ->references("id")
+                ->on("wallets");
             $table->softDeletes();
             $table->timestamps();
         });

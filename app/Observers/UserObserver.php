@@ -3,8 +3,7 @@
 namespace App\Observers;
 
 use App\Models\User;
-use App\Models\V1\Accounting\Account;
-use App\Models\V1\Accounting\Wallet;
+use Finance\Finance;
 
 class UserObserver
 {
@@ -13,10 +12,7 @@ class UserObserver
      */
     public function created(User $user): void
     {
-        $account = new Account();
-        $account->type = "real_personality";
-        $account->wallet_id = Wallet::query()->where("name", "toman")->first()->id;
-        $user->accounts()->save($account);
+        Finance::createAccounts($user);
     }
 
     /**

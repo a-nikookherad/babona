@@ -16,6 +16,12 @@ return new class extends Migration {
                 ->nullable();
             $table->unsignedBigInteger("paid_by_admin_user_id")
                 ->nullable();
+
+            $table->unsignedBigInteger("transaction_id")
+                ->index();
+            $table->foreign("transaction_id")
+                ->references("id")
+                ->on("transactions");
             $table->timestamps();
         });
     }

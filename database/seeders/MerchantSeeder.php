@@ -2,8 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\V1\Merchant;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Merchant;
 use Illuminate\Database\Seeder;
 
 class MerchantSeeder extends Seeder
