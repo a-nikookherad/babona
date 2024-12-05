@@ -14,8 +14,9 @@ class MerchantSeeder extends Seeder
     {
         foreach ($this->merchants() as $merchant) {
             Merchant::query()
-                ->updateOrCreate($merchant, $merchant);
+                ->updateOrCreate(["name" => $merchant["name"]], $merchant);
         }
+
     }
 
     private function merchants()

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Services\Ecommerce\src\Database\Seeders\CategoriesSeeder;
 use App\Services\Finance\src\Database\Seeders\WalletSeeder;
 use Illuminate\Database\Seeder;
 
@@ -21,7 +22,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
             ]);*/
         $this->call([
-            WalletSeeder::class,
+            \Finance\Database\Seeders\DatabaseSeeder::class,
             CategoriesSeeder::class,
             MerchantSeeder::class,
             DefaultUserSeeder::class,

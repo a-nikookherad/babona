@@ -10,7 +10,8 @@ trait AccountTrait
     public function createAccounts($object)
     {
         $wallets_id = Wallet::query()
-            ->get("id");
+            ->pluck("id")
+            ->all();
         foreach ($wallets_id as $wallet_id) {
             $account = new Account();
             $account->wallet_id = $wallet_id;

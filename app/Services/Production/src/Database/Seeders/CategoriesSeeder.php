@@ -1,9 +1,9 @@
 <?php
 
-namespace Database\Seeders;
+namespace Production\Database\Seeders;
 
-use App\Models\Category;
 use Illuminate\Database\Seeder;
+use Production\Entities\Models\Category;
 
 class CategoriesSeeder extends Seeder
 {
@@ -26,8 +26,8 @@ class CategoriesSeeder extends Seeder
     {
         return [
             [
-                "slug" => "fashion",
-                "name" => "fashion",
+                "slug" => "clothing",
+                "name" => "clothing",
                 "fa_name" => "لباس",
                 "description" => "",
                 "parent_id" => null,

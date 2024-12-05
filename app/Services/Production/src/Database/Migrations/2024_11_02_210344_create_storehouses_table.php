@@ -12,17 +12,26 @@ return new class extends Migration {
     {
         Schema::create('storehouses', function (Blueprint $table) {
             $table->id();
-            $table->string("name")
-                ->nullable();
-            $table->float("total_price")
-                ->nullable();
-            $table->boolean("is_empty")
-                ->default(false);
-            $table->unsignedBigInteger("merchant_id")
-                ->index();
-            $table->foreign("merchant_id")
+            $table->unsignedBigInteger("product_id");
+            $table->foreign("product_id")
                 ->references("id")
-                ->on("merchants");
+                ->on("products");
+
+            $table->string("color")
+                ->nullable();
+            $table->string("size")
+                ->nullable();
+            $table->unsignedInteger("quantity");
+
+            $table->boolean("is_active")
+                ->default(true);
+
+            $table->unsignedBigInteger("add_by_id");
+            $table->foreign("add_by_id")
+                ->references("id")
+                ->on("users");
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }

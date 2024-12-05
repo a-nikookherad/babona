@@ -7,6 +7,7 @@ use App\Services\Finance\src\Traits\AccountTrait;
 use App\Services\Finance\src\Traits\BalancesTrait;
 use App\Services\Finance\src\Traits\WalletTrait;
 use Finance\Entities\Models\Transaction;
+use Finance\Exceptions\DoNotHaveEnoughCreditException;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
@@ -25,13 +26,13 @@ class FinanceService
         return $balances;
     }
 
-    public function transfer($fromObject, $toObject, $wallet, $amount)
+    public function transfer($fromObject, $toObject, $wallet, $amount, $forObject = null)
     {
         $fromAccount = $fromObject->accounts->where("wallet_id", $wallet->id)->first();
         $fromBalance = $fromAccount->balance;
 
         if ($fromBalance->credit < $amount) {
-            return "you dont have enough credit";
+            throw(new DoNotHaveEnoughCreditException("do not have enough credit"));
         }
 
         try {
@@ -42,39 +43,74 @@ class FinanceService
 
             $toAccount = $toObject->accounts->where("wallet_id", $wallet->id)->first();
             if ($wallet->transaction_accept_manual == true) {
-                $treasuryAccount = $wallet->treasuryAccount->first();
-                $treasuryBalance = $treasuryAccount->balance;
-                $treasuryBalance->credit = $treasuryBalance->credit + $amount;
-                $treasuryBalance->save();
-                Transaction::query()
-                    ->create([
-                        "from_account_id" => $fromAccount->id,
-                        "to_account_id" => $treasuryAccount->id,
-                        "amount" => $amount,
-                        "uuid" => Str::uuid()->toString(),
-                    ]);
-                Transaction::query()
-                    ->create([
-                        "from_account_id" => $treasuryAccount->id,
-                        "to_account_id" => $toAccount->id,
-                        "is_done" => false,
-                        "amount" => $amount,
-                        "uuid" => Str::uuid()->toString(),
-                    ]);
-            } else {
-                $toBalance = $toAccount->balance;
-                $toBalance->credit = $toBalance->credit + $amount;
-                $toBalance->save();
-
-                Transaction::query()
-                    ->create([
-                        "from_account_id" => $fromAccount->id,
-                        "to_account_id" => $toAccount->id,
-                        "amount" => $amount,
-                        "uuid" => Str::uuid()->toString(),
-                    ]);
+                $transaction = new Transaction();
+                $transaction->from_account_id = $fromAccount->id;
+                $transaction->to_account_id = $toAccount->id;
+                $transaction->is_done = false;
+                $transaction->amount = $amount;
+                $transaction->uuid = Str::uuid()->toString();
+                $forObject->transactions()->save($transaction);
+                DB::commit();
+                return true;
             }
+            $toBalance = $toAccount->balance;
+            $toBalance->credit = $toBalance->credit + $amount;
+            $toBalance->save();
+
+            $transaction = new Transaction();
+            $transaction->from_account_id = $fromAccount->id;
+            $transaction->to_account_id = $toAccount->id;
+            $transaction->amount = $amount;
+            $transaction->uuid = Str::uuid()->toString();
+            $forObject->transactions()->save($transaction);
+
             DB::commit();
+            return true;
+        } catch (\Throwable $exception) {
+            DB::rollBack();
+        }
+    }
+
+    public function reverseTransfer($fromObject, $toObject, $wallet, $amount, $forObject = null)
+    {
+        $fromAccount = $fromObject->accounts->where("wallet_id", $wallet->id)->first();
+        $fromBalance = $fromAccount->balance;
+
+        if ($fromBalance->credit < $amount) {
+            throw(new DoNotHaveEnoughCreditException("do not have enough credit"));
+        }
+
+        try {
+            DB::beginTransaction();
+
+            $fromBalance->credit = $fromBalance->credit - $amount;
+            $fromBalance->save();
+
+            $toAccount = $toObject->accounts->where("wallet_id", $wallet->id)->first();
+            if ($wallet->transaction_accept_manual == true) {
+                $transaction = new Transaction();
+                $transaction->from_account_id = $fromAccount->id;
+                $transaction->to_account_id = $toAccount->id;
+                $transaction->is_done = false;
+                $transaction->amount = $amount;
+                $transaction->uuid = Str::uuid()->toString();
+                $forObject->transactions()->save($transaction);
+                DB::commit();
+                return true;
+            }
+            $toBalance = $toAccount->balance;
+            $toBalance->credit = $toBalance->credit + $amount;
+            $toBalance->save();
+
+            $transaction = new Transaction();
+            $transaction->from_account_id = $fromAccount->id;
+            $transaction->to_account_id = $toAccount->id;
+            $transaction->amount = $amount;
+            $transaction->uuid = Str::uuid()->toString();
+            $forObject->transactions()->save($transaction);
+
+            DB::commit();
+            return true;
         } catch (\Throwable $exception) {
             DB::rollBack();
         }

@@ -10,18 +10,20 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('basket_prices', function (Blueprint $table) {
             $table->id();
-            $table->string("description")
-                ->nullable();
-            $table->unsignedBigInteger("paid_by_admin_user_id")
-                ->nullable();
-
-            $table->unsignedBigInteger("transaction_id")
+            $table->unsignedBigInteger("basket_id")
                 ->index();
-            $table->foreign("transaction_id")
+            $table->foreign("basket_id")
                 ->references("id")
-                ->on("transactions");
+                ->on("baskets");
+
+            $table->unsignedBigInteger("price_id")
+                ->index();
+            $table->foreign("price_id")
+                ->references("id")
+                ->on("prices");
+            $table->integer("quantity");
             $table->timestamps();
         });
     }
@@ -31,6 +33,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('basket_prices');
     }
 };

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
         });
-        \Illuminate\Support\Facades\Schema::enableForeignKeyConstraints();
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -23,6 +23,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('tags');
     }
 };

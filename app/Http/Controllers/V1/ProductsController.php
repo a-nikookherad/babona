@@ -5,13 +5,13 @@ namespace App\Http\Controllers\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Products\ProductCreateRequest;
 use App\Http\Requests\Products\ProductUpdateRequest;
-use App\Models\Product;
+use App\Services\Production\src\Entities\Models\Product;
 
 class ProductsController extends Controller
 {
     public function index()
     {
-        $products = \App\Models\Product::query()
+        $products = \App\Services\Production\src\Entities\Models\Product::query()
             ->with("category")
             ->get();
         return view("shop/products/list", compact("products"));
@@ -19,7 +19,7 @@ class ProductsController extends Controller
 
     public function details($id)
     {
-        $product = \App\Models\Product::query()
+        $product = \App\Services\Production\src\Entities\Models\Product::query()
             ->where("id", $id)
             ->with("category")
             ->first();

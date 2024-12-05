@@ -20,13 +20,13 @@ class AccountObserver
             $balance->credit = 0;
             $balance->started_at = null;
             $balance->expired_at = null;
-            $account->balances()->save($balance);
+            $account->balance()->save($balance);
         } else {
             $balance = new Balance();
             $balance->credit = 0;
             $balance->started_at = JalaliCalendar::startOfYear();
             $balance->expired_at = JalaliCalendar::endOfYear();
-            $account->balances()->save($balance);
+            $account->balance()->save($balance);
         }
 
 

@@ -16,7 +16,7 @@ class FinanceProvider extends ServiceProvider
     {
         $this->loadMigrationsFrom(__DIR__ . "/../Database/Migrations");
         Relation::enforceMorphMap([
-            'wallet' => 'App\Services\Finance\src\Entities\Models\Wallet',
+            'wallet' => 'Finance\Entities\Models\Wallet',
         ]);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Services\Ordering\src\Entities\Models\Order;
 use Illuminate\Database\Eloquent\Model;
 
 class Shipment extends Model

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Services\Production\src\Entities\Models\Storehouse;
 use Finance\Entities\Models\Account;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;

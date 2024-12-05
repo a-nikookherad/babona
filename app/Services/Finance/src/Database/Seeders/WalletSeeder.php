@@ -3,6 +3,7 @@
 namespace Finance\Database\Seeders;
 
 use Finance\Entities\Models\Wallet;
+use Finance\Finance;
 use Illuminate\Database\Seeder;
 
 class WalletSeeder extends Seeder
@@ -13,8 +14,8 @@ class WalletSeeder extends Seeder
     public function run(): void
     {
         foreach ($this->wallets() as $wallet) {
-            Wallet::query()
-                ->updateOrCreate($wallet, $wallet);
+            $wallet=Wallet::query()
+                ->updateOrCreate(["name"=>$wallet["name"]], $wallet);
         }
     }
 

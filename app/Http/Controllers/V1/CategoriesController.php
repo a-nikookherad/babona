@@ -10,14 +10,14 @@ class CategoriesController extends Controller
 {
     public function index()
     {
-        $categories = \App\Models\Category::query()
+        $categories = \App\Services\Production\src\Entities\Models\Category::query()
             ->get();
         return view("shop/categories/list", compact("categories"));
     }
 
     public function details($id)
     {
-        $category = \App\Models\Category::query()
+        $category = \App\Services\Production\src\Entities\Models\Category::query()
             ->where("id", $id)
             ->first();
         return view("shop/categories/details", compact("category"));
@@ -25,7 +25,7 @@ class CategoriesController extends Controller
 
     public function view($id)
     {
-        $category = \App\Models\Category::query()
+        $category = \App\Services\Production\src\Entities\Models\Category::query()
             ->where("id", $id)
             ->first();
         return view("shop/categories/view", compact("category"));

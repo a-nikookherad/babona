@@ -10,7 +10,7 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        \Illuminate\Support\Facades\Schema::disableForeignKeyConstraints();
+        Schema::disableForeignKeyConstraints();
 
         Schema::create('users', function (Blueprint $table) {
             $table->id();
@@ -23,6 +23,14 @@ return new class extends Migration {
                 ->nullable();
             $table->string('email')
                 ->unique()
+                ->nullable();
+            $table->enum('role', [
+                "super_admin",
+                "admin",
+                "accountant",
+                "customer",
+            ])
+                ->default("customer")
                 ->nullable();
             $table->timestamp('email_verified_at')
                 ->nullable();
@@ -55,5 +63,6 @@ return new class extends Migration {
         Schema::dropIfExists('users');
         Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');
+        Schema::enableForeignKeyConstraints();
     }
 };
