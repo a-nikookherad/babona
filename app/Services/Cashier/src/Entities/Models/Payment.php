@@ -2,7 +2,6 @@
 
 namespace Cashier\Entities\Models;
 
-use App\Models\Bank;
 use Finance\Entities\Models\Transaction;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

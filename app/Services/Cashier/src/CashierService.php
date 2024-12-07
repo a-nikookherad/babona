@@ -3,32 +3,12 @@
 namespace Cashier;
 
 
+use Cashier\Traits\CampaignTrait;
+use Cashier\Traits\OrderTrait;
+use Cashier\Traits\PaymentTrait;
+
 class CashierService
 {
-    public function allPayments($object)
-    {
-        //calculate all payments amount
+    use OrderTrait,PaymentTrait,CampaignTrait;
 
-    }
-
-    public function unpaidOrder($object)
-    {
-        //looking for object's unpaid order
-
-    }
-
-    public function orderSettle($order)
-    {
-
-    }
-
-    public function createOrder($basket)
-    {
-
-    }
-
-    private function getActiveCampaigns($object)
-    {
-
-    }
 }

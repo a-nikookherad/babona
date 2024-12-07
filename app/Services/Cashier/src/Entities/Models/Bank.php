@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Models;
+namespace Cashier\Entities\Models;
 
-use App\Services\Ordering\src\Entities\Models\Payment;
 use Finance\Entities\Models\Account;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;

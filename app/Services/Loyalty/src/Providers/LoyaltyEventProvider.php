@@ -1,10 +1,10 @@
 <?php
 
-namespace Ecommerce\Providers;
+namespace Loyalty\Providers;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
-class EcommerceEventProvider extends ServiceProvider
+class LoyaltyEventProvider extends ServiceProvider
 {
     /**
      * Register any events for your application.

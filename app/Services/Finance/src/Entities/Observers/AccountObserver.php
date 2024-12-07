@@ -3,7 +3,7 @@
 namespace Finance\Entities\Observers;
 
 
-use App\Services\Finance\src\Adapter\JalaliCalendar;
+use Finance\Adapter\JalaliCalendar;
 use Finance\Entities\Models\Account;
 use Finance\Entities\Models\Balance;
 

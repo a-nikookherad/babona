@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Models;
+namespace Loyalty\Entities\Models;
 
+use App\Models\User;
 use Cashier\Entities\Models\Order;
 use Finance\Entities\Models\Account;
 use Illuminate\Database\Eloquent\Model;

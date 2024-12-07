@@ -25,8 +25,8 @@ class AppServiceProvider extends ServiceProvider
             'product' => 'App\Services\Production\src\Entities\Models\Product',
             'merchant' => 'App\Models\Merchant',
             'user' => 'App\Models\User',
-            'bank' => 'App\Models\Bank',
-            'campaign' => 'App\Models\Campaign',
+            'bank' => 'App\Services\Finance\src\Entities\Models\Bank',
+            'campaign' => 'App\Services\Loyalty\src\Entities\Models\Campaign',
             'order' => 'App\Services\Ordering\src\Entities\Models\Order',
             'payment' => 'App\Services\Ordering\src\Entities\Models\Payment',
         ]);

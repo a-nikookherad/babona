@@ -1,13 +1,11 @@
 <?php
 
-namespace Cashier\Providers;
+namespace Production\Providers;
 
-use Cashier\Entities\Models\Bank;
-use Cashier\Entities\Observers\BankObserver;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\ServiceProvider;
 
-class CashierProvider extends ServiceProvider
+class ProductionProvider extends ServiceProvider
 {
     public function register()
     {
@@ -18,10 +16,8 @@ class CashierProvider extends ServiceProvider
     {
         $this->loadMigrationsFrom(__DIR__ . "/../Database/Migrations");
         Relation::enforceMorphMap([
-//            'wallet' => 'Cashier\Entities\Models\Wallet',
+//            'wallet' => 'Production\Entities\Models\Wallet',
         ]);
-
-        Bank::observe(BankObserver::class);
     }
 }
 

@@ -23,6 +23,7 @@ return new class extends Migration {
             $table->foreign("price_id")
                 ->references("id")
                 ->on("prices");
+
             $table->integer("quantity");
             $table->timestamps();
         });

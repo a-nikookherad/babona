@@ -12,7 +12,8 @@ return new class extends Migration {
     {
         Schema::create('storehouses', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("product_id");
+            $table->unsignedBigInteger("product_id")
+                ->index();
             $table->foreign("product_id")
                 ->references("id")
                 ->on("products");
@@ -21,13 +22,13 @@ return new class extends Migration {
                 ->nullable();
             $table->string("size")
                 ->nullable();
-            $table->unsignedInteger("quantity");
+            $table->integer("quantity");
 
             $table->boolean("is_active")
                 ->default(true);
 
-            $table->unsignedBigInteger("add_by_id");
-            $table->foreign("add_by_id")
+            $table->unsignedBigInteger("add_by_user_id");
+            $table->foreign("add_by_user_id")
                 ->references("id")
                 ->on("users");
 

@@ -12,7 +12,8 @@ return new class extends Migration {
     {
         Schema::create('baskets', function (Blueprint $table) {
             $table->id();
-
+            $table->dateTime("bought_at")
+                ->nullable();
             $table->timestamps();
         });
     }

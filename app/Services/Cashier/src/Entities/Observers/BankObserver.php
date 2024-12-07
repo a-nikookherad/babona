@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Observers;
+namespace Cashier\Entities\Observers;
 
-use App\Models\Bank;
+use Cashier\Entities\Models\Bank;
 use Finance\Finance;
 
 class BankObserver

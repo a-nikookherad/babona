@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Observers;
+namespace Loyalty\Entities\Observers;
 
 
-use App\Models\Campaign;
 use Finance\Finance;
+use Loyalty\Entities\Models\Campaign;
 
 class CampaignObserver
 {

@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Basket extends Model
 {
-    protected $fillable=[
 
+    protected $fillable = [
+        "bought_at"
     ];
 
     public function prices(): BelongsToMany

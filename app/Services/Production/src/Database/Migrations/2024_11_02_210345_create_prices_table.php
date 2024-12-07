@@ -12,14 +12,13 @@ return new class extends Migration {
     {
         Schema::create('prices', function (Blueprint $table) {
             $table->id();
-            $table->string("color")
-                ->nullable();
             $table->float("price");
-            $table->unsignedBigInteger("product_id")
+
+            $table->unsignedBigInteger("storehouse_id")
                 ->index();
-            $table->foreign("product_id")
+            $table->foreign("storehouse_id")
                 ->references("id")
-                ->on("products");
+                ->on("storehouses");
 
             $table->unsignedBigInteger("wallet_id")
                 ->index();

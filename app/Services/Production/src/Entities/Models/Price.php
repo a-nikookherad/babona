@@ -2,13 +2,13 @@
 
 namespace Production\Entities\Models;
 
-use App\Models\Campaign;
 use Cashier\Entities\Models\Order;
 use Finance\Entities\Models\Wallet;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Loyalty\Entities\Models\Campaign;
 
 class Price extends Model
 {

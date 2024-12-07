@@ -8,7 +8,10 @@
         "php": "^8.2",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
-        "nikookherad/finance": "*"
+        "nikookherad/cashier": "*",
+        "nikookherad/finance": "*",
+        "nikookherad/loyalty": "*",
+        "nikookherad/production": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -34,7 +37,19 @@
     "repositories": [
         {
             "type": "path",
+            "url": "./app/Services/Cashier"
+        },
+        {
+            "type": "path",
             "url": "./app/Services/Finance"
+        },
+        {
+            "type": "path",
+            "url": "./app/Services/Loyalty"
+        },
+        {
+            "type": "path",
+            "url": "./app/Services/Production"
         }
     ],
     "scripts": {

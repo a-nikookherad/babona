@@ -1,11 +1,13 @@
 <?php
 
-namespace Ecommerce\Providers;
+namespace Loyalty\Providers;
 
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\ServiceProvider;
+use Loyalty\Entities\Models\Campaign;
+use Loyalty\Entities\Observers\CampaignObserver;
 
-class EcommerceProvider extends ServiceProvider
+class LoyaltyProvider extends ServiceProvider
 {
     public function register()
     {
@@ -16,8 +18,10 @@ class EcommerceProvider extends ServiceProvider
     {
         $this->loadMigrationsFrom(__DIR__ . "/../Database/Migrations");
         Relation::enforceMorphMap([
-            'wallet' => 'Ecommerce\Entities\Models\Wallet',
+//            'wallet' => 'Loyalty\Entities\Models\Wallet',
         ]);
+
+        Campaign::observe(CampaignObserver::class);
     }
 }
 

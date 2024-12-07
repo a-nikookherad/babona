@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Finance\src\Adapter;
+namespace Finance\Adapter;
 
 use Morilog\Jalali\Jalalian;
 

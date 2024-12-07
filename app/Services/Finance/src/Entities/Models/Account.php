@@ -2,7 +2,7 @@
 
 namespace Finance\Entities\Models;
 
-use App\Services\Finance\src\Adapter\JalaliCalendar;
+use Finance\Adapter\JalaliCalendar;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;

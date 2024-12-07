@@ -16,7 +16,8 @@ return new class extends Migration {
             $table->string("name");
             $table->string("fa_name")
                 ->nullable();
-            $table->string("description");
+            $table->string("description")
+                ->nullable();
             $table->json("jsonld")
                 ->nullable();
             $table->unsignedBigInteger("parent_id")
