@@ -28,7 +28,7 @@ class CategoriesSeeder extends Seeder
             [
                 "slug" => "clothing",
                 "name" => "clothing",
-                "fa_name" => "لباس",
+                "fa_name" => "پوشاک",
                 "description" => "",
                 "parent_id" => null,
             ],
