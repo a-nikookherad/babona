@@ -3,12 +3,11 @@
 namespace Production\Entities\Models;
 
 use App\Models\Attachment;
-use App\Models\Comment;
+use App\Models\Tag;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Illuminate\Database\Eloquent\Relations\MorphOne;
 
 class Product extends Model
 {
@@ -16,6 +15,7 @@ class Product extends Model
     protected $fillable = [
         "slug",
         "name",
+        "status",
         "description",
         "body",
         "jsonld",
@@ -37,8 +37,13 @@ class Product extends Model
         return $this->hasMany(Storehouse::class, "storehouse_id");
     }
 
-    public function comments(): MorphOne
+    public function comments(): HasMany
     {
-        return $this->morphOne(Comment::class, "commentable");
+        return $this->hasMany(Comment::class, "product_id");
+    }
+
+    public function tags(): MorphMany
+    {
+        return $this->morphMany(Tag::class, "taggable");
     }
 }

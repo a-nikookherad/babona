@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\V1;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Products\ProductCreateRequest;
-use App\Http\Requests\Products\ProductUpdateRequest;
 use App\Services\Production\src\Entities\Models\Product;
+use App\Services\Production\src\Http\Requests\Products\ProductCreateRequest;
+use App\Services\Production\src\Http\Requests\Products\ProductUpdateRequest;
 
 class ProductsController extends Controller
 {

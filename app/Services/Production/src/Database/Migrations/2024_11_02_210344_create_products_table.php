@@ -20,6 +20,11 @@ return new class extends Migration {
                 ->nullable();
             $table->text("description")
                 ->nullable();
+            $table->enum("status", [
+                "waiting",
+                "published",
+                "archive",
+            ]);
             $table->json("jsonld")
                 ->nullable();
 

@@ -1,34 +1,30 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace Production\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Categories\CategoryCreateRequest;
-use App\Http\Requests\Categories\CategoryUpdateRequest;
-use App\Services\Production\src\Entities\Models\Category;
+use Production\Http\Requests\Categories\CategoryCreateRequest;
+use Production\Http\Requests\Categories\CategoryUpdateRequest;
+use Production\Production;
+use function view;
 
 class CategoriesController extends Controller
 {
     public function index()
     {
-        $categories = Category::query()
-            ->get();
+        $categories = Production::categories();
         return view("shop/categories/list", compact("categories"));
     }
 
     public function details($id)
     {
-        $category = Category::query()
-            ->where("id", $id)
-            ->first();
+        $category = Production::category($id);
         return view("shop/categories/details", compact("category"));
     }
 
     public function view($id)
     {
-        $category = Category::query()
-            ->where("id", $id)
-            ->first();
+        $category = Production::category($id);
         return view("shop/categories/view", compact("category"));
     }
 

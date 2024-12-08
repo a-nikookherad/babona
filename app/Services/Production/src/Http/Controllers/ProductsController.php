@@ -1,37 +1,31 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Services\Production\src\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Products\ProductCreateRequest;
-use App\Http\Requests\Products\ProductUpdateRequest;
-use App\Services\Production\src\Entities\Models\Product;
+use Production\Http\Requests\Products\ProductCreateRequest;
+use Production\Http\Requests\Products\ProductUpdateRequest;
+use Production\Production;
+use function view;
 
 class ProductsController extends Controller
 {
     public function index()
     {
-        $products = Product::query()
-            ->with("category")
-            ->get();
+        $filter = [];
+        $products = Production::products($filter, request("per_page"));
         return view("shop/products/list", compact("products"));
     }
 
     public function details($id)
     {
-        $product = Product::query()
-            ->where("id", $id)
-            ->with("category")
-            ->first();
+        $product = Production::product($id);
         return view("shop/products/details", compact("product"));
     }
 
     public function view($id)
     {
-        $product = Product::query()
-            ->where("id", $id)
-            ->with("category")
-            ->first();
+        $product = Production::product($id);
         return view("shop/products/view", compact("product"));
     }
 

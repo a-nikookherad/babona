@@ -3,6 +3,7 @@
 namespace Production\Entities\Models;
 
 use App\Models\Attachment;
+use App\Models\Tag;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -13,6 +14,7 @@ class Category extends Model
     protected $fillable = [
         "slug",
         "name",
+        "status",
         "parent_id",
         "description",
         "jsonld",
@@ -31,5 +33,10 @@ class Category extends Model
     public function attachments(): MorphMany
     {
         return $this->morphMany(Attachment::class, "attachable");
+    }
+
+    public function tags(): MorphMany
+    {
+        return $this->morphMany(Tag::class, "taggable");
     }
 }

@@ -18,6 +18,11 @@ return new class extends Migration {
                 ->nullable();
             $table->string("description")
                 ->nullable();
+            $table->enum("status", [
+                "waiting",
+                "published",
+                "archive",
+            ]);
             $table->json("jsonld")
                 ->nullable();
             $table->unsignedBigInteger("parent_id")
