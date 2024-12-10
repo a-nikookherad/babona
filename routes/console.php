@@ -10,6 +10,6 @@ Artisan::command('inspire', function () {
 
 Artisan::command("migrate:custom", function () {
     \Illuminate\Support\Facades\Schema::disableForeignKeyConstraints();
-    echo Artisan::call("migrate");
+    Artisan::call("migrate:refresh");
     \Illuminate\Support\Facades\Schema::enableForeignKeyConstraints();
 });

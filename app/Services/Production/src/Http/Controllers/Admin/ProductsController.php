@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Production\src\Http\Controllers;
+namespace Production\Http\Controllers\Admin;
 
 use Production\Http\Requests\Products\ProductCreateRequest;
 use Production\Http\Requests\Products\ProductUpdateRequest;

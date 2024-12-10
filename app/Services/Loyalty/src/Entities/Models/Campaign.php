@@ -4,19 +4,12 @@ namespace Loyalty\Entities\Models;
 
 use App\Models\User;
 use Cashier\Entities\Models\Order;
-use Finance\Entities\Models\Account;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Production\Entities\Models\Price;
 
 class Campaign extends Model
 {
-    public function accounts(): MorphMany
-    {
-        return $this->morphMany(Account::class, "accountable");
-    }
-
     public function orders(): BelongsToMany
     {
         return $this->belongsToMany(Order::class, "order_campaigns", "campaign_id", "order_id");

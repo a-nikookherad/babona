@@ -12,6 +12,12 @@ return new class extends Migration {
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->boolean("is_delivery")
+                ->default(false);
+
+            $table->dateTime("paid_at")
+                ->nullable();
+
             $table->string("description")
                 ->nullable();
             $table->unsignedBigInteger("paid_by_admin_user_id")

@@ -2,13 +2,12 @@
 
 namespace Production\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Production\Http\Requests\Categories\CategoryCreateRequest;
 use Production\Http\Requests\Categories\CategoryUpdateRequest;
 use Production\Production;
 use function view;
 
-class CategoriesController extends Controller
+class CategoriesController
 {
     public function index()
     {

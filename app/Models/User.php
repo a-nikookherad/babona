@@ -6,11 +6,9 @@ namespace App\Models;
 use Finance\Entities\Models\Account;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Production\Entities\Models\Basket;
 
 class User extends Authenticatable
 {
@@ -40,11 +38,6 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
     protected function casts(): array
     {
         return [
@@ -53,18 +46,9 @@ class User extends Authenticatable
         ];
     }
 
-    public function accounts(): MorphMany
-    {
-        return $this->morphMany(Account::class, "accountable");
-    }
-
     public function merchants(): BelongsToMany
     {
         return $this->belongsToMany(Merchant::class, "user_merchants", "user_id", "merchant_id");
     }
 
-    public function basket(): HasOne
-    {
-        return $this->hasOne(Basket::class, "user_id");
-    }
 }

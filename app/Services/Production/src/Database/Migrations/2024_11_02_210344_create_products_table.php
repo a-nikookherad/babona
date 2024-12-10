@@ -16,15 +16,23 @@ return new class extends Migration {
             $table->string("name");
             $table->string("fa_name")
                 ->nullable();
-            $table->string("brief")
+            $table->string("material")
                 ->nullable();
-            $table->text("description")
+            $table->string("style")
+                ->nullable();
+            $table->string("code")
+                ->nullable();
+            $table->string("barcode")
                 ->nullable();
             $table->enum("status", [
                 "waiting",
                 "published",
                 "archive",
             ]);
+            $table->string("brief")
+                ->nullable();
+            $table->text("description")
+                ->nullable();
             $table->json("jsonld")
                 ->nullable();
 

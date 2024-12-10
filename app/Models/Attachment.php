@@ -13,6 +13,7 @@ class Attachment extends Model
         "path",
         "file_name",
         "extension",
+        "is_thumbnail",
     ];
 
     public function attachable(): MorphTo

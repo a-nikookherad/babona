@@ -16,7 +16,7 @@
         "laravel": {
             "providers": [
                 "Production\\Providers\\ProductionProvider",
-                "Production\\Providers\\ProductionEventProvider"
+                "Production\\Providers\\RelationshipProvider"
             ]
         }
     }
