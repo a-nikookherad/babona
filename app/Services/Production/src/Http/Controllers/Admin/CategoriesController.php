@@ -52,4 +52,10 @@ class CategoriesController
         return view("Production::admin.category.list")
             ->with("success", "create successfully");
     }
+
+    public function destroy($id)
+    {
+        $category = Production::deleteCategory($id);
+        return view("Production::admin.category.list", compact("category"));
+    }
 }

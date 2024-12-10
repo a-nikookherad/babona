@@ -27,6 +27,8 @@ Route::group([
         Route::post("{id}/update", [\Production\Http\Controllers\Admin\CategoriesController::class, "update"])
             ->name("production.categories.update");
 
+        Route::delete("{id}/delete", [\Production\Http\Controllers\Admin\CategoriesController::class, "destroy"])
+            ->name("production.categories.delete");
     });
 
     Route::group([
