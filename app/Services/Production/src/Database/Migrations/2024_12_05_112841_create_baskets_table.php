@@ -20,6 +20,7 @@ return new class extends Migration {
 
             $table->dateTime("bought_at")
                 ->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

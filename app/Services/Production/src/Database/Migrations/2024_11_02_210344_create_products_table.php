@@ -42,6 +42,13 @@ return new class extends Migration {
                 ->references("id")
                 ->on("categories");
 
+            $table->unsignedBigInteger("user_id")
+                ->index();
+            $table->foreign("user_id")
+                ->references("id")
+                ->on("users");
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }

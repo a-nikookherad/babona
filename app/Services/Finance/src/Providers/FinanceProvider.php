@@ -6,6 +6,7 @@ use App\Models\Merchant;
 use App\Models\User;
 use Cashier\Entities\Models\Bank;
 use Finance\Entities\Models\Account;
+use Finance\Entities\Models\Wallet;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\ServiceProvider;
 use Loyalty\Entities\Models\Campaign;
@@ -24,10 +25,8 @@ class FinanceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__ . "/../Database/Migrations");
 
         Relation::enforceMorphMap([
-            'user' => User::class,
-            'merchant' => Merchant::class,
-            'campaign' => Campaign::class,
-            'Bank' => Bank::class,
+            'wallet' => Wallet::class,
+            'account' => Account::class,
         ]);
     }
 

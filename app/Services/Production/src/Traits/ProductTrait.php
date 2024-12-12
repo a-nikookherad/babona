@@ -2,42 +2,33 @@
 
 namespace Production\Traits;
 
-use Production\Entities\Models\Product;
+use Production\Entities\Repositories\product\ProductRepo;
 
 trait ProductTrait
 {
-    public function products(array $filter, int $perPage)
+    public function products(callable $filter, int $perPage = 10)
     {
-        return Product::query()
-            ->where($filter)
-            ->paginate($perPage);
+        return ProductRepo::getByFilterPaginate($filter, $perPage);
     }
 
     public function product($id)
     {
-        return Product::query()
-            ->where("id", $id)
-            ->first();
+        return ProductRepo::getById($id);
     }
 
     public function addProduct(array $data)
     {
-        return Product::query()
-            ->create($data);
+        return ProductRepo::store($data);
     }
 
-    public function updateProduct($product_id, array $data)
+    public function editProduct($product_id, array $data)
     {
-        return Product::query()
-            ->where("id", $product_id)
-            ->update($data);
+        return ProductRepo::update($product_id, $data);
     }
 
-    public function deleteProduct($id)
+    public function destroyProduct($id)
     {
-        return Product::query()
-            ->where("id", $id)
-            ->delete();
+        return ProductRepo::delete($id);
 
     }
 }

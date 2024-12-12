@@ -18,7 +18,11 @@ class Price extends Model
         "color",
         "price",
         "wallet_id",
+        "discount",
+        "storehouse_id",
         "product_id",
+        "discount",
+        "expired_at",
     ];
 
     public function storehouse(): BelongsTo

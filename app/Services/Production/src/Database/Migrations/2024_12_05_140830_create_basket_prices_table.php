@@ -10,7 +10,7 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('basket_prices', function (Blueprint $table) {
+        Schema::create( 'basket_prices', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger("basket_id")
                 ->index();

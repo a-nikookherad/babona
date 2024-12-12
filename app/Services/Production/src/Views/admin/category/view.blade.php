@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="success">
-    <p>hello world</p>
+    <p>{{$category->name}}</p>
 </div>
 </body>
 </html>

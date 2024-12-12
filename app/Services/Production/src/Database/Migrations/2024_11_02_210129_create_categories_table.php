@@ -30,7 +30,7 @@ return new class extends Migration {
             $table->foreign("parent_id")
                 ->references("id")
                 ->on("categories");
-
+            $table->softDeletes();
             $table->timestamps();
         });
     }

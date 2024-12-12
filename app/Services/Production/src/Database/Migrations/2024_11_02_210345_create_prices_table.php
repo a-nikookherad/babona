@@ -13,6 +13,8 @@ return new class extends Migration {
         Schema::create('prices', function (Blueprint $table) {
             $table->id();
             $table->float("price");
+            $table->float("discount")
+                ->default(0);
 
             $table->unsignedBigInteger("storehouse_id")
                 ->index();
@@ -25,6 +27,9 @@ return new class extends Migration {
             $table->foreign("wallet_id")
                 ->references("id")
                 ->on("wallets");
+
+            $table->dateTime("expired_at")
+                ->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

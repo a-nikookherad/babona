@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -21,14 +23,21 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Relation::enforceMorphMap([
-            'category' => 'App\Services\Production\src\Entities\Models\Category',
-            'product' => 'App\Services\Production\src\Entities\Models\Product',
             'merchant' => 'App\Models\Merchant',
             'user' => 'App\Models\User',
-            'bank' => 'App\Services\Finance\src\Entities\Models\Bank',
-            'campaign' => 'App\Services\Loyalty\src\Entities\Models\Campaign',
-            'order' => 'App\Services\Ordering\src\Entities\Models\Order',
-            'payment' => 'App\Services\Ordering\src\Entities\Models\Payment',
         ]);
+
+        Gate::define("super_admin", function (User $user) {
+            return $user->role == "super_admin";
+        });
+
+        Gate::define("admin", function (User $user) {
+            return $user->role == "admin";
+        });
+
+        Gate::define("accountant", function (User $user) {
+            return $user->role == "accountant";
+        });
+
     }
 }

@@ -17,7 +17,7 @@ class Storehouse extends Model
         "size",
         "quantity",
         "is_active",
-        "add_by_id",
+        "add_by_user_id",
     ];
 
     public function products(): BelongsTo

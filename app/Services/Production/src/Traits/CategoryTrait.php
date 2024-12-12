@@ -2,41 +2,32 @@
 
 namespace Production\Traits;
 
-use Production\Entities\Models\Category;
+use Production\Entities\Repositories\category\CategoryRepo;
 
 trait CategoryTrait
 {
     public function categories()
     {
-        return Category::query()
-            ->get();
+        return CategoryRepo::all();
     }
 
     public function category($id)
     {
-        return Category::query()
-            ->where("id", $id)
-            ->first();
-
+        return CategoryRepo::getById($id);
     }
 
     public function addCategory(array $data)
     {
-        return Category::query()
-            ->create($data);
+        return CategoryRepo::store($data);
     }
 
-    public function updateCategory($category_id, array $data)
+    public function editCategory($category_id, array $data)
     {
-        return Category::query()
-            ->where("id", $category_id)
-            ->update($data);
+        return CategoryRepo::update($category_id, $data);
     }
 
-    public function deleteCategory($id)
+    public function destroyCategory($id)
     {
-        return Category::query()
-            ->where("id", $id)
-            ->delete();
+        return CategoryRepo::delete($id);
     }
 }

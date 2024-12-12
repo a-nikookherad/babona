@@ -17,6 +17,8 @@ return new class extends Migration {
                 ->nullable();
             $table->string("instrument")
                 ->nullable();
+            $table->boolean("is_default")
+                ->default(false);
             $table->boolean("is_permanent")
                 ->default(true);
             $table->boolean("transaction_accept_manual")

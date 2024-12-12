@@ -16,6 +16,9 @@ class Wallet extends Model
         "instrument",
         "name",
         "fa_name",
+        "is_default",
+        "is_permanent",
+        "interest_rate",
         "transaction_accept_manual",
         "club_id",
     ];
