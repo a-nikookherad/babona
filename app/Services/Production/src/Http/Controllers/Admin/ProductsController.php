@@ -24,6 +24,12 @@ class ProductsController
     public function store(ProductCreateRequest $request)
     {
         $product = Production::createProduct($request->all());
+        if (!$product->exists) {
+            return Response::
+            code(400)
+                ->redirect(route("Production::admin.product.list"))
+                ->failed(__("product_didnt_create_successfully"));
+        }
         return Response::view("Production::admin.product.list", compact("product"))
             ->jsonData($product)
             ->code(201)
@@ -40,16 +46,7 @@ class ProductsController
 
     public function update(ProductUpdateRequest $request, $id)
     {
-        $data = $request->only([
-            "slug",
-            "name",
-            "fa_name",
-            "description",
-            "status",
-            "jsonld",
-            "parent_id",
-        ]);
-        $product = Production::editProduct($id, $data);
+        $product = Production::editProduct($id, $request->all());
 
         if ($product) {
             return Response::view("Production::admin.product.list")
