@@ -28,6 +28,9 @@ class HtmlResponse
 
     public function success($message)
     {
+        if ($this->redirect) {
+            return redirect($this->redirect)->with("success", $message);
+        }
         return view($this->view, $this->compactData)
             ->with("success", $message);
     }

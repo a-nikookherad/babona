@@ -11,6 +11,11 @@ trait CategoryTrait
         return CategoryRepo::all();
     }
 
+    public function categoriesByPluck($pluck)
+    {
+        return CategoryRepo::getByPluck($pluck);
+    }
+
     public function category($id)
     {
         return CategoryRepo::getById($id);

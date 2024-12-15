@@ -12,6 +12,12 @@ abstract class RepositoryAbstract
             ->get();
     }
 
+    public function getByPluck($pluck)
+    {
+        return $this->instance::query()
+            ->get($pluck);
+    }
+
     public function getById($id)
     {
         return $this->instance::query()

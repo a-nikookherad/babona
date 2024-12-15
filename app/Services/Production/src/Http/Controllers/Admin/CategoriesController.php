@@ -6,23 +6,28 @@ use Production\Http\Requests\Categories\CategoryCreateRequest;
 use Production\Http\Requests\Categories\CategoryUpdateRequest;
 use Production\Production;
 use Response\Response;
-use function view;
 
 class CategoriesController
 {
     public function index()
     {
         $categories = Production::categories();
-        return Response::view("Production::admin.category.list", compact("categories"))
+        return Response::view("admin.category.list", compact("categories"))
             ->jsonData($categories)
-            ->code(204)
+            ->code(200)
             ->success(__("list_of_categories"));
+    }
+
+    public function create()
+    {
+        $categories = Production::categoriesByPluck(["id", "fa_name"]);
+        return view("admin.category.create", ["categories" => $categories->toArray()]);
     }
 
     public function edit($id)
     {
         $category = Production::category($id);
-        return Response::view("Production::admin.category.view", compact("category"))
+        return Response::view("admin.category.edit", compact("category"))
             ->jsonData($category)
             ->success("error");
     }
@@ -53,17 +58,8 @@ class CategoriesController
 
     public function store(CategoryCreateRequest $request)
     {
-        $data = $request->only([
-            "slug",
-            "name",
-            "fa_name",
-            "description",
-            "status",
-            "jsonld",
-            "parent_id",
-        ]);
-        $category = Production::addCategory($data);
-        return Response::view("Production::admin.category.list")
+        $category = Production::createCategory($request);
+        return Response::redirect(route("production.categories.create"))
             ->jsonData($category)
             ->code(201)
             ->success(__("category_created_successfully"));

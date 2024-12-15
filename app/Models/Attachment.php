@@ -10,10 +10,10 @@ class Attachment extends Model
     protected $fillable = [
         "attachable_type",
         "attachable_id",
+        "name",
         "path",
         "file_name",
         "extension",
-        "is_thumbnail",
     ];
 
     public function attachable(): MorphTo

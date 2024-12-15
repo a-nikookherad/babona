@@ -5,6 +5,7 @@ namespace Production;
 use App\Models\Attachment;
 use App\Models\Tag;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Production\Traits\CategoryTrait;
 use Production\Traits\PriceTrait;
 use Production\Traits\ProductTrait;
@@ -14,6 +15,39 @@ use Production\Traits\StorehouseTrait;
 class ProductionService
 {
     use CategoryTrait, ProductTrait, StorehouseTrait, PriceTrait, BasketTrait;
+
+    public function createCategory($request)
+    {
+        $data = $request->only([
+            "slug",
+            "name",
+            "fa_name",
+            "description",
+            "status",
+            "jsonld",
+            "parent_id",
+        ]);
+        $category = $this->addCategory($data);
+        $thumbnail = $request->file("thumbnail");
+        if (!$thumbnail) {
+            return $category;
+        }
+        $fileConfigPath = config("production.category_thumbnail_path_from_public");
+        $fileName = $category->id;
+        $fileExtension = $thumbnail->getClientOriginalExtension();
+        $attachment = new Attachment();
+        $attachment->name = "thumbnail";
+        $attachment->path = storage_path("app/public/") . ltrim($fileConfigPath, "/");
+        $attachment->file_name = $fileName;
+        $attachment->extension = $fileExtension;
+        $attachment->alt = $request->fa_name;
+        $category->attachments()->save($attachment);
+
+        if ($category->exists) {
+            //store avatar to filesystem
+            Storage::disk("public")->putFileAs($fileConfigPath, $thumbnail, $fileName . "." . $fileExtension);
+        }
+    }
 
     public function createProduct(array $data)
     {
