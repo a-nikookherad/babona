@@ -5,13 +5,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::group([
     "prefix" => "dashboard",
-//    "middleware" => "auth:web"
+    "middleware" => ["web"]
 ], function () {
 
     Route::view("dashboard", "admin.dashboard")
         ->name("dashboard");
     Route::group([
-        "prefix" => "categories"
+        "prefix" => "categories",
+//        "middleware" => ["can:super_admin"]
     ], function () {
         Route::get("", [\Production\Http\Controllers\Admin\CategoriesController::class, "index"])
             ->name("production.categories.list");

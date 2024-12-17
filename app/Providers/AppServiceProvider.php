@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 
@@ -32,12 +33,13 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Gate::define("admin", function (User $user) {
-            return $user->role == "admin";
+            return $user->role == "admin" || $user->role == "super_admin";
         });
 
         Gate::define("accountant", function (User $user) {
-            return $user->role == "accountant";
+            return $user->role == "accountant" || $user->role == "super_admin";
         });
 
+        Paginator::useBootstrapFive();
     }
 }

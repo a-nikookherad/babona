@@ -1,7 +1,20 @@
 @extends("admin.layouts.main")
+@push("breadcrumb")
+    <!--begin::آیتم-->
+    <li class="breadcrumb-item">
+        <span class="bullet bg-gray-400 w-5px h-2px"></span>
+    </li>
+    <!--end::آیتم-->
 
+    <!--begin::آیتم-->
+    <li class="breadcrumb-item text-muted">
+        <a href="{{route("production.categories.list")}}"
+           class="text-muted text-hover-primary">لیست دسته بندی ها</a>
+    </li>
+    <!--end::آیتم-->
+@endpush
 @section("content")
-    <div>
+    <div dir="rtl">
         <div class="card card-flush">
             <!--begin::کارت header-->
             <div class="card-header align-items-center py-5 gap-2 gap-md-5">
@@ -50,26 +63,27 @@
                             <!--begin::Table head-->
                             <thead>
                             <!--begin::Table row-->
-                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                <th class="w-10px pe-2 sorting_disabled" rowspan="1" colspan="1" aria-label="
-
-
-
-														" style="width: 29.8906px;">
+                            <tr class="text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                <th class="w-10px pe-2 sorting_disabled" rowspan="1" colspan="1" aria-label="" style="width: 29.8906px;">
                                     <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
-                                        <input class="form-check-input" type="checkbox" data-kt-check="true"
+                                        {{--<input class="form-check-input" type="checkbox" data-kt-check="true"
                                                data-kt-check-target="#kt_ecommerce_category_table .form-check-input"
-                                               value="1">
+                                               value="1">--}}
+                                        #
                                     </div>
                                 </th>
-                                <th class="min-w-250px sorting" tabindex="0" aria-controls="kt_ecommerce_category_table"
+                                <th class="min-w-350px sorting" tabindex="0" aria-controls="kt_ecommerce_category_table"
                                     rowspan="1" colspan="1" aria-label="دسته بندی: activate to sort column ascending"
                                     style="width: 591.047px;">دسته بندی
                                 </th>
-                                <th class="min-w-150px sorting" tabindex="0" aria-controls="kt_ecommerce_category_table"
+                                <th class="min-w-100px sorting" tabindex="0" aria-controls="kt_ecommerce_category_table"
+                                    rowspan="1" colspan="1" aria-label="دسته بندی: activate to sort column ascending"
+                                    style="width: 200.047px;">وضعیت
+                                </th>
+                                <th class="min-w-100px sorting" tabindex="0" aria-controls="kt_ecommerce_category_table"
                                     rowspan="1" colspan="1"
                                     aria-label="دسته بندی نوع: activate to sort column ascending"
-                                    style="width: 200.219px;">دسته بندی نوع
+                                    style="width: 200.219px;">دسته بندی والد
                                 </th>
                                 <th class="text-end min-w-70px sorting_disabled" rowspan="1" colspan="1"
                                     aria-label="عملیات"
@@ -125,20 +139,26 @@
                                     <td>
                                         <div class="d-flex">
                                             <!--begin::Thumbnail-->
-                                            <a href="../../demo1/dist/apps/ecommerce/catalog/edit-category.html"
+                                            <a href="{{route("production.categories.edit",["id"=>$category->id])}}"
                                                class="symbol symbol-50px">
-                                        <span class="symbol-label"
-                                              style="background-image:url({{asset("admin/media//stock/ecommerce/71.gif")}});"></span>
+                                                @php
+                                                    if($category->thumbnail)
+                                                        $path=$category->thumbnail->relative_path."/".$category->thumbnail->file_name.".".$category->thumbnail->extension;
+                                                    else
+                                                        $path="admin/media/svg/files/blank-image.svg"
+                                                @endphp
+                                                <span class="symbol-label"
+                                                      style="background-image:url({{asset($path)}});"></span>
                                             </a>
                                             <!--end::Thumbnail-->
                                             <div class="ms-5">
                                                 <!--begin::Title-->
-                                                <a href="../../demo1/dist/apps/ecommerce/catalog/edit-category.html"
+                                                <a href="{{route("production.categories.edit",["id"=>$category->id])}}"
                                                    class="text-gray-800 text-hover-primary fs-5 fw-bold mb-1"
                                                    data-kt-ecommerce-category-filter="category_name">{{$category->fa_name}}</a>
                                                 <!--end::Title-->
                                                 <!--begin::توضیحات-->
-                                                <div class="text-muted fs-7 fw-bold">{{$category->description}}</div>
+                                                <div class="text-muted fs-7 fw-bold">{{\Illuminate\Support\Str::limit($category->description,120)}}</div>
                                                 <!--end::توضیحات-->
                                             </div>
                                         </div>
@@ -147,10 +167,18 @@
                                     <!--begin::نوع=-->
                                     <td>
                                         <!--begin::Badges-->
-                                        <div class="badge badge-light-success">خودکار</div>
+                                        <div class="badge badge-light-success">{{$category->status}}</div>
                                         <!--end::Badges-->
                                     </td>
                                     <!--end::نوع=-->
+                                    <!--begin::parent=-->
+                                    <td>
+                                        <!--begin::Badges-->
+                                        <div
+                                            class="badge badge-light-warning">{{$category->parent->fa_name??"..."}}</div>
+                                        <!--end::Badges-->
+                                    </td>
+                                    <!--end::parent=-->
                                     <!--begin::عملیات=-->
                                     <td class="text-end">
                                         <a href="#" class="btn btn-sm btn-light btn-active-light-primary"
@@ -171,15 +199,28 @@
                                             data-kt-menu="true">
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-3">
-                                                <a href="../../demo1/dist/apps/ecommerce/catalog/add-category.html"
-                                                   class="menu-link px-3"></a>
+                                                <a href="{{route("production.categories.edit",["id"=>$category->id])}}"
+                                                   class="menu-link px-3">
+                                                    ویرایش
+                                                </a>
                                             </div>
                                             <!--end::Menu item-->
                                             <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3"
-                                                   data-kt-ecommerce-category-filter="delete_row">حذف</a>
-                                            </div>
+                                            <form
+                                                action="{{route("production.categories.delete",["id"=>$category->id])}}"
+                                                method="post">
+                                                @method('DELETE')
+                                                @csrf
+                                                <div class="menu-item px-3">
+                                                    <a href=""
+                                                       class="menu-link px-3"
+                                                       data-kt-ecommerce-category-filter="delete_row">
+                                                        <button class="border-0 btn p-0" type="submit">
+                                                            حذف
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                            </form>
                                             <!--end::Menu item-->
                                         </div>
                                         <!--end::Menu-->
@@ -197,39 +238,59 @@
                     <div class="row">
                         <div
                             class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start">
-                            <div class="dataTables_length" id="kt_ecommerce_category_table_length"><label><select
-                                        name="kt_ecommerce_category_table_length"
-                                        aria-controls="kt_ecommerce_category_table"
-                                        class="form-select form-select-sm form-select-solid">
-                                        <option value="10">10</option>
-                                        <option value="25">25</option>
-                                        <option value="50">50</option>
-                                        <option value="100">100</option>
-                                    </select></label></div>
+                            <div class="dataTables_length" id="kt_ecommerce_category_table_length">
+                                <label>
+                                    <form action="{{route("production.categories.list")}}">
+                                        <select name="per_page" onchange="this.form.submit()"
+                                                aria-controls="kt_ecommerce_category_table"
+                                                class="form-select form-select-sm form-select-solid">
+                                            <option value="5" @if(request()->get("per_page")==5){{"selected"}}@endif>5
+                                            </option>
+                                            <option value="10" @if(request()->get("per_page")==10){{"selected"}}@endif>
+                                                10
+                                            </option>
+                                            <option value="25" @if(request()->get("per_page")==25){{"selected"}}@endif>
+                                                25
+                                            </option>
+                                        </select>
+                                    </form>
+
+                                </label>
+                            </div>
                         </div>
                         <div
                             class="col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end">
                             <div class="dataTables_paginate paging_simple_numbers"
                                  id="kt_ecommerce_category_table_paginate">
-                                <ul class="pagination">
-                                    <li class="paginate_button page-item previous disabled"
-                                        id="kt_ecommerce_category_table_previous"><a href="#"
-                                                                                     aria-controls="kt_ecommerce_category_table"
-                                                                                     data-dt-idx="0" tabindex="0"
-                                                                                     class="page-link"><i
-                                                class="previous"></i></a></li>
-                                    <li class="paginate_button page-item active"><a href="#"
-                                                                                    aria-controls="kt_ecommerce_category_table"
-                                                                                    data-dt-idx="1" tabindex="0"
-                                                                                    class="page-link">1</a></li>
-                                    <li class="paginate_button page-item "><a href="#"
-                                                                              aria-controls="kt_ecommerce_category_table"
-                                                                              data-dt-idx="2" tabindex="0"
-                                                                              class="page-link">2</a></li>
-                                    <li class="paginate_button page-item next" id="kt_ecommerce_category_table_next"><a
-                                            href="#" aria-controls="kt_ecommerce_category_table" data-dt-idx="3"
-                                            tabindex="0" class="page-link"><i class="next"></i></a></li>
-                                </ul>
+                                {{$categories->links()}}
+                                {{--<ul class="pagination">
+                                    <li class="paginate_button page-item previous @if($categories->currentPage()==1) {{"disabled"}} @endif"
+                                        id="kt_ecommerce_category_table_previous"><a
+                                            href="{{$categories->previousPageUrl()}}"
+                                            aria-controls="kt_ecommerce_category_table"
+                                            data-dt-idx="0" tabindex="0"
+                                            class="page-link"><i
+                                                class="previous"></i></a>
+                                    </li>
+
+                                    @for($i=1;($categories->total()/$categories->perPage())>=$i;$i++)
+                                        <li class="paginate_button page-item @if($categories->currentPage()==$i){{"active"}}@endif">
+                                            <a href="{{$categories->url($i)}}"
+                                               aria-controls="kt_ecommerce_category_table"
+                                               data-dt-idx="{{$categories->currentPage()}}" tabindex="0"
+                                               class="page-link">
+                                                {{$i}}
+                                            </a>
+                                        </li>
+
+                                    @endfor
+                                    <li class="paginate_button page-item next @if($categories->currentPage()==$categories->lastPage()) {{"disabled"}} @endif"
+                                        id="kt_ecommerce_category_table_next"><a
+                                            href="{{$categories->nextPageUrl()}}"
+                                            aria-controls="kt_ecommerce_category_table" data-dt-idx="3"
+                                            tabindex="0" class="page-link"><i class="next"></i></a>
+                                    </li>
+                                </ul>--}}
                             </div>
                         </div>
                     </div>

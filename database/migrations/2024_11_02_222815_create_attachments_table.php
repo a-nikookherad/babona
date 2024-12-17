@@ -15,7 +15,10 @@ return new class extends Migration {
             $table->morphs("attachable");
             $table->string("name")
                 ->nullable();
-            $table->string("path");
+            $table->string("absolute_path")
+                ->nullable();
+            $table->string("relative_path")
+                ->nullable();
             $table->string("file_name");
             $table->string("extension");
             $table->string("alt")

@@ -2,6 +2,8 @@
 
 namespace App\Services\Production\src\Entities\Repositories;
 
+use Illuminate\Database\Eloquent\Builder;
+
 abstract class RepositoryAbstract
 {
     protected $instance;
@@ -12,16 +14,40 @@ abstract class RepositoryAbstract
             ->get();
     }
 
+    public function paginate($perPage)
+    {
+        return $this->instance::query()
+            ->paginate($perPage);
+    }
+
     public function getByPluck($pluck)
     {
         return $this->instance::query()
             ->get($pluck);
     }
 
-    public function getById($id)
+    public function getById($id, $with = [])
     {
         return $this->instance::query()
             ->where("id", $id)
+            ->when(!empty($with), function (Builder $query) use ($with) {
+                return $query->with($with);
+            })
+            ->first();
+    }
+
+    public function getByRelation($relation, $whereHas, $where = [], $with = [])
+    {
+        return $this->instance::query()
+            ->when(!empty($with), function (Builder $query) use ($with) {
+                return $query->with($with);
+            })
+            ->when(!empty($where), function (Builder $query) use ($where) {
+                return $query->where($where);
+            })
+            ->whereHas($relation, function ($query) use ($whereHas) {
+                return $query->where($whereHas);
+            })
             ->first();
     }
 

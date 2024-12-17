@@ -14,8 +14,8 @@
         "nikookherad/cashier": "*",
         "nikookherad/finance": "*",
         "nikookherad/loyalty": "*",
-        "nikookherad/production": "*",
-        "nikookherad/response": "*"
+        "nikookherad/production": "*"
+
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

@@ -17,7 +17,12 @@ class CategoryUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "slug" => "required|string|max:150|min:2",
+            "fa_name" => "nullable|string|max:250|min:2",
+            "description" => "nullable|string|min:20|max:350",
+            "status" => "required|in:waiting,published,archive",
+            "jsonld" => "nullable|json",
+            "parent_id" => "nullable|numeric|exists:categories,id",
         ];
     }
 }

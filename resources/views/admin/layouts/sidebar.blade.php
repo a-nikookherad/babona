@@ -46,7 +46,8 @@
             <div class="menu menu-column menu-rounded menu-sub-indention px-3" id="#kt_app_sidebar_menu"
                  data-kt-menu="true" data-kt-menu-expو="false">
                 <!--begin:Menu item-->
-                <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
+                <div data-kt-menu-trigger="click"
+                     class="menu-item here @if (request()->routeIs('dashboard')) {{"show"}} @endif menu-accordion">
                     <!--begin:Menu link-->
                     <span class="menu-link">
 											<span class="menu-icon">
@@ -66,7 +67,7 @@
 												</span>
                                                 <!--end::Svg Icon-->
 											</span>
-											<span class="menu-title">داشبورد ها</span>
+											<span class="menu-title">داشبورد</span>
 											<span class="menu-arrow"></span>
 										</span>
                     <!--end:Menu link-->
@@ -75,7 +76,8 @@
                         <!--begin:Menu item-->
                         <div class="menu-item">
                             <!--begin:Menu link-->
-                            <a class="menu-link active" href="../../demo1/dist/index.html">
+                            <a class="menu-link @if (request()->routeIs('dashboard')) {{"active"}} @endif"
+                               href="{{route("dashboard")}}">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -84,520 +86,24 @@
                             <!--end:Menu link-->
                         </div>
                         <!--end:Menu item-->
-                        <!--begin:Menu item-->
-                    {{--<div class="menu-item">
-                        <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo1/dist/dashboards/ecommerce.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                            <span class="menu-title">تجارت الکترونیک</span>
-                        </a>
-                        <!--end:Menu link-->
-                    </div>--}}
-                    <!--end:Menu item-->
-                        <!--begin:Menu item-->
-                    {{--<div class="menu-item">
-                        <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo1/dist/dashboards/projects.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                            <span class="menu-title">پروژه ها</span>
-                        </a>
-                        <!--end:Menu link-->
-                    </div>--}}
-                    <!--end:Menu item-->
-                        <!--begin:Menu item-->
-                    {{--<div class="menu-item">
-                        <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo1/dist/dashboards/online-courses.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                            <span class="menu-title">آنلاین دوره ها</span>
-                        </a>
-                        <!--end:Menu link-->
-                    </div>--}}
-                    <!--end:Menu item-->
-                        <!--begin:Menu item-->
-                    {{--<div class="menu-item">
-                        <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo1/dist/dashboards/marketing.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                            <span class="menu-title">بازاریابی</span>
-                        </a>
-                        <!--end:Menu link-->
-                    </div>--}}
-                    <!--end:Menu item-->
-                        <div class="menu-inner flex-column collapse"
-                             id="kt_app_sidebar_menu_dashboards_collapse">
-                            <!--begin:Menu item-->
-                        {{--<div class="menu-item">
-                            <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo1/dist/dashboards/bidding.html">
-                                                    <span class="menu-bullet">
-                                                        <span class="bullet bullet-dot"></span>
-                                                    </span>
-                                <span class="menu-title">مناقصه</span>
-                            </a>
-                            <!--end:Menu link-->
-                        </div>--}}
-                        <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                        {{--<div class="menu-item">
-                            <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo1/dist/dashboards/pos.html">
-                                                    <span class="menu-bullet">
-                                                        <span class="bullet bullet-dot"></span>
-                                                    </span>
-                                <span class="menu-title">سیستم پوز</span>
-                            </a>
-                            <!--end:Menu link-->
-                        </div>--}}
-                        <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                        {{--<div class="menu-item">
-                            <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo1/dist/dashboards/call-center.html">
-                                                    <span class="menu-bullet">
-                                                        <span class="bullet bullet-dot"></span>
-                                                    </span>
-                                <span class="menu-title">مرکز تماس</span>
-                            </a>
-                            <!--end:Menu link-->
-                        </div>--}}
-                        <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                        {{--<div class="menu-item">
-                            <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo1/dist/dashboards/logistics.html">
-                                                    <span class="menu-bullet">
-                                                        <span class="bullet bullet-dot"></span>
-                                                    </span>
-                                <span class="menu-title">حمل و نقل</span>
-                            </a>
-                            <!--end:Menu link-->
-                        </div>--}}
-                        <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link"
-                                   href="../../demo1/dist/dashboards/website-analytics.html">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-                                    <span class="menu-title">وب سایت آنالیتیکس</span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                            <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                        {{--<div class="menu-item">
-                            <!--begin:Menu link-->
-                            <a class="menu-link"
-                               href="../../demo1/dist/dashboards/finance-performance.html">
-                                                    <span class="menu-bullet">
-                                                        <span class="bullet bullet-dot"></span>
-                                                    </span>
-                                <span class="menu-title">دارایی، مالیه، سرمایه گذاری کارایی</span>
-                            </a>
-                            <!--end:Menu link-->
-                        </div>--}}
-                        <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                            <div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link"
-                                   href="../../demo1/dist/dashboards/store-analytics.html">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-                                    <span class="menu-title">فروشگاه آنالیتیکس</span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>
-                            <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                        {{--<div class="menu-item">
-                            <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo1/dist/dashboards/social.html">
-                                                    <span class="menu-bullet">
-                                                        <span class="bullet bullet-dot"></span>
-                                                    </span>
-                                <span class="menu-title">شبکه اجتماعی</span>
-                            </a>
-                            <!--end:Menu link-->
-                        </div>--}}
-                        <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                        {{--<div class="menu-item">
-                            <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo1/dist/dashboards/delivery.html">
-                                                    <span class="menu-bullet">
-                                                        <span class="bullet bullet-dot"></span>
-                                                    </span>
-                                <span class="menu-title">تحویل</span>
-                            </a>
-                            <!--end:Menu link-->
-                        </div>--}}
-                        <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                        {{--<div class="menu-item">
-                            <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo1/dist/dashboards/crypto.html">
-                                                    <span class="menu-bullet">
-                                                        <span class="bullet bullet-dot"></span>
-                                                    </span>
-                                <span class="menu-title">کریپتو</span>
-                            </a>
-                            <!--end:Menu link-->
-                        </div>--}}
-                        <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                        {{--<div class="menu-item">
-                            <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo1/dist/dashboards/school.html">
-                                                    <span class="menu-bullet">
-                                                        <span class="bullet bullet-dot"></span>
-                                                    </span>
-                                <span class="menu-title">مدرسه</span>
-                            </a>
-                            <!--end:Menu link-->
-                        </div>--}}
-                        <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                        {{--<div class="menu-item">
-                            <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo1/dist/dashboards/podcast.html">
-                                                    <span class="menu-bullet">
-                                                        <span class="bullet bullet-dot"></span>
-                                                    </span>
-                                <span class="menu-title">پادکست</span>
-                            </a>
-                            <!--end:Menu link-->
-                        </div>--}}
-                        <!--end:Menu item-->
-                            <!--begin:Menu item-->
-                        {{--<div class="menu-item">
-                            <!--begin:Menu link-->
-                            <a class="menu-link" href="../../demo1/dist/landing.html">
-                                                    <span class="menu-bullet">
-                                                        <span class="bullet bullet-dot"></span>
-                                                    </span>
-                                <span class="menu-title">صفحه فرود</span>
-                            </a>
-                            <!--end:Menu link-->
-                        </div>--}}
-                        <!--end:Menu item-->
-                        </div>
-                        {{--<div class="menu-item">
-                            <div class="menu-content">
-                                <a class="btn btn-flex btn-color-primary d-flex flex-stack fs-base p-0 ms-2 mb-2 toggle collapsible collapsed"
-                                   data-bs-toggle="collapse" href="#kt_app_sidebar_menu_dashboards_collapse"
-                                   data-kt-toggle-text="بستن">
-                                    <span data-kt-toggle-text-target="true">مشاهده بیشتر</span>
-                                    <!--begin::Svg Icon | path: icons/duotune/general/gen036.svg-->
-                                    <span class="svg-icon toggle-on svg-icon-2 me-0">
-															<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                                 xmlns="http://www.w3.org/2000/svg">
-																<rect opacity="0.3" x="2" y="2" width="20" height="20"
-                                                                      rx="5" fill="currentColor"/>
-																<rect x="6.0104" y="10.9247" width="12" height="2"
-                                                                      rx="1" fill="currentColor"/>
-															</svg>
-														</span>
-                                    <!--end::Svg Icon-->
-                                    <!--begin::Svg Icon | path: icons/duotune/general/gen035.svg-->
-                                    <span class="svg-icon toggle-off svg-icon-2 me-0">
-															<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                                 xmlns="http://www.w3.org/2000/svg">
-																<rect opacity="0.3" x="2" y="2" width="20" height="20"
-                                                                      rx="5" fill="currentColor"/>
-																<rect x="10.8891" y="17.8033" width="12" height="2"
-                                                                      rx="1" transform="rotate(-90 10.8891 17.8033)"
-                                                                      fill="currentColor"/>
-																<rect x="6.01041" y="10.9247" width="12" height="2"
-                                                                      rx="1" fill="currentColor"/>
-															</svg>
-														</span>
-                                    <!--end::Svg Icon-->
-                                </a>
-                            </div>
-                        </div>--}}
                     </div>
                     <!--end:Menu sub-->
                 </div>
                 <!--end:Menu item-->
-                <!--begin:Menu item-->
-            {{--<div class="menu-item pt-5">
-                <!--begin:Menu content-->
-                <div class="menu-content">
-                    <span class="menu-heading fw-bold text-uppercase fs-7">صفحات</span>
-                </div>
-                <!--end:Menu content-->
-            </div>--}}
-            <!--end:Menu item-->
-                <!--begin:Menu item-->
-            {{--<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                <!--begin:Menu link-->
-                <span class="menu-link">
-                                        <span class="menu-icon">
-                                            <!--begin::Svg Icon | path: icons/duotune/communication/com005.svg-->
-                                            <span class="svg-icon svg-icon-2">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M20 14H18V10H20C20.6 10 21 10.4 21 11V13C21 13.6 20.6 14 20 14ZM21 19V17C21 16.4 20.6 16 20 16H18V20H20C20.6 20 21 19.6 21 19ZM21 7V5C21 4.4 20.6 4 20 4H18V8H20C20.6 8 21 7.6 21 7Z"
-                                                        fill="currentColor"/>
-                                                    <path opacity="0.3"
-                                                          d="M17 22H3C2.4 22 2 21.6 2 21V3C2 2.4 2.4 2 3 2H17C17.6 2 18 2.4 18 3V21C18 21.6 17.6 22 17 22ZM10 7C8.9 7 8 7.9 8 9C8 10.1 8.9 11 10 11C11.1 11 12 10.1 12 9C12 7.9 11.1 7 10 7ZM13.3 16C14 16 14.5 15.3 14.3 14.7C13.7 13.2 12 12 10.1 12C8.10001 12 6.49999 13.1 5.89999 14.7C5.59999 15.3 6.19999 16 7.39999 16H13.3Z"
-                                                          fill="currentColor"/>
-                                                </svg>
-                                            </span>
-                                            <!--end::Svg Icon-->
-                                        </span>
-                                        <span class="menu-title">کاربر پروفایل</span>
-                                        <span class="menu-arrow"></span>
-                                    </span>
-                <!--end:Menu link-->
-                <!--begin:Menu sub-->
-                <div class="menu-sub menu-sub-accordion">
-                    <!--begin:Menu item-->
-                    <div class="menu-item">
-                        <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo1/dist/pages/user-profile/overview.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                            <span class="menu-title">بررسی اجمالی</span>
-                        </a>
-                        <!--end:Menu link-->
-                    </div>
-                    <!--end:Menu item-->
-                    <!--begin:Menu item-->
-                    <div class="menu-item">
-                        <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo1/dist/pages/user-profile/projects.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                            <span class="menu-title">پروژه ها</span>
-                        </a>
-                        <!--end:Menu link-->
-                    </div>
-                    <!--end:Menu item-->
-                    <!--begin:Menu item-->
-                    <div class="menu-item">
-                        <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo1/dist/pages/user-profile/campaigns.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                            <span class="menu-title">کمپین ها</span>
-                        </a>
-                        <!--end:Menu link-->
-                    </div>
-                    <!--end:Menu item-->
-                    <!--begin:Menu item-->
-                    <div class="menu-item">
-                        <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo1/dist/pages/user-profile/documents.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                            <span class="menu-title">اسناد</span>
-                        </a>
-                        <!--end:Menu link-->
-                    </div>
-                    <!--end:Menu item-->
-                    <!--begin:Menu item-->
-                    <div class="menu-item">
-                        <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo1/dist/pages/user-profile/followers.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                            <span class="menu-title">فالوورها</span>
-                        </a>
-                        <!--end:Menu link-->
-                    </div>
-                    <!--end:Menu item-->
-                    <!--begin:Menu item-->
-                    <div class="menu-item">
-                        <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo1/dist/pages/user-profile/activity.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                            <span class="menu-title">فعالیت</span>
-                        </a>
-                        <!--end:Menu link-->
-                    </div>
-                    <!--end:Menu item-->
-                </div>
-                <!--end:Menu sub-->
-            </div>--}}
-            <!--end:Menu item-->
-                <!--begin:Menu item-->
-            {{--<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                <!--begin:Menu link-->
-                <span class="menu-link">
-                                        <span class="menu-icon">
-                                            <!--begin::Svg Icon | path: icons/duotune/general/gen022.svg-->
-                                            <span class="svg-icon svg-icon-2">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M11.2929 2.70711C11.6834 2.31658 12.3166 2.31658 12.7071 2.70711L15.2929 5.29289C15.6834 5.68342 15.6834 6.31658 15.2929 6.70711L12.7071 9.29289C12.3166 9.68342 11.6834 9.68342 11.2929 9.29289L8.70711 6.70711C8.31658 6.31658 8.31658 5.68342 8.70711 5.29289L11.2929 2.70711Z"
-                                                        fill="currentColor"/>
-                                                    <path
-                                                        d="M11.2929 14.7071C11.6834 14.3166 12.3166 14.3166 12.7071 14.7071L15.2929 17.2929C15.6834 17.6834 15.6834 18.3166 15.2929 18.7071L12.7071 21.2929C12.3166 21.6834 11.6834 21.6834 11.2929 21.2929L8.70711 18.7071C8.31658 18.3166 8.31658 17.6834 8.70711 17.2929L11.2929 14.7071Z"
-                                                        fill="currentColor"/>
-                                                    <path opacity="0.3"
-                                                          d="M5.29289 8.70711C5.68342 8.31658 6.31658 8.31658 6.70711 8.70711L9.29289 11.2929C9.68342 11.6834 9.68342 12.3166 9.29289 12.7071L6.70711 15.2929C6.31658 15.6834 5.68342 15.6834 5.29289 15.2929L2.70711 12.7071C2.31658 12.3166 2.31658 11.6834 2.70711 11.2929L5.29289 8.70711Z"
-                                                          fill="currentColor"/>
-                                                    <path opacity="0.3"
-                                                          d="M17.2929 8.70711C17.6834 8.31658 18.3166 8.31658 18.7071 8.70711L21.2929 11.2929C21.6834 11.6834 21.6834 12.3166 21.2929 12.7071L18.7071 15.2929C18.3166 15.6834 17.6834 15.6834 17.2929 15.2929L14.7071 12.7071C14.3166 12.3166 14.3166 11.6834 14.7071 11.2929L17.2929 8.70711Z"
-                                                          fill="currentColor"/>
-                                                </svg>
-                                            </span>
-                                            <!--end::Svg Icon-->
-                                        </span>
-                                        <span class="menu-title">اکانت</span>
-                                        <span class="menu-arrow"></span>
-                                    </span>
-                <!--end:Menu link-->
-                <!--begin:Menu sub-->
-                <div class="menu-sub menu-sub-accordion">
-                    <!--begin:Menu item-->
-                    <div class="menu-item">
-                        <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo1/dist/account/overview.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                            <span class="menu-title">بررسی اجمالی</span>
-                        </a>
-                        <!--end:Menu link-->
-                    </div>
-                    <!--end:Menu item-->
-                    <!--begin:Menu item-->
-                    <div class="menu-item">
-                        <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo1/dist/account/settings.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                            <span class="menu-title">تنظیمات</span>
-                        </a>
-                        <!--end:Menu link-->
-                    </div>
-                    <!--end:Menu item-->
-                    <!--begin:Menu item-->
-                    --}}{{--<div class="menu-item">
-                        <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo1/dist/account/security.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                            <span class="menu-title">امنیت</span>
-                        </a>
-                        <!--end:Menu link-->
-                    </div>--}}{{--
-                    <!--end:Menu item-->
-                    <!--begin:Menu item-->
-                    --}}{{--<div class="menu-item">
-                        <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo1/dist/account/activity.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                            <span class="menu-title">فعالیت</span>
-                        </a>
-                        <!--end:Menu link-->
-                    </div>--}}{{--
-                    <!--end:Menu item-->
-                    <!--begin:Menu item-->
---}}{{--                        <div class="menu-item">
-                        <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo1/dist/account/billing.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                            <span class="menu-title">صورتحساب</span>
-                        </a>
-                        <!--end:Menu link-->
-                    </div>--}}{{--
-                    <!--end:Menu item-->
-                    <!--begin:Menu item-->
---}}{{--                        <div class="menu-item">
-                        <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo1/dist/account/statements.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                            <span class="menu-title">بیانه ها</span>
-                        </a>
-                        <!--end:Menu link-->
-                    </div>--}}{{--
-                    <!--end:Menu item-->
-                    <!--begin:Menu item-->
-                    --}}{{--<div class="menu-item">
-                        <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo1/dist/account/referrals.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                            <span class="menu-title">مراجعات</span>
-                        </a>
-                        <!--end:Menu link-->
-                    </div>--}}{{--
-                    <!--end:Menu item-->
-                    <!--begin:Menu item-->
-                    --}}{{--<div class="menu-item">
-                        <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo1/dist/account/api-keys.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                            <span class="menu-title">کلید ای پی ای</span>
-                        </a>
-                        <!--end:Menu link-->
-                    </div>--}}{{--
-                    <!--end:Menu item-->
-                    <!--begin:Menu item-->
-                    --}}{{--<div class="menu-item">
-                        <!--begin:Menu link-->
-                        <a class="menu-link" href="../../demo1/dist/account/logs.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                            <span class="menu-title">گزارش</span>
-                        </a>
-                        <!--end:Menu link-->
-                    </div>--}}{{--
-                    <!--end:Menu item-->
-                </div>
-                <!--end:Menu sub-->
-            </div>--}}
-            <!--end:Menu item-->
 
                 <!--begin:Menu item-->
                 <div class="menu-item pt-5">
                     <!--begin:Menu content-->
                     <div class="menu-content">
-                        <span class="menu-heading fw-bold text-uppercase fs-7">اپلیکیشن ها</span>
+                        <span class="menu-heading fw-bold text-uppercase fs-7">اپلیکیشن</span>
                     </div>
                     <!--end:Menu content-->
                 </div>
                 <!--end:Menu item-->
 
                 <!--begin:Menu item-->
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                <div data-kt-menu-trigger="click"
+                     class="menu-item menu-accordion @if (request()->routeIs('production.*')) {{"hover show"}} @endif">
                     <!--begin:Menu link-->
                     <span class="menu-link">
 											<span class="menu-icon">
@@ -623,9 +129,10 @@
 										</span>
                     <!--end:Menu link-->
                     <!--begin:Menu sub-->
-                    <div class="menu-sub menu-sub-accordion">
+                    <div class="menu-sub menu-sub-accordion @if(request()->routeIs('production.*')) {{"show"}} @endif">
                         <!--begin:Menu item-->
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        <div data-kt-menu-trigger="click"
+                             class="menu-item menu-accordion @if(request()->routeIs('production.*')) {{"hover show"}} @endif ">
                             <!--begin:Menu link-->
                             <span class="menu-link">
 													<span class="menu-bullet">
@@ -637,11 +144,12 @@
                             <!--end:Menu link-->
 
                             <!--begin:Menu sub-->
-                            <div class="menu-sub menu-sub-accordion">
+                            <div
+                                class="menu-sub menu-sub-accordion @if(request()->routeIs('production.categories.*')) {{"show"}} @endif">
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link"
+                                    <a class="menu-link @if (request()->routeIs('production.categories.list')) {{"active"}} @endif"
                                        href="{{route("production.categories.list")}}">
 															<span class="menu-bullet">
 																<span class="bullet bullet-dot"></span>
@@ -655,7 +163,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link"
+                                    <a class="menu-link @if (request()->routeIs('production.categories.create')) {{"active"}} @endif"
                                        href="{{route("production.categories.create")}}">
 															<span class="menu-bullet">
 																<span class="bullet bullet-dot"></span>
@@ -667,23 +175,9 @@
                                 <!--end:Menu item-->
 
                                 <!--begin:Menu item-->
-                            {{--<div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link"
-                                   href="../../demo1/dist/apps/ecommerce/catalog/edit-category.html">
-                                                        <span class="menu-bullet">
-                                                            <span class="bullet bullet-dot"></span>
-                                                        </span>
-                                    <span class="menu-title"> دسته بندی</span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>--}}
-                            <!--end:Menu item-->
-
-                                <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link"
+                                    <a class="menu-link @if (request()->routeIs('production.products.list')) {{"active"}} @endif"
                                        href="{{route("production.products.list")}}">
 															<span class="menu-bullet">
 																<span class="bullet bullet-dot"></span>
@@ -697,7 +191,7 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link"
+                                    <a class="menu-link @if (request()->routeIs('production.products.create')) {{"active"}} @endif"
                                        href="{{route("production.categories.create")}}">
 															<span class="menu-bullet">
 																<span class="bullet bullet-dot"></span>
@@ -707,20 +201,6 @@
                                     <!--end:Menu link-->
                                 </div>
                                 <!--end:Menu item-->
-
-                                <!--begin:Menu item-->
-                            {{--<div class="menu-item">
-                                <!--begin:Menu link-->
-                                <a class="menu-link"
-                                   href="../../demo1/dist/apps/ecommerce/catalog/edit-product.html">
-                                                        <span class="menu-bullet">
-                                                            <span class="bullet bullet-dot"></span>
-                                                        </span>
-                                    <span class="menu-title"> محصولات</span>
-                                </a>
-                                <!--end:Menu link-->
-                            </div>--}}
-                            <!--end:Menu item-->
 
                             </div>
                             <!--end:Menu sub-->
@@ -1635,28 +1115,4 @@
         <!--end::Menu wrapper-->
     </div>
     <!--end::sidebar menu-->
-    <!--begin::Footer-->
-{{--    <div class="app-sidebar-footer flex-column-auto pt-2 pb-6 px-6" id="kt_app_sidebar_footer">
-        <a href="https://preview.keenthemes.com/html/metronic/docs"
-           class="btn btn-flex flex-center btn-custom btn-primary overflow-hidden text-nowrap px-0 h-40px w-100"
-           data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss-="click"
-           title="200+ کامپوننت ها و افزونه های شخص ثالث">
-            <span class="btn-label">اسناد و کامپوننت ها</span>
-            <!--begin::Svg Icon | path: icons/duotune/general/gen005.svg-->
-            <span class="svg-icon btn-icon svg-icon-2 m-0">
-									<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-										<path opacity="0.3"
-                                              d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM12.5 18C12.5 17.4 12.6 17.5 12 17.5H8.5C7.9 17.5 8 17.4 8 18C8 18.6 7.9 18.5 8.5 18.5L12 18C12.6 18 12.5 18.6 12.5 18ZM16.5 13C16.5 12.4 16.6 12.5 16 12.5H8.5C7.9 12.5 8 12.4 8 13C8 13.6 7.9 13.5 8.5 13.5H15.5C16.1 13.5 16.5 13.6 16.5 13ZM12.5 8C12.5 7.4 12.6 7.5 12 7.5H8C7.4 7.5 7.5 7.4 7.5 8C7.5 8.6 7.4 8.5 8 8.5H12C12.6 8.5 12.5 8.6 12.5 8Z"
-                                              fill="currentColor"/>
-										<rect x="7" y="17" width="6" height="2" rx="1" fill="currentColor"/>
-										<rect x="7" y="12" width="10" height="2" rx="1" fill="currentColor"/>
-										<rect x="7" y="7" width="6" height="2" rx="1" fill="currentColor"/>
-										<path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="currentColor"/>
-									</svg>
-								</span>
-            <!--end::Svg Icon-->
-        </a>
-    </div>--}}
-<!--end::Footer-->
 </div>

@@ -6,6 +6,7 @@ use App\Models\Attachment;
 use App\Models\Tag;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Production\Entities\Repositories\category\CategoryRepo;
 use Production\Traits\CategoryTrait;
 use Production\Traits\PriceTrait;
 use Production\Traits\ProductTrait;
@@ -15,39 +16,6 @@ use Production\Traits\StorehouseTrait;
 class ProductionService
 {
     use CategoryTrait, ProductTrait, StorehouseTrait, PriceTrait, BasketTrait;
-
-    public function createCategory($request)
-    {
-        $data = $request->only([
-            "slug",
-            "name",
-            "fa_name",
-            "description",
-            "status",
-            "jsonld",
-            "parent_id",
-        ]);
-        $category = $this->addCategory($data);
-        $thumbnail = $request->file("thumbnail");
-        if (!$thumbnail) {
-            return $category;
-        }
-        $fileConfigPath = config("production.category_thumbnail_path_from_public");
-        $fileName = $category->id;
-        $fileExtension = $thumbnail->getClientOriginalExtension();
-        $attachment = new Attachment();
-        $attachment->name = "thumbnail";
-        $attachment->path = storage_path("app/public/") . ltrim($fileConfigPath, "/");
-        $attachment->file_name = $fileName;
-        $attachment->extension = $fileExtension;
-        $attachment->alt = $request->fa_name;
-        $category->attachments()->save($attachment);
-
-        if ($category->exists) {
-            //store avatar to filesystem
-            Storage::disk("public")->putFileAs($fileConfigPath, $thumbnail, $fileName . "." . $fileExtension);
-        }
-    }
 
     public function createProduct(array $data)
     {
@@ -132,5 +100,41 @@ class ProductionService
             DB::rollBack();
             dd($exception->getMessage(), $exception->getFile(), $exception->getCode());
         }
+    }
+
+    private function storeFile($category, $thumbnail, $alt = ""): void
+    {
+        try {
+            DB::beginTransaction();
+
+            //create attachment for database
+            $attachment = new Attachment();
+            $attachment->name = "thumbnail";
+            $attachment->absolute_path = storage_path(config("production.category_thumbnail_storage_path"));
+            $attachment->relative_path = config("production.category_thumbnail_public_path");
+            $attachment->file_name = $category->id;
+            $attachment->extension = $thumbnail->getClientOriginalExtension();
+            $attachment->alt = $alt;
+            $category->thumbnail()->save($attachment);
+
+            $file = $category->id . "." . $attachment->extension;
+            $junkFile = $attachment->absolute_path . DIRECTORY_SEPARATOR . $file;
+            $this->storeFileToFilesystem($thumbnail, $file, $junkFile);
+
+            DB::commit();
+        } catch (\Throwable $exception) {
+            DB::rollBack();
+            throw($exception);
+        }
+    }
+
+    private function storeFileToFilesystem($thumbnail, string $fileName, string $junkFile): void
+    {
+        if (file_exists($junkFile)) {
+            unlink($junkFile);
+        }
+
+        //store thumbnail pic to filesystem
+        Storage::disk("storage")->putFileAs(config("production.category_thumbnail_storage_path"), $thumbnail, $fileName);
     }
 }

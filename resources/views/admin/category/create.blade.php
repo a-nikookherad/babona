@@ -9,13 +9,24 @@
 
     <!--begin::آیتم-->
     <li class="breadcrumb-item text-muted">
+        <a href="{{route("production.categories.list")}}"
+           class="text-muted text-hover-primary">لیست دسته بندی ها</a>
+    </li>
+    <!--end::آیتم-->
+    <!--begin::آیتم-->
+    <li class="breadcrumb-item">
+        <span class="bullet bg-gray-400 w-5px h-2px"></span>
+    </li>
+    <!--end::آیتم-->
+
+    <!--begin::آیتم-->
+    <li class="breadcrumb-item text-muted">
         <a href="{{route("production.categories.create")}}"
-           class="text-muted text-hover-primary">ساخت دسته بندی</a>
+           class="text-muted text-hover-primary">افزودن دسته بندی</a>
     </li>
     <!--end::آیتم-->
 @endpush
 @section("content")
-
     <form id="kt_ecommerce_add_category_form" class="form d-flex flex-column flex-lg-row"
           data-kt-redirect="{{route("production.categories.create")}}"
           action="{{route("production.categories.store")}}"
@@ -112,9 +123,10 @@
                             data-hide-search="true"
                             data-placeholder="انتخاب " id="kt_ecommerce_add_category_status_select">
                         <option></option>
-                        <option value="published">منتشر شده</option>
-                        <option value="waiting">در انتظار</option>
-                        <option value="archive">آرشیو</option>
+                        <option value="published" @if(old("status")=="published") {{"selected"}} @endif>منتشر شده
+                        </option>
+                        <option value="waiting" @if(old("status")=="waiting") {{"selected"}} @endif>در انتظار</option>
+                        <option value="archive" @if(old("status")=="archive") {{"selected"}} @endif>آرشیو</option>
                     </select>
                     <!--end::انتخاب2-->
                     <!--begin::توضیحات-->
@@ -139,12 +151,8 @@
         <div class="d-flex flex-column flex-row-fluid gap-7 gap-lg-10">
             <!--begin::عمومی options-->
             <div class="card card-flush py-4">
-                @if(isset($errors)&&$errors->any())
-                    @foreach ($errors->all() as $error)
-                        <div class="alert-danger">{{ $error }}</div>
-                @endforeach
-            @endif
-            <!--begin::کارت header-->
+
+                <!--begin::کارت header-->
                 <div class="card-header">
                     <div class="card-title">
                         <h2>عمومی</h2>
@@ -192,9 +200,9 @@
                         <!--end::Tags-->
 
                         <!--begin::Input-->
-                        <select class="form-select " name="paren_id" data-control="select2" data-hide-search="true"
-                                data-placeholder="انتخاب کنید">
-                            <option>بدون انتخاب</option>
+                        <select class="form-select " name="parent_id" data-control="select2" data-hide-search="false"
+                            {{-- data-placeholder="انتخاب کنید"--}}>
+                            <option value="">بدون انتخاب</option>
                             @foreach($categories as $category)
                                 @if(!$category["fa_name"])
                                     @continue

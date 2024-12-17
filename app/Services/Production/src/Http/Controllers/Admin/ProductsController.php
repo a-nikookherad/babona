@@ -11,6 +11,7 @@ class ProductsController
 {
     public function index()
     {
+//        dd(request()->all());
         $filter = function ($query) {
             return $query->where("status", request("status", "published"));
         };

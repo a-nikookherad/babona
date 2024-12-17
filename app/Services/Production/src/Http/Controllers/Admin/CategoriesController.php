@@ -11,7 +11,7 @@ class CategoriesController
 {
     public function index()
     {
-        $categories = Production::categories();
+        $categories = Production::categoriesPaginate(request("per_page", 5));
         return Response::view("admin.category.list", compact("categories"))
             ->jsonData($categories)
             ->code(200)
@@ -20,39 +20,34 @@ class CategoriesController
 
     public function create()
     {
-        $categories = Production::categoriesByPluck(["id", "fa_name"]);
-        return view("admin.category.create", ["categories" => $categories->toArray()]);
+        $categories = Production::categoriesByPluck(["id", "fa_name"])->toArray();
+        return view("admin.category.create", ["categories" => $categories]);
     }
 
     public function edit($id)
     {
-        $category = Production::category($id);
-        return Response::view("admin.category.edit", compact("category"))
+        $category = Production::category($id, ["thumbnail"]);
+        $categories = Production::categoriesByPluck(["id", "fa_name"])->toArray();
+        return Response::view("admin.category.edit", compact("category", "categories"))
             ->jsonData($category)
-            ->success("error");
+            ->code(200)
+            ->success(__("operation_was_successfully"));
     }
 
     public function update(CategoryUpdateRequest $request, $id)
     {
-        $data = $request->only([
-            "slug",
-            "name",
-            "fa_name",
-            "description",
-            "status",
-            "jsonld",
-            "parent_id",
-        ]);
-        $category = Production::editCategory($id, $data);
+
+        $category = Production::editCategory($id, $request);
 
         if ($category) {
-            return Response::view("Production::admin.category.list")
+            return Response::redirect(route("production.categories.list"))
                 ->jsonData($category)
                 ->code(202)
                 ->success(__("category_updated_successfully"));
         }
         return Response::jsonData($category)
             ->code(400)
+            ->redirect(route("production.categories.list"))
             ->failed(__("something_went_wrong"));
     }
 
@@ -67,8 +62,13 @@ class CategoriesController
 
     public function destroy($id)
     {
-        Production::destroyCategory($id);
-        return Response::view("Production::admin.category.list")
+        $rowEffect = Production::destroyCategory($id);
+        if ($rowEffect == 0) {
+            return Response::code(400)
+                ->redirect(route("production.categories.list"))
+                ->failed(__("something_went_wrong"));
+        }
+        return Response::redirect(route("production.categories.list"))
             ->code(204)
             ->success(__("operation_was_success"));
     }

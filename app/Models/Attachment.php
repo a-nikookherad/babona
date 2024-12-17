@@ -11,7 +11,8 @@ class Attachment extends Model
         "attachable_type",
         "attachable_id",
         "name",
-        "path",
+        "absolute_path",
+        "relative_path",
         "file_name",
         "extension",
     ];
