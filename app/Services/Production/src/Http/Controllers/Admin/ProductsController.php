@@ -24,10 +24,10 @@ class ProductsController
 
     public function store(ProductCreateRequest $request)
     {
-        $product = Production::createProduct($request->all());
+        dd($request->all());
+        $product = Production::createProduct($request);
         if (!$product->exists) {
-            return Response::
-            code(400)
+            return Response::code(400)
                 ->redirect(route("production.products.list"))
                 ->failed(__("product_didnt_create_successfully"));
         }

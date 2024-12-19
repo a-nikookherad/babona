@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->string("fa_name");
             $table->string("description")
                 ->nullable();
+            $table->float("max_buy");
             $table->dateTime("started_at");
             $table->dateTime("expired_at");
             $table->timestamps();

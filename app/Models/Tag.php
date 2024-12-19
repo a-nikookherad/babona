@@ -10,7 +10,6 @@ class Tag extends Model
     protected $fillable=[
       "name",
       "description",
-      "keywords",
     ];
 
     public function taggable(): MorphTo

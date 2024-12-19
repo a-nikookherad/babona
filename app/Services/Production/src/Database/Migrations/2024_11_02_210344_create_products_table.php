@@ -13,7 +13,8 @@ return new class extends Migration {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string("slug");
-            $table->string("name");
+            $table->string("name")
+                ->nullable();
             $table->string("fa_name")
                 ->nullable();
             $table->string("material")
@@ -25,6 +26,7 @@ return new class extends Migration {
             $table->string("barcode")
                 ->nullable();
             $table->enum("status", [
+                "upcoming",
                 "waiting",
                 "published",
                 "archive",

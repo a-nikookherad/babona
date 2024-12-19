@@ -13,6 +13,8 @@ return new class extends Migration {
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
             $table->morphs("accountable");
+            $table->string("type")
+                ->default("customer");
             $table->boolean("is_active")
                 ->default(true);
             $table->unsignedBigInteger("wallet_id")

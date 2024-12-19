@@ -32,11 +32,11 @@ class WalletSeeder extends Seeder
                 "club_id" => null,
             ],
             [
-                "instrument" => "bon",
-                "name" => "bon",
-                "fa_name" => "بن",
+                "instrument" => "sekeh",
+                "name" => "sekeh",
+                "fa_name" => "سکه",
                 "is_permanent" => false,
-                "interest_rate" => 0.01,
+                "interest_rate" => 0.05,
                 "club_id" => null,
             ],
         ];

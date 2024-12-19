@@ -8,11 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
     use SoftDeletes;
+
     protected $fillable = [
         "slug",
         "name",
@@ -37,6 +39,11 @@ class Product extends Model
     public function attachments(): MorphMany
     {
         return $this->morphMany(Attachment::class, "attachable");
+    }
+
+    public function thumbnail(): MorphOne
+    {
+        return $this->morphOne(Attachment::class, "attachable")->where("name", "thumbnail");
     }
 
     public function storehouses(): HasMany

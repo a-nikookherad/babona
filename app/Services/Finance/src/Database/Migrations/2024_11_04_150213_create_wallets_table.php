@@ -21,6 +21,8 @@ return new class extends Migration {
                 ->default(false);
             $table->boolean("is_permanent")
                 ->default(true);
+            $table->smallInteger("reset_count_per_year")
+                ->default(1);
             $table->boolean("transaction_accept_manual")
                 ->default(false);
             $table->float("interest_rate")

@@ -13,7 +13,23 @@ return new class extends Migration {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->float("amount");
+            $table->string("transaction_number")
+                ->nullable();
 
+            $table->unsignedBigInteger("user_id_who_make_this_manual")
+                ->nullable()
+                ->comment("the admin user who paid the payment");
+            $table->string("description")
+                ->nullable();
+            $table->dateTime("paid_at")
+                ->nullable();
+
+            $table->unsignedBigInteger("user_id")
+                ->index()
+                ->comment("the user who paid the payment");
+            $table->foreign("user_id")
+                ->references("id")
+                ->on("users");
             $table->unsignedBigInteger("transaction_id")
                 ->index();
             $table->foreign("transaction_id")

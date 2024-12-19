@@ -12,10 +12,16 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        //todo comment this line of code
+        $middleware->validateCsrfTokens(except: [
+            '*',
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        $exceptions->report(function (DoNotHaveEnoughCreditException $exception) {
-            return false;
-        });
+//        $exceptions->report(function (Throwable $exception) {
+//            dd($exception->getMessage());
+//        });
+//        $exceptions->report(function (DoNotHaveEnoughCreditException $exception) {
+//            return false;
+//        });
     })->create();

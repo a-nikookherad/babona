@@ -20,6 +20,7 @@ class FinanceProvider extends ServiceProvider
 
     public function boot()
     {
+        // todo make dynamic relationship for user and merchant and campaign
         $this->defineServiceRelationship();
 
         $this->loadMigrationsFrom(__DIR__ . "/../Database/Migrations");
