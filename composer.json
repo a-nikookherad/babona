@@ -15,7 +15,6 @@
         "nikookherad/finance": "*",
         "nikookherad/loyalty": "*",
         "nikookherad/production": "*"
-
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -58,6 +57,10 @@
         {
             "type": "path",
             "url": "./app/Services/Response"
+        },
+        {
+            "type": "path",
+            "url": "./app/Services/Attachment"
         }
     ],
     "scripts": {

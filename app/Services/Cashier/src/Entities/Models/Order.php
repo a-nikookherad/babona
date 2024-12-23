@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Loyalty\Entities\Models\Campaign;
-use Production\Entities\Models\Price;
+use Production\Entities\Models\ProductDetail;
 
 class Order extends Model
 {
@@ -31,7 +31,7 @@ class Order extends Model
 
     public function prices(): BelongsToMany
     {
-        return $this->belongsToMany(Price::class, "order_prices", "order_id", "price_id");
+        return $this->belongsToMany(ProductDetail::class, "order_prices", "order_id", "price_id");
     }
 
     public function campaigns(): BelongsToMany

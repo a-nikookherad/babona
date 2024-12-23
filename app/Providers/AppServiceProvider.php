@@ -33,11 +33,20 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Gate::define("admin", function (User $user) {
-            return $user->role == "admin" || $user->role == "super_admin";
+            return $user->role == "admin" ||
+                $user->role == "super_admin";
         });
 
         Gate::define("accountant", function (User $user) {
-            return $user->role == "accountant" || $user->role == "super_admin";
+            return $user->role == "accountant" ||
+                $user->role == "super_admin";
+        });
+
+        Gate::define("customer", function (User $user) {
+            return $user->role == "accountant" ||
+                $user->role == "super_admin" ||
+                $user->role == "admin" ||
+                $user->role == "customer";
         });
 
         Paginator::useBootstrapFive();

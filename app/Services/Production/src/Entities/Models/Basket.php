@@ -11,18 +11,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Basket extends Model
 {
     use SoftDeletes;
+
     protected $fillable = [
         "user_id",
         "bought_at"
     ];
 
-    public function prices(): BelongsToMany
+    public function productDetails(): BelongsToMany
     {
-        return $this->belongsToMany(Price::class, "basket_prices", "basket_id", "price_id");
-    }
-
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class, "user_id");
+        return $this->belongsToMany(ProductDetail::class, "basket_product_details", "basket_id", "product_detail_id");
     }
 }

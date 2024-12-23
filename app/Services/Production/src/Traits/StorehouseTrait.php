@@ -2,33 +2,33 @@
 
 namespace Production\Traits;
 
-use Production\Entities\Repositories\storehouse\StorehouseRepo;
+use Production\Entities\Repositories\storehouse\ProductDetailRepo;
 
 trait StorehouseTrait
 {
     public function storehouses(array $filter, int $perPage)
     {
-        return StorehouseRepo::storehouses($filter, $perPage);
+        return ProductDetailRepo::storehouses($filter, $perPage);
     }
 
     public function storehouse($id)
     {
-        return StorehouseRepo::storehouse($id);
+        return ProductDetailRepo::storehouse($id);
     }
 
     public function addStorehouse(array $data)
     {
-        return StorehouseRepo::store($data);
+        return ProductDetailRepo::store($data);
     }
 
     public function editStorehouse($id, array $data)
     {
-        return StorehouseRepo::update($id, $data);
+        return ProductDetailRepo::update($id, $data);
     }
 
     public function destroyStorehouse($id)
     {
-        return StorehouseRepo::delete($id);
+        return ProductDetailRepo::delete($id);
 
     }
 }

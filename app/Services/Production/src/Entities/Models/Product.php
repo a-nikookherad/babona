@@ -2,8 +2,8 @@
 
 namespace Production\Entities\Models;
 
-use App\Models\Attachment;
 use App\Models\Tag;
+use Attachment\Entities\Models\File;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -29,6 +29,7 @@ class Product extends Model
         "jsonld",
         "user_id",
         "category_id",
+        "add_by_user_id",
     ];
 
     public function category(): BelongsTo
@@ -38,26 +39,11 @@ class Product extends Model
 
     public function attachments(): MorphMany
     {
-        return $this->morphMany(Attachment::class, "attachable");
+        return $this->morphMany(File::class, "attachable")->orderBy("name");
     }
 
     public function thumbnail(): MorphOne
     {
-        return $this->morphOne(Attachment::class, "attachable")->where("name", "thumbnail");
-    }
-
-    public function storehouses(): HasMany
-    {
-        return $this->hasMany(Storehouse::class, "storehouse_id");
-    }
-
-    public function comments(): HasMany
-    {
-        return $this->hasMany(Comment::class, "product_id");
-    }
-
-    public function tags(): MorphMany
-    {
-        return $this->morphMany(Tag::class, "taggable");
+        return $this->morphOne(File::class, "attachable")->where("name", "thumbnail");
     }
 }

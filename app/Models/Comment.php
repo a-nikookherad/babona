@@ -1,32 +1,26 @@
 <?php
 
-namespace Production\Entities\Models;
+namespace App\Models;
 
-use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Comment extends Model
 {
-    use SoftDeletes;
-    protected $table = "product_comments";
     protected $fillable = [
-        "is_suggestion",
-        "stars",
-        "product_id",
-        "user_id",
-        "reply_to_id",
-        "accepted_by_user_id",
-        "can_publish",
         "title",
         "description",
-
+        "can_publish",
+        "is_admin",
+        "accepted_by_user_id",
+        "reply_to_id",
+        "user_id",
     ];
 
-    public function product(): BelongsTo
+    public function commentable(): MorphTo
     {
-        return $this->belongsTo(Product::class, "product_id");
+        return $this->morphTo();
     }
 
     public function user(): BelongsTo

@@ -2,6 +2,7 @@
 
 namespace Production\Traits;
 
+use Attachment\Attachment;
 use Production\Entities\Repositories\category\CategoryRepo;
 
 trait CategoryTrait
@@ -22,8 +23,11 @@ trait CategoryTrait
         if (!$thumbnail || !$category->exists) {
             return $category;
         }
+        $categoryPath = config("production.category_thumbnail_storage_path");
+        $attachment = Attachment::setData($thumbnail, $categoryPath, "thumbnail", $category->id, $request->fa_name)
+            ->store();
 
-        $this->storeFile($category, $thumbnail, $alt = $request->fa_name);
+        $category->thumbnail()->save($attachment);
     }
 
     public function editCategory($id, $request)
@@ -45,39 +49,17 @@ trait CategoryTrait
         if (!$thumbnail) {
             return $category;
         }
-
-        if (!$category->thumbnail) {
-            $this->storeFile($category, $thumbnail, $alt = $request->get("fa_name", $category->fa_name));
-            return $category;
-        }
-
-        $extension = $thumbnail->getClientOriginalExtension();
-        $attachment = $category->thumbnail;
-        $attachment->extension = $extension;
-        $attachment->alt = $request->get("fa_name", $category->fa_name);
-        $attachment->save();
-
-        $file = $category->id . "." . $extension;
-        $junkFile = $attachment->absolute_path . DIRECTORY_SEPARATOR . $category->id . "." . $attachment->extension;
-        $this->storeFileToFilesystem($thumbnail, $file, $junkFile);
+        $categoryPath = config("production.category_thumbnail_storage_path");
+        $attachment = Attachment::setAttachment($category->thumbnail)
+            ->deleteFileFromStorage()
+            ->setData($thumbnail, $categoryPath, "thumbnail", $category->id, $category->fa_name)
+            ->update();
+        $category->thumbnail()->save($attachment);
         return $category;
     }
 
     public function destroyCategory($id)
     {
-        $category = CategoryRepo::getById($id, ["thumbnail"]);
-        if (!$category->thumbnail) {
-            return CategoryRepo::delete($id);
-        }
-        $attachment = $category->thumbnail;
-
-        $file = $attachment->absolute_path . DIRECTORY_SEPARATOR . $attachment->file_name . "." . $attachment->extension;
-        if (file_exists($file)) {
-            //delete thumbnail from filesystem
-            unlink($file);
-        }
-
-        $attachment->delete();
         return CategoryRepo::delete($id);
     }
 
@@ -99,10 +81,5 @@ trait CategoryTrait
     public function category($id, $with = [])
     {
         return CategoryRepo::getById($id, $with);
-    }
-
-    public function addCategory(array $data)
-    {
-        return CategoryRepo::store($data);
     }
 }

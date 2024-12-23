@@ -12,7 +12,7 @@ class CategoriesController
     public function index()
     {
         $categories = Production::categoriesPaginate(request("per_page", 5));
-        return Response::view("admin.category.list", compact("categories"))
+        return Response::view("Production::admin.category.list", compact("categories"))
             ->jsonData($categories)
             ->code(200)
             ->success(__("list_of_categories"));
@@ -21,14 +21,23 @@ class CategoriesController
     public function create()
     {
         $categories = Production::categoriesByPluck(["id", "fa_name"])->toArray();
-        return view("admin.category.create", ["categories" => $categories]);
+        return view("Production::admin.category.create", ["categories" => $categories]);
+    }
+
+    public function store(CategoryCreateRequest $request)
+    {
+        $category = Production::createCategory($request);
+        return Response::redirect(route("production.categories.create"))
+            ->jsonData($category)
+            ->code(201)
+            ->success(__("category_created_successfully"));
     }
 
     public function edit($id)
     {
         $category = Production::category($id, ["thumbnail"]);
         $categories = Production::categoriesByPluck(["id", "fa_name"])->toArray();
-        return Response::view("admin.category.edit", compact("category", "categories"))
+        return Response::view("Production::admin.category.edit", compact("category", "categories"))
             ->jsonData($category)
             ->code(200)
             ->success(__("operation_was_successfully"));
@@ -36,7 +45,6 @@ class CategoriesController
 
     public function update(CategoryUpdateRequest $request, $id)
     {
-
         $category = Production::editCategory($id, $request);
 
         if ($category) {
@@ -49,15 +57,6 @@ class CategoriesController
             ->code(400)
             ->redirect(route("production.categories.list"))
             ->failed(__("something_went_wrong"));
-    }
-
-    public function store(CategoryCreateRequest $request)
-    {
-        $category = Production::createCategory($request);
-        return Response::redirect(route("production.categories.create"))
-            ->jsonData($category)
-            ->code(201)
-            ->success(__("category_created_successfully"));
     }
 
     public function destroy($id)

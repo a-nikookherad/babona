@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Facade;
  * @method static ProductionService categories()
  * @method static ProductionService categoriesPaginate(int $perPage)
  * @method static ProductionService category($id,$with)
- * @method static ProductionService addCategory(array $data)
  * @method static ProductionService createCategory($request)
  * @method static ProductionService editCategory($category_id, array $data)
  * @method static ProductionService destroyCategory($id)

@@ -32,9 +32,21 @@ return new class extends Migration {
             ])
                 ->default("customer")
                 ->nullable();
+
+            $table->unsignedBigInteger("merchant_id")
+                ->index();
+            $table->foreign("merchant_id")
+                ->references("id")
+                ->on("merchants");
+
             $table->timestamp('email_verified_at')
                 ->nullable();
-            $table->string('password');
+            $table->string('password')
+                ->nullable();
+
+            $table->boolean("is_blocked")
+                ->default(false);
+
             $table->rememberToken();
             $table->timestamps();
         });

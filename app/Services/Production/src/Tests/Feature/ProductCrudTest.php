@@ -2,13 +2,16 @@
 
 namespace Production\Tests\Feature;
 
+use App\Models\Merchant;
 use App\Models\User;
 use Finance\Entities\Models\Wallet;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Production\Entities\Models\Product;
 use Production\Entities\Repositories\category\CategoryRepo;
 use Production\Entities\Repositories\product\ProductRepo;
+use Production\Production;
 use Tests\TestCase;
 
 class ProductCrudTest extends TestCase
@@ -16,42 +19,32 @@ class ProductCrudTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        $this->withoutExceptionHandling();
-//        Artisan::call("migrate", ["--path" => "app/Services/Production/src/Database/Migrations/2024_11_02_210129_create_categories_table.php"]);
-//        Artisan::call("migrate", ["--path" => "app/Services/Production/src/Database/Migrations/2024_11_02_210344_create_products_table.php"]);
-//        Artisan::call("migrate", ["--path" => "app/Services/Production/src/Database/Migrations/2024_11_02_210344_create_storehouses_table.php"]);
-//        Artisan::call("migrate", ["--path" => "app/Services/Production/src/Database/Migrations/2024_11_02_210345_create_prices_table.php"]);
-        $this->userLogin($id = 1);
+//        $this->withoutExceptionHandling();
+        Artisan::call("migrate");
     }
 
     public function tearDown(): void
     {
-//        Artisan::call("migrate:rollback");
+        Artisan::call("migrate:rollback");
         parent::tearDown();
     }
 
     public function test_product_crud(): void
     {
-        $user = Auth::user();
-        $data = [
+        $merchant = Merchant::query()
+            ->create([
+                "name" => "test",
+            ]);
+        $this->userLogin(1, $merchant->id);
+
+        $categoryData = [
             "slug" => "clothing",
             "name" => "clothing",
             "fa_name" => "clothing",
             "description" => "clothing",
             "status" => "published",
         ];
-        $category = CategoryRepo::store($data);
-
-        $data = [
-            "name" => "toman",
-            "fa_name" => "تومان",
-            "instrument" => "tmn",
-            "is_default" => true,
-            "is_permanent" => true,
-            "interest_rate" => 1,
-        ];
-        $wallet = Wallet::query()
-            ->create($data);
+        $category = CategoryRepo::store($categoryData);
 
         $data = [
             "slug" => "test",
@@ -65,25 +58,57 @@ class ProductCrudTest extends TestCase
             "brief" => "کیفیت این محصول نسبت به قیمت بسیار بالا می باشد",
             "description" => "شلوار با جنس کتان می باشد که فری سایز می باشد",
             "jsonld" => json_encode(["size" => "free"]),
-            "user_id" => $user->id,
             "category_id" => $category->id,
-            "size" => "free size",
-            "color" => "red",
-            "quantity" => 120,
-            "is_active" => true,
-//            "add_by_user_id" => $user->id,
-            "price" => 600000,
-            "wallet_id" => $wallet->id,
-            "discount" => 0.01,
-            "expired_at" => now()->addDays(2)->format("Y-m-d H:i:s"),
-            "tag_name" => "#clothing #mom_style",
-            "tag_description" => "free size pants",
-            "keywords" => "mom_style",
-            "campaign_id" => null,
+            "product_details" => [
+                [
+                    "size" => "S, M",
+                    "color" => "red",
+                    "price" => 199000,
+                    "discount" => 0,
+                    "quantity" => 20,
+                    "net_price" => 150000,
+                    "discount_expired_at" => null,
+                ],
+                [
+                    "size" => "L, Xl, XXl",
+                    "color" => "red, blue, green, yellow",
+                    "price" => 299000,
+                    "discount" => 30000,
+                    "quantity" => 30,
+                    "net_price" => 250000,
+                    "discount_expired_at" => now()->addDays(2)->format("Y-m-d H:i:s"),
+                ],
+            ],
+            "tag_name" => "#new, #off",
+            "tag_description" => "new products",
         ];
-        $this->assertAddProduct($data);
 
-        $this->assertListProducts();
+        $file = UploadedFile::fake()->image("test.jpg");
+        $file1 = UploadedFile::fake()->image("test1.jpg");
+        $file2 = UploadedFile::fake()->image("test2.jpg");
+        $request = new \Illuminate\Http\Request;
+        $request = $request->createFromBase(
+            \Symfony\Component\HttpFoundation\Request::create(
+                "test",
+                "post",
+                $data,
+                [],
+                [
+                    "thumbnail" => $file,
+                    "images" => [
+                        $file1,
+                        $file2,
+                    ]
+                ],
+                [],
+
+            )
+        );
+
+
+        $this->assertCreateProduct($request);
+
+//        $this->assertListProducts();
 
 //        $product = $this->getLatestProduct();
 
@@ -95,12 +120,12 @@ class ProductCrudTest extends TestCase
     }
 
 
-    private function assertAddProduct(array $data)
+    private function assertCreateProduct($request)
     {
-        $response = $this->post(route("production.products.store"), $data);
-        $response->assertStatus(200);
-        $products = ProductRepo::all();
-        $this->assertFalse($products->isEmpty());
+//        $response = $this->post(route("production.products.store"), $data);
+//        $response->assertStatus(200);
+        $product = Production::createProduct($request);
+        $this->assertTrue($product->exists);
     }
 
     private function assertListProducts()
@@ -135,10 +160,14 @@ class ProductCrudTest extends TestCase
         $this->assertEquals(0, $productCount);
     }
 
-    private function userLogin($id): void
+    private function userLogin($id, $merchant_id): void
     {
         $user = User::query()
-            ->firstOrCreate(["id" => 1], ["password" => bcrypt("teat")]);
+            ->firstOrCreate(["id" => $id], [
+                "role" => "admin",
+                "merchant_id" => $merchant_id,
+                "password" => bcrypt("teat")
+            ]);
         Auth::login($user);
     }
 

@@ -6,7 +6,7 @@ use App\Models\User;
 use Cashier\Entities\Models\Order;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Production\Entities\Models\Price;
+use Production\Entities\Models\ProductDetail;
 
 class Campaign extends Model
 {
@@ -17,7 +17,7 @@ class Campaign extends Model
 
     public function prices(): BelongsToMany
     {
-        return $this->belongsToMany(Price::class, "campaign_prices", "campaign_id", "price_id");
+        return $this->belongsToMany(ProductDetail::class, "campaign_prices", "campaign_id", "price_id");
     }
 
     public function tiers(): BelongsToMany

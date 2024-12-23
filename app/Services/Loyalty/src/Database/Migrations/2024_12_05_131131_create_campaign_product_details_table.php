@@ -10,21 +10,21 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create( 'basket_prices', function (Blueprint $table) {
+        Schema::create('campaign_product_details', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("basket_id")
+            $table->unsignedBigInteger("campaign_id")
                 ->index();
-            $table->foreign("basket_id")
+            $table->foreign("campaign_id")
                 ->references("id")
-                ->on("baskets");
+                ->on("campaigns");
 
-            $table->unsignedBigInteger("price_id")
+            $table->unsignedBigInteger("product_detail_id")
                 ->index();
-            $table->foreign("price_id")
+            $table->foreign("product_detail_id")
                 ->references("id")
-                ->on("prices");
+                ->on("product_details");
 
-            $table->integer("quantity");
+            $table->unsignedSmallInteger("percent");
             $table->timestamps();
         });
     }
@@ -34,6 +34,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('basket_prices');
+        Schema::dropIfExists('campaign_product_details');
     }
 };
