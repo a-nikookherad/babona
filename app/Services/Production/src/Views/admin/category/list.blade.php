@@ -64,7 +64,8 @@
                             <thead>
                             <!--begin::Table row-->
                             <tr class="text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                <th class="w-10px pe-2 sorting_disabled" rowspan="1" colspan="1" aria-label="" style="width: 29.8906px;">
+                                <th class="w-10px pe-2 sorting_disabled" rowspan="1" colspan="1" aria-label=""
+                                    style="width: 29.8906px;">
                                     <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
                                         {{--<input class="form-check-input" type="checkbox" data-kt-check="true"
                                                data-kt-check-target="#kt_ecommerce_category_table .form-check-input"
@@ -142,10 +143,12 @@
                                             <a href="{{route("production.categories.edit",["id"=>$category->id])}}"
                                                class="symbol symbol-50px">
                                                 @php
-                                                    if($category->thumbnail)
-                                                        $path=$category->thumbnail->relative_path."/".$category->thumbnail->file_name.".".$category->thumbnail->extension;
-                                                    else
-                                                        $path="admin/media/svg/files/blank-image.svg"
+                                                    if($category->thumbnail){
+                                                        $thumbnail=$category->thumbnail;
+                                                        $path=config("filesystems.public_storage")."/".$thumbnail->path."/".$thumbnail->full_name;
+                                                    }else{
+                                                        $path="admin/media/svg/files/blank-image.svg";
+                                                    }
                                                 @endphp
                                                 <span class="symbol-label"
                                                       style="background-image:url({{asset($path)}});"></span>
@@ -158,7 +161,8 @@
                                                    data-kt-ecommerce-category-filter="category_name">{{$category->fa_name}}</a>
                                                 <!--end::Title-->
                                                 <!--begin::توضیحات-->
-                                                <div class="text-muted fs-7 fw-bold">{{\Illuminate\Support\Str::limit($category->description,120)}}</div>
+                                                <div
+                                                    class="text-muted fs-7 fw-bold">{{\Illuminate\Support\Str::limit($category->description,120)}}</div>
                                                 <!--end::توضیحات-->
                                             </div>
                                         </div>

@@ -44,11 +44,7 @@ return new class extends Migration {
                 ->references("id")
                 ->on("categories");
 
-            $table->unsignedBigInteger("add_by_user_id")
-                ->comment("the user who is admin");
-            $table->foreign("add_by_user_id")
-                ->references("id")
-                ->on("users");
+
 
             $table->softDeletes();
             $table->timestamps();

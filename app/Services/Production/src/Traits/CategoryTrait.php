@@ -24,10 +24,13 @@ trait CategoryTrait
             return $category;
         }
         $categoryPath = config("production.category_thumbnail_storage_path");
-        $attachment = Attachment::setData($thumbnail, $categoryPath, "thumbnail", $category->id, $request->fa_name)
-            ->store();
+        $attachment = Attachment::setAttachment()
+            ->prepareAttributes($thumbnail, $categoryPath, "thumbnail", $category->id, $request->fa_name)
+            ->storeFileToStorage()
+            ->getAttachment();
 
         $category->thumbnail()->save($attachment);
+        return $category;
     }
 
     public function editCategory($id, $request)
@@ -50,17 +53,17 @@ trait CategoryTrait
             return $category;
         }
         $categoryPath = config("production.category_thumbnail_storage_path");
-        $attachment = Attachment::setAttachment($category->thumbnail)
+        Attachment::setAttachment($category->thumbnail)
             ->deleteFileFromStorage()
-            ->setData($thumbnail, $categoryPath, "thumbnail", $category->id, $category->fa_name)
+            ->prepareAttributes($thumbnail, $categoryPath, "thumbnail", $category->id, $category->fa_name)
+            ->storeFileToStorage()
             ->update();
-        $category->thumbnail()->save($attachment);
         return $category;
     }
 
-    public function destroyCategory($id)
+    public function destroyCategory($category)
     {
-        return CategoryRepo::delete($id);
+        return $category->delete();
     }
 
     public function categories()

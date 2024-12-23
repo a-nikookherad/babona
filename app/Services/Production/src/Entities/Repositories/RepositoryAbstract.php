@@ -3,9 +3,13 @@
 namespace App\Services\Production\src\Entities\Repositories;
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 
 abstract class RepositoryAbstract
 {
+    /**
+     * @var Model $instance
+     */
     protected $instance;
 
     public function all()
@@ -76,6 +80,12 @@ abstract class RepositoryAbstract
         return $this->instance::query()
             ->where("id", $id)
             ->update($data);
+    }
+
+    public function updateOrCreate(array $condition, array $data)
+    {
+        return $this->instance::query()
+            ->updateOrCreate($condition, $data);
     }
 
     public function delete($id)

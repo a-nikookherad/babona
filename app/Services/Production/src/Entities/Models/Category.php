@@ -37,7 +37,8 @@ class Category extends Model
 
     public function thumbnail(): MorphOne
     {
-        return $this->morphOne(File::class, "attachable")->where("name", "thumbnail");
+        return $this->morphOne(File::class, "attachable")
+            ->where("title", "thumbnail");
     }
 
     public function tags(): MorphMany

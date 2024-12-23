@@ -3,6 +3,7 @@
 namespace Production\Entities\Observers;
 
 
+use Attachment\Attachment;
 use Production\Entities\Models\Category;
 
 class CategoryObserver
@@ -28,7 +29,7 @@ class CategoryObserver
      */
     public function deleted(Category $category): void
     {
-        $category->thumbnail->delete();
+        $this->deleteAttachments($category);
     }
 
     /**
@@ -44,6 +45,13 @@ class CategoryObserver
      */
     public function forceDeleted(Category $category): void
     {
-        //
+        $this->deleteAttachments($category);
+    }
+
+    private function deleteAttachments(Category $category): void
+    {
+        Attachment::setAttachment($category->thumbnail)
+            ->deleteFileFromStorage()
+            ->delete();
     }
 }

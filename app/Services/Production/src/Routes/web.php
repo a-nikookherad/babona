@@ -10,6 +10,7 @@ Route::group([
 
     Route::view("dashboard", "admin.dashboard")
         ->name("dashboard");
+
     Route::group([
         "prefix" => "categories",
 //        "middleware" => ["can:super_admin"]

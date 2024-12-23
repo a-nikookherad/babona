@@ -21,6 +21,7 @@ class ProductDetail extends Model
         "status",
         "add_by_user_id",
         "net_price",
+        "add_by_user_id",
         "product_id",
         "merchant_id",
     ];

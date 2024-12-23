@@ -10,10 +10,15 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Production\Entities\Observers\ProductObserver;
 
 class Product extends Model
 {
     use SoftDeletes;
+
+    /*    protected $dispatchesEvents = [
+            "deleting" => ProductObserver::class
+        ];*/
 
     protected $fillable = [
         "slug",
@@ -29,7 +34,6 @@ class Product extends Model
         "jsonld",
         "user_id",
         "category_id",
-        "add_by_user_id",
     ];
 
     public function category(): BelongsTo
@@ -39,11 +43,18 @@ class Product extends Model
 
     public function attachments(): MorphMany
     {
-        return $this->morphMany(File::class, "attachable")->orderBy("name");
+        return $this->morphMany(File::class, "attachable")
+            ->orderBy("name");
     }
 
     public function thumbnail(): MorphOne
     {
-        return $this->morphOne(File::class, "attachable")->where("name", "thumbnail");
+        return $this->morphOne(File::class, "attachable")
+            ->where("title", "thumbnail");
+    }
+
+    public function productDetails(): HasMany
+    {
+        return $this->hasMany(ProductDetail::class, "product_id");
     }
 }

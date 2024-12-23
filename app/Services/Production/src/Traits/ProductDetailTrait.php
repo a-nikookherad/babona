@@ -5,7 +5,7 @@ namespace Production\Traits;
 
 use Production\Entities\Repositories\price\PriceRepo;
 
-trait PriceTrait
+trait ProductDetailTrait
 {
     public function prices(array $filter, int $perPage)
     {

@@ -36,6 +36,12 @@ return new class extends Migration {
             $table->unsignedBigInteger("merchant_id")
                 ->index();
 
+            $table->unsignedBigInteger("add_by_user_id")
+                ->comment("the user who is admin");
+            $table->foreign("add_by_user_id")
+                ->references("id")
+                ->on("users");
+
             $table->foreign("product_id")
                 ->references("id")
                 ->on("products");
