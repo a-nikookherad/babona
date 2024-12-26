@@ -19,7 +19,9 @@ class ProductDetail extends Model
         "discount",
         "discount_percentage",
         "discount_expired_at",
+        "quantity_add_from_prev",
         "quantity",
+        "quantity_remain_before_deleting",
         "status",
         "add_by_user_id",
         "net_price",
@@ -31,7 +33,7 @@ class ProductDetail extends Model
         "net_price"
     ];
 
-    public function products(): BelongsTo
+    public function product(): BelongsTo
     {
         return $this->belongsTo(Product::class, "product_id");
     }
@@ -41,10 +43,10 @@ class ProductDetail extends Model
         return $this->belongsToMany(Basket::class, "basket_product_details", "product_detail_id", "basket_id");
     }
 
-    public function soldCount(): BelongsToMany
+    public function soldCount()
     {
-        return $this->belongsToMany(Basket::class, "basket_product_details", "product_detail_id", "basket_id")
+        return $this->baskets()
             ->whereNotNull("baskets.bought_at")
-            ->withSum("pivot", "quantity");
+            ->withPivot(["quantity"]);
     }
 }

@@ -13,14 +13,14 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         //todo comment this line of code
-        $middleware->validateCsrfTokens(except: [
+/*        $middleware->validateCsrfTokens(except: [
             '*',
-        ]);
+        ]);*/
     })
     ->withExceptions(function (Exceptions $exceptions) {
-//        $exceptions->report(function (Throwable $exception) {
-//            dd($exception->getMessage());
-//        });
+/*        $exceptions->report(function (Throwable $exception) {
+            dd("exception message===> ",$exception->getMessage());
+        });*/
 //        $exceptions->report(function (DoNotHaveEnoughCreditException $exception) {
 //            return false;
 //        });

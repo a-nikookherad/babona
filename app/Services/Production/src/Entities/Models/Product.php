@@ -43,6 +43,7 @@ class Product extends Model
     public function attachments(): MorphMany
     {
         return $this->morphMany(File::class, "attachable")
+            ->whereNot("title", "thumbnail")
             ->orderBy("name");
     }
 

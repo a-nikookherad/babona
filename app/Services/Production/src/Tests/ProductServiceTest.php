@@ -17,8 +17,22 @@ use Tests\TestCase;
 
 class ProductServiceTest extends TestCase
 {
+    public function _setUp(): void
+    {
+        parent::setUp();
+        Artisan::call("migrate");
+    }
+
+    public function _tearDown(): void
+    {
+//        Artisan::call("migrate:rollback");
+        parent::tearDown();
+    }
+
     public function test_product_service(): void
     {
+        $this->withoutExceptionHandling();
+
         $merchant = Merchant::query()
             ->create([
                 "name" => "test",
@@ -83,45 +97,42 @@ class ProductServiceTest extends TestCase
         $this->assertCreateProduct($request);
 
 
-//        $this->assertListProducts();
+        $this->assertListProducts();
 
-//        $product = $this->getLatestProduct();
+        $product = $this->getLatestProduct();
 
-//        $this->assertEditProduct($product->id);
+        $this->addBasketToProduct($product);
 
-//        $this->assertUpdateProduct($product->id, $request);
+        $this->assertEditProduct($product, $data);
 
 //        $this->assertDeleteProduct($product->id);
-    }
-
-    public function _setUp(): void
-    {
-        parent::setUp();
-//        $this->withoutExceptionHandling();
-        Artisan::call("migrate");
-    }
-
-    public function _tearDown(): void
-    {
-//        Artisan::call("migrate:rollback");
-        parent::tearDown();
     }
 
 
     private function assertCreateProduct($request)
     {
+        //product assertions
         $product = Production::createProduct($request);
         $this->assertTrue($product->exists);
-        Storage::disk("public")
-            ->assertExists($product->thumbnail->path . "/" . $product->thumbnail->full_name);
 
-        $this->assertNotEmpty($product->attachments);
-        foreach ($product->attachments as $attachment) {
+        //product thumbnail assertions
+        $thumbnail = $product->thumbnail()->first();
+        $this->assertNotEmpty($thumbnail);
+        Storage::disk("public")
+            ->assertExists($thumbnail->path . "/" . $thumbnail->full_name);
+
+        //product images assertions(that would be 3 assertions)
+        $attachments = $product->attachments()->get();
+        $this->assertTrue($attachments->isNotEmpty());
+        foreach ($attachments as $attachment) {
             Storage::disk("public")
                 ->assertExists($attachment->path . "/" . $attachment->full_name);
         }
 
-
+        //product details assertions
+        $productDetails = $product->productDetails()->get();
+        $this->assertTrue($productDetails->isNotEmpty());
+        $this->assertTrue($productDetails->count() == count($request->product_details));
     }
 
     private function assertListProducts()
@@ -129,30 +140,44 @@ class ProductServiceTest extends TestCase
         $products = Production::products(function ($query) {
             return $query->where("status", "published");
         }, 10);
-        $this->assertNotNull($products);
+        $this->assertTrue(count($products->items()) > 0);
     }
 
-    private function assertEditProduct($product_id)
+    private function assertEditProduct($product, $data)
     {
+        $file = UploadedFile::fake()->image("test.jpg");
+        $fileEdited = UploadedFile::fake()->image("test2_edited.jpg");
+        $request = $this->createRequest($data, $file, [$fileEdited]);
 
-//        $product=ProductRepo::getById(9);
-/*        $basketData = [
-            "user_id" => 1,
-            "bought_at" => now()->format("Y-m-d H:i:s"),
-        ];
-        $basket = Basket::query()
-            ->create($basketData);
-        $product->productDetails()->first()->baskets()->sync([$basket->id => ["quantity" => 2]]);*/
-    }
+        $request->merge([
+            "slug" => "test_edited",
+            "style" => "مام استایل ویرایش شده",
+            "product_details" => [
+                [
+                    "size" => "S, M",
+                    "color" => "red",
+                    "price" => 199000,
+                    "discount" => 0,
+                    "quantity" => 20,
+                    "net_price" => 170000,
+                    "discount_expired_at" => null,
+                ],
+                [
+                    "size" => "xxl",
+                    "color" => "brown",
+                    "price" => 600000,
+                    "discount" => 10000,
+                    "discount_percentage" => 5,
+                    "quantity" => 20,
+                    "net_price" => 500000,
+                    "discount_expired_at" => now()->addDays(9)->format("Y-m-d H:i:s"),
+                ],
+            ]
+        ]);
 
-    private function assertUpdateProduct($product_id, $request)
-    {
-        $request->merge(["name" => "test", "status" => "archive"]);
-//        $response = $this->post(route("production.products.update", ["id" => $product_id]), $data);
-//        $response->assertStatus(200);
-        Production::editProduct($product_id, $request);
-        $product = ProductRepo::getById($product_id)->toArray();
-        $this->assertArrayIsEqualToArrayOnlyConsideringListOfKeys($product, $request->all(), ["name", "status"]);
+        Production::editProduct($product->id, $request);
+        $product = (ProductRepo::getById($product->id))->toArray();
+        $this->assertArrayIsEqualToArrayOnlyConsideringListOfKeys($product, $request->all(), ["slug", "style"]);
     }
 
     private function assertDeleteProduct($product_id): void
@@ -205,5 +230,16 @@ class ProductServiceTest extends TestCase
             )
         );
         return $request;
+    }
+
+    private function addBasketToProduct(mixed $product): void
+    {
+        $basketData = [
+            "user_id" => 1,
+            "bought_at" => now()->format("Y-m-d H:i:s"),
+        ];
+        $basket = Basket::query()
+            ->create($basketData);
+        $product->productDetails()->first()->baskets()->attach([$basket->id => ["quantity" => 16]]);
     }
 }

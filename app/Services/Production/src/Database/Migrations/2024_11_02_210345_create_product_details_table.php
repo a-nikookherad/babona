@@ -30,8 +30,12 @@ return new class extends Migration {
             $table->dateTime("discount_expired_at")
                 ->nullable();
 
+            $table->unsignedSmallInteger("quantity_add_from_prev")
+                ->default(0);
             $table->unsignedInteger("quantity")
-                ->nullable();
+                ->default(0);
+            $table->unsignedSmallInteger("quantity_remain_before_deleting")
+                ->default(0);
 
             $table->float("net_price")
                 ->nullable();
