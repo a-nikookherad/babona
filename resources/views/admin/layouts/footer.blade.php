@@ -3938,10 +3938,12 @@
                                             <!--end::Input-->
                                             <!--begin::کارت logos-->
                                             <div class="position-absolute translate-middle-y top-50 end-0 me-5">
-                                                <img src="{{asset("admin/media/svg/card-logos/visa.svg")}}" alt="" class="h-25px"/>
+                                                <img src="{{asset("admin/media/svg/card-logos/visa.svg")}}" alt=""
+                                                     class="h-25px"/>
                                                 <img src="{{asset("admin/media/svg/card-logos/mastercard.svg")}}" alt=""
                                                      class="h-25px"/>
-                                                <img src="{{asset("admin/media/svg/card-logos/american-express.svg")}}" alt=""
+                                                <img src="{{asset("admin/media/svg/card-logos/american-express.svg")}}"
+                                                     alt=""
                                                      class="h-25px"/>
                                             </div>
                                             <!--end::کارت logos-->
@@ -5838,7 +5840,8 @@
                 <!--end::Heading-->
                 <!--begin::گوگل تماس با ما Invite-->
                 <div class="btn btn-light-primary fw-bold w-100 mb-8">
-                    <img alt="Logo" src="{{asset("admin/media/svg/brand-logos/google-icon.svg")}}" class="h-20px me-3"/>دعوت جی میل
+                    <img alt="Logo" src="{{asset("admin/media/svg/brand-logos/google-icon.svg")}}" class="h-20px me-3"/>دعوت
+                    جی میل
                     تماس با ما
                 </div>
                 <!--end::گوگل تماس با ما Invite-->
@@ -6395,6 +6398,7 @@
 <!--end::Modal - دعوت دوست-->
 <!--end::Modals-->
 
+@stack("scripts_before")
 
 <!--begin::Javascript-->
 <script>var hostUrl = "assets/";</script>
@@ -6402,41 +6406,48 @@
 <script src="{{asset("admin/plugins/global/plugins.bundle.js")}}"></script>
 <script src="{{asset("admin/js/scripts.bundle.js")}}"></script>
 <!--end::Global Javascript Bundle-->
+
 <!--begin::Vendors Javascript(used for this page only)-->
-<script src="{{asset("admin/plugins/custom/fullcalendar/fullcalendar.bundle.js")}}"></script>
-{{--<script src="https://cdn.amcharts.com/lib/5/index.js"></script>--}}
+{{--<script src="{{asset("admin/plugins/custom/fullcalendar/fullcalendar.bundle.js")}}"></script>
+--}}{{--<script src="https://cdn.amcharts.com/lib/5/index.js"></script>--}}{{--
 <script src="{{asset("admin/lib/5/index.js")}}"></script>
-{{--<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>--}}
+--}}{{--<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>--}}{{--
 <script src="{{asset("admin/lib/5/xy.js")}}"></script>
-{{--<script src="https://cdn.amcharts.com/lib/5/percent.js"></script>--}}
+--}}{{--<script src="https://cdn.amcharts.com/lib/5/percent.js"></script>--}}{{--
 <script src="{{asset("admin/lib/5/percent.js")}}"></script>
-{{--<script src="https://cdn.amcharts.com/lib/5/radar.js"></script>--}}
+--}}{{--<script src="https://cdn.amcharts.com/lib/5/radar.js"></script>--}}{{--
 <script src="{{asset("admin/lib/5/radar.js")}}"></script>
-{{--<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>--}}
-<script src="{{asset("admin/lib/5/animated.js")}}"></script>
-{{--<script src="https://cdn.amcharts.com/lib/5/map.js"></script>--}}
+--}}{{--<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>--}}{{--
+<script src="{{asset("admin/lib/5/themes/animated.js")}}"></script>
+--}}{{--<script src="https://cdn.amcharts.com/lib/5/map.js"></script>--}}{{--
 <script src="{{asset("admin/lib/5/map.js")}}"></script>
-{{--<script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>--}}
+--}}{{--<script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>--}}{{--
 <script src="{{asset("admin/lib/5/worldLow.js")}}"></script>
-{{--<script src="https://cdn.amcharts.com/lib/5/geodata/continentsLow.js"></script>--}}
+--}}{{--<script src="https://cdn.amcharts.com/lib/5/geodata/continentsLow.js"></script>--}}{{--
 <script src="{{asset("admin/lib/5/continentsLow.js")}}"></script>
-{{--<script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>--}}
+--}}{{--<script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>--}}{{--
 <script src="{{asset("admin/lib/5/usaLow.js")}}"></script>
-{{--<script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZonesLow.js"></script>--}}
+--}}{{--<script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZonesLow.js"></script>--}}{{--
 <script src="{{asset("admin/lib/5/worldTimeZonesLow.js")}}"></script>
-{{--<script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZoneAreasLow.js"></script>--}}
+--}}{{--<script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZoneAreasLow.js"></script>--}}{{--
 <script src="{{asset("admin/lib/5/worldTimeZoneAreasLow.js")}}"></script>
-<script src="{{asset("admin/plugins/custom/datatables/datatables.bundle.js")}}"></script>
+<script src="{{asset("admin/plugins/custom/datatables/datatables.bundle.js")}}"></script>--}}
 <!--end::Vendors Javascript-->
+
+@stack("scripts_after")
+
 <!--begin::سفارشی Javascript(used for this page only)-->
-<script src="{{asset("admin/js/widgets.bundle.js")}}"></script>
+{{--<script src="{{asset("admin/js/widgets.bundle.js")}}"></script>
 <script src="{{asset("admin/js/custom/widgets.js")}}"></script>
 <script src="{{asset("admin/js/custom/apps/chat/chat.js")}}"></script>
 <script src="{{asset("admin/js/custom/utilities/modals/upgrade-plan.js")}}"></script>
 <script src="{{asset("admin/js/custom/utilities/modals/create-app.js")}}"></script>
 <script src="{{asset("admin/js/custom/utilities/modals/new-target.js")}}"></script>
-<script src="{{asset("admin/js/custom/utilities/modals/users-search.js")}}"></script>
+<script src="{{asset("admin/js/custom/utilities/modals/users-search.js")}}"></script>--}}
 <!--end::سفارشی Javascript-->
+
+@stack("manual_scripts")
+
 <!--end::Javascript-->
 </body>
 <!--end::Body-->

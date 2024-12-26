@@ -26,6 +26,8 @@
     <!--end::آیتم-->
 @endpush
 @section("content")
+
+    <!--begin::Form-->
     <form id="kt_ecommerce_add_product_form" class="form d-flex flex-column flex-lg-row"
           data-kt-redirect="../../demo1/dist/apps/ecommerce/catalog/products.html">
         <!--begin::کناری column-->
@@ -46,11 +48,11 @@
                     <!--begin::Image input-->
                     <!--begin::Image input placeholder-->
                     <style>.image-input-placeholder {
-                            background-image: url({{asset('admin/media/svg/files/blank-image.svg')}});
+                            background-image: url('assets/media/svg/files/blank-image.svg');
                         }
 
                         [data-theme="dark"] .image-input-placeholder {
-                            background-image: url({{asset('admin/media/svg/files/blank-image-dark.svg')}});
+                            background-image: url('assets/media/svg/files/blank-image-dark.svg');
                         }</style>
                     <!--end::Image input placeholder-->
                     <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3"
@@ -172,7 +174,8 @@
                     <!--end::توضیحات-->
                     <!--end::Input group-->
                     <!--begin::Button-->
-                    <a href="{{route("production.categories.create")}}" class="btn btn-light-primary btn-sm mb-10">
+                    <a href="../../demo1/dist/apps/ecommerce/catalog/add-category.html"
+                       class="btn btn-light-primary btn-sm mb-10">
                         <!--begin::Svg Icon | path: icons/duotune/arrows/arr087.svg-->
                         <span class="svg-icon svg-icon-2">
 														<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -900,5 +903,25 @@
         </div>
         <!--end::Main column-->
     </form>
+    <!--end::Form-->
 
 @endsection
+@push("styles_before")
+    {{--    <link rel="stylesheet" href="{{asset("admin/plugins/custom/dropzone/dropzone.min.css")}}" type="text/css"/>--}}
+@endpush
+@push("scripts_before")
+    <script>var hostUrl = "admin/";</script>
+{{--    <script src="{{asset("admin/plugins/custom/tinymce/tinymce.bundle.js")}}"></script>--}}
+    {{--    <script src="{{asset("admin/plugins/custom/dropzone/dropzone.min.js")}}"></script>--}}
+@endpush
+@push("scripts_after")
+    <script src="{{asset("admin/plugins/custom/datatables/datatables.bundle.js")}}"></script>
+    <script src="{{asset("admin/plugins/custom/formrepeater/formrepeater.bundle.js")}}"></script>
+    {{--    <script src="{{asset("admin/js/custom/apps/ecommerce/catalog/save-product.js")}}"></script>--}}
+    {{--    <script src="{{asset("admin/js/widgets.bundle.js")}}"></script>--}}
+    {{--    <script src="{{asset("admin/js/custom/widgets.js")}}"></script>--}}
+    {{--    <script src="{{asset("admin/js/custom/apps/chat/chat.js")}}"></script>--}}
+    {{--    <script src="{{asset("admin/js/custom/utilities/modals/upgrade-plan.js")}}"></script>--}}
+    {{--    <script src="{{asset("admin/js/custom/utilities/modals/create-app.js")}}"></script>--}}
+    {{--    <script src="{{asset("admin/js/custom/utilities/modals/users-search.js")}}"></script>--}}
+@endpush

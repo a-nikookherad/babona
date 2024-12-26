@@ -2,6 +2,7 @@
 
 namespace Production\Http\Controllers\Admin;
 
+use Production\Entities\Models\Category;
 use Production\Http\Requests\Categories\CategoryCreateRequest;
 use Production\Http\Requests\Categories\CategoryUpdateRequest;
 use Production\Production;
@@ -59,9 +60,9 @@ class CategoriesController
             ->failed(__("something_went_wrong"));
     }
 
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        $rowEffect = Production::destroyCategory($id);
+        $rowEffect = Production::destroyCategory($category);
         if ($rowEffect == 0) {
             return Response::code(400)
                 ->redirect(route("production.categories.list"))

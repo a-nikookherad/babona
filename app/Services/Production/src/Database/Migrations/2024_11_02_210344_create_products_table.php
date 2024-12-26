@@ -35,7 +35,14 @@ return new class extends Migration {
                 ->nullable();
             $table->text("description")
                 ->nullable();
+
             $table->json("jsonld")
+                ->nullable();
+            $table->string("meta_tag_title")
+                ->nullable();
+            $table->string("meta_tag_description")
+                ->nullable();
+            $table->string("meta_tag_keywords")
                 ->nullable();
 
             $table->unsignedBigInteger("category_id")
@@ -43,7 +50,6 @@ return new class extends Migration {
             $table->foreign("category_id")
                 ->references("id")
                 ->on("categories");
-
 
 
             $table->softDeletes();

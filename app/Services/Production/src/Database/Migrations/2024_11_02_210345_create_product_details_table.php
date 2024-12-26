@@ -19,9 +19,14 @@ return new class extends Migration {
                 ->nullable();
 
             $table->float("price");
+            $table->float("tax")
+                ->default(0);
 
             $table->float("discount")
                 ->default(0);
+            $table->float("discount_percentage", 1)
+                ->default(0);
+
             $table->dateTime("discount_expired_at")
                 ->nullable();
 

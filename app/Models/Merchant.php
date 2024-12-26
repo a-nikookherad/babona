@@ -9,7 +9,9 @@ class Merchant extends Model
 {
     protected $fillable = [
         "name",
+        "brand",
         "description",
+        "static_costs",
     ];
 
 

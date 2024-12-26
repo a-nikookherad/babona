@@ -3,6 +3,7 @@
 namespace Production\Http\Requests\Products;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class ProductCreateRequest extends FormRequest
 {
@@ -14,10 +15,28 @@ class ProductCreateRequest extends FormRequest
         return true;
     }
 
+    public function messages(): array
+    {
+        $message = [
+            "slug.unique" => "این محصول تکراری می باشد و از قبل وجود دارد"
+        ];
+        return array_merge($message, parent::messages());
+    }
+
     public function rules(): array
     {
         return [
-            "slug" => "string|max:255|min:2",
+            "slug" => [
+                "string",
+                "max:255",
+                "min:2",
+                Rule::unique("products")
+                    ->where(function ($query) {
+                        $query->where("slug", $this->slug)
+                            ->where("category_id", $this->category_id)
+                            ->where("status", $this->status);
+                    })
+            ],
             "name" => "string|max:255|min:2",
             "fa_name" => "string|max:255|min:2",
             "material" => "nullable|string|max:255|min:2",
@@ -28,18 +47,19 @@ class ProductCreateRequest extends FormRequest
             "brief" => "nullable|string|max:255|min:15",
             "description" => "nullable|string|max:2500|min:20",
             "jsonld" => "nullable|string|max:500",
+            "meta_tag_title" => "nullable|string|max:100|min:3",
+            "meta_tag_description" => "nullable|string|max:250|min:15",
+            "meta_tag_keywords" => "nullable|string|max:250|min:2",
             "category_id" => "required|exists:categories,id",
 
-//            "color" => "nullable|string|max:30|min:2",
-//            "size" => "nullable|string|max:50|min:2",
-//            "quantity" => "required|numeric",
-//            "is_active" => "nullable|boolean",
-//            "add_by_user_id" => "nullable|exists:users,id",
-
-            "price" => "required|array",
-            "wallet_id" => "nullable|numeric",
-            "discount" => "nullable|numeric",
-            "expired_at" => "nullable|date_format:Y-m-d H:i:s",
+            "product_details.*.size" => "nullable",
+            "product_details.*.color" => "nullable",
+            "product_details.*.quantity" => "required|numeric",
+            "product_details.*.price" => "required|numeric",
+            "product_details.*.net_price" => "nullable|numeric",
+            "product_details.*.discount" => "nullable|numeric",
+            "product_details.*.discount_percentage" => "nullable|numeric",
+            "product_details.*.discount_expired_at" => "date_format:Y-m-d H:i:s",
 
             "tag_name" => "nullable|string|max:50|min:3",
             "tag_description" => "nullable|string|max:255|min:3",

@@ -40,6 +40,16 @@ abstract class RepositoryAbstract
             ->first();
     }
 
+    public function getByCondition($condition, $with = [])
+    {
+        return $this->instance::query()
+            ->where($condition)
+            ->when(!empty($with), function (Builder $query) use ($with) {
+                return $query->with($with);
+            })
+            ->first();
+    }
+
     public function getByRelation($relation, $whereHas, $where = [], $with = [])
     {
         return $this->instance::query()

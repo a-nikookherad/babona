@@ -18,6 +18,8 @@ return new class extends Migration {
                 ->nullable();
             $table->string("brand")
                 ->nullable();
+            $table->float("static_costs")
+                ->default(0);
             $table->timestamps();
         });
     }

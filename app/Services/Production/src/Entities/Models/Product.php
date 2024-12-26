@@ -16,10 +16,6 @@ class Product extends Model
 {
     use SoftDeletes;
 
-    /*    protected $dispatchesEvents = [
-            "deleting" => ProductObserver::class
-        ];*/
-
     protected $fillable = [
         "slug",
         "name",
@@ -34,6 +30,9 @@ class Product extends Model
         "jsonld",
         "user_id",
         "category_id",
+        "meta_tag_title",
+        "meta_tag_description",
+        "meta_tag_keywords",
     ];
 
     public function category(): BelongsTo

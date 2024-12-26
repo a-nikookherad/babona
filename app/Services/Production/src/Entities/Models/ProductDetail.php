@@ -15,7 +15,9 @@ class ProductDetail extends Model
         "size",
         "color",
         "price",
+        "tax",
         "discount",
+        "discount_percentage",
         "discount_expired_at",
         "quantity",
         "status",
@@ -37,5 +39,12 @@ class ProductDetail extends Model
     public function baskets(): BelongsToMany
     {
         return $this->belongsToMany(Basket::class, "basket_product_details", "product_detail_id", "basket_id");
+    }
+
+    public function soldCount(): BelongsToMany
+    {
+        return $this->belongsToMany(Basket::class, "basket_product_details", "product_detail_id", "basket_id")
+            ->whereNotNull("baskets.bought_at")
+            ->withSum("pivot", "quantity");
     }
 }

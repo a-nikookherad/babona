@@ -279,7 +279,7 @@
                                 <!--end::Menu item-->
                                 <!--begin::Menu item-->
                                 <div class="menu-item px-3">
-                                    <a href="{{route("production.categories.delete",["id"=>$product->id])}}"
+                                    <a href="{{route("production.categories.delete",["product"=>$product->id])}}"
                                        class="menu-link px-3"
                                        data-kt-ecommerce-product-filter="delete_row">حذف</a>
                                 </div>

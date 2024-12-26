@@ -16,19 +16,6 @@ use Tests\TestCase;
 
 class ProductCrudTest extends TestCase
 {
-    public function setUp(): void
-    {
-        parent::setUp();
-//        $this->withoutExceptionHandling();
-        Artisan::call("migrate");
-    }
-
-    public function tearDown(): void
-    {
-//        Artisan::call("migrate:rollback");
-        parent::tearDown();
-    }
-
     public function _test_product_crud(): void
     {
         $merchant = Merchant::query()
@@ -117,6 +104,19 @@ class ProductCrudTest extends TestCase
 //        $this->assertUpdateProduct($product->id, $request);
 
 //        $this->assertDeleteProduct($product->id);
+    }
+
+    public function setUp(): void
+    {
+        parent::setUp();
+//        $this->withoutExceptionHandling();
+        Artisan::call("migrate");
+    }
+
+    public function tearDown(): void
+    {
+//        Artisan::call("migrate:rollback");
+        parent::tearDown();
     }
 
 

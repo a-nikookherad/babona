@@ -192,7 +192,7 @@
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
                                     <a class="menu-link @if (request()->routeIs('production.products.create')) {{"active"}} @endif"
-                                       href="{{route("production.categories.create")}}">
+                                       href="{{route("production.products.create")}}">
 															<span class="menu-bullet">
 																<span class="bullet bullet-dot"></span>
 															</span>

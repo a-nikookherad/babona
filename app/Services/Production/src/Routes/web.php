@@ -30,7 +30,7 @@ Route::group([
         Route::put("{id}/update", [\Production\Http\Controllers\Admin\CategoriesController::class, "update"])
             ->name("production.categories.update");
 
-        Route::delete("{id}/delete", [\Production\Http\Controllers\Admin\CategoriesController::class, "destroy"])
+        Route::delete("{category}/delete", [\Production\Http\Controllers\Admin\CategoriesController::class, "destroy"])
             ->name("production.categories.delete");
     });
 
@@ -41,7 +41,7 @@ Route::group([
         Route::get("", [\Production\Http\Controllers\Admin\ProductsController::class, "index"])
             ->name("production.products.list");
 
-        Route::view("create", "admin.product.create")
+        Route::view("create", "Production::admin.product.create")
             ->name("production.products.create");
 
         Route::post("", [\Production\Http\Controllers\Admin\ProductsController::class, "store"])

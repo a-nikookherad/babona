@@ -211,7 +211,7 @@
                                             <!--end::Menu item-->
                                             <!--begin::Menu item-->
                                             <form
-                                                action="{{route("production.categories.delete",["id"=>$category->id])}}"
+                                                action="{{route("production.categories.delete",["category"=>$category->id])}}"
                                                 method="post">
                                                 @method('DELETE')
                                                 @csrf

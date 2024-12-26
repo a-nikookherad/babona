@@ -55,7 +55,8 @@
                     @php
                         $path="admin/media/svg/files/blank-image.svg";
                             if($category->thumbnail){
-                                $path=$category->thumbnail->relative_path."/".$category->thumbnail->file_name.".".$category->thumbnail->extension;
+                                $thumbnail=$category->thumbnail;
+                                $path=config("filesystems.public_storage")."/".$thumbnail->path."/".$thumbnail->full_name;
                             }
                     @endphp
                     <style>.image-input-placeholder {

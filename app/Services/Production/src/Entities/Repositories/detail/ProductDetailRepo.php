@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Facade;
 
 /**
  * @method static ProductDetailRepoService all()
- * @method static ProductDetailRepoService getById($id)
+ * @method static ProductDetailRepoService getById($id, $with = [])
+ * @method static ProductDetailRepoService getByCondition($condition, $with = [])
  * @method static ProductDetailRepoService store($data)
  * @method static ProductDetailRepoService update($category_id, array $data)
  * @method static ProductDetailRepoService updateOrCreate(array $condition, array $data)
