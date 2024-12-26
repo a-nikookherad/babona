@@ -43,6 +43,18 @@ class ProductDetail extends Model
         return $this->belongsToMany(Basket::class, "basket_product_details", "product_detail_id", "basket_id");
     }
 
+    public function paidBaskets(): BelongsToMany
+    {
+        return $this->baskets()
+            ->whereNotNull("baskets.bought_at");
+    }
+
+    public function hasPaidBaskets()
+    {
+        return $this->paidBaskets()
+            ->exists();
+    }
+
     public function soldCount()
     {
         return $this->baskets()

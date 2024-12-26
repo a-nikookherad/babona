@@ -24,42 +24,29 @@ class ProductObserver
         //
     }
 
-    /**
-     * Handle the Product "deleted" event.
-     */
+
     public function deleted(Product $product): void
     {
+        $product->productDetails()->delete();
         $this->deleteAttachments($product);
     }
 
-    /**
-     * Handle the Product "restored" event.
-     */
-    public function deleting(Product $product): void
-    {
-        dd(453);
-        $this->deleteAttachments($product);
-    }
-
-    /**
-     * Handle the Product "force deleted" event.
-     */
     public function forceDeleted(Product $product): void
     {
+        $product->productDetails()->delete();
         $this->deleteAttachments($product);
     }
 
     private function deleteAttachments(Product $product): void
     {
         Attachment::setAttachment($product->thumbnail)
-            ->deleteFileFromStorage();
-        $product->thumbnail->delete();
+            ->deleteFileFromStorage()
+            ->delete();
 
-        foreach ($product->attachments() as $attachment) {
+        foreach ($product->attachments as $attachment) {
             Attachment::setAttachment($attachment)
-                ->deleteFileFromStorage();
-            $attachment->delete();
+                ->deleteFileFromStorage()
+                ->delete();
         }
-//        $product->attachments->delete();
     }
 }

@@ -105,7 +105,7 @@ class ProductServiceTest extends TestCase
 
         $this->assertEditProduct($product, $data);
 
-//        $this->assertDeleteProduct($product->id);
+        $this->assertDeleteProduct($product);
     }
 
 
@@ -180,17 +180,13 @@ class ProductServiceTest extends TestCase
         $this->assertArrayIsEqualToArrayOnlyConsideringListOfKeys($product, $request->all(), ["slug", "style"]);
     }
 
-    private function assertDeleteProduct($product_id): void
+    private function assertDeleteProduct($product): void
     {
-        /*        $response = $this->delete(route("production.products.delete", ["id" => $product_id]));
-                $response->assertStatus(200);*/
+        $allow = Production::destroyProduct($product);
+        $this->assertFalse($allow);
 
-
-        Production::destroyProduct($product_id);
-
-        $product = ProductRepo::getById($product_id);
-
-        $this->assertEmpty($product);
+        $product = ProductRepo::getById($product->id);
+        $this->assertNotEmpty($product);
     }
 
     private function userLogin($id, $merchant_id): void
@@ -240,6 +236,8 @@ class ProductServiceTest extends TestCase
         ];
         $basket = Basket::query()
             ->create($basketData);
-        $product->productDetails()->first()->baskets()->attach([$basket->id => ["quantity" => 16]]);
+        $product->productDetails()->each(function ($productDetail) use ($basket) {
+            $productDetail->baskets()->attach([$basket->id => ["quantity" => 16]]);
+        });
     }
 }
