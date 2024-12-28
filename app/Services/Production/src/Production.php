@@ -19,8 +19,8 @@ use Illuminate\Support\Facades\Facade;
  * @method static ProductionService editProduct($product_id, $request)
  * @method static ProductionService destroyProduct($id)
  *
- * @method static ProductionService createBasket($user_id)
- * @method static ProductionService editBasket($user_id, $prices)
+ * @method static ProductionService basket($user_id)
+ * @method static ProductionService addToTheBasket($user_id, $productDetails)
  */
 class Production extends Facade
 {

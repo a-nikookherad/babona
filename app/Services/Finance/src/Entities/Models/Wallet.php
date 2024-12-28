@@ -20,6 +20,7 @@ class Wallet extends Model
         "is_permanent",
         "interest_rate",
         "transaction_accept_manual",
+        "maximum_transaction_amount_needs_to_approve",
         "club_id",
     ];
 
@@ -30,7 +31,8 @@ class Wallet extends Model
 
     public function treasuryAccount(): MorphOne
     {
-        return $this->morphOne(Account::class, "accountable");
+        return $this->morphOne(Account::class, "accountable")
+            ->where("type", "treasury");
     }
 
     public function accounts(): MorphMany

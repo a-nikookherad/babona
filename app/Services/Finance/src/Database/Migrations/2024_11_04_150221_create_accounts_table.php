@@ -17,6 +17,8 @@ return new class extends Migration {
                 ->default("customer");
             $table->boolean("is_active")
                 ->default(true);
+            $table->boolean("can_be_minus")
+                ->default(false);
             $table->unsignedBigInteger("wallet_id")
                 ->index();
             $table->foreign("wallet_id")

@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Merchant;
 use App\Models\User;
+use Finance\Entities\Models\Account;
 use Illuminate\Support\ServiceProvider;
 use Production\Entities\Models\Basket;
 use Production\Entities\Models\Product;
@@ -16,8 +17,9 @@ class RelationshipServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->handleRelationsWithProductionService();
+        $this->HandleRelationshipsWithFinanceService();
 
+        $this->handleRelationsWithProductionService();
     }
 
 
@@ -39,5 +41,18 @@ class RelationshipServiceProvider extends ServiceProvider
         Basket::resolveRelationUsing("user", function ($basket) {
             return $basket->belongsTo(User::class, "user_id");
         });
+    }
+
+    private function HandleRelationshipsWithFinanceService(): void
+    {
+        User::resolveRelationUsing("accounts", function ($accounts) {
+            return $accounts->morphMany(Account::class, "accountable");
+        });
+        Merchant::resolveRelationUsing("accounts", function ($merchant) {
+            return $merchant->morphMany(Account::class, "accountable");
+        });
+        /*        Campaign::resolveRelationUsing("accounts", function ($campaign) {
+                    return $campaign->morphMany(Account::class, "accountable");
+                });*/
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Production;
 
+use Production\Entities\Repositories\product\ProductRepo;
 use Production\Traits\BasketTrait;
 use Production\Traits\CategoryTrait;
 use Production\Traits\ProductDetailTrait;
@@ -11,19 +12,9 @@ class ProductionService
 {
     use CategoryTrait, ProductTrait, ProductDetailTrait, BasketTrait;
 
-    public function destroyProduct($product)
+
+    public function products(callable $filter, int $perPage = 10)
     {
-        $allow = true;
-        foreach ($product->productDetails as $productDetail) {
-            if ($productDetail->hasPaidBaskets()) {
-                $allow = false;
-            }
-        }
-
-        if ($allow) {
-            $product->delete();
-        }
-
-        return $allow;
+        return ProductRepo::getByFilterPaginate($filter, $perPage);
     }
 }

@@ -12,7 +12,7 @@ class MerchantObserver
      */
     public function created(Merchant $merchant): void
     {
-        Finance::createAccounts($merchant);
+        Finance::createAccounts($merchant,"merchant");
     }
 
     /**

@@ -19,7 +19,10 @@ class Account extends Model
         "type",
         "wallet_id",
         "is_active",
+        "can_be_minus",
     ];
+
+    protected $with = "balance";
 
     public function wallet(): BelongsTo
     {
@@ -34,6 +37,7 @@ class Account extends Model
     public function balance(): HasOne
     {
         return $this->hasOne(Balance::class, "account_id")
-            ->where("expired_at", ">", JalaliCalendar::endOfYear());
+            ->where("expired_at", ">", JalaliCalendar::endOfYear())
+            ->orWhereNull("expired_at");
     }
 }

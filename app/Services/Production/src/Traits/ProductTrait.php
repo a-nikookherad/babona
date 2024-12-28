@@ -8,12 +8,6 @@ use Production\Entities\Repositories\product\ProductRepo;
 
 trait ProductTrait
 {
-    public function products(callable $filter, int $perPage = 10)
-    {
-        return ProductRepo::getByFilterPaginate($filter, $perPage);
-    }
-
-
 
     public function createProduct($request)
     {
@@ -43,24 +37,28 @@ trait ProductTrait
         $product = ProductRepo::getById($product_id, ["productDetails", "thumbnail", "attachments"]);
 
         $this->handleProductDetails($request, $product, $currentUser);
-        /*        foreach ($request->product_details as $productDetail) {
-                    $productDetail = array_merge($productDetail, ["add_by_user_id" => $currentUser->id]);
-                    $productDetail = array_merge($productDetail, [
-                        "product_id" => $product->id,
-                        "merchant_id" => $currentUser->merchant_id,
-                    ]);
-                    $condition = [
-                        "size" => $productDetail["size"],
-                        "color" => $productDetail["color"],
-                    ];
-                    ProductDetailRepo::updateOrCreate($condition, $productDetail);
-                }*/
 
         $this->handleProductThumbnail($request, $product);
 
         $this->handleProductImages($request, $product);
 
         return $product;
+    }
+
+    public function destroyProduct($product)
+    {
+        $allow = true;
+        foreach ($product->productDetails as $productDetail) {
+            if ($productDetail->hasPaidBaskets()) {
+                $allow = false;
+            }
+        }
+
+        if ($allow) {
+            $product->delete();
+        }
+
+        return $allow;
     }
 
     private function handleProductDetails($request, $product, $currentUser): void

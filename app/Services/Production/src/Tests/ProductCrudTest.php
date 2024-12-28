@@ -1,6 +1,6 @@
 <?php
 
-namespace Production\Tests\Feature;
+namespace Production\Tests;
 
 use App\Models\Merchant;
 use App\Models\User;

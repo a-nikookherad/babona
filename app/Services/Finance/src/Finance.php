@@ -5,17 +5,21 @@ namespace Finance;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static FinanceService credit($object)
- * @method static FinanceService transfer($fromObject, $toObject, $wallet, $amount)
- * @method static FinanceService transaction($transaction_uuid)
- * @method static FinanceService enquiry($object, $wallet, $fromDateTime, $toDateTime)
- * @method static FinanceService createWallet(array $walletInfo, array $objects)
+ * @method static FinanceService createWallet(array $walletInfo, array $classes = [])
  * @method static FinanceService wallets()
- * @method static FinanceService createAccounts($object)
- * @method static FinanceService createAccount($object, $walletName = "toman")
- * @method static FinanceService createTemporaryAccount($wallet, $object, $expireDate)
- * @method static FinanceService resetBalances($walletName)
+ *
+ * @method static FinanceService createAccount($object, $type = "customer", $wallet = "default", $canBeMinus = false)
+ * @method static FinanceService createAccounts($object, $type = "customer")
+ * @method static FinanceService account($object, $wallet = "default")
+ * @method static FinanceService credit($account)
+ *
+ * @method static FinanceService transfer($fromAccount, $toAccount, $amount, $description = null)
+ * @method static FinanceService reverseTransfer($transaction, $description = null)
+ * @method static FinanceService transaction($transaction_uuid)
+ * @method static FinanceService acceptTransaction($transaction)
  */
+// @method static FinanceService enquiry($account, $wallet, $fromDateTime, $toDateTime)
+// @method static FinanceService resetBalances($walletName)
 class Finance extends Facade
 {
     public static function getFacadeAccessor()

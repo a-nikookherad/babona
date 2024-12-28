@@ -25,6 +25,8 @@ return new class extends Migration {
                 ->default(1);
             $table->boolean("transaction_accept_manual")
                 ->default(false);
+            $table->float("maximum_transaction_amount_needs_to_approve")
+                ->default(100000000);
             $table->float("interest_rate")
                 ->nullable();
             $table->unsignedSmallInteger("club_id")

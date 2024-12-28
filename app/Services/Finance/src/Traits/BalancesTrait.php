@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services\Finance\src\Traits;
+namespace Finance\Traits;
 
-use App\Services\Finance\src\Adapter\JalaliCalendar;
+use Finance\Adapter\JalaliCalendar;
 use Finance\Entities\Models\Balance;
 use Finance\Entities\Models\Wallet;
 
@@ -24,4 +24,6 @@ trait BalancesTrait
             $account->balances()->save($balance);
         }
     }
+
+
 }

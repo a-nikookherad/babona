@@ -34,7 +34,7 @@ return new class extends Migration {
                 ->nullable();
 
             $table->unsignedBigInteger("merchant_id")
-                ->index();
+                ->nullable();
             $table->foreign("merchant_id")
                 ->references("id")
                 ->on("merchants");

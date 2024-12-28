@@ -13,7 +13,7 @@ class WalletObserver
      */
     public function created(Wallet $wallet): void
     {
-        Finance::createAccount($wallet, $wallet->name);
+        Finance::createAccount($wallet, "treasury", $wallet, true);
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Attachment\Tests\Feature;
+namespace Attachment\Tests;
 
 use Attachment\Attachment;
 use Attachment\Entities\Models\File;
@@ -11,7 +11,7 @@ use Tests\TestCase;
 
 class AttachmentTest extends TestCase
 {
-    public function _test_attachment(): void
+    public function _test_attachment_service(): void
     {
         $file = UploadedFile::fake()->image("test.jpg");
         $request = new \Illuminate\Http\Request;

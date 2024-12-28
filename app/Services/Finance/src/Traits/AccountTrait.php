@@ -1,43 +1,55 @@
 <?php
 
-namespace App\Services\Finance\src\Traits;
+namespace Finance\Traits;
 
+use Finance\Entities\Repositories\WalletRepo;
 use Finance\Entities\Models\Account;
-use Finance\Entities\Models\Wallet;
+use Illuminate\Database\Eloquent\Model;
 
 trait AccountTrait
 {
-    public function createAccounts($object)
+    public function credit($account)
     {
-        $wallets_id = Wallet::query()
-            ->pluck("id")
-            ->all();
+        return $account->balance->credit;
+    }
+
+    public function account($object, $wallet = "")
+    {
+        if (!$wallet instanceof (WalletRepo::getInstance())) {
+            $wallet = WalletRepo::getByNameOrDefault($wallet);
+        }
+
+        return $object->accounts->where("wallet_id", $wallet->id)->first();
+    }
+
+    public function createAccounts($object, $type = "customer")
+    {
+        $wallets_id = WalletRepo::getIds();
         foreach ($wallets_id as $wallet_id) {
             $account = new Account();
             $account->wallet_id = $wallet_id;
+            $account->type = $type;
             $object->accounts()->save($account);
         }
+        return $object;
     }
 
-    public function createAccount($object, $walletName = "toman")
+    /**
+     * @param Model $object
+     * @param string|null $type
+     * @param mixed|null $wallet
+     * @param boolean|null $canBeMinus
+     * @return void
+     */
+    public function createAccount($object, ?string $type = "customer", mixed $wallet = null, ?bool $canBeMinus = false): void
     {
-        $wallet_id = Wallet::query()
-            ->where("name", $walletName)
-            ->pluck("id")
-            ->first();
-        if ($wallet_id) {
-            $account = new Account();
-            $account->wallet_id = $wallet_id;
-            $object->accounts()->save($account);
+        if (!$wallet instanceof (WalletRepo::getInstance())) {
+            $wallet = WalletRepo::getByNameOrDefault($wallet);
         }
-    }
-
-    public function createTemporaryAccount($wallet, $object, $expireDate)
-    {
         $account = new Account();
-        $account->type = "temporary";
-        $account->expiered_at = $expireDate;
         $account->wallet_id = $wallet->id;
+        $account->type = $type;
+        $account->can_be_minus = $canBeMinus;
         $object->accounts()->save($account);
     }
 }
