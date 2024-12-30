@@ -8,15 +8,18 @@ use function base_path;
 
 trait migrationTrait
 {
-    public function _setUp(): void
+    public function setUp(): void
     {
         parent::setUp();
 
-        $path = Str::replace(base_path('\\'), "", __DIR__ . "/../../Database/Migrations/");
+        Artisan::call("migrate:rollback");
+        $path = Str::replace(base_path('\\'), "", __DIR__ . "/../Database/Migrations/");
         Artisan::call("migrate", ["--path" => $path]);
+        Artisan::call("migrate", ["--path" => "database/migrations/0001_01_01_000000_create_users_table.php"]);
+        Artisan::call("migrate", ["--path" => "database/migrations/2024_11_03_212151_create_merchants_table.php"]);
     }
 
-    public function _tearDown(): void
+    public function tearDown(): void
     {
         Artisan::call("migrate:rollback");
         parent::tearDown();

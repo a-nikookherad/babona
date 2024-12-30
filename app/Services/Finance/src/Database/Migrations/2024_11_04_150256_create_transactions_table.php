@@ -34,8 +34,6 @@ return new class extends Migration {
             $table->float("amount");
             $table->boolean("is_done")
                 ->default(true);
-            $table->string("uuid")
-                ->unique();
 
             $table->unsignedBigInteger("reverse_transaction_id")
                 ->nullable();
@@ -45,6 +43,8 @@ return new class extends Migration {
 
             $table->string("description", 250)
                 ->nullable();
+            $table->string("uuid")
+                ->unique();
             $table->softDeletes();
             $table->timestamps();
         });

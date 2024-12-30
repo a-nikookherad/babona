@@ -5,7 +5,8 @@ namespace Cashier;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static CashierService credit($object)
+ * @method static CashierService setBasket($basket)
+ * @method static CashierService createInvoice()
  */
 class Cashier extends Facade
 {

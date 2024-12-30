@@ -2,19 +2,19 @@
 
 namespace Production\Entities\Models;
 
-use App\Models\Tag;
 use Attachment\Entities\Models\File;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Production\Entities\Observers\ProductObserver;
+use Production\Database\Factories\ProductFactory;
 
 class Product extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, HasFactory;
 
     protected $fillable = [
         "slug",
@@ -34,6 +34,11 @@ class Product extends Model
         "meta_tag_description",
         "meta_tag_keywords",
     ];
+
+    public static function newFactory()
+    {
+        return ProductFactory::new();
+    }
 
     public function category(): BelongsTo
     {

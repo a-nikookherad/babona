@@ -14,18 +14,25 @@ trait TransactionTrait
         $wallet = $fromAccount->wallet;
 
         //Decrease credit from source account
-        $this->decreaseCredit($fromAccount, $amount);
+        $this->decreaseCredit(account: $fromAccount, amount: $amount);
 
-        $transaction = $this->createTransactionObject($fromAccount->id, $toAccount->id, $amount, $description);
-        if ($wallet->transaction_accept_manual == true || $wallet->maximum_transaction_amount_needs_to_approve < $amount) {
+        $transaction = $this->createTransactionObject(
+            fromAccountId: $fromAccount->id,
+            toAccountId: $toAccount->id,
+            amount: $amount,
+            description: $description
+        );
+        if ($wallet->transaction_accept_manual == true ||
+            $wallet->maximum_transaction_amount_needs_to_approve < $amount) {
             $transaction->treasury_account_id = $wallet->treasuryAccount->id;
             $transaction->is_done = false;
             $transaction->save();
         } else {
+            $transaction->is_done = true;
             $transaction->save();
 
             //Increase credit from destination account
-            $this->increaseCredit($toAccount, $amount);
+            $this->increaseCredit(account: $toAccount, amount: $amount);
         }
 
         return $transaction;
@@ -39,29 +46,24 @@ trait TransactionTrait
         $transaction->save();
     }
 
-    public function reverseTransfer($transaction, $description = null)
+    public function reverseTransfer($transaction, $amount = null, $description = null)
     {
-        $wallet = $transaction->fromAccount->wallet;
-        if ($wallet->transaction_accept_manual == true) {
-            $reverseTransaction = new Transaction();
-            $reverseTransaction->from_account_id = $wallet->treasuryAccount->id;
-            $reverseTransaction->to_account_id = $transaction->fromAccount->id;
-            $reverseTransaction->amount = $transaction->amount;
-            $reverseTransaction->reverse_transaction_id = $transaction->id;
-            $reverseTransaction->is_done = $transaction->is_done;
-            $reverseTransaction->uuid = Str::uuid()->toString();
-            $reverseTransaction->description = $description;
-            $reverseTransaction->save();
-        }
-        $reverseTransaction = new Transaction();
-        $reverseTransaction->from_account_id = $transaction->toAccount->id;
-        $reverseTransaction->to_account_id = $transaction->fromAccount->id;
-        $reverseTransaction->amount = $transaction->amount;
+        $amount = $amount ?? $transaction->amount;
+
+        $this->increaseCredit(account: $transaction->fromAccount, amount: $amount);
+
+        $reverseTransaction = $this->createTransactionObject(
+            fromAccountId: $transaction->toAccount->id,
+            toAccountId: $transaction->fromAccount->id,
+            amount: $amount,
+            description: $description
+        );
         $reverseTransaction->reverse_transaction_id = $transaction->id;
-        $reverseTransaction->is_done = $transaction->is_done;
+        $reverseTransaction->is_done = (boolean)$transaction->is_done;
         $reverseTransaction->uuid = Str::uuid()->toString();
-        $reverseTransaction->description = $description;
         $reverseTransaction->save();
+
+        $this->decreaseCredit(account: $transaction->toAccount, amount: $amount);
 
         return $reverseTransaction;
     }

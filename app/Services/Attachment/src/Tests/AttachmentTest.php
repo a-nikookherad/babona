@@ -11,7 +11,7 @@ use Tests\TestCase;
 
 class AttachmentTest extends TestCase
 {
-    public function _test_attachment_service(): void
+    public function test_attachment_service(): void
     {
         $file = UploadedFile::fake()->image("test.jpg");
         $request = new \Illuminate\Http\Request;
@@ -34,14 +34,13 @@ class AttachmentTest extends TestCase
         $this->assertDeleteAttachment($attachment);
     }
 
-    public function _setUp(): void
+    public function setUp(): void
     {
         parent::setUp();
-//        $this->withoutExceptionHandling();
         File::up();
     }
 
-    public function _tearDown(): void
+    public function tearDown(): void
     {
         File::down();
         parent::tearDown();

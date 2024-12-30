@@ -23,11 +23,24 @@ return new class extends Migration {
             $table->unsignedBigInteger("paid_by_admin_user_id")
                 ->nullable();
 
+            $table->unsignedBigInteger("delivery_id")
+                ->nullable();
+            /*            $table->foreign("delivery_id")
+                            ->references("id")
+                            ->on("deliveries");*/
+
+            $table->unsignedBigInteger("basket_id")
+                ->index();
+            $table->foreign("basket_id")
+                ->references("id")
+                ->on("baskets");
+
             $table->unsignedBigInteger("user_id")
                 ->index();
             $table->foreign("user_id")
                 ->references("id")
                 ->on("users");
+
             $table->timestamps();
         });
     }

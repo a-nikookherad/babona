@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static FinanceService credit($account)
  *
  * @method static FinanceService transfer($fromAccount, $toAccount, $amount, $description = null)
- * @method static FinanceService reverseTransfer($transaction, $description = null)
+ * @method static FinanceService reverseTransfer($transaction, $amount = null, $description = null)
  * @method static FinanceService transaction($transaction_uuid)
  * @method static FinanceService acceptTransaction($transaction)
  */

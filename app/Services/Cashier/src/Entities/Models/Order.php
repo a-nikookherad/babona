@@ -19,27 +19,22 @@ class Order extends Model
         "paid_at",
     ];
 
-    public function transactions(): MorphMany
-    {
-        return $this->morphMany(Transaction::class, "payable");
-    }
-
     public function payments(): HasMany
     {
         return $this->hasMany(Payment::class, "payment_id");
     }
 
-    public function prices(): BelongsToMany
+    public function invoices(): BelongsToMany
     {
-        return $this->belongsToMany(ProductDetail::class, "order_prices", "order_id", "price_id");
+        return $this->belongsToMany(ProductDetail::class, "invoices", "order_id", "product_detail_id");
     }
 
-    public function campaigns(): BelongsToMany
+    /*public function campaigns(): BelongsToMany
     {
         return $this->belongsToMany(Campaign::class, "order_campaigns", "order_id", "campaign_id");
     }
 
-    /*    public function shipments(): HasMany
+        public function shipments(): HasMany
         {
             return $this->hasMany(Shipment::class, "order_id");
         }*/

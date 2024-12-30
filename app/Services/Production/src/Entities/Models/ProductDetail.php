@@ -2,14 +2,16 @@
 
 namespace Production\Entities\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Production\Database\Factories\ProductDetailFactory;
 
 class ProductDetail extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, HasFactory;
 
     protected $fillable = [
         "size",
@@ -32,6 +34,11 @@ class ProductDetail extends Model
     protected $hidden = [
         "net_price"
     ];
+
+    public static function newFactory()
+    {
+        return ProductDetailFactory::new();
+    }
 
     public function product(): BelongsTo
     {

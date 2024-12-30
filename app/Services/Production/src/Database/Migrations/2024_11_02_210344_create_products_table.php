@@ -46,6 +46,7 @@ return new class extends Migration {
                 ->nullable();
 
             $table->unsignedBigInteger("category_id")
+                ->nullable()
                 ->index();
             $table->foreign("category_id")
                 ->references("id")
