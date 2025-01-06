@@ -10,18 +10,24 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create( 'basket_product_details', function (Blueprint $table) {
+        Schema::create('basket_product_details', function (Blueprint $table) {
             $table->id();
-            $table->integer("quantity");
-            $table->unsignedBigInteger("basket_id")
-                ->index();
+            $table->unsignedInteger("quantity");
 
-            $table->unsignedBigInteger("product_detail_id")
-                ->index();
+            $table->dateTime("request_to_return")
+                ->nullable();
+            $table->integer("return_quantity")
+                ->default(0);
+            $table->string("return_description")
+                ->nullable();
 
             $table->foreign("basket_id")
                 ->references("id")
                 ->on("baskets");
+            $table->unsignedBigInteger("basket_id")
+                ->index();
+            $table->unsignedBigInteger("product_detail_id")
+                ->index();
             $table->foreign("product_detail_id")
                 ->references("id")
                 ->on("product_details");

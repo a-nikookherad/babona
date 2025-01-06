@@ -13,10 +13,13 @@ use Production\Entities\Models\ProductDetail;
 class Order extends Model
 {
     protected $fillable = [
-        "user_id",
-        "payment_id",
-        "type",
+        "delivered_at",
         "paid_at",
+        "description",
+        "paid_by_admin_user_id",
+        "delivery_id",
+        "basket_id",
+        "user_id",
     ];
 
     public function payments(): HasMany

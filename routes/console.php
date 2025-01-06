@@ -3,9 +3,13 @@
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
 
-Artisan::command('inspire', function () {
-    $this->comment(Inspiring::quote());
-})->purpose('Display an inspiring quote')->hourly();
+Artisan::command('package {name} {--O|observer} {--F|factory} {--R|repository} {--C|controller  : Whether you want make a controller or not}', function () {
+    if ($this->option("observer")) {
+    };
+    $packageName = $this->argument("name");
+    $packageNameSpace = $this->ask("what is Package namespace?");
+    $packageAddress = $this->ask("what is Package Address?");
+})->purpose("Make a new custom Package");
 
 
 Artisan::command("migrate:custom", function () {

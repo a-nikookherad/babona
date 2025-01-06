@@ -13,8 +13,10 @@ class Basket extends Model
     use SoftDeletes,HasFactory;
 
     protected $fillable = [
+        "bought_at",
         "user_id",
-        "bought_at"
+        "has_damage_product_to_return",
+        "damage_description",
     ];
 
     protected static function newFactory()

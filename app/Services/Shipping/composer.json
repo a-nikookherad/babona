@@ -1,0 +1,22 @@
+{
+    "name": "nikookherad/shipping",
+    "type": "library",
+    "version": "v1.0.0",
+    "autoload": {
+        "psr-4": {
+            "Shipping\\": "./src"
+        }
+    },
+    "require": {
+        "php": ">=8.1",
+        "laravel/framework": "^11.9",
+        "nikookherad/address": "*"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Shipping\\Providers\\ShippingServiceProvider"
+            ]
+        }
+    }
+}

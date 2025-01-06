@@ -11,8 +11,14 @@
         <testsuite name="Feature">
             <directory>tests/Feature</directory>
         </testsuite>-->
-        <testsuite name="services">
-            <directory>app/Services/Cashier</directory>
+        <!--<testsuite name="services">
+            <directory>app/Services</directory>
+        </testsuite>-->
+<!--        <testsuite name="shipping">
+            <directory>app/Services/Shipping</directory>
+        </testsuite>-->
+        <testsuite name="address">
+            <directory>app/Services/Address</directory>
         </testsuite>
     </testsuites>
     <source>
@@ -26,10 +32,10 @@
         <env name="BCRYPT_ROUNDS" value="4"/>
         <env name="CACHE_STORE" value="array"/>
 
-                <env name="DB_CONNECTION" value="sqlite"/>
-                <env name="DB_DATABASE" value=":memory:"/>
-<!--        <env name="DB_CONNECTION" value="mysql"/>-->
-<!--        <env name="DB_DATABASE" value="babona"/>-->
+<!--        <env name="DB_CONNECTION" value="sqlite"/>-->
+<!--        <env name="DB_DATABASE" value=":memory:"/>-->
+                <env name="DB_CONNECTION" value="mysql"/>
+                <env name="DB_DATABASE" value="babona"/>
 
         <env name="MAIL_MAILER" value="array"/>
         <env name="PULSE_ENABLED" value="false"/>

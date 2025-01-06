@@ -1,0 +1,22 @@
+{
+    "name": "nikookherad/address",
+    "type": "library",
+    "version": "v1.0.0",
+    "autoload": {
+        "psr-4": {
+            "Address\\": "./src",
+            "Address\\Seeders\\": "./src/Database/Seeders/"
+        }
+    },
+    "require": {
+        "php": ">=8.1",
+        "laravel/framework": "^11.9"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Address\\Providers\\AddressServiceProvider"
+            ]
+        }
+    }
+}

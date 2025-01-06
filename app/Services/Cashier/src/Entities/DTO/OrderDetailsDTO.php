@@ -8,12 +8,13 @@ class OrderDetailsDTO
     private $basket;
     private $productDetails;
 
-    private $quantity;
+    private $quantity = 1;
     private $price;
-    private $merchant;
-    private $delivery_id;
-    private $campaignDiscount;
-    private $campaign_id;
+    private $merchant = null;
+    private $delivery_id = null;
+    private $campaignDiscount = 0;
+    private $campaign_id = null;
+    private $transaction_id = null;
 
     public function toArray()
     {
@@ -23,8 +24,8 @@ class OrderDetailsDTO
                 "campaign_discount" => $this->campaignDiscount,
                 "campaign_id" => $this->campaign_id,
                 "merchant_id" => $this->merchant->id,
-//                "delivery_id" => "",
-//                "transaction_id" => "",
+                "delivery_id" => $this->delivery_id,
+                "transaction_id" => $this->transaction_id,
             ]
         ];
     }
@@ -86,6 +87,12 @@ class OrderDetailsDTO
     public function setBasket($basket)
     {
         $this->basket = $basket;
+        return $this;
+    }
+
+    public function setTransactionId($transaction_id)
+    {
+        $this->transaction_id = $transaction_id;
         return $this;
     }
 

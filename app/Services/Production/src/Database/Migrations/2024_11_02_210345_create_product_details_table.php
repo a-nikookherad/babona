@@ -23,9 +23,11 @@ return new class extends Migration {
                 ->default(0);
 
             $table->float("discount")
+                ->comment("percentage")
                 ->default(0);
-            $table->float("discount_percentage", 1)
-                ->default(0);
+
+            /*$table->float("discount_percentage", 1)
+                ->default(0);*/
 
             $table->dateTime("discount_expired_at")
                 ->nullable();

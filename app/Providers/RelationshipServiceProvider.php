@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Address\Entities\Models\Address;
 use App\Models\Merchant;
 use App\Models\User;
 use Finance\Entities\Models\Account;
@@ -20,6 +21,10 @@ class RelationshipServiceProvider extends ServiceProvider
         $this->HandleRelationshipsWithFinanceService();
 
         $this->handleRelationsWithProductionService();
+
+        User::resolveRelationUsing("addresses", function ($addresses) {
+            return $addresses->morphMany(Address::class, "addressable");
+        });
     }
 
 

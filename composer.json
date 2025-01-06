@@ -14,7 +14,9 @@
         "nikookherad/cashier": "*",
         "nikookherad/finance": "*",
         "nikookherad/loyalty": "*",
-        "nikookherad/production": "*"
+        "nikookherad/production": "*",
+        "nikookherad/address": "*",
+        "nikookherad/shipping": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -61,6 +63,14 @@
         {
             "type": "path",
             "url": "./app/Services/Attachment"
+        },
+        {
+            "type": "path",
+            "url": "./app/Services/Address"
+        },
+        {
+            "type": "path",
+            "url": "./app/Services/Shipping"
         }
     ],
     "scripts": {

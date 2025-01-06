@@ -19,7 +19,7 @@ class ProductDetail extends Model
         "price",
         "tax",
         "discount",
-        "discount_percentage",
+//        "discount_percentage",
         "discount_expired_at",
         "quantity_add_from_prev",
         "quantity",
