@@ -35,6 +35,8 @@ trait BasketTrait
 
     public function setBasketBoughtAt($basket_id)
     {
-
+        return Basket::query()
+            ->where("id", $basket_id)
+            ->update(["bought_at" => now()]);
     }
 }
