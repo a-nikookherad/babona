@@ -1,6 +1,6 @@
 <?php
 
-namespace Attachment;
+namespace Shipping;
 
 use Illuminate\Support\Facades\Facade;
 use Shipping\Contracts\ShippingServiceInterface;

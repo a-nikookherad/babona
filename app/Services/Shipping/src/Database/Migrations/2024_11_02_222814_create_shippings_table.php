@@ -13,12 +13,32 @@ return new class extends Migration {
         Schema::create('shippings', function (Blueprint $table) {
             $table->id();
 
+            $table->string("label")
+                ->nullable();
+
+            $table->uuid("uuid")
+                ->nullable();
+
+            $table->unsignedBigInteger("carrier_id")
+                ->comment("user id with carrier role")
+                ->nullable();
+
+            $table->enum("status", [
+                "doing",
+                "done",
+            ])->default("doing");
+
+            $table->enum("type", [
+                "reverse",
+                "normal",
+            ])->default("normal");
+
             $table->unsignedBigInteger("source_id")
-                ->comment("address_id")
+                ->comment("address id")
                 ->nullable();
 
             $table->unsignedBigInteger("destination_id")
-                ->comment("address_id")
+                ->comment("address id")
                 ->nullable();
 
             $table->timestamps();

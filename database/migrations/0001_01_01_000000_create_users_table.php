@@ -29,6 +29,7 @@ return new class extends Migration {
                 "admin",
                 "accountant",
                 "customer",
+                "carrier",
             ])
                 ->default("customer")
                 ->nullable();
