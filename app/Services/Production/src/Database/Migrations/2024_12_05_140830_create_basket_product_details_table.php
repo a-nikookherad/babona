@@ -21,11 +21,12 @@ return new class extends Migration {
             $table->string("return_description")
                 ->nullable();
 
+            $table->unsignedBigInteger("basket_id")
+                ->index();
             $table->foreign("basket_id")
                 ->references("id")
                 ->on("baskets");
-            $table->unsignedBigInteger("basket_id")
-                ->index();
+
             $table->unsignedBigInteger("product_detail_id")
                 ->index();
             $table->foreign("product_detail_id")

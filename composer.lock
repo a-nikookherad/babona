@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2c57c5bd89275951920f83a9d71d2968",
+    "content-hash": "84207cb1d31b358f25b5307a1b76aa46",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -1120,6 +1120,47 @@
                 }
             ],
             "time": "2023-12-03T19:50:20+00:00"
+        },
+        {
+            "name": "imanghafoori/taggable",
+            "version": "v1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "./app/Services/Taggable",
+                "reference": "142812950ea92bd621237f33d6b9f32a323492f5"
+            },
+            "require": {
+                "laravel/framework": "^11.9",
+                "php": ">=7.1.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Imanghafoori\\Tags\\TempTagServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Imanghafoori\\Tags\\": "src/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "vendor/bin/phpunit"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Laravel Temporary Tag simplify tagging Eloquent models.",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "laravel/framework",
@@ -2708,9 +2749,10 @@
             "dist": {
                 "type": "path",
                 "url": "./app/Services/Production",
-                "reference": "32eb581716c80050a491ac9d4546c926042b61a8"
+                "reference": "14e4d261bfec2a1110881ccf70e929026f45bc2a"
             },
             "require": {
+                "imanghafoori/taggable": "*",
                 "laravel/framework": "^11.9",
                 "morilog/jalali": "3.*",
                 "nikookherad/attachment": "*",

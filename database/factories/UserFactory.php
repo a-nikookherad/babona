@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Merchant;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -24,12 +25,14 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'id' => fake()->numberBetween(1,10),
+            'id' => fake()->numberBetween(1, 10),
             'name' => fake()->name(),
             'family' => fake()->lastName(),
             'phone_number' => fake()->phoneNumber(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
+            'merchant_id' => Merchant::factory()
+                ->create()->id,
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
         ];
@@ -40,7 +43,7 @@ class UserFactory extends Factory
      */
     public function unverified(): static
     {
-        return $this->state(fn (array $attributes) => [
+        return $this->state(fn(array $attributes) => [
             'email_verified_at' => null,
         ]);
     }

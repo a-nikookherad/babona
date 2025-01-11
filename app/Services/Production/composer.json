@@ -12,7 +12,8 @@
         "laravel/framework": "^11.9",
         "morilog/jalali": "3.*",
         "nikookherad/response": "*",
-        "nikookherad/attachment": "*"
+        "nikookherad/attachment": "*",
+        "imanghafoori/taggable": "*"
     },
     "extra": {
         "laravel": {

@@ -14,12 +14,15 @@
         <!--<testsuite name="services">
             <directory>app/Services</directory>
         </testsuite>-->
-<!--        <testsuite name="address">
+        <testsuite name="production">
+            <directory>app/Services/Production</directory>
+        </testsuite>
+        <!--<testsuite name="address">
             <directory>app/Services/Address</directory>
         </testsuite>-->
-        <testsuite name="shipping">
+        <!--<testsuite name="shipping">
             <directory>app/Services/Shipping</directory>
-        </testsuite>
+        </testsuite>-->
     </testsuites>
     <source>
         <include>

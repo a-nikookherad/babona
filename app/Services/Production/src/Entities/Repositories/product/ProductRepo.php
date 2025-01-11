@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @method static ProductRepoService all()
  * @method static ProductRepoService paginate(int $perPage)
+ * @method static ProductRepoService getByFilterPaginate($filter, $perPage)
  * @method static ProductRepoService getById($id, array $with = [])
  * @method static ProductRepoService getByRelation($relation, $whereHas, $where = [], $with = [])
  * @method static ProductRepoService store($data)

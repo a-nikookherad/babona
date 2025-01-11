@@ -13,8 +13,4 @@ class ProductionService
     use CategoryTrait, ProductTrait, ProductDetailTrait, BasketTrait;
 
 
-    public function products(callable $filter, int $perPage = 10)
-    {
-        return ProductRepo::getByFilterPaginate($filter, $perPage);
-    }
 }

@@ -4,16 +4,18 @@ namespace Production\Entities\Models;
 
 use App\Models\Tag;
 use Attachment\Entities\Models\File;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Production\Database\Factories\CategoryFactory;
 
 class Category extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes,HasFactory;
 
     protected $fillable = [
         "slug",
@@ -25,6 +27,10 @@ class Category extends Model
         "jsonld",
     ];
 
+    public static function newFactory()
+    {
+        return CategoryFactory::new();
+    }
     public function parent(): BelongsTo
     {
         return $this->belongsTo(Category::class, "parent_id");

@@ -32,4 +32,9 @@ trait BasketTrait
             });
         return $basket->productDetails()->sync($productDetailData);
     }
+
+    public function setBasketBoughtAt($basket_id)
+    {
+
+    }
 }

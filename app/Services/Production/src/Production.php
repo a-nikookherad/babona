@@ -15,12 +15,15 @@ use Illuminate\Support\Facades\Facade;
  * @method static ProductionService products()
  * @method static ProductionService productsPaginate(array $filter, int $perPage)
  * @method static ProductionService product($id)
- * @method static ProductionService createProduct($request)
- * @method static ProductionService editProduct($product_id, $request)
+ * @method static ProductionService createProduct($request, $currentUser)
+ * @method static ProductionService editProduct($product_id, $request, $currentUser)
  * @method static ProductionService destroyProduct($id)
+ * @method static ProductionService increaseProductDetailsQuantities($productDetails_id, $currentUser, $count = 1)
+ * @method static ProductionService decreaseProductDetailsQuantities($productDetails_id, $currentUser, $count = 1)
  *
  * @method static ProductionService basket($user_id)
  * @method static ProductionService addToTheBasket($user_id, $productDetails)
+ * @method static ProductionService setBasketBoughtAt($basket_id)
  */
 class Production extends Facade
 {

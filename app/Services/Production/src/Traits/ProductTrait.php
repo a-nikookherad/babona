@@ -8,11 +8,13 @@ use Production\Entities\Repositories\product\ProductRepo;
 
 trait ProductTrait
 {
-
-    public function createProduct($request)
+    public function products(callable $filter, int $perPage = 10)
     {
-        $currentUser = auth()->user();
+        return ProductRepo::getByFilterPaginate($filter, $perPage);
+    }
 
+    public function createProduct($request, $currentUser)
+    {
         $productData = $this->getProductData($request);
 
         $product = ProductRepo::store($productData);
@@ -23,13 +25,13 @@ trait ProductTrait
 
         $this->handleProductImages($request, $product);
 
+        $this->handleProductTags($request, $product);
+
         return $product;
     }
 
-    public function editProduct($product_id, $request)
+    public function editProduct($product_id, $request, $currentUser)
     {
-        $currentUser = auth()->user();
-
         $productData = $this->getProductData($request);
 
         ProductRepo::update($product_id, $productData);
@@ -41,6 +43,8 @@ trait ProductTrait
         $this->handleProductThumbnail($request, $product);
 
         $this->handleProductImages($request, $product);
+
+        $this->handleProductTags($request, $product);
 
         return $product;
     }
@@ -60,6 +64,8 @@ trait ProductTrait
 
         return $allow;
     }
+
+
 
     private function handleProductDetails($request, $product, $currentUser): void
     {
@@ -175,5 +181,15 @@ trait ProductTrait
             "category_id",
         ]);
         return $productData;
+    }
+
+    private function handleProductTags($request, $product): void
+    {
+        if ($request->filled("tags")) {
+            foreach ($request->tags as $tag) {
+                tempTags($product)->unTag($tag["name"]);
+                tempTags($product)->tagIt($tag["name"], now()->addDays(7), ["description" => $tag["description"]]);
+            }
+        }
     }
 }

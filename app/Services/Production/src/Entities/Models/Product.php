@@ -10,11 +10,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Imanghafoori\Tags\Traits\hasTempTags;
 use Production\Database\Factories\ProductFactory;
 
 class Product extends Model
 {
-    use SoftDeletes, HasFactory;
+    use SoftDeletes, HasFactory,hasTempTags;
 
     protected $fillable = [
         "slug",

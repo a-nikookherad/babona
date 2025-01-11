@@ -3,33 +3,43 @@
 namespace Production\Traits;
 
 
-use Production\Entities\Repositories\price\PriceRepo;
+use Illuminate\Support\ItemNotFoundException;
+use Production\Entities\Repositories\detail\ProductDetailRepo;
+use Symfony\Component\Finder\Exception\AccessDeniedException;
 
 trait ProductDetailTrait
 {
-    public function prices(array $filter, int $perPage)
+    public function increaseProductDetailsQuantities($productDetails_id, $currentUser, $count = 1)
     {
-        return PriceRepo::prices($filter, $perPage);
+        $productDetails = $this->getProductDetails($productDetails_id, $currentUser);
+
+        $productDetails->quantity = $productDetails->quantity + $count;
+        $productDetails->save();
+        return $productDetails;
     }
 
-    public function price($id)
+    public function decreaseProductDetailsQuantities($productDetails_id, $currentUser, $count = 1)
     {
-        return PriceRepo::price($id);
+        $productDetails = $this->getProductDetails($productDetails_id, $currentUser);
+
+        $productDetails->quantity = $productDetails->quantity - $count;
+        $productDetails->save();
+        return $productDetails;
     }
 
-    public function addPrice(array $data)
+    private function getProductDetails($productDetails_id, $currentUser)
     {
-        return PriceRepo::store($data);
-    }
+        $productDetails = ProductDetailRepo::getById($productDetails_id);
 
-    public function editPrice($id, array $data)
-    {
-        return PriceRepo::update($id, $data);
-    }
+        if (!$productDetails) {
+            throw new ItemNotFoundException("This product details not exists");
+        }
 
-    public function destroyPrice($id)
-    {
-        return PriceRepo::delete($id);
-
+        //check authorization to change quantity
+        if ($productDetails->merchant_id != $currentUser->merchant_id) {
+            //return or rise an error
+            throw new AccessDeniedException("You can't manipulate this details for this product because you are not owner of this product");
+        }
+        return $productDetails;
     }
 }

@@ -28,6 +28,9 @@
         "phpunit/phpunit": "^11.0.1"
     },
     "autoload": {
+        "files": [
+            "app/Helpers.php"
+        ],
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
@@ -71,6 +74,10 @@
         {
             "type": "path",
             "url": "./app/Services/Shipping"
+        },
+        {
+            "type": "path",
+            "url": "./app/Services/Taggable"
         }
     ],
     "scripts": {
