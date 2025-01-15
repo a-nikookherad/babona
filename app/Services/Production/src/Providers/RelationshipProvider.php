@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\ServiceProvider;
 use Production\Entities\Models\Category;
 use Production\Entities\Models\Product;
+use Production\Entities\Models\ReturnProduct;
 use Production\Entities\Observers\CategoryObserver;
 use Production\Entities\Observers\ProductObserver;
 
@@ -27,6 +28,7 @@ class RelationshipProvider extends ServiceProvider
         Relation::enforceMorphMap([
             'product' => Product::class,
             'category' => Category::class,
+            'return_product' => ReturnProduct::class,
         ]);
     }
 

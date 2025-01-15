@@ -15,10 +15,10 @@ trait CategoryMigrationTrait
         Schema::disableForeignKeyConstraints();
         $path = Str::replace(base_path('\\'), "", __DIR__ . "/../Database/Migrations/");
         Artisan::call("migrate", ["--path" => $path]);
-        File::up();
+//        File::up();
     }
 
-    public function tearDown(): void
+    public function _tearDown(): void
     {
         Artisan::call("migrate:rollback");
         File::down();

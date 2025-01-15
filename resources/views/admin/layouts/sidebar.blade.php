@@ -77,7 +77,7 @@
                         <div class="menu-item">
                             <!--begin:Menu link-->
                             <a class="menu-link @if (request()->routeIs('dashboard')) {{"active"}} @endif"
-                               href="{{route("dashboard")}}">
+                               href="{{route("admin.dashboard")}}">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>

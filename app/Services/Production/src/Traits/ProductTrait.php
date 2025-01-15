@@ -3,8 +3,12 @@
 namespace Production\Traits;
 
 use Attachment\Attachment;
+use Production\Entities\Repositories\basket\BasketRepo;
 use Production\Entities\Repositories\detail\ProductDetailRepo;
 use Production\Entities\Repositories\product\ProductRepo;
+use Production\Entities\Repositories\return\ReturnProductRepo;
+use Production\Production;
+use Symfony\Component\Finder\Exception\AccessDeniedException;
 
 trait ProductTrait
 {
@@ -65,7 +69,33 @@ trait ProductTrait
         return $allow;
     }
 
+    public function requestToReturnProduct($request)
+    {
+        $basket = BasketRepo::getById($request->basket_id);
+        if ($basket->bought_at === null) {
+            throw new AccessDeniedException("You can't return the basket which was not bought");
+        }
 
+        //get return product data
+        $data = $request->only([
+            "reason",
+            "description",
+            "request_at",
+            "return_at",
+            "basket_id",
+        ]);
+        $returnProduct = ReturnProductRepo::store($data);
+
+        //set attachment data
+        $returnProductImagePath = config("production.request_to_return_product_images") . DIRECTORY_SEPARATOR . $returnProduct->id;
+        foreach ($request->file("attachments") as $attachmentFile) {
+            $attachment = Attachment::setAttachment()
+                ->prepareAttributes($attachmentFile, $returnProductImagePath, "attachment")
+                ->storeFileToStorage()
+                ->getAttachment();
+            $returnProduct->attachments()->save($attachment);
+        }
+    }
 
     private function handleProductDetails($request, $product, $currentUser): void
     {

@@ -28,9 +28,9 @@ class MerchantSeeder extends Seeder
                 "brand" => "Babona",
             ],
             [
-                "name" => "parsian_push",
+                "name" => "parsian_posh",
                 "fa_name" => "پارسیان پوش",
-                "brand" => "PARSIAN PUSH",
+                "brand" => "Parsian Posh",
             ],
         ];
     }

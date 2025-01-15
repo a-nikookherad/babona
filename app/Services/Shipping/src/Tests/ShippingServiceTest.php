@@ -2,7 +2,6 @@
 
 namespace Shipping\Tests;
 
-use Attachment\Shipping;
 use Tests\TestCase;
 
 class ShippingServiceTest extends TestCase
@@ -11,7 +10,7 @@ class ShippingServiceTest extends TestCase
     public function test_shipping_service(): void
     {
         $this->assertTrue(true);
-        Shipping::
+//        Shipping::
     }
 
 }

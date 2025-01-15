@@ -16,8 +16,10 @@ return new class extends Migration {
 
             $table->dateTime("request_to_return")
                 ->nullable();
+
             $table->integer("return_quantity")
                 ->default(0);
+
             $table->string("return_description")
                 ->nullable();
 

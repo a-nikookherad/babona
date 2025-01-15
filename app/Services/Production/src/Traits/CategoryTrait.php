@@ -48,16 +48,20 @@ trait CategoryTrait
         CategoryRepo::update($id, $data);
         $category = CategoryRepo::getById($id, ["thumbnail"]);
         $thumbnail = $request->file("thumbnail");
-
         if (!$thumbnail) {
             return $category;
         }
         $categoryPath = config("production.category_thumbnail_storage_path");
-        Attachment::setAttachment($category->thumbnail)
+        $attachment = Attachment::setAttachment($category->thumbnail)
             ->deleteFileFromStorage()
             ->prepareAttributes($thumbnail, $categoryPath, "thumbnail", $category->id, $category->fa_name)
             ->storeFileToStorage()
-            ->update();
+            ->getAttachment();
+        if ($category->thumbnail) {
+            $attachment->update();
+        } else {
+            $category->thumbnail()->save($attachment);
+        }
         return $category;
     }
 

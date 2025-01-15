@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @method static ProductionService categories()
  * @method static ProductionService categoriesPaginate(int $perPage)
+ * @method static ProductionService categoriesByPluck(array $columns)
  * @method static ProductionService category($id, $with)
  * @method static ProductionService createCategory($request)
  * @method static ProductionService editCategory($category_id, $request)
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static ProductionService createProduct($request, $currentUser)
  * @method static ProductionService editProduct($product_id, $request, $currentUser)
  * @method static ProductionService destroyProduct($id)
+ * @method static ProductionService requestToReturnProduct($request)
  * @method static ProductionService increaseProductDetailsQuantities($productDetails_id, $currentUser, $count = 1)
  * @method static ProductionService decreaseProductDetailsQuantities($productDetails_id, $currentUser, $count = 1)
  *
@@ -27,6 +29,13 @@ use Illuminate\Support\Facades\Facade;
  */
 class Production extends Facade
 {
+    public static $mapStatus = [
+        "upcoming" => "پیش رو",
+        "waiting" => "درانتظار",
+        "published" => "منتشرشده",
+        "archive" => "غیرفعال",
+    ];
+
     public static function getFacadeAccessor()
     {
         return ProductionService::class;

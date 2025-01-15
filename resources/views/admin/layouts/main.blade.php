@@ -485,84 +485,153 @@
                             </div>
                             <!--end:Menu item-->
                             <!--begin:Menu item-->
-                            <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
-                                 data-kt-menu-placement="bottom-end"
-                                 class="menu-item menu-lg-down-accordion me-0 me-lg-2">
-                                <!--begin:Menu link-->
-                                <span class="menu-link">
-											<span class="menu-title">صفحات</span>
-											<span class="menu-arrow d-lg-none"></span>
-										</span>
-                                <!--end:Menu link-->
-                                <!--begin:Menu sub-->
-                                <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0">
-                                    <!--begin:صفحات menu-->
-                                    <div class="menu-active-bg px-4 px-lg-0">
-                                        <!--begin:Tabs nav-->
-                                        <div class="d-flex w-100 overflow-auto">
-                                            <ul class="nav nav-stretch nav-line-tabs fw-bold fs-6 p-0 p-lg-10 flex-nowrap flex-grow-1">
-                                                <!--begin:Nav item-->
-                                                <li class="nav-item mx-lg-1">
-                                                    <a class="nav-link py-3 py-lg-6 active text-active-primary" href="#"
-                                                       data-bs-toggle="tab"
-                                                       data-bs-target="#kt_app_header_menu_pages_pages">عمومی</a>
-                                                </li>
-                                                <!--end:Nav item-->
-                                                <!--begin:Nav item-->
-                                                <li class="nav-item mx-lg-1">
-                                                    <a class="nav-link py-3 py-lg-6 text-active-primary" href="#"
-                                                       data-bs-toggle="tab"
-                                                       data-bs-target="#kt_app_header_menu_pages_account">اکانت</a>
-                                                </li>
-                                                <!--end:Nav item-->
-                                                <!--begin:Nav item-->
-                                                <li class="nav-item mx-lg-1">
-                                                    <a class="nav-link py-3 py-lg-6 text-active-primary" href="#"
-                                                       data-bs-toggle="tab"
-                                                       data-bs-target="#kt_app_header_menu_pages_authentication">احراز
-                                                        هویت</a>
-                                                </li>
-                                                <!--end:Nav item-->
-                                                <!--begin:Nav item-->
-                                                <li class="nav-item mx-lg-1">
-                                                    <a class="nav-link py-3 py-lg-6 text-active-primary" href="#"
-                                                       data-bs-toggle="tab"
-                                                       data-bs-target="#kt_app_header_menu_pages_utilities">ابزارها</a>
-                                                </li>
-                                                <!--end:Nav item-->
-                                                <!--begin:Nav item-->
-                                                <li class="nav-item mx-lg-1">
-                                                    <a class="nav-link py-3 py-lg-6 text-active-primary" href="#"
-                                                       data-bs-toggle="tab"
-                                                       data-bs-target="#kt_app_header_menu_pages_widgets">ابزارک</a>
-                                                </li>
-                                                <!--end:Nav item-->
-                                            </ul>
-                                        </div>
-                                        <!--end:Tabs nav-->
-                                        <!--begin:Tab content-->
-                                        <div class="tab-content py-4 py-lg-8 px-lg-7">
-                                            <!--begin:Tab pane-->
-                                            <div class="tab-pane active w-lg-1000px"
-                                                 id="kt_app_header_menu_pages_pages">
-                                                <!--begin:Row-->
-                                                <div class="row">
-                                                    <!--begin:Col-->
-                                                    <div class="col-lg-8">
-                                                        <!--begin:Row-->
-                                                        <div class="row">
-                                                            <!--begin:Col-->
-                                                            <div class="col-lg-3 mb-6 mb-lg-0">
+                        {{--<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
+                             data-kt-menu-placement="bottom-end"
+                             class="menu-item menu-lg-down-accordion me-0 me-lg-2">
+                            <!--begin:Menu link-->
+                            <span class="menu-link">
+                                        <span class="menu-title">صفحات</span>
+                                        <span class="menu-arrow d-lg-none"></span>
+                                    </span>
+                            <!--end:Menu link-->
+                            <!--begin:Menu sub-->
+                            <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0">
+                                <!--begin:صفحات menu-->
+                                <div class="menu-active-bg px-4 px-lg-0">
+                                    <!--begin:Tabs nav-->
+                                    <div class="d-flex w-100 overflow-auto">
+                                        <ul class="nav nav-stretch nav-line-tabs fw-bold fs-6 p-0 p-lg-10 flex-nowrap flex-grow-1">
+                                            <!--begin:Nav item-->
+                                            <li class="nav-item mx-lg-1">
+                                                <a class="nav-link py-3 py-lg-6 active text-active-primary" href="#"
+                                                   data-bs-toggle="tab"
+                                                   data-bs-target="#kt_app_header_menu_pages_pages">عمومی</a>
+                                            </li>
+                                            <!--end:Nav item-->
+                                            <!--begin:Nav item-->
+                                            <li class="nav-item mx-lg-1">
+                                                <a class="nav-link py-3 py-lg-6 text-active-primary" href="#"
+                                                   data-bs-toggle="tab"
+                                                   data-bs-target="#kt_app_header_menu_pages_account">اکانت</a>
+                                            </li>
+                                            <!--end:Nav item-->
+                                            <!--begin:Nav item-->
+                                            <li class="nav-item mx-lg-1">
+                                                <a class="nav-link py-3 py-lg-6 text-active-primary" href="#"
+                                                   data-bs-toggle="tab"
+                                                   data-bs-target="#kt_app_header_menu_pages_authentication">احراز
+                                                    هویت</a>
+                                            </li>
+                                            <!--end:Nav item-->
+                                            <!--begin:Nav item-->
+                                            <li class="nav-item mx-lg-1">
+                                                <a class="nav-link py-3 py-lg-6 text-active-primary" href="#"
+                                                   data-bs-toggle="tab"
+                                                   data-bs-target="#kt_app_header_menu_pages_utilities">ابزارها</a>
+                                            </li>
+                                            <!--end:Nav item-->
+                                            <!--begin:Nav item-->
+                                            <li class="nav-item mx-lg-1">
+                                                <a class="nav-link py-3 py-lg-6 text-active-primary" href="#"
+                                                   data-bs-toggle="tab"
+                                                   data-bs-target="#kt_app_header_menu_pages_widgets">ابزارک</a>
+                                            </li>
+                                            <!--end:Nav item-->
+                                        </ul>
+                                    </div>
+                                    <!--end:Tabs nav-->
+                                    <!--begin:Tab content-->
+                                    <div class="tab-content py-4 py-lg-8 px-lg-7">
+                                        <!--begin:Tab pane-->
+                                        <div class="tab-pane active w-lg-1000px"
+                                             id="kt_app_header_menu_pages_pages">
+                                            <!--begin:Row-->
+                                            <div class="row">
+                                                <!--begin:Col-->
+                                                <div class="col-lg-8">
+                                                    <!--begin:Row-->
+                                                    <div class="row">
+                                                        <!--begin:Col-->
+                                                        <div class="col-lg-3 mb-6 mb-lg-0">
+                                                            <!--begin:Menu heading-->
+                                                            <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">کاربر
+                                                                پروفایل</h4>
+                                                            <!--end:Menu heading-->
+                                                            <!--begin:Menu item-->
+                                                            <div class="menu-item p-0 m-0">
+                                                                <!--begin:Menu link-->
+                                                                <a href="../../demo1/dist/pages/user-profile/overview.html"
+                                                                   class="menu-link">
+                                                                    <span class="menu-title">بررسی اجمالی</span>
+                                                                </a>
+                                                                <!--end:Menu link-->
+                                                            </div>
+                                                            <!--end:Menu item-->
+                                                            <!--begin:Menu item-->
+                                                            <div class="menu-item p-0 m-0">
+                                                                <!--begin:Menu link-->
+                                                                <a href="../../demo1/dist/pages/user-profile/projects.html"
+                                                                   class="menu-link">
+                                                                    <span class="menu-title">پروژه ها</span>
+                                                                </a>
+                                                                <!--end:Menu link-->
+                                                            </div>
+                                                            <!--end:Menu item-->
+                                                            <!--begin:Menu item-->
+                                                            <div class="menu-item p-0 m-0">
+                                                                <!--begin:Menu link-->
+                                                                <a href="../../demo1/dist/pages/user-profile/campaigns.html"
+                                                                   class="menu-link">
+                                                                    <span class="menu-title">کمپین ها</span>
+                                                                </a>
+                                                                <!--end:Menu link-->
+                                                            </div>
+                                                            <!--end:Menu item-->
+                                                            <!--begin:Menu item-->
+                                                            <div class="menu-item p-0 m-0">
+                                                                <!--begin:Menu link-->
+                                                                <a href="../../demo1/dist/pages/user-profile/documents.html"
+                                                                   class="menu-link">
+                                                                    <span class="menu-title">اسناد</span>
+                                                                </a>
+                                                                <!--end:Menu link-->
+                                                            </div>
+                                                            <!--end:Menu item-->
+                                                            <!--begin:Menu item-->
+                                                            <div class="menu-item p-0 m-0">
+                                                                <!--begin:Menu link-->
+                                                                <a href="../../demo1/dist/pages/user-profile/followers.html"
+                                                                   class="menu-link">
+                                                                    <span class="menu-title">فالوورها</span>
+                                                                </a>
+                                                                <!--end:Menu link-->
+                                                            </div>
+                                                            <!--end:Menu item-->
+                                                            <!--begin:Menu item-->
+                                                            <div class="menu-item p-0 m-0">
+                                                                <!--begin:Menu link-->
+                                                                <a href="../../demo1/dist/pages/user-profile/activity.html"
+                                                                   class="menu-link">
+                                                                    <span class="menu-title">فعالیت</span>
+                                                                </a>
+                                                                <!--end:Menu link-->
+                                                            </div>
+                                                            <!--end:Menu item-->
+                                                        </div>
+                                                        <!--end:Col-->
+                                                        <!--begin:Col-->
+                                                        <div class="col-lg-3 mb-6 mb-lg-0">
+                                                            <!--begin:Menu section-->
+                                                            <div class="mb-6">
                                                                 <!--begin:Menu heading-->
-                                                                <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">کاربر
-                                                                    پروفایل</h4>
+                                                                <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">شرکت</h4>
                                                                 <!--end:Menu heading-->
                                                                 <!--begin:Menu item-->
                                                                 <div class="menu-item p-0 m-0">
                                                                     <!--begin:Menu link-->
-                                                                    <a href="../../demo1/dist/pages/user-profile/overview.html"
+                                                                    <a href="../../demo1/dist/pages/about.html"
                                                                        class="menu-link">
-                                                                        <span class="menu-title">بررسی اجمالی</span>
+                                                                        <span class="menu-title">درباره</span>
                                                                     </a>
                                                                     <!--end:Menu link-->
                                                                 </div>
@@ -570,9 +639,9 @@
                                                                 <!--begin:Menu item-->
                                                                 <div class="menu-item p-0 m-0">
                                                                     <!--begin:Menu link-->
-                                                                    <a href="../../demo1/dist/pages/user-profile/projects.html"
+                                                                    <a href="../../demo1/dist/pages/team.html"
                                                                        class="menu-link">
-                                                                        <span class="menu-title">پروژه ها</span>
+                                                                        <span class="menu-title">تیم ما</span>
                                                                     </a>
                                                                     <!--end:Menu link-->
                                                                 </div>
@@ -580,9 +649,9 @@
                                                                 <!--begin:Menu item-->
                                                                 <div class="menu-item p-0 m-0">
                                                                     <!--begin:Menu link-->
-                                                                    <a href="../../demo1/dist/pages/user-profile/campaigns.html"
+                                                                    <a href="../../demo1/dist/pages/contact.html"
                                                                        class="menu-link">
-                                                                        <span class="menu-title">کمپین ها</span>
+                                                                        <span class="menu-title">تماس با ما</span>
                                                                     </a>
                                                                     <!--end:Menu link-->
                                                                 </div>
@@ -590,9 +659,9 @@
                                                                 <!--begin:Menu item-->
                                                                 <div class="menu-item p-0 m-0">
                                                                     <!--begin:Menu link-->
-                                                                    <a href="../../demo1/dist/pages/user-profile/documents.html"
+                                                                    <a href="../../demo1/dist/pages/licenses.html"
                                                                        class="menu-link">
-                                                                        <span class="menu-title">اسناد</span>
+                                                                        <span class="menu-title">لاینسس شده</span>
                                                                     </a>
                                                                     <!--end:Menu link-->
                                                                 </div>
@@ -600,7 +669,165 @@
                                                                 <!--begin:Menu item-->
                                                                 <div class="menu-item p-0 m-0">
                                                                     <!--begin:Menu link-->
-                                                                    <a href="../../demo1/dist/pages/user-profile/followers.html"
+                                                                    <a href="../../demo1/dist/pages/sitemap.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">نقشه سایت</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                            </div>
+                                                            <!--end:Menu section-->
+                                                            <!--begin:Menu section-->
+                                                            <div class="mb-0">
+                                                                <!--begin:Menu heading-->
+                                                                <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">
+                                                                    مشاغل</h4>
+                                                                <!--end:Menu heading-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/pages/careers/list.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">مشاغل لیست</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/pages/careers/apply.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">مشاغل تایید</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                            </div>
+                                                            <!--end:Menu section-->
+                                                        </div>
+                                                        <!--end:Col-->
+                                                        <!--begin:Col-->
+                                                        <div class="col-lg-3 mb-6 mb-lg-0">
+                                                            <!--begin:Menu section-->
+                                                            <div class="mb-6">
+                                                                <!--begin:Menu heading-->
+                                                                <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">سوالات
+                                                                    متداول</h4>
+                                                                <!--end:Menu heading-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/pages/faq/classic.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">کلاسیک</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/pages/faq/extended.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">اضافه شده</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                            </div>
+                                                            <!--end:Menu section-->
+                                                            <!--begin:Menu section-->
+                                                            <div class="mb-6">
+                                                                <!--begin:Menu heading-->
+                                                                <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">
+                                                                    مقالات</h4>
+                                                                <!--end:Menu heading-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/pages/blog/home.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">مقالات خانه</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/pages/blog/post.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">پست مقالات</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                            </div>
+                                                            <!--end:Menu section-->
+                                                            <!--begin:Menu section-->
+                                                            <div class="mb-0">
+                                                                <!--begin:Menu heading-->
+                                                                <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">قیمت
+                                                                    گذاری</h4>
+                                                                <!--end:Menu heading-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/pages/pricing/column.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">ستونی</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/pages/pricing/table.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">جدول</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                            </div>
+                                                            <!--end:Menu section-->
+                                                        </div>
+                                                        <!--end:Col-->
+                                                        <!--begin:Col-->
+                                                        <div class="col-lg-3 mb-6 mb-lg-0">
+                                                            <!--begin:Menu section-->
+                                                            <div class="mb-0">
+                                                                <!--begin:Menu heading-->
+                                                                <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">شبکه
+                                                                    اجتماعی</h4>
+                                                                <!--end:Menu heading-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/pages/social/feeds.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">تغذیه</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/pages/social/activity.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">فعالیت</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/pages/social/followers.html"
                                                                        class="menu-link">
                                                                         <span class="menu-title">فالوورها</span>
                                                                     </a>
@@ -610,2859 +837,2632 @@
                                                                 <!--begin:Menu item-->
                                                                 <div class="menu-item p-0 m-0">
                                                                     <!--begin:Menu link-->
-                                                                    <a href="../../demo1/dist/pages/user-profile/activity.html"
-                                                                       class="menu-link">
-                                                                        <span class="menu-title">فعالیت</span>
-                                                                    </a>
-                                                                    <!--end:Menu link-->
-                                                                </div>
-                                                                <!--end:Menu item-->
-                                                            </div>
-                                                            <!--end:Col-->
-                                                            <!--begin:Col-->
-                                                            <div class="col-lg-3 mb-6 mb-lg-0">
-                                                                <!--begin:Menu section-->
-                                                                <div class="mb-6">
-                                                                    <!--begin:Menu heading-->
-                                                                    <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">شرکت</h4>
-                                                                    <!--end:Menu heading-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/pages/about.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">درباره</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/pages/team.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">تیم ما</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/pages/contact.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">تماس با ما</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/pages/licenses.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">لاینسس شده</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/pages/sitemap.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">نقشه سایت</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                </div>
-                                                                <!--end:Menu section-->
-                                                                <!--begin:Menu section-->
-                                                                <div class="mb-0">
-                                                                    <!--begin:Menu heading-->
-                                                                    <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">
-                                                                        مشاغل</h4>
-                                                                    <!--end:Menu heading-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/pages/careers/list.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">مشاغل لیست</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/pages/careers/apply.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">مشاغل تایید</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                </div>
-                                                                <!--end:Menu section-->
-                                                            </div>
-                                                            <!--end:Col-->
-                                                            <!--begin:Col-->
-                                                            <div class="col-lg-3 mb-6 mb-lg-0">
-                                                                <!--begin:Menu section-->
-                                                                <div class="mb-6">
-                                                                    <!--begin:Menu heading-->
-                                                                    <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">سوالات
-                                                                        متداول</h4>
-                                                                    <!--end:Menu heading-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/pages/faq/classic.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">کلاسیک</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/pages/faq/extended.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">اضافه شده</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                </div>
-                                                                <!--end:Menu section-->
-                                                                <!--begin:Menu section-->
-                                                                <div class="mb-6">
-                                                                    <!--begin:Menu heading-->
-                                                                    <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">
-                                                                        مقالات</h4>
-                                                                    <!--end:Menu heading-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/pages/blog/home.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">مقالات خانه</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/pages/blog/post.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">پست مقالات</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                </div>
-                                                                <!--end:Menu section-->
-                                                                <!--begin:Menu section-->
-                                                                <div class="mb-0">
-                                                                    <!--begin:Menu heading-->
-                                                                    <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">قیمت
-                                                                        گذاری</h4>
-                                                                    <!--end:Menu heading-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/pages/pricing/column.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">ستونی</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/pages/pricing/table.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">جدول</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                </div>
-                                                                <!--end:Menu section-->
-                                                            </div>
-                                                            <!--end:Col-->
-                                                            <!--begin:Col-->
-                                                            <div class="col-lg-3 mb-6 mb-lg-0">
-                                                                <!--begin:Menu section-->
-                                                                <div class="mb-0">
-                                                                    <!--begin:Menu heading-->
-                                                                    <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">شبکه
-                                                                        اجتماعی</h4>
-                                                                    <!--end:Menu heading-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/pages/social/feeds.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">تغذیه</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/pages/social/activity.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">فعالیت</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/pages/social/followers.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">فالوورها</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/pages/social/settings.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">تنظیمات</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                </div>
-                                                                <!--end:Menu section-->
-                                                            </div>
-                                                            <!--end:Col-->
-                                                        </div>
-                                                        <!--end:Row-->
-                                                    </div>
-                                                    <!--end:Col-->
-                                                    <!--begin:Col-->
-                                                    <div class="col-lg-4">
-                                                        <img src="{{asset("admin/media/stock/600x600/img-82.jpg")}}"
-                                                             class="rounded mw-100" alt=""/>
-                                                    </div>
-                                                    <!--end:Col-->
-                                                </div>
-                                                <!--end:Row-->
-                                            </div>
-                                            <!--end:Tab pane-->
-                                            <!--begin:Tab pane-->
-                                            <div class="tab-pane w-lg-600px" id="kt_app_header_menu_pages_account">
-                                                <!--begin:Row-->
-                                                <div class="row">
-                                                    <!--begin:Col-->
-                                                    <div class="col-lg-5 mb-6 mb-lg-0">
-                                                        <!--begin:Row-->
-                                                        <div class="row">
-                                                            <!--begin:Col-->
-                                                            <div class="col-lg-6">
-                                                                <!--begin:Menu item-->
-                                                                <div class="menu-item p-0 m-0">
-                                                                    <!--begin:Menu link-->
-                                                                    <a href="../../demo1/dist/account/overview.html"
-                                                                       class="menu-link">
-                                                                        <span class="menu-title">بررسی اجمالی</span>
-                                                                    </a>
-                                                                    <!--end:Menu link-->
-                                                                </div>
-                                                                <!--end:Menu item-->
-                                                                <!--begin:Menu item-->
-                                                                <div class="menu-item p-0 m-0">
-                                                                    <!--begin:Menu link-->
-                                                                    <a href="../../demo1/dist/account/settings.html"
+                                                                    <a href="../../demo1/dist/pages/social/settings.html"
                                                                        class="menu-link">
                                                                         <span class="menu-title">تنظیمات</span>
                                                                     </a>
                                                                     <!--end:Menu link-->
                                                                 </div>
                                                                 <!--end:Menu item-->
-                                                                <!--begin:Menu item-->
-                                                                <div class="menu-item p-0 m-0">
-                                                                    <!--begin:Menu link-->
-                                                                    <a href="../../demo1/dist/account/security.html"
-                                                                       class="menu-link">
-                                                                        <span class="menu-title">امنیت</span>
-                                                                    </a>
-                                                                    <!--end:Menu link-->
-                                                                </div>
-                                                                <!--end:Menu item-->
-                                                                <!--begin:Menu item-->
-                                                                <div class="menu-item p-0 m-0">
-                                                                    <!--begin:Menu link-->
-                                                                    <a href="../../demo1/dist/account/activity.html"
-                                                                       class="menu-link">
-                                                                        <span class="menu-title">فعالیت</span>
-                                                                    </a>
-                                                                    <!--end:Menu link-->
-                                                                </div>
-                                                                <!--end:Menu item-->
-                                                                <!--begin:Menu item-->
-                                                                <div class="menu-item p-0 m-0">
-                                                                    <!--begin:Menu link-->
-                                                                    <a href="../../demo1/dist/account/billing.html"
-                                                                       class="menu-link">
-                                                                        <span class="menu-title">صورتحساب</span>
-                                                                    </a>
-                                                                    <!--end:Menu link-->
-                                                                </div>
-                                                                <!--end:Menu item-->
                                                             </div>
-                                                            <!--end:Col-->
-                                                            <!--begin:Col-->
-                                                            <div class="col-lg-6">
-                                                                <!--begin:Menu item-->
-                                                                <div class="menu-item p-0 m-0">
-                                                                    <!--begin:Menu link-->
-                                                                    <a href="../../demo1/dist/account/statements.html"
-                                                                       class="menu-link">
-                                                                        <span class="menu-title">بیانه ها</span>
-                                                                    </a>
-                                                                    <!--end:Menu link-->
-                                                                </div>
-                                                                <!--end:Menu item-->
-                                                                <!--begin:Menu item-->
-                                                                <div class="menu-item p-0 m-0">
-                                                                    <!--begin:Menu link-->
-                                                                    <a href="../../demo1/dist/account/referrals.html"
-                                                                       class="menu-link">
-                                                                        <span class="menu-title">مراجعات</span>
-                                                                    </a>
-                                                                    <!--end:Menu link-->
-                                                                </div>
-                                                                <!--end:Menu item-->
-                                                                <!--begin:Menu item-->
-                                                                <div class="menu-item p-0 m-0">
-                                                                    <!--begin:Menu link-->
-                                                                    <a href="../../demo1/dist/account/api-keys.html"
-                                                                       class="menu-link">
-                                                                        <span class="menu-title">کلید ای پی ای</span>
-                                                                    </a>
-                                                                    <!--end:Menu link-->
-                                                                </div>
-                                                                <!--end:Menu item-->
-                                                                <!--begin:Menu item-->
-                                                                <div class="menu-item p-0 m-0">
-                                                                    <!--begin:Menu link-->
-                                                                    <a href="../../demo1/dist/account/logs.html"
-                                                                       class="menu-link">
-                                                                        <span class="menu-title">گزارش</span>
-                                                                    </a>
-                                                                    <!--end:Menu link-->
-                                                                </div>
-                                                                <!--end:Menu item-->
-                                                            </div>
-                                                            <!--end:Col-->
+                                                            <!--end:Menu section-->
                                                         </div>
-                                                        <!--end:Row-->
+                                                        <!--end:Col-->
                                                     </div>
-                                                    <!--end:Col-->
-                                                    <!--begin:Col-->
-                                                    <div class="col-lg-7">
-                                                        <img src="{{asset("admin/media/stock/900x600/46.jpg")}}"
-                                                             class="rounded mw-100" alt=""/>
-                                                    </div>
-                                                    <!--end:Col-->
+                                                    <!--end:Row-->
                                                 </div>
-                                                <!--end:Row-->
-                                            </div>
-                                            <!--end:Tab pane-->
-                                            <!--begin:Tab pane-->
-                                            <div class="tab-pane w-lg-1000px"
-                                                 id="kt_app_header_menu_pages_authentication">
-                                                <!--begin:Row-->
-                                                <div class="row">
-                                                    <!--begin:Col-->
-                                                    <div class="col-lg-3 mb-6 mb-lg-0">
-                                                        <!--begin:Menu section-->
-                                                        <div class="mb-6">
-                                                            <!--begin:Menu heading-->
-                                                            <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">شرکت قالب
-                                                                بندی</h4>
-                                                            <!--end:Menu heading-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/layouts/corporate/sign-in.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">ورود</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/layouts/corporate/sign-up.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">ثبت نام</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/layouts/corporate/two-steps.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">دو مرحله ای</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/layouts/corporate/reset-password.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">ریست کلمه عبور</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/layouts/corporate/new-password.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">کلمه عبور جدید</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                        </div>
-                                                        <!--end:Menu section-->
-                                                        <!--begin:Menu section-->
-                                                        <div class="mb-0">
-                                                            <!--begin:Menu heading-->
-                                                            <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">قالب بندی</h4>
-                                                            <!--end:Menu heading-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/layouts/overlay/sign-in.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">ورود</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/layouts/overlay/sign-up.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">ثبت نام</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/layouts/overlay/two-steps.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">دو مرحله ای</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/layouts/overlay/reset-password.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">ریست کلمه عبور</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/layouts/overlay/new-password.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">کلمه عبور جدید</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                        </div>
-                                                        <!--end:Menu section-->
-                                                    </div>
-                                                    <!--end:Col-->
-                                                    <!--begin:Col-->
-                                                    <div class="col-lg-3 mb-6 mb-lg-0">
-                                                        <!--begin:Menu section-->
-                                                        <div class="mb-6">
-                                                            <!--begin:Menu heading-->
-                                                            <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">قالب بندی
-                                                                خلاقانه</h4>
-                                                            <!--end:Menu heading-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/layouts/creative/sign-in.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">ورود</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/layouts/creative/sign-up.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">ثبت نام</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/layouts/creative/two-steps.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">دو مرحله ای</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/layouts/creative/reset-password.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">ریست کلمه عبور</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/layouts/creative/new-password.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">کلمه عبور جدید</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                        </div>
-                                                        <!--end:Menu section-->
-                                                        <!--begin:Menu section-->
-                                                        <div class="mb-6">
-                                                            <!--begin:Menu heading-->
-                                                            <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">قالب بندی
-                                                                فانتزی</h4>
-                                                            <!--end:Menu heading-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/layouts/fancy/sign-in.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">ورود</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/layouts/fancy/sign-up.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">ثبت نام</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/layouts/fancy/two-steps.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">دو مرحله ای</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/layouts/fancy/reset-password.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">ریست کلمه عبور</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/layouts/fancy/new-password.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">کلمه عبور جدید</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                        </div>
-                                                        <!--end:Menu section-->
-                                                    </div>
-                                                    <!--end:Col-->
-                                                    <!--begin:Col-->
-                                                    <div class="col-lg-3 mb-6 mb-lg-0">
-                                                        <!--begin:Menu section-->
-                                                        <div class="mb-0">
-                                                            <!--begin:Menu heading-->
-                                                            <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">عمومی</h4>
-                                                            <!--end:Menu heading-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/extended/multi-steps-sign-up.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">ثبت نام چند مرحله ای</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/extended/two-factor-auth.html"
-                                                                   class="menu-link">
-                                                                    <span
-                                                                        class="menu-title">احراز هویت دومرحله ای</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/general/welcome.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">پیام خوش امد گویی</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/general/verify-email.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">تایید ایمیل</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/extended/coming-soon.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">بزودی</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/general/password-confirmation.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">تایید کلمه عبور</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/general/account-deactivated.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">اکانت غیرفعال</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/general/error-404.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">خطایی 404</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/general/error-500.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">خطایی 500</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                        </div>
-                                                        <!--end:Menu section-->
-                                                    </div>
-                                                    <!--end:Col-->
-                                                    <!--begin:Col-->
-                                                    <div class="col-lg-3 mb-6 mb-lg-0">
-                                                        <!--begin:Menu section-->
-                                                        <div class="mb-0">
-                                                            <!--begin:Menu heading-->
-                                                            <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">قالب های
-                                                                ایمیل</h4>
-                                                            <!--end:Menu heading-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/email/welcome-message.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">پیام خوش امد گویی</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/email/reset-password.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">ریست کلمه عبور</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/email/subscription-confirmed.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">اشتراک تایید شده </span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/email/card-declined.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">کارت اعتباری رد شده</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/email/promo-1.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">حرفه ای  1</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/email/promo-2.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">حرفه ای  2</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                            <!--begin:Menu item-->
-                                                            <div class="menu-item p-0 m-0">
-                                                                <!--begin:Menu link-->
-                                                                <a href="../../demo1/dist/authentication/email/promo-3.html"
-                                                                   class="menu-link">
-                                                                    <span class="menu-title">حرفه ای  3</span>
-                                                                </a>
-                                                                <!--end:Menu link-->
-                                                            </div>
-                                                            <!--end:Menu item-->
-                                                        </div>
-                                                        <!--end:Menu section-->
-                                                    </div>
-                                                    <!--end:Col-->
+                                                <!--end:Col-->
+                                                <!--begin:Col-->
+                                                <div class="col-lg-4">
+                                                    <img src="{{asset("admin/media/stock/600x600/img-82.jpg")}}"
+                                                         class="rounded mw-100" alt=""/>
                                                 </div>
-                                                <!--end:Row-->
+                                                <!--end:Col-->
                                             </div>
-                                            <!--end:Tab pane-->
-                                            <!--begin:Tab pane-->
-                                            <div class="tab-pane w-lg-1000px" id="kt_app_header_menu_pages_utilities">
-                                                <!--begin:Row-->
-                                                <div class="row">
-                                                    <!--begin:Col-->
-                                                    <div class="col-lg-7">
-                                                        <!--begin:Row-->
-                                                        <div class="row">
-                                                            <!--begin:Col-->
-                                                            <div class="col-lg-4 mb-6 mb-lg-0">
-                                                                <!--begin:Menu section-->
-                                                                <div class="mb-0">
-                                                                    <!--begin:Menu heading-->
-                                                                    <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">عمومی
-                                                                        مودال ها</h4>
-                                                                    <!--end:Menu heading-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/modals/general/invite-friends.html"
-                                                                           class="menu-link">
-                                                                            <span
-                                                                                class="menu-title">دعوت از دوستان</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/modals/general/view-users.html"
-                                                                           class="menu-link">
-                                                                            <span
-                                                                                class="menu-title">نمایش کاربران</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/modals/general/select-users.html"
-                                                                           class="menu-link">
-                                                                            <span
-                                                                                class="menu-title">انتخاب کاربران</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/modals/general/upgrade-plan.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">ارتقا طرح</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/modals/general/share-earn.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">به اشتراک بگذارید و کسب کنید</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/modals/forms/new-target.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">هدف جدید</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/modals/forms/new-card.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">کارت جدید</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/modals/forms/new-address.html"
-                                                                           class="menu-link">
-                                                                            <span
-                                                                                class="menu-title">آدرس های جدید</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/modals/forms/create-api-key.html"
-                                                                           class="menu-link">
-                                                                            <span
-                                                                                class="menu-title">ساختن ای پی آی</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/modals/forms/bidding.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">مناقصه</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                </div>
-                                                                <!--end:Menu section-->
-                                                            </div>
-                                                            <!--end:Col-->
-                                                            <!--begin:Col-->
-                                                            <div class="col-lg-4 mb-6 mb-lg-0">
-                                                                <!--begin:Menu section-->
-                                                                <div class="mb-6">
-                                                                    <!--begin:Menu heading-->
-                                                                    <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">پیشرفته
-                                                                        مودال ها</h4>
-                                                                    <!--end:Menu heading-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/modals/wizards/create-app.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">ساختن اپ</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/modals/wizards/create-campaign.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">ساختن کمپین</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/modals/wizards/create-account.html"
-                                                                           class="menu-link">
-                                                                            <span
-                                                                                class="menu-title">ساختن بیزینس </span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/modals/wizards/create-project.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">ساختن پروژه</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/modals/wizards/top-up-wallet.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">کیف پول</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/modals/wizards/offer-a-deal.html"
-                                                                           class="menu-link">
-                                                                            <span
-                                                                                class="menu-title">پیشنهاد معامله</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/modals/wizards/two-factor-authentication.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">احراز هویت دومرحله ای</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                </div>
-                                                                <!--end:Menu section-->
-                                                                <!--begin:Menu section-->
-                                                                <div class="mb-0">
-                                                                    <!--begin:Menu heading-->
-                                                                    <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">
-                                                                        جستجو</h4>
-                                                                    <!--end:Menu heading-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/search/horizontal.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">افقی</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/search/vertical.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">عمودی</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/modals/search/users.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">کاربران</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/modals/search/select-location.html"
-                                                                           class="menu-link">
-                                                                            <span
-                                                                                class="menu-title">مکان را انتخاب کنید</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                </div>
-                                                                <!--end:Menu section-->
-                                                            </div>
-                                                            <!--end:Col-->
-                                                            <!--begin:Col-->
-                                                            <div class="col-lg-4 mb-6 mb-lg-0">
-                                                                <!--begin:Menu section-->
-                                                                <div class="mb-0">
-                                                                    <!--begin:Menu heading-->
-                                                                    <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">
-                                                                        ویزارد</h4>
-                                                                    <!--end:Menu heading-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/wizards/horizontal.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">افقی</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/wizards/vertical.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">عمودی</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/wizards/two-factor-authentication.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">احراز هویت دومرحله ای</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/wizards/create-app.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">ساختن اپ</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/wizards/create-campaign.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">ساختن کمپین</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/wizards/create-account.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">ساختن اکانت</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/wizards/create-project.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">ساختن پروژه</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/modals/wizards/top-up-wallet.html"
-                                                                           class="menu-link">
-                                                                            <span class="menu-title">کیف پول</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                    <!--begin:Menu item-->
-                                                                    <div class="menu-item p-0 m-0">
-                                                                        <!--begin:Menu link-->
-                                                                        <a href="../../demo1/dist/utilities/wizards/offer-a-deal.html"
-                                                                           class="menu-link">
-                                                                            <span
-                                                                                class="menu-title">پیشنهاد معامله</span>
-                                                                        </a>
-                                                                        <!--end:Menu link-->
-                                                                    </div>
-                                                                    <!--end:Menu item-->
-                                                                </div>
-                                                                <!--end:Menu section-->
-                                                            </div>
-                                                            <!--end:Col-->
-                                                        </div>
-                                                        <!--end:Row-->
-                                                    </div>
-                                                    <!--end:Col-->
-                                                    <!--begin:Col-->
-                                                    <div class="col-lg-5 pe-lg-5">
-                                                        <img src="{{asset("admin/media/stock/600x600/img-84.jpg")}}"
-                                                             class="rounded mw-100" alt=""/>
-                                                    </div>
-                                                    <!--end:Col-->
-                                                </div>
-                                                <!--end:Row-->
-                                            </div>
-                                            <!--end:Tab pane-->
-                                            <!--begin:Tab pane-->
-                                            <div class="tab-pane w-lg-500px" id="kt_app_header_menu_pages_widgets">
-                                                <!--begin:Row-->
-                                                <div class="row">
-                                                    <!--begin:Col-->
-                                                    <div class="col-lg-4 mb-6 mb-lg-0">
-                                                        <!--begin:Menu item-->
-                                                        <div class="menu-item p-0 m-0">
-                                                            <!--begin:Menu link-->
-                                                            <a href="../../demo1/dist/widgets/lists.html"
-                                                               class="menu-link">
-                                                                <span class="menu-title">لیست ها</span>
-                                                            </a>
-                                                            <!--end:Menu link-->
-                                                        </div>
-                                                        <!--end:Menu item-->
-                                                        <!--begin:Menu item-->
-                                                        <div class="menu-item p-0 m-0">
-                                                            <!--begin:Menu link-->
-                                                            <a href="../../demo1/dist/widgets/statistics.html"
-                                                               class="menu-link">
-                                                                <span class="menu-title">امار</span>
-                                                            </a>
-                                                            <!--end:Menu link-->
-                                                        </div>
-                                                        <!--end:Menu item-->
-                                                        <!--begin:Menu item-->
-                                                        <div class="menu-item p-0 m-0">
-                                                            <!--begin:Menu link-->
-                                                            <a href="../../demo1/dist/widgets/charts.html"
-                                                               class="menu-link">
-                                                                <span class="menu-title">نمودار ها</span>
-                                                            </a>
-                                                            <!--end:Menu link-->
-                                                        </div>
-                                                        <!--end:Menu item-->
-                                                        <!--begin:Menu item-->
-                                                        <div class="menu-item p-0 m-0">
-                                                            <!--begin:Menu link-->
-                                                            <a href="../../demo1/dist/widgets/mixed.html"
-                                                               class="menu-link">
-                                                                <span class="menu-title">مخلوط</span>
-                                                            </a>
-                                                            <!--end:Menu link-->
-                                                        </div>
-                                                        <!--end:Menu item-->
-                                                        <!--begin:Menu item-->
-                                                        <div class="menu-item p-0 m-0">
-                                                            <!--begin:Menu link-->
-                                                            <a href="../../demo1/dist/widgets/tables.html"
-                                                               class="menu-link">
-                                                                <span class="menu-title">جداول</span>
-                                                            </a>
-                                                            <!--end:Menu link-->
-                                                        </div>
-                                                        <!--end:Menu item-->
-                                                        <!--begin:Menu item-->
-                                                        <div class="menu-item p-0 m-0">
-                                                            <!--begin:Menu link-->
-                                                            <a href="../../demo1/dist/widgets/feeds.html"
-                                                               class="menu-link">
-                                                                <span class="menu-title">تغذیه</span>
-                                                            </a>
-                                                            <!--end:Menu link-->
-                                                        </div>
-                                                        <!--end:Menu item-->
-                                                    </div>
-                                                    <!--end:Col-->
-                                                    <!--begin:Col-->
-                                                    <div class="col-lg-8">
-                                                        <img src="{{asset("admin/media/stock/900x600/44.jpg")}}"
-                                                             class="rounded mw-100" alt=""/>
-                                                    </div>
-                                                    <!--end:Col-->
-                                                </div>
-                                                <!--end:Row-->
-                                            </div>
-                                            <!--end:Tab pane-->
+                                            <!--end:Row-->
                                         </div>
-                                        <!--end:Tab content-->
+                                        <!--end:Tab pane-->
+                                        <!--begin:Tab pane-->
+                                        <div class="tab-pane w-lg-600px" id="kt_app_header_menu_pages_account">
+                                            <!--begin:Row-->
+                                            <div class="row">
+                                                <!--begin:Col-->
+                                                <div class="col-lg-5 mb-6 mb-lg-0">
+                                                    <!--begin:Row-->
+                                                    <div class="row">
+                                                        <!--begin:Col-->
+                                                        <div class="col-lg-6">
+                                                            <!--begin:Menu item-->
+                                                            <div class="menu-item p-0 m-0">
+                                                                <!--begin:Menu link-->
+                                                                <a href="../../demo1/dist/account/overview.html"
+                                                                   class="menu-link">
+                                                                    <span class="menu-title">بررسی اجمالی</span>
+                                                                </a>
+                                                                <!--end:Menu link-->
+                                                            </div>
+                                                            <!--end:Menu item-->
+                                                            <!--begin:Menu item-->
+                                                            <div class="menu-item p-0 m-0">
+                                                                <!--begin:Menu link-->
+                                                                <a href="../../demo1/dist/account/settings.html"
+                                                                   class="menu-link">
+                                                                    <span class="menu-title">تنظیمات</span>
+                                                                </a>
+                                                                <!--end:Menu link-->
+                                                            </div>
+                                                            <!--end:Menu item-->
+                                                            <!--begin:Menu item-->
+                                                            <div class="menu-item p-0 m-0">
+                                                                <!--begin:Menu link-->
+                                                                <a href="../../demo1/dist/account/security.html"
+                                                                   class="menu-link">
+                                                                    <span class="menu-title">امنیت</span>
+                                                                </a>
+                                                                <!--end:Menu link-->
+                                                            </div>
+                                                            <!--end:Menu item-->
+                                                            <!--begin:Menu item-->
+                                                            <div class="menu-item p-0 m-0">
+                                                                <!--begin:Menu link-->
+                                                                <a href="../../demo1/dist/account/activity.html"
+                                                                   class="menu-link">
+                                                                    <span class="menu-title">فعالیت</span>
+                                                                </a>
+                                                                <!--end:Menu link-->
+                                                            </div>
+                                                            <!--end:Menu item-->
+                                                            <!--begin:Menu item-->
+                                                            <div class="menu-item p-0 m-0">
+                                                                <!--begin:Menu link-->
+                                                                <a href="../../demo1/dist/account/billing.html"
+                                                                   class="menu-link">
+                                                                    <span class="menu-title">صورتحساب</span>
+                                                                </a>
+                                                                <!--end:Menu link-->
+                                                            </div>
+                                                            <!--end:Menu item-->
+                                                        </div>
+                                                        <!--end:Col-->
+                                                        <!--begin:Col-->
+                                                        <div class="col-lg-6">
+                                                            <!--begin:Menu item-->
+                                                            <div class="menu-item p-0 m-0">
+                                                                <!--begin:Menu link-->
+                                                                <a href="../../demo1/dist/account/statements.html"
+                                                                   class="menu-link">
+                                                                    <span class="menu-title">بیانه ها</span>
+                                                                </a>
+                                                                <!--end:Menu link-->
+                                                            </div>
+                                                            <!--end:Menu item-->
+                                                            <!--begin:Menu item-->
+                                                            <div class="menu-item p-0 m-0">
+                                                                <!--begin:Menu link-->
+                                                                <a href="../../demo1/dist/account/referrals.html"
+                                                                   class="menu-link">
+                                                                    <span class="menu-title">مراجعات</span>
+                                                                </a>
+                                                                <!--end:Menu link-->
+                                                            </div>
+                                                            <!--end:Menu item-->
+                                                            <!--begin:Menu item-->
+                                                            <div class="menu-item p-0 m-0">
+                                                                <!--begin:Menu link-->
+                                                                <a href="../../demo1/dist/account/api-keys.html"
+                                                                   class="menu-link">
+                                                                    <span class="menu-title">کلید ای پی ای</span>
+                                                                </a>
+                                                                <!--end:Menu link-->
+                                                            </div>
+                                                            <!--end:Menu item-->
+                                                            <!--begin:Menu item-->
+                                                            <div class="menu-item p-0 m-0">
+                                                                <!--begin:Menu link-->
+                                                                <a href="../../demo1/dist/account/logs.html"
+                                                                   class="menu-link">
+                                                                    <span class="menu-title">گزارش</span>
+                                                                </a>
+                                                                <!--end:Menu link-->
+                                                            </div>
+                                                            <!--end:Menu item-->
+                                                        </div>
+                                                        <!--end:Col-->
+                                                    </div>
+                                                    <!--end:Row-->
+                                                </div>
+                                                <!--end:Col-->
+                                                <!--begin:Col-->
+                                                <div class="col-lg-7">
+                                                    <img src="{{asset("admin/media/stock/900x600/46.jpg")}}"
+                                                         class="rounded mw-100" alt=""/>
+                                                </div>
+                                                <!--end:Col-->
+                                            </div>
+                                            <!--end:Row-->
+                                        </div>
+                                        <!--end:Tab pane-->
+                                        <!--begin:Tab pane-->
+                                        <div class="tab-pane w-lg-1000px"
+                                             id="kt_app_header_menu_pages_authentication">
+                                            <!--begin:Row-->
+                                            <div class="row">
+                                                <!--begin:Col-->
+                                                <div class="col-lg-3 mb-6 mb-lg-0">
+                                                    <!--begin:Menu section-->
+                                                    <div class="mb-6">
+                                                        <!--begin:Menu heading-->
+                                                        <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">شرکت قالب
+                                                            بندی</h4>
+                                                        <!--end:Menu heading-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/layouts/corporate/sign-in.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">ورود</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/layouts/corporate/sign-up.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">ثبت نام</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/layouts/corporate/two-steps.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">دو مرحله ای</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/layouts/corporate/reset-password.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">ریست کلمه عبور</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/layouts/corporate/new-password.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">کلمه عبور جدید</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                    </div>
+                                                    <!--end:Menu section-->
+                                                    <!--begin:Menu section-->
+                                                    <div class="mb-0">
+                                                        <!--begin:Menu heading-->
+                                                        <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">قالب بندی</h4>
+                                                        <!--end:Menu heading-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/layouts/overlay/sign-in.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">ورود</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/layouts/overlay/sign-up.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">ثبت نام</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/layouts/overlay/two-steps.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">دو مرحله ای</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/layouts/overlay/reset-password.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">ریست کلمه عبور</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/layouts/overlay/new-password.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">کلمه عبور جدید</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                    </div>
+                                                    <!--end:Menu section-->
+                                                </div>
+                                                <!--end:Col-->
+                                                <!--begin:Col-->
+                                                <div class="col-lg-3 mb-6 mb-lg-0">
+                                                    <!--begin:Menu section-->
+                                                    <div class="mb-6">
+                                                        <!--begin:Menu heading-->
+                                                        <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">قالب بندی
+                                                            خلاقانه</h4>
+                                                        <!--end:Menu heading-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/layouts/creative/sign-in.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">ورود</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/layouts/creative/sign-up.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">ثبت نام</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/layouts/creative/two-steps.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">دو مرحله ای</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/layouts/creative/reset-password.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">ریست کلمه عبور</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/layouts/creative/new-password.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">کلمه عبور جدید</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                    </div>
+                                                    <!--end:Menu section-->
+                                                    <!--begin:Menu section-->
+                                                    <div class="mb-6">
+                                                        <!--begin:Menu heading-->
+                                                        <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">قالب بندی
+                                                            فانتزی</h4>
+                                                        <!--end:Menu heading-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/layouts/fancy/sign-in.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">ورود</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/layouts/fancy/sign-up.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">ثبت نام</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/layouts/fancy/two-steps.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">دو مرحله ای</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/layouts/fancy/reset-password.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">ریست کلمه عبور</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/layouts/fancy/new-password.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">کلمه عبور جدید</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                    </div>
+                                                    <!--end:Menu section-->
+                                                </div>
+                                                <!--end:Col-->
+                                                <!--begin:Col-->
+                                                <div class="col-lg-3 mb-6 mb-lg-0">
+                                                    <!--begin:Menu section-->
+                                                    <div class="mb-0">
+                                                        <!--begin:Menu heading-->
+                                                        <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">عمومی</h4>
+                                                        <!--end:Menu heading-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/extended/multi-steps-sign-up.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">ثبت نام چند مرحله ای</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/extended/two-factor-auth.html"
+                                                               class="menu-link">
+                                                                <span
+                                                                    class="menu-title">احراز هویت دومرحله ای</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/general/welcome.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">پیام خوش امد گویی</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/general/verify-email.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">تایید ایمیل</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/extended/coming-soon.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">بزودی</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/general/password-confirmation.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">تایید کلمه عبور</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/general/account-deactivated.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">اکانت غیرفعال</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/general/error-404.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">خطایی 404</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/general/error-500.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">خطایی 500</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                    </div>
+                                                    <!--end:Menu section-->
+                                                </div>
+                                                <!--end:Col-->
+                                                <!--begin:Col-->
+                                                <div class="col-lg-3 mb-6 mb-lg-0">
+                                                    <!--begin:Menu section-->
+                                                    <div class="mb-0">
+                                                        <!--begin:Menu heading-->
+                                                        <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">قالب های
+                                                            ایمیل</h4>
+                                                        <!--end:Menu heading-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/email/welcome-message.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">پیام خوش امد گویی</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/email/reset-password.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">ریست کلمه عبور</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/email/subscription-confirmed.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">اشتراک تایید شده </span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/email/card-declined.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">کارت اعتباری رد شده</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/email/promo-1.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">حرفه ای  1</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/email/promo-2.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">حرفه ای  2</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                        <!--begin:Menu item-->
+                                                        <div class="menu-item p-0 m-0">
+                                                            <!--begin:Menu link-->
+                                                            <a href="../../demo1/dist/authentication/email/promo-3.html"
+                                                               class="menu-link">
+                                                                <span class="menu-title">حرفه ای  3</span>
+                                                            </a>
+                                                            <!--end:Menu link-->
+                                                        </div>
+                                                        <!--end:Menu item-->
+                                                    </div>
+                                                    <!--end:Menu section-->
+                                                </div>
+                                                <!--end:Col-->
+                                            </div>
+                                            <!--end:Row-->
+                                        </div>
+                                        <!--end:Tab pane-->
+                                        <!--begin:Tab pane-->
+                                        <div class="tab-pane w-lg-1000px" id="kt_app_header_menu_pages_utilities">
+                                            <!--begin:Row-->
+                                            <div class="row">
+                                                <!--begin:Col-->
+                                                <div class="col-lg-7">
+                                                    <!--begin:Row-->
+                                                    <div class="row">
+                                                        <!--begin:Col-->
+                                                        <div class="col-lg-4 mb-6 mb-lg-0">
+                                                            <!--begin:Menu section-->
+                                                            <div class="mb-0">
+                                                                <!--begin:Menu heading-->
+                                                                <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">عمومی
+                                                                    مودال ها</h4>
+                                                                <!--end:Menu heading-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/modals/general/invite-friends.html"
+                                                                       class="menu-link">
+                                                                        <span
+                                                                            class="menu-title">دعوت از دوستان</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/modals/general/view-users.html"
+                                                                       class="menu-link">
+                                                                        <span
+                                                                            class="menu-title">نمایش کاربران</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/modals/general/select-users.html"
+                                                                       class="menu-link">
+                                                                        <span
+                                                                            class="menu-title">انتخاب کاربران</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/modals/general/upgrade-plan.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">ارتقا طرح</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/modals/general/share-earn.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">به اشتراک بگذارید و کسب کنید</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/modals/forms/new-target.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">هدف جدید</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/modals/forms/new-card.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">کارت جدید</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/modals/forms/new-address.html"
+                                                                       class="menu-link">
+                                                                        <span
+                                                                            class="menu-title">آدرس های جدید</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/modals/forms/create-api-key.html"
+                                                                       class="menu-link">
+                                                                        <span
+                                                                            class="menu-title">ساختن ای پی آی</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/modals/forms/bidding.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">مناقصه</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                            </div>
+                                                            <!--end:Menu section-->
+                                                        </div>
+                                                        <!--end:Col-->
+                                                        <!--begin:Col-->
+                                                        <div class="col-lg-4 mb-6 mb-lg-0">
+                                                            <!--begin:Menu section-->
+                                                            <div class="mb-6">
+                                                                <!--begin:Menu heading-->
+                                                                <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">پیشرفته
+                                                                    مودال ها</h4>
+                                                                <!--end:Menu heading-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/modals/wizards/create-app.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">ساختن اپ</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/modals/wizards/create-campaign.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">ساختن کمپین</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/modals/wizards/create-account.html"
+                                                                       class="menu-link">
+                                                                        <span
+                                                                            class="menu-title">ساختن بیزینس </span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/modals/wizards/create-project.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">ساختن پروژه</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/modals/wizards/top-up-wallet.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">کیف پول</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/modals/wizards/offer-a-deal.html"
+                                                                       class="menu-link">
+                                                                        <span
+                                                                            class="menu-title">پیشنهاد معامله</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/modals/wizards/two-factor-authentication.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">احراز هویت دومرحله ای</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                            </div>
+                                                            <!--end:Menu section-->
+                                                            <!--begin:Menu section-->
+                                                            <div class="mb-0">
+                                                                <!--begin:Menu heading-->
+                                                                <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">
+                                                                    جستجو</h4>
+                                                                <!--end:Menu heading-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/search/horizontal.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">افقی</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/search/vertical.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">عمودی</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/modals/search/users.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">کاربران</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/modals/search/select-location.html"
+                                                                       class="menu-link">
+                                                                        <span
+                                                                            class="menu-title">مکان را انتخاب کنید</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                            </div>
+                                                            <!--end:Menu section-->
+                                                        </div>
+                                                        <!--end:Col-->
+                                                        <!--begin:Col-->
+                                                        <div class="col-lg-4 mb-6 mb-lg-0">
+                                                            <!--begin:Menu section-->
+                                                            <div class="mb-0">
+                                                                <!--begin:Menu heading-->
+                                                                <h4 class="fs-6 fs-lg-4 fw-bold mb-3 ms-4">
+                                                                    ویزارد</h4>
+                                                                <!--end:Menu heading-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/wizards/horizontal.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">افقی</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/wizards/vertical.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">عمودی</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/wizards/two-factor-authentication.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">احراز هویت دومرحله ای</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/wizards/create-app.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">ساختن اپ</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/wizards/create-campaign.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">ساختن کمپین</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/wizards/create-account.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">ساختن اکانت</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/wizards/create-project.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">ساختن پروژه</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/modals/wizards/top-up-wallet.html"
+                                                                       class="menu-link">
+                                                                        <span class="menu-title">کیف پول</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                                <!--begin:Menu item-->
+                                                                <div class="menu-item p-0 m-0">
+                                                                    <!--begin:Menu link-->
+                                                                    <a href="../../demo1/dist/utilities/wizards/offer-a-deal.html"
+                                                                       class="menu-link">
+                                                                        <span
+                                                                            class="menu-title">پیشنهاد معامله</span>
+                                                                    </a>
+                                                                    <!--end:Menu link-->
+                                                                </div>
+                                                                <!--end:Menu item-->
+                                                            </div>
+                                                            <!--end:Menu section-->
+                                                        </div>
+                                                        <!--end:Col-->
+                                                    </div>
+                                                    <!--end:Row-->
+                                                </div>
+                                                <!--end:Col-->
+                                                <!--begin:Col-->
+                                                <div class="col-lg-5 pe-lg-5">
+                                                    <img src="{{asset("admin/media/stock/600x600/img-84.jpg")}}"
+                                                         class="rounded mw-100" alt=""/>
+                                                </div>
+                                                <!--end:Col-->
+                                            </div>
+                                            <!--end:Row-->
+                                        </div>
+                                        <!--end:Tab pane-->
+                                        <!--begin:Tab pane-->
+                                        <div class="tab-pane w-lg-500px" id="kt_app_header_menu_pages_widgets">
+                                            <!--begin:Row-->
+                                            <div class="row">
+                                                <!--begin:Col-->
+                                                <div class="col-lg-4 mb-6 mb-lg-0">
+                                                    <!--begin:Menu item-->
+                                                    <div class="menu-item p-0 m-0">
+                                                        <!--begin:Menu link-->
+                                                        <a href="../../demo1/dist/widgets/lists.html"
+                                                           class="menu-link">
+                                                            <span class="menu-title">لیست ها</span>
+                                                        </a>
+                                                        <!--end:Menu link-->
+                                                    </div>
+                                                    <!--end:Menu item-->
+                                                    <!--begin:Menu item-->
+                                                    <div class="menu-item p-0 m-0">
+                                                        <!--begin:Menu link-->
+                                                        <a href="../../demo1/dist/widgets/statistics.html"
+                                                           class="menu-link">
+                                                            <span class="menu-title">امار</span>
+                                                        </a>
+                                                        <!--end:Menu link-->
+                                                    </div>
+                                                    <!--end:Menu item-->
+                                                    <!--begin:Menu item-->
+                                                    <div class="menu-item p-0 m-0">
+                                                        <!--begin:Menu link-->
+                                                        <a href="../../demo1/dist/widgets/charts.html"
+                                                           class="menu-link">
+                                                            <span class="menu-title">نمودار ها</span>
+                                                        </a>
+                                                        <!--end:Menu link-->
+                                                    </div>
+                                                    <!--end:Menu item-->
+                                                    <!--begin:Menu item-->
+                                                    <div class="menu-item p-0 m-0">
+                                                        <!--begin:Menu link-->
+                                                        <a href="../../demo1/dist/widgets/mixed.html"
+                                                           class="menu-link">
+                                                            <span class="menu-title">مخلوط</span>
+                                                        </a>
+                                                        <!--end:Menu link-->
+                                                    </div>
+                                                    <!--end:Menu item-->
+                                                    <!--begin:Menu item-->
+                                                    <div class="menu-item p-0 m-0">
+                                                        <!--begin:Menu link-->
+                                                        <a href="../../demo1/dist/widgets/tables.html"
+                                                           class="menu-link">
+                                                            <span class="menu-title">جداول</span>
+                                                        </a>
+                                                        <!--end:Menu link-->
+                                                    </div>
+                                                    <!--end:Menu item-->
+                                                    <!--begin:Menu item-->
+                                                    <div class="menu-item p-0 m-0">
+                                                        <!--begin:Menu link-->
+                                                        <a href="../../demo1/dist/widgets/feeds.html"
+                                                           class="menu-link">
+                                                            <span class="menu-title">تغذیه</span>
+                                                        </a>
+                                                        <!--end:Menu link-->
+                                                    </div>
+                                                    <!--end:Menu item-->
+                                                </div>
+                                                <!--end:Col-->
+                                                <!--begin:Col-->
+                                                <div class="col-lg-8">
+                                                    <img src="{{asset("admin/media/stock/900x600/44.jpg")}}"
+                                                         class="rounded mw-100" alt=""/>
+                                                </div>
+                                                <!--end:Col-->
+                                            </div>
+                                            <!--end:Row-->
+                                        </div>
+                                        <!--end:Tab pane-->
                                     </div>
-                                    <!--end:صفحات menu-->
+                                    <!--end:Tab content-->
                                 </div>
-                                <!--end:Menu sub-->
+                                <!--end:صفحات menu-->
                             </div>
-                            <!--end:Menu item-->
+                            <!--end:Menu sub-->
+                        </div>--}}
+                        <!--end:Menu item-->
                             <!--begin:Menu item-->
-                            <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
-                                 data-kt-menu-placement="bottom-end"
-                                 class="menu-item menu-lg-down-accordion menu-sub-lg-down-indention me-0 me-lg-2">
-                                <!--begin:Menu link-->
-                                <span class="menu-link">
-											<span class="menu-title">اپلیکیشن ها</span>
-											<span class="menu-arrow d-lg-none"></span>
-										</span>
-                                <!--end:Menu link-->
-                                <!--begin:Menu sub-->
-                                <div
-                                    class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown px-lg-2 py-lg-4 w-lg-250px">
-                                    <!--begin:Menu item-->
-                                    <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-                                         data-kt-menu-placement="left-start" class="menu-item menu-lg-down-accordion">
-                                        <!--begin:Menu link-->
-                                        <span class="menu-link">
-													<span class="menu-icon">
-														<!--begin::Svg Icon | path: icons/duotune/general/gen002.svg-->
-														<span class="svg-icon svg-icon-3">
-															<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                                 xmlns="http://www.w3.org/2000/svg">
-																<path opacity="0.3"
-                                                                      d="M4.05424 15.1982C8.34524 7.76818 13.5782 3.26318 20.9282 2.01418C21.0729 1.98837 21.2216 1.99789 21.3618 2.04193C21.502 2.08597 21.6294 2.16323 21.7333 2.26712C21.8372 2.37101 21.9144 2.49846 21.9585 2.63863C22.0025 2.7788 22.012 2.92754 21.9862 3.07218C20.7372 10.4222 16.2322 15.6552 8.80224 19.9462L4.05424 15.1982ZM3.81924 17.3372L2.63324 20.4482C2.58427 20.5765 2.5735 20.7163 2.6022 20.8507C2.63091 20.9851 2.69788 21.1082 2.79503 21.2054C2.89218 21.3025 3.01536 21.3695 3.14972 21.3982C3.28408 21.4269 3.42387 21.4161 3.55224 21.3672L6.66524 20.1802L3.81924 17.3372ZM16.5002 5.99818C16.2036 5.99818 15.9136 6.08615 15.6669 6.25097C15.4202 6.41579 15.228 6.65006 15.1144 6.92415C15.0009 7.19824 14.9712 7.49984 15.0291 7.79081C15.0869 8.08178 15.2298 8.34906 15.4396 8.55884C15.6494 8.76862 15.9166 8.91148 16.2076 8.96935C16.4986 9.02723 16.8002 8.99753 17.0743 8.884C17.3484 8.77046 17.5826 8.5782 17.7474 8.33153C17.9123 8.08486 18.0002 7.79485 18.0002 7.49818C18.0002 7.10035 17.8422 6.71882 17.5609 6.43752C17.2796 6.15621 16.8981 5.99818 16.5002 5.99818Z"
-                                                                      fill="currentColor"/>
-																<path
-                                                                    d="M4.05423 15.1982L2.24723 13.3912C2.15505 13.299 2.08547 13.1867 2.04395 13.0632C2.00243 12.9396 1.9901 12.8081 2.00793 12.679C2.02575 12.5498 2.07325 12.4266 2.14669 12.3189C2.22013 12.2112 2.31752 12.1219 2.43123 12.0582L9.15323 8.28918C7.17353 10.3717 5.4607 12.6926 4.05423 15.1982ZM8.80023 19.9442L10.6072 21.7512C10.6994 21.8434 10.8117 21.9129 10.9352 21.9545C11.0588 21.996 11.1903 22.0083 11.3195 21.9905C11.4486 21.9727 11.5718 21.9252 11.6795 21.8517C11.7872 21.7783 11.8765 21.6809 11.9402 21.5672L15.7092 14.8442C13.6269 16.8245 11.3061 18.5377 8.80023 19.9442ZM7.04023 18.1832L12.5832 12.6402C12.7381 12.4759 12.8228 12.2577 12.8195 12.032C12.8161 11.8063 12.725 11.5907 12.5653 11.4311C12.4057 11.2714 12.1901 11.1803 11.9644 11.1769C11.7387 11.1736 11.5205 11.2583 11.3562 11.4132L5.81323 16.9562L7.04023 18.1832Z"
-                                                                    fill="currentColor"/>
-															</svg>
-														</span>
-                                                        <!--end::Svg Icon-->
-													</span>
-													<span class="menu-title">پروژه ها</span>
-													<span class="menu-arrow"></span>
-												</span>
-                                        <!--end:Menu link-->
-                                        <!--begin:Menu sub-->
-                                        <div
-                                            class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link" href="../../demo1/dist/apps/projects/list.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">پروژه ها من</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link" href="../../demo1/dist/apps/projects/project.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">نمایش پروژه ها</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link" href="../../demo1/dist/apps/projects/targets.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">اهداف</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link" href="../../demo1/dist/apps/projects/budget.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">بودجه</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link" href="../../demo1/dist/apps/projects/users.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">کاربران</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link" href="../../demo1/dist/apps/projects/files.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">فایل ها</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link"
-                                                   href="../../demo1/dist/apps/projects/activity.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">فعالیت</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link"
-                                                   href="../../demo1/dist/apps/projects/settings.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">تنظیمات</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
+                        {{--<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
+                             data-kt-menu-placement="bottom-end"
+                             class="menu-item menu-lg-down-accordion menu-sub-lg-down-indention me-0 me-lg-2">
+                            <!--begin:Menu link-->
+                            <span class="menu-link">
+                                        <span class="menu-title">اپلیکیشن ها</span>
+                                        <span class="menu-arrow d-lg-none"></span>
+                                    </span>
+                            <!--end:Menu link-->
+                            <!--begin:Menu sub-->
+                            <div
+                                class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown px-lg-2 py-lg-4 w-lg-250px">
+                                <!--begin:Menu item-->
+                                <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
+                                     data-kt-menu-placement="left-start" class="menu-item menu-lg-down-accordion">
+                                    <!--begin:Menu link-->
+                                    <span class="menu-link">
+                                                <span class="menu-icon">
+                                                    <!--begin::Svg Icon | path: icons/duotune/general/gen002.svg-->
+                                                    <span class="svg-icon svg-icon-3">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path opacity="0.3"
+                                                                  d="M4.05424 15.1982C8.34524 7.76818 13.5782 3.26318 20.9282 2.01418C21.0729 1.98837 21.2216 1.99789 21.3618 2.04193C21.502 2.08597 21.6294 2.16323 21.7333 2.26712C21.8372 2.37101 21.9144 2.49846 21.9585 2.63863C22.0025 2.7788 22.012 2.92754 21.9862 3.07218C20.7372 10.4222 16.2322 15.6552 8.80224 19.9462L4.05424 15.1982ZM3.81924 17.3372L2.63324 20.4482C2.58427 20.5765 2.5735 20.7163 2.6022 20.8507C2.63091 20.9851 2.69788 21.1082 2.79503 21.2054C2.89218 21.3025 3.01536 21.3695 3.14972 21.3982C3.28408 21.4269 3.42387 21.4161 3.55224 21.3672L6.66524 20.1802L3.81924 17.3372ZM16.5002 5.99818C16.2036 5.99818 15.9136 6.08615 15.6669 6.25097C15.4202 6.41579 15.228 6.65006 15.1144 6.92415C15.0009 7.19824 14.9712 7.49984 15.0291 7.79081C15.0869 8.08178 15.2298 8.34906 15.4396 8.55884C15.6494 8.76862 15.9166 8.91148 16.2076 8.96935C16.4986 9.02723 16.8002 8.99753 17.0743 8.884C17.3484 8.77046 17.5826 8.5782 17.7474 8.33153C17.9123 8.08486 18.0002 7.79485 18.0002 7.49818C18.0002 7.10035 17.8422 6.71882 17.5609 6.43752C17.2796 6.15621 16.8981 5.99818 16.5002 5.99818Z"
+                                                                  fill="currentColor"/>
+                                                            <path
+                                                                d="M4.05423 15.1982L2.24723 13.3912C2.15505 13.299 2.08547 13.1867 2.04395 13.0632C2.00243 12.9396 1.9901 12.8081 2.00793 12.679C2.02575 12.5498 2.07325 12.4266 2.14669 12.3189C2.22013 12.2112 2.31752 12.1219 2.43123 12.0582L9.15323 8.28918C7.17353 10.3717 5.4607 12.6926 4.05423 15.1982ZM8.80023 19.9442L10.6072 21.7512C10.6994 21.8434 10.8117 21.9129 10.9352 21.9545C11.0588 21.996 11.1903 22.0083 11.3195 21.9905C11.4486 21.9727 11.5718 21.9252 11.6795 21.8517C11.7872 21.7783 11.8765 21.6809 11.9402 21.5672L15.7092 14.8442C13.6269 16.8245 11.3061 18.5377 8.80023 19.9442ZM7.04023 18.1832L12.5832 12.6402C12.7381 12.4759 12.8228 12.2577 12.8195 12.032C12.8161 11.8063 12.725 11.5907 12.5653 11.4311C12.4057 11.2714 12.1901 11.1803 11.9644 11.1769C11.7387 11.1736 11.5205 11.2583 11.3562 11.4132L5.81323 16.9562L7.04023 18.1832Z"
+                                                                fill="currentColor"/>
+                                                        </svg>
+                                                    </span>
+                                                    <!--end::Svg Icon-->
+                                                </span>
+                                                <span class="menu-title">پروژه ها</span>
+                                                <span class="menu-arrow"></span>
+                                            </span>
+                                    <!--end:Menu link-->
+                                    <!--begin:Menu sub-->
+                                    <div
+                                        class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="../../demo1/dist/apps/projects/list.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">پروژه ها من</span>
+                                            </a>
+                                            <!--end:Menu link-->
                                         </div>
-                                        <!--end:Menu sub-->
-                                    </div>
-                                    <!--end:Menu item-->
-                                    <!--begin:Menu item-->
-                                    <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-                                         data-kt-menu-placement="left-start" class="menu-item menu-lg-down-accordion">
-                                        <!--begin:Menu link-->
-                                        <span class="menu-link">
-													<span class="menu-icon">
-														<!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm001.svg-->
-														<span class="svg-icon svg-icon-3">
-															<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                                 xmlns="http://www.w3.org/2000/svg">
-																<path opacity="0.3"
-                                                                      d="M18.041 22.041C18.5932 22.041 19.041 21.5932 19.041 21.041C19.041 20.4887 18.5932 20.041 18.041 20.041C17.4887 20.041 17.041 20.4887 17.041 21.041C17.041 21.5932 17.4887 22.041 18.041 22.041Z"
-                                                                      fill="currentColor"/>
-																<path opacity="0.3"
-                                                                      d="M6.04095 22.041C6.59324 22.041 7.04095 21.5932 7.04095 21.041C7.04095 20.4887 6.59324 20.041 6.04095 20.041C5.48867 20.041 5.04095 20.4887 5.04095 21.041C5.04095 21.5932 5.48867 22.041 6.04095 22.041Z"
-                                                                      fill="currentColor"/>
-																<path opacity="0.3"
-                                                                      d="M7.04095 16.041L19.1409 15.1409C19.7409 15.1409 20.141 14.7409 20.341 14.1409L21.7409 8.34094C21.9409 7.64094 21.4409 7.04095 20.7409 7.04095H5.44095L7.04095 16.041Z"
-                                                                      fill="currentColor"/>
-																<path
-                                                                    d="M19.041 20.041H5.04096C4.74096 20.041 4.34095 19.841 4.14095 19.541C3.94095 19.241 3.94095 18.841 4.14095 18.541L6.04096 14.841L4.14095 4.64095L2.54096 3.84096C2.04096 3.64096 1.84095 3.04097 2.14095 2.54097C2.34095 2.04097 2.94096 1.84095 3.44096 2.14095L5.44096 3.14095C5.74096 3.24095 5.94096 3.54096 5.94096 3.84096L7.94096 14.841C7.94096 15.041 7.94095 15.241 7.84095 15.441L6.54096 18.041H19.041C19.641 18.041 20.041 18.441 20.041 19.041C20.041 19.641 19.641 20.041 19.041 20.041Z"
-                                                                    fill="currentColor"/>
-															</svg>
-														</span>
-                                                        <!--end::Svg Icon-->
-													</span>
-													<span class="menu-title">تجارت الکترونیک</span>
-													<span class="menu-arrow"></span>
-												</span>
-                                        <!--end:Menu link-->
-                                        <!--begin:Menu sub-->
-                                        <div
-                                            class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
-                                            <!--begin:Menu item-->
-                                            <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-                                                 data-kt-menu-placement="left-start"
-                                                 class="menu-item menu-lg-down-accordion">
-                                                <!--begin:Menu link-->
-                                                <span class="menu-link">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-															<span class="menu-title">کاتالوگ</span>
-															<span class="menu-arrow"></span>
-														</span>
-                                                <!--end:Menu link-->
-                                                <!--begin:Menu sub-->
-                                                <div
-                                                    class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/ecommerce/catalog/products.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title">محصولات</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/ecommerce/catalog/categories.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title">دسته بندی ها</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/ecommerce/catalog/add-product.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title">افزودن محصول</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/ecommerce/catalog/edit-product.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title"> محصولات</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/ecommerce/catalog/add-category.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title">افزودن دسته بندی</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/ecommerce/catalog/edit-category.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title"> دسته بندی</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                </div>
-                                                <!--end:Menu sub-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div data-kt-menu-trigger="click"
-                                                 class="menu-item menu-accordion menu-sub-indention">
-                                                <!--begin:Menu link-->
-                                                <span class="menu-link">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-															<span class="menu-title">فروش</span>
-															<span class="menu-arrow"></span>
-														</span>
-                                                <!--end:Menu link-->
-                                                <!--begin:Menu sub-->
-                                                <div class="menu-sub menu-sub-accordion">
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/ecommerce/sales/listing.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title">لیست سفارشات</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/ecommerce/sales/details.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title">جزییات سفارش</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/ecommerce/sales/add-order.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title">افزودن سفارش</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/ecommerce/sales/edit-order.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title"> سفارش</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                </div>
-                                                <!--end:Menu sub-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div data-kt-menu-trigger="click"
-                                                 class="menu-item menu-accordion menu-sub-indention">
-                                                <!--begin:Menu link-->
-                                                <span class="menu-link">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-															<span class="menu-title">مشتریان</span>
-															<span class="menu-arrow"></span>
-														</span>
-                                                <!--end:Menu link-->
-                                                <!--begin:Menu sub-->
-                                                <div class="menu-sub menu-sub-accordion">
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/ecommerce/customers/listing.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title">لیست مشتریان</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/ecommerce/customers/details.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title">مشتریان جزییات</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                </div>
-                                                <!--end:Menu sub-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div data-kt-menu-trigger="click"
-                                                 class="menu-item menu-accordion menu-sub-indention">
-                                                <!--begin:Menu link-->
-                                                <span class="menu-link">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-															<span class="menu-title">گزارشات</span>
-															<span class="menu-arrow"></span>
-														</span>
-                                                <!--end:Menu link-->
-                                                <!--begin:Menu sub-->
-                                                <div class="menu-sub menu-sub-accordion">
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/ecommerce/reports/view.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title">محصولات مشاهده شده</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/ecommerce/reports/sales.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title">فروش</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/ecommerce/reports/returns.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title">برگشتی ها</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/ecommerce/reports/customer-orders.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title">مشتری سفارشات</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/ecommerce/reports/shipping.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title">حمل دریایی</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                </div>
-                                                <!--end:Menu sub-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link"
-                                                   href="../../demo1/dist/apps/ecommerce/settings.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">تنظیمات</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="../../demo1/dist/apps/projects/project.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">نمایش پروژه ها</span>
+                                            </a>
+                                            <!--end:Menu link-->
                                         </div>
-                                        <!--end:Menu sub-->
-                                    </div>
-                                    <!--end:Menu item-->
-                                    <!--begin:Menu item-->
-                                    <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-                                         data-kt-menu-placement="left-start" class="menu-item menu-lg-down-accordion">
-                                        <!--begin:Menu link-->
-                                        <span class="menu-link">
-													<span class="menu-icon">
-														<!--begin::Svg Icon | path: icons/duotune/graphs/gra006.svg-->
-														<span class="svg-icon svg-icon-3">
-															<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                                 xmlns="http://www.w3.org/2000/svg">
-																<path
-                                                                    d="M13 5.91517C15.8 6.41517 18 8.81519 18 11.8152C18 12.5152 17.9 13.2152 17.6 13.9152L20.1 15.3152C20.6 15.6152 21.4 15.4152 21.6 14.8152C21.9 13.9152 22.1 12.9152 22.1 11.8152C22.1 7.01519 18.8 3.11521 14.3 2.01521C13.7 1.91521 13.1 2.31521 13.1 3.01521V5.91517H13Z"
-                                                                    fill="currentColor"/>
-																<path opacity="0.3"
-                                                                      d="M19.1 17.0152C19.7 17.3152 19.8 18.1152 19.3 18.5152C17.5 20.5152 14.9 21.7152 12 21.7152C9.1 21.7152 6.50001 20.5152 4.70001 18.5152C4.30001 18.0152 4.39999 17.3152 4.89999 17.0152L7.39999 15.6152C8.49999 16.9152 10.2 17.8152 12 17.8152C13.8 17.8152 15.5 17.0152 16.6 15.6152L19.1 17.0152ZM6.39999 13.9151C6.19999 13.2151 6 12.5152 6 11.8152C6 8.81517 8.2 6.41515 11 5.91515V3.01519C11 2.41519 10.4 1.91519 9.79999 2.01519C5.29999 3.01519 2 7.01517 2 11.8152C2 12.8152 2.2 13.8152 2.5 14.8152C2.7 15.4152 3.4 15.7152 4 15.3152L6.39999 13.9151Z"
-                                                                      fill="currentColor"/>
-															</svg>
-														</span>
-                                                        <!--end::Svg Icon-->
-													</span>
-													<span class="menu-title">مرکز پشتیبانی</span>
-													<span class="menu-arrow"></span>
-												</span>
-                                        <!--end:Menu link-->
-                                        <!--begin:Menu sub-->
-                                        <div
-                                            class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link"
-                                                   href="../../demo1/dist/apps/support-center/overview.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">بررسی اجمالی</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-                                                 data-kt-menu-placement="left-start"
-                                                 class="menu-item menu-lg-down-accordion">
-                                                <!--begin:Menu link-->
-                                                <span class="menu-link">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-															<span class="menu-title">تیکت ها</span>
-															<span class="menu-arrow"></span>
-														</span>
-                                                <!--end:Menu link-->
-                                                <!--begin:Menu sub-->
-                                                <div
-                                                    class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/support-center/tickets/list.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title">تیکت لیست</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/support-center/tickets/view.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title">تیکت نمایش</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                </div>
-                                                <!--end:Menu sub-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-                                                 data-kt-menu-placement="left-start"
-                                                 class="menu-item menu-lg-down-accordion">
-                                                <!--begin:Menu link-->
-                                                <span class="menu-link">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-															<span class="menu-title">آموزشها</span>
-															<span class="menu-arrow"></span>
-														</span>
-                                                <!--end:Menu link-->
-                                                <!--begin:Menu sub-->
-                                                <div
-                                                    class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/support-center/tutorials/list.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title">آموزشها لیست</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/support-center/tutorials/post.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title">پست های آموزشی</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                </div>
-                                                <!--end:Menu sub-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link"
-                                                   href="../../demo1/dist/apps/support-center/faq.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">سوالات متداول</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link"
-                                                   href="../../demo1/dist/apps/support-center/licenses.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">لاینسس شده</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link"
-                                                   href="../../demo1/dist/apps/support-center/contact.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">تماس با ما</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="../../demo1/dist/apps/projects/targets.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">اهداف</span>
+                                            </a>
+                                            <!--end:Menu link-->
                                         </div>
-                                        <!--end:Menu sub-->
-                                    </div>
-                                    <!--end:Menu item-->
-                                    <!--begin:Menu item-->
-                                    <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-                                         data-kt-menu-placement="left-start" class="menu-item menu-lg-down-accordion">
-                                        <!--begin:Menu link-->
-                                        <span class="menu-link">
-													<span class="menu-icon">
-														<!--begin::Svg Icon | path: icons/duotune/general/gen051.svg-->
-														<span class="svg-icon svg-icon-3">
-															<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                                 xmlns="http://www.w3.org/2000/svg">
-																<path opacity="0.3"
-                                                                      d="M20.5543 4.37824L12.1798 2.02473C12.0626 1.99176 11.9376 1.99176 11.8203 2.02473L3.44572 4.37824C3.18118 4.45258 3 4.6807 3 4.93945V13.569C3 14.6914 3.48509 15.8404 4.4417 16.984C5.17231 17.8575 6.18314 18.7345 7.446 19.5909C9.56752 21.0295 11.6566 21.912 11.7445 21.9488C11.8258 21.9829 11.9129 22 12.0001 22C12.0872 22 12.1744 21.983 12.2557 21.9488C12.3435 21.912 14.4326 21.0295 16.5541 19.5909C17.8169 18.7345 18.8277 17.8575 19.5584 16.984C20.515 15.8404 21 14.6914 21 13.569V4.93945C21 4.6807 20.8189 4.45258 20.5543 4.37824Z"
-                                                                      fill="currentColor"/>
-																<path
-                                                                    d="M14.854 11.321C14.7568 11.2282 14.6388 11.1818 14.4998 11.1818H14.3333V10.2272C14.3333 9.61741 14.1041 9.09378 13.6458 8.65628C13.1875 8.21876 12.639 8 12 8C11.361 8 10.8124 8.21876 10.3541 8.65626C9.89574 9.09378 9.66663 9.61739 9.66663 10.2272V11.1818H9.49999C9.36115 11.1818 9.24306 11.2282 9.14583 11.321C9.0486 11.4138 9 11.5265 9 11.6591V14.5227C9 14.6553 9.04862 14.768 9.14583 14.8609C9.24306 14.9536 9.36115 15 9.49999 15H14.5C14.6389 15 14.7569 14.9536 14.8542 14.8609C14.9513 14.768 15 14.6553 15 14.5227V11.6591C15.0001 11.5265 14.9513 11.4138 14.854 11.321ZM13.3333 11.1818H10.6666V10.2272C10.6666 9.87594 10.7969 9.57597 11.0573 9.32743C11.3177 9.07886 11.6319 8.9546 12 8.9546C12.3681 8.9546 12.6823 9.07884 12.9427 9.32743C13.2031 9.57595 13.3333 9.87594 13.3333 10.2272V11.1818Z"
-                                                                    fill="currentColor"/>
-															</svg>
-														</span>
-                                                        <!--end::Svg Icon-->
-													</span>
-													<span class="menu-title">کاربر مدیریت</span>
-													<span class="menu-arrow"></span>
-												</span>
-                                        <!--end:Menu link-->
-                                        <!--begin:Menu sub-->
-                                        <div
-                                            class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
-                                            <!--begin:Menu item-->
-                                            <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-                                                 data-kt-menu-placement="left-start"
-                                                 class="menu-item menu-lg-down-accordion">
-                                                <!--begin:Menu link-->
-                                                <span class="menu-link">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-															<span class="menu-title">کاربران</span>
-															<span class="menu-arrow"></span>
-														</span>
-                                                <!--end:Menu link-->
-                                                <!--begin:Menu sub-->
-                                                <div
-                                                    class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/user-management/users/list.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title">کاربران لیست</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/user-management/users/view.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title">نمایش کاربر</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                </div>
-                                                <!--end:Menu sub-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-                                                 data-kt-menu-placement="left-start"
-                                                 class="menu-item menu-lg-down-accordion">
-                                                <!--begin:Menu link-->
-                                                <span class="menu-link">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-															<span class="menu-title">سطح دسترسی</span>
-															<span class="menu-arrow"></span>
-														</span>
-                                                <!--end:Menu link-->
-                                                <!--begin:Menu sub-->
-                                                <div
-                                                    class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/user-management/roles/list.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title">سطح دسترسی لیست</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/user-management/roles/view.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title">نمایش سطح دسترسی</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                </div>
-                                                <!--end:Menu sub-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link"
-                                                   href="../../demo1/dist/apps/user-management/permissions.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">مجوزها</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="../../demo1/dist/apps/projects/budget.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">بودجه</span>
+                                            </a>
+                                            <!--end:Menu link-->
                                         </div>
-                                        <!--end:Menu sub-->
-                                    </div>
-                                    <!--end:Menu item-->
-                                    <!--begin:Menu item-->
-                                    <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-                                         data-kt-menu-placement="left-start" class="menu-item menu-lg-down-accordion">
-                                        <!--begin:Menu link-->
-                                        <span class="menu-link">
-													<span class="menu-icon">
-														<!--begin::Svg Icon | path: icons/duotune/electronics/elc002.svg-->
-														<span class="svg-icon svg-icon-3">
-															<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                                 xmlns="http://www.w3.org/2000/svg">
-																<path
-                                                                    d="M6 21C6 21.6 6.4 22 7 22H17C17.6 22 18 21.6 18 21V20H6V21Z"
-                                                                    fill="currentColor"/>
-																<path opacity="0.3"
-                                                                      d="M17 2H7C6.4 2 6 2.4 6 3V20H18V3C18 2.4 17.6 2 17 2Z"
-                                                                      fill="currentColor"/>
-																<path
-                                                                    d="M12 4C11.4 4 11 3.6 11 3V2H13V3C13 3.6 12.6 4 12 4Z"
-                                                                    fill="currentColor"/>
-															</svg>
-														</span>
-                                                        <!--end::Svg Icon-->
-													</span>
-													<span class="menu-title">تماس با ما</span>
-													<span class="menu-arrow"></span>
-												</span>
-                                        <!--end:Menu link-->
-                                        <!--begin:Menu sub-->
-                                        <div
-                                            class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link"
-                                                   href="../../demo1/dist/apps/contacts/getting-started.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">شروع شدن</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link"
-                                                   href="../../demo1/dist/apps/contacts/add-contact.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title"> افزودن تماس با ما</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link"
-                                                   href="../../demo1/dist/apps/contacts/edit-contact.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title"> تماس با ما</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link"
-                                                   href="../../demo1/dist/apps/contacts/view-contact.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">نمایش تماس با ما</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="../../demo1/dist/apps/projects/users.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">کاربران</span>
+                                            </a>
+                                            <!--end:Menu link-->
                                         </div>
-                                        <!--end:Menu sub-->
-                                    </div>
-                                    <!--end:Menu item-->
-                                    <!--begin:Menu item-->
-                                    <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-                                         data-kt-menu-placement="left-start" class="menu-item menu-lg-down-accordion">
-                                        <!--begin:Menu link-->
-                                        <span class="menu-link">
-													<span class="menu-icon">
-														<!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm002.svg-->
-														<span class="svg-icon svg-icon-3">
-															<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                                 xmlns="http://www.w3.org/2000/svg">
-																<path
-                                                                    d="M21 10H13V11C13 11.6 12.6 12 12 12C11.4 12 11 11.6 11 11V10H3C2.4 10 2 10.4 2 11V13H22V11C22 10.4 21.6 10 21 10Z"
-                                                                    fill="currentColor"/>
-																<path opacity="0.3"
-                                                                      d="M12 12C11.4 12 11 11.6 11 11V3C11 2.4 11.4 2 12 2C12.6 2 13 2.4 13 3V11C13 11.6 12.6 12 12 12Z"
-                                                                      fill="currentColor"/>
-																<path opacity="0.3"
-                                                                      d="M18.1 21H5.9C5.4 21 4.9 20.6 4.8 20.1L3 13H21L19.2 20.1C19.1 20.6 18.6 21 18.1 21ZM13 18V15C13 14.4 12.6 14 12 14C11.4 14 11 14.4 11 15V18C11 18.6 11.4 19 12 19C12.6 19 13 18.6 13 18ZM17 18V15C17 14.4 16.6 14 16 14C15.4 14 15 14.4 15 15V18C15 18.6 15.4 19 16 19C16.6 19 17 18.6 17 18ZM9 18V15C9 14.4 8.6 14 8 14C7.4 14 7 14.4 7 15V18C7 18.6 7.4 19 8 19C8.6 19 9 18.6 9 18Z"
-                                                                      fill="currentColor"/>
-															</svg>
-														</span>
-                                                        <!--end::Svg Icon-->
-													</span>
-													<span class="menu-title">اشتراک ها</span>
-													<span class="menu-arrow"></span>
-												</span>
-                                        <!--end:Menu link-->
-                                        <!--begin:Menu sub-->
-                                        <div
-                                            class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link"
-                                                   href="../../demo1/dist/apps/subscriptions/getting-started.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">شروع شدن</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link"
-                                                   href="../../demo1/dist/apps/subscriptions/list.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">لیست اشتراک</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link"
-                                                   href="../../demo1/dist/apps/subscriptions/add.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">افزودن اشتراک</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link"
-                                                   href="../../demo1/dist/apps/subscriptions/view.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">نمایش اشتراک ها</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="../../demo1/dist/apps/projects/files.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">فایل ها</span>
+                                            </a>
+                                            <!--end:Menu link-->
                                         </div>
-                                        <!--end:Menu sub-->
-                                    </div>
-                                    <!--end:Menu item-->
-                                    <!--begin:Menu item-->
-                                    <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-                                         data-kt-menu-placement="left-start" class="menu-item menu-lg-down-accordion">
-                                        <!--begin:Menu link-->
-                                        <span class="menu-link">
-													<span class="menu-icon">
-														<!--begin::Svg Icon | path: icons/duotune/finance/fin006.svg-->
-														<span class="svg-icon svg-icon-3">
-															<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                                 xmlns="http://www.w3.org/2000/svg">
-																<path opacity="0.3"
-                                                                      d="M20 15H4C2.9 15 2 14.1 2 13V7C2 6.4 2.4 6 3 6H21C21.6 6 22 6.4 22 7V13C22 14.1 21.1 15 20 15ZM13 12H11C10.5 12 10 12.4 10 13V16C10 16.5 10.4 17 11 17H13C13.6 17 14 16.6 14 16V13C14 12.4 13.6 12 13 12Z"
-                                                                      fill="currentColor"/>
-																<path
-                                                                    d="M14 6V5H10V6H8V5C8 3.9 8.9 3 10 3H14C15.1 3 16 3.9 16 5V6H14ZM20 15H14V16C14 16.6 13.5 17 13 17H11C10.5 17 10 16.6 10 16V15H4C3.6 15 3.3 14.9 3 14.7V18C3 19.1 3.9 20 5 20H19C20.1 20 21 19.1 21 18V14.7C20.7 14.9 20.4 15 20 15Z"
-                                                                    fill="currentColor"/>
-															</svg>
-														</span>
-                                                        <!--end::Svg Icon-->
-													</span>
-													<span class="menu-title">مشتریان</span>
-													<span class="menu-arrow"></span>
-												</span>
-                                        <!--end:Menu link-->
-                                        <!--begin:Menu sub-->
-                                        <div
-                                            class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link"
-                                                   href="../../demo1/dist/apps/customers/getting-started.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">شروع شدن</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link" href="../../demo1/dist/apps/customers/list.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">لیست مشتریان</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link" href="../../demo1/dist/apps/customers/view.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">جزییات مشتریان</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link"
+                                               href="../../demo1/dist/apps/projects/activity.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">فعالیت</span>
+                                            </a>
+                                            <!--end:Menu link-->
                                         </div>
-                                        <!--end:Menu sub-->
-                                    </div>
-                                    <!--end:Menu item-->
-                                    <!--begin:Menu item-->
-                                    <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-                                         data-kt-menu-placement="left-start" class="menu-item menu-lg-down-accordion">
-                                        <!--begin:Menu link-->
-                                        <span class="menu-link">
-													<span class="menu-icon">
-														<!--begin::Svg Icon | path: icons/duotune/finance/fin002.svg-->
-														<span class="svg-icon svg-icon-3">
-															<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                                 xmlns="http://www.w3.org/2000/svg">
-																<path d="M22 7H2V11H22V7Z" fill="currentColor"/>
-																<path opacity="0.3"
-                                                                      d="M21 19H3C2.4 19 2 18.6 2 18V6C2 5.4 2.4 5 3 5H21C21.6 5 22 5.4 22 6V18C22 18.6 21.6 19 21 19ZM14 14C14 13.4 13.6 13 13 13H5C4.4 13 4 13.4 4 14C4 14.6 4.4 15 5 15H13C13.6 15 14 14.6 14 14ZM16 15.5C16 16.3 16.7 17 17.5 17H18.5C19.3 17 20 16.3 20 15.5C20 14.7 19.3 14 18.5 14H17.5C16.7 14 16 14.7 16 15.5Z"
-                                                                      fill="currentColor"/>
-															</svg>
-														</span>
-                                                        <!--end::Svg Icon-->
-													</span>
-													<span class="menu-title">فاکتور مدیریت</span>
-													<span class="menu-arrow"></span>
-												</span>
-                                        <!--end:Menu link-->
-                                        <!--begin:Menu sub-->
-                                        <div
-                                            class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
-                                            <!--begin:Menu item-->
-                                            <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-                                                 data-kt-menu-placement="left-start"
-                                                 class="menu-item menu-lg-down-accordion">
-                                                <!--begin:Menu link-->
-                                                <span class="menu-link">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-															<span class="menu-title">پروفایل</span>
-															<span class="menu-arrow"></span>
-														</span>
-                                                <!--end:Menu link-->
-                                                <!--begin:Menu sub-->
-                                                <div
-                                                    class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/invoices/view/invoice-1.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title">فاکتور1</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/invoices/view/invoice-2.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title">فاکتور2</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                    <!--begin:Menu item-->
-                                                    <div class="menu-item">
-                                                        <!--begin:Menu link-->
-                                                        <a class="menu-link"
-                                                           href="../../demo1/dist/apps/invoices/view/invoice-3.html">
-																	<span class="menu-bullet">
-																		<span class="bullet bullet-dot"></span>
-																	</span>
-                                                            <span class="menu-title">فاکتور 3</span>
-                                                        </a>
-                                                        <!--end:Menu link-->
-                                                    </div>
-                                                    <!--end:Menu item-->
-                                                </div>
-                                                <!--end:Menu sub-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link" href="../../demo1/dist/apps/invoices/create.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">ساختن فاکتور</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link"
+                                               href="../../demo1/dist/apps/projects/settings.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">تنظیمات</span>
+                                            </a>
+                                            <!--end:Menu link-->
                                         </div>
-                                        <!--end:Menu sub-->
+                                        <!--end:Menu item-->
                                     </div>
-                                    <!--end:Menu item-->
-                                    <!--begin:Menu item-->
-                                    <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-                                         data-kt-menu-placement="left-start" class="menu-item menu-lg-down-accordion">
-                                        <!--begin:Menu link-->
-                                        <span class="menu-link">
-													<span class="menu-icon">
-														<!--begin::Svg Icon | path: icons/duotune/files/fil025.svg-->
-														<span class="svg-icon svg-icon-3">
-															<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                                 xmlns="http://www.w3.org/2000/svg">
-																<path opacity="0.3"
-                                                                      d="M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2Z"
-                                                                      fill="currentColor"/>
-																<path d="M20 8L14 2V6C14 7.10457 14.8954 8 16 8H20Z"
-                                                                      fill="currentColor"/>
-																<path
-                                                                    d="M10.3629 14.0084L8.92108 12.6429C8.57518 12.3153 8.03352 12.3153 7.68761 12.6429C7.31405 12.9967 7.31405 13.5915 7.68761 13.9453L10.2254 16.3488C10.6111 16.714 11.215 16.714 11.6007 16.3488L16.3124 11.8865C16.6859 11.5327 16.6859 10.9379 16.3124 10.5841C15.9665 10.2565 15.4248 10.2565 15.0789 10.5841L11.4631 14.0084C11.1546 14.3006 10.6715 14.3006 10.3629 14.0084Z"
-                                                                    fill="currentColor"/>
-															</svg>
-														</span>
-                                                        <!--end::Svg Icon-->
-													</span>
-													<span class="menu-title">مدیر پرونده</span>
-													<span class="menu-arrow"></span>
-												</span>
-                                        <!--end:Menu link-->
-                                        <!--begin:Menu sub-->
-                                        <div
-                                            class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link"
-                                                   href="../../demo1/dist/apps/file-manager/folders.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">پوشه ها</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link"
-                                                   href="../../demo1/dist/apps/file-manager/files.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">فایل ها</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link"
-                                                   href="../../demo1/dist/apps/file-manager/blank.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">دایرکتوری خالی</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link"
-                                                   href="../../demo1/dist/apps/file-manager/settings.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">تنظیمات</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                        </div>
-                                        <!--end:Menu sub-->
-                                    </div>
-                                    <!--end:Menu item-->
-                                    <!--begin:Menu item-->
-                                    <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-                                         data-kt-menu-placement="left-start" class="menu-item menu-lg-down-accordion">
-                                        <!--begin:Menu link-->
-                                        <span class="menu-link">
-													<span class="menu-icon">
-														<!--begin::Svg Icon | path: icons/duotune/communication/com011.svg-->
-														<span class="svg-icon svg-icon-3">
-															<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                                 xmlns="http://www.w3.org/2000/svg">
-																<path opacity="0.3"
-                                                                      d="M21 19H3C2.4 19 2 18.6 2 18V6C2 5.4 2.4 5 3 5H21C21.6 5 22 5.4 22 6V18C22 18.6 21.6 19 21 19Z"
-                                                                      fill="currentColor"/>
-																<path
-                                                                    d="M21 5H2.99999C2.69999 5 2.49999 5.10005 2.29999 5.30005L11.2 13.3C11.7 13.7 12.4 13.7 12.8 13.3L21.7 5.30005C21.5 5.10005 21.3 5 21 5Z"
-                                                                    fill="currentColor"/>
-															</svg>
-														</span>
-                                                        <!--end::Svg Icon-->
-													</span>
-													<span class="menu-title">صندوق پیام</span>
-													<span class="menu-arrow"></span>
-												</span>
-                                        <!--end:Menu link-->
-                                        <!--begin:Menu sub-->
-                                        <div
-                                            class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link" href="../../demo1/dist/apps/inbox/listing.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">پیام ها</span>
-                                                    <span class="menu-badge">
-																<span class="badge badge-light-success">3</span>
-															</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link" href="../../demo1/dist/apps/inbox/compose.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">ارسال</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link" href="../../demo1/dist/apps/inbox/reply.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">نمایش & پاسخ</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                        </div>
-                                        <!--end:Menu sub-->
-                                    </div>
-                                    <!--end:Menu item-->
-                                    <!--begin:Menu item-->
-                                    <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-                                         data-kt-menu-placement="left-start" class="menu-item menu-lg-down-accordion">
-                                        <!--begin:Menu link-->
-                                        <span class="menu-link">
-													<span class="menu-icon">
-														<!--begin::Svg Icon | path: icons/duotune/communication/com012.svg-->
-														<span class="svg-icon svg-icon-3">
-															<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                                 xmlns="http://www.w3.org/2000/svg">
-																<path opacity="0.3"
-                                                                      d="M20 3H4C2.89543 3 2 3.89543 2 5V16C2 17.1046 2.89543 18 4 18H4.5C5.05228 18 5.5 18.4477 5.5 19V21.5052C5.5 22.1441 6.21212 22.5253 6.74376 22.1708L11.4885 19.0077C12.4741 18.3506 13.6321 18 14.8167 18H20C21.1046 18 22 17.1046 22 16V5C22 3.89543 21.1046 3 20 3Z"
-                                                                      fill="currentColor"/>
-																<rect x="6" y="12" width="7" height="2" rx="1"
-                                                                      fill="currentColor"/>
-																<rect x="6" y="7" width="12" height="2" rx="1"
-                                                                      fill="currentColor"/>
-															</svg>
-														</span>
-                                                        <!--end::Svg Icon-->
-													</span>
-													<span class="menu-title">چت</span>
-													<span class="menu-arrow"></span>
-												</span>
-                                        <!--end:Menu link-->
-                                        <!--begin:Menu sub-->
-                                        <div
-                                            class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link" href="../../demo1/dist/apps/chat/private.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">خصوصی چت</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link" href="../../demo1/dist/apps/chat/group.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">گروه چت</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                            <!--begin:Menu item-->
-                                            <div class="menu-item">
-                                                <!--begin:Menu link-->
-                                                <a class="menu-link" href="../../demo1/dist/apps/chat/drawer.html">
-															<span class="menu-bullet">
-																<span class="bullet bullet-dot"></span>
-															</span>
-                                                    <span class="menu-title">کشو چت</span>
-                                                </a>
-                                                <!--end:Menu link-->
-                                            </div>
-                                            <!--end:Menu item-->
-                                        </div>
-                                        <!--end:Menu sub-->
-                                    </div>
-                                    <!--end:Menu item-->
-                                    <!--begin:Menu item-->
-                                    <div class="menu-item">
-                                        <!--begin:Menu link-->
-                                        <a class="menu-link" href="../../demo1/dist/apps/calendar.html">
-													<span class="menu-icon">
-														<!--begin::Svg Icon | path: icons/duotune/general/gen014.svg-->
-														<span class="svg-icon svg-icon-2">
-															<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                                 xmlns="http://www.w3.org/2000/svg">
-																<path opacity="0.3"
-                                                                      d="M21 22H3C2.4 22 2 21.6 2 21V5C2 4.4 2.4 4 3 4H21C21.6 4 22 4.4 22 5V21C22 21.6 21.6 22 21 22Z"
-                                                                      fill="currentColor"/>
-																<path
-                                                                    d="M6 6C5.4 6 5 5.6 5 5V3C5 2.4 5.4 2 6 2C6.6 2 7 2.4 7 3V5C7 5.6 6.6 6 6 6ZM11 5V3C11 2.4 10.6 2 10 2C9.4 2 9 2.4 9 3V5C9 5.6 9.4 6 10 6C10.6 6 11 5.6 11 5ZM15 5V3C15 2.4 14.6 2 14 2C13.4 2 13 2.4 13 3V5C13 5.6 13.4 6 14 6C14.6 6 15 5.6 15 5ZM19 5V3C19 2.4 18.6 2 18 2C17.4 2 17 2.4 17 3V5C17 5.6 17.4 6 18 6C18.6 6 19 5.6 19 5Z"
-                                                                    fill="currentColor"/>
-																<path
-                                                                    d="M8.8 13.1C9.2 13.1 9.5 13 9.7 12.8C9.9 12.6 10.1 12.3 10.1 11.9C10.1 11.6 10 11.3 9.8 11.1C9.6 10.9 9.3 10.8 9 10.8C8.8 10.8 8.59999 10.8 8.39999 10.9C8.19999 11 8.1 11.1 8 11.2C7.9 11.3 7.8 11.4 7.7 11.6C7.6 11.8 7.5 11.9 7.5 12.1C7.5 12.2 7.4 12.2 7.3 12.3C7.2 12.4 7.09999 12.4 6.89999 12.4C6.69999 12.4 6.6 12.3 6.5 12.2C6.4 12.1 6.3 11.9 6.3 11.7C6.3 11.5 6.4 11.3 6.5 11.1C6.6 10.9 6.8 10.7 7 10.5C7.2 10.3 7.49999 10.1 7.89999 10C8.29999 9.90003 8.60001 9.80003 9.10001 9.80003C9.50001 9.80003 9.80001 9.90003 10.1 10C10.4 10.1 10.7 10.3 10.9 10.4C11.1 10.5 11.3 10.8 11.4 11.1C11.5 11.4 11.6 11.6 11.6 11.9C11.6 12.3 11.5 12.6 11.3 12.9C11.1 13.2 10.9 13.5 10.6 13.7C10.9 13.9 11.2 14.1 11.4 14.3C11.6 14.5 11.8 14.7 11.9 15C12 15.3 12.1 15.5 12.1 15.8C12.1 16.2 12 16.5 11.9 16.8C11.8 17.1 11.5 17.4 11.3 17.7C11.1 18 10.7 18.2 10.3 18.3C9.9 18.4 9.5 18.5 9 18.5C8.5 18.5 8.1 18.4 7.7 18.2C7.3 18 7 17.8 6.8 17.6C6.6 17.4 6.4 17.1 6.3 16.8C6.2 16.5 6.10001 16.3 6.10001 16.1C6.10001 15.9 6.2 15.7 6.3 15.6C6.4 15.5 6.6 15.4 6.8 15.4C6.9 15.4 7.00001 15.4 7.10001 15.5C7.20001 15.6 7.3 15.6 7.3 15.7C7.5 16.2 7.7 16.6 8 16.9C8.3 17.2 8.6 17.3 9 17.3C9.2 17.3 9.5 17.2 9.7 17.1C9.9 17 10.1 16.8 10.3 16.6C10.5 16.4 10.5 16.1 10.5 15.8C10.5 15.3 10.4 15 10.1 14.7C9.80001 14.4 9.50001 14.3 9.10001 14.3C9.00001 14.3 8.9 14.3 8.7 14.3C8.5 14.3 8.39999 14.3 8.39999 14.3C8.19999 14.3 7.99999 14.2 7.89999 14.1C7.79999 14 7.7 13.8 7.7 13.7C7.7 13.5 7.79999 13.4 7.89999 13.2C7.99999 13 8.2 13 8.5 13H8.8V13.1ZM15.3 17.5V12.2C14.3 13 13.6 13.3 13.3 13.3C13.1 13.3 13 13.2 12.9 13.1C12.8 13 12.7 12.8 12.7 12.6C12.7 12.4 12.8 12.3 12.9 12.2C13 12.1 13.2 12 13.6 11.8C14.1 11.6 14.5 11.3 14.7 11.1C14.9 10.9 15.2 10.6 15.5 10.3C15.8 10 15.9 9.80003 15.9 9.70003C15.9 9.60003 16.1 9.60004 16.3 9.60004C16.5 9.60004 16.7 9.70003 16.8 9.80003C16.9 9.90003 17 10.2 17 10.5V17.2C17 18 16.7 18.4 16.2 18.4C16 18.4 15.8 18.3 15.6 18.2C15.4 18.1 15.3 17.8 15.3 17.5Z"
-                                                                    fill="currentColor"/>
-															</svg>
-														</span>
-                                                        <!--end::Svg Icon-->
-													</span>
-                                            <span class="menu-title">تقویم</span>
-                                        </a>
-                                        <!--end:Menu link-->
-                                    </div>
-                                    <!--end:Menu item-->
+                                    <!--end:Menu sub-->
                                 </div>
-                                <!--end:Menu sub-->
+                                <!--end:Menu item-->
+                                <!--begin:Menu item-->
+                                <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
+                                     data-kt-menu-placement="left-start" class="menu-item menu-lg-down-accordion">
+                                    <!--begin:Menu link-->
+                                    <span class="menu-link">
+                                                <span class="menu-icon">
+                                                    <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm001.svg-->
+                                                    <span class="svg-icon svg-icon-3">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path opacity="0.3"
+                                                                  d="M18.041 22.041C18.5932 22.041 19.041 21.5932 19.041 21.041C19.041 20.4887 18.5932 20.041 18.041 20.041C17.4887 20.041 17.041 20.4887 17.041 21.041C17.041 21.5932 17.4887 22.041 18.041 22.041Z"
+                                                                  fill="currentColor"/>
+                                                            <path opacity="0.3"
+                                                                  d="M6.04095 22.041C6.59324 22.041 7.04095 21.5932 7.04095 21.041C7.04095 20.4887 6.59324 20.041 6.04095 20.041C5.48867 20.041 5.04095 20.4887 5.04095 21.041C5.04095 21.5932 5.48867 22.041 6.04095 22.041Z"
+                                                                  fill="currentColor"/>
+                                                            <path opacity="0.3"
+                                                                  d="M7.04095 16.041L19.1409 15.1409C19.7409 15.1409 20.141 14.7409 20.341 14.1409L21.7409 8.34094C21.9409 7.64094 21.4409 7.04095 20.7409 7.04095H5.44095L7.04095 16.041Z"
+                                                                  fill="currentColor"/>
+                                                            <path
+                                                                d="M19.041 20.041H5.04096C4.74096 20.041 4.34095 19.841 4.14095 19.541C3.94095 19.241 3.94095 18.841 4.14095 18.541L6.04096 14.841L4.14095 4.64095L2.54096 3.84096C2.04096 3.64096 1.84095 3.04097 2.14095 2.54097C2.34095 2.04097 2.94096 1.84095 3.44096 2.14095L5.44096 3.14095C5.74096 3.24095 5.94096 3.54096 5.94096 3.84096L7.94096 14.841C7.94096 15.041 7.94095 15.241 7.84095 15.441L6.54096 18.041H19.041C19.641 18.041 20.041 18.441 20.041 19.041C20.041 19.641 19.641 20.041 19.041 20.041Z"
+                                                                fill="currentColor"/>
+                                                        </svg>
+                                                    </span>
+                                                    <!--end::Svg Icon-->
+                                                </span>
+                                                <span class="menu-title">تجارت الکترونیک</span>
+                                                <span class="menu-arrow"></span>
+                                            </span>
+                                    <!--end:Menu link-->
+                                    <!--begin:Menu sub-->
+                                    <div
+                                        class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
+                                        <!--begin:Menu item-->
+                                        <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
+                                             data-kt-menu-placement="left-start"
+                                             class="menu-item menu-lg-down-accordion">
+                                            <!--begin:Menu link-->
+                                            <span class="menu-link">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                        <span class="menu-title">کاتالوگ</span>
+                                                        <span class="menu-arrow"></span>
+                                                    </span>
+                                            <!--end:Menu link-->
+                                            <!--begin:Menu sub-->
+                                            <div
+                                                class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/ecommerce/catalog/products.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title">محصولات</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/ecommerce/catalog/categories.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title">دسته بندی ها</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/ecommerce/catalog/add-product.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title">افزودن محصول</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/ecommerce/catalog/edit-product.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title"> محصولات</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/ecommerce/catalog/add-category.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title">افزودن دسته بندی</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/ecommerce/catalog/edit-category.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title"> دسته بندی</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                            </div>
+                                            <!--end:Menu sub-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div data-kt-menu-trigger="click"
+                                             class="menu-item menu-accordion menu-sub-indention">
+                                            <!--begin:Menu link-->
+                                            <span class="menu-link">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                        <span class="menu-title">فروش</span>
+                                                        <span class="menu-arrow"></span>
+                                                    </span>
+                                            <!--end:Menu link-->
+                                            <!--begin:Menu sub-->
+                                            <div class="menu-sub menu-sub-accordion">
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/ecommerce/sales/listing.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title">لیست سفارشات</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/ecommerce/sales/details.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title">جزییات سفارش</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/ecommerce/sales/add-order.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title">افزودن سفارش</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/ecommerce/sales/edit-order.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title"> سفارش</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                            </div>
+                                            <!--end:Menu sub-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div data-kt-menu-trigger="click"
+                                             class="menu-item menu-accordion menu-sub-indention">
+                                            <!--begin:Menu link-->
+                                            <span class="menu-link">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                        <span class="menu-title">مشتریان</span>
+                                                        <span class="menu-arrow"></span>
+                                                    </span>
+                                            <!--end:Menu link-->
+                                            <!--begin:Menu sub-->
+                                            <div class="menu-sub menu-sub-accordion">
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/ecommerce/customers/listing.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title">لیست مشتریان</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/ecommerce/customers/details.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title">مشتریان جزییات</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                            </div>
+                                            <!--end:Menu sub-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div data-kt-menu-trigger="click"
+                                             class="menu-item menu-accordion menu-sub-indention">
+                                            <!--begin:Menu link-->
+                                            <span class="menu-link">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                        <span class="menu-title">گزارشات</span>
+                                                        <span class="menu-arrow"></span>
+                                                    </span>
+                                            <!--end:Menu link-->
+                                            <!--begin:Menu sub-->
+                                            <div class="menu-sub menu-sub-accordion">
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/ecommerce/reports/view.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title">محصولات مشاهده شده</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/ecommerce/reports/sales.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title">فروش</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/ecommerce/reports/returns.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title">برگشتی ها</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/ecommerce/reports/customer-orders.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title">مشتری سفارشات</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/ecommerce/reports/shipping.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title">حمل دریایی</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                            </div>
+                                            <!--end:Menu sub-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link"
+                                               href="../../demo1/dist/apps/ecommerce/settings.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">تنظیمات</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                    </div>
+                                    <!--end:Menu sub-->
+                                </div>
+                                <!--end:Menu item-->
+                                <!--begin:Menu item-->
+                                <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
+                                     data-kt-menu-placement="left-start" class="menu-item menu-lg-down-accordion">
+                                    <!--begin:Menu link-->
+                                    <span class="menu-link">
+                                                <span class="menu-icon">
+                                                    <!--begin::Svg Icon | path: icons/duotune/graphs/gra006.svg-->
+                                                    <span class="svg-icon svg-icon-3">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M13 5.91517C15.8 6.41517 18 8.81519 18 11.8152C18 12.5152 17.9 13.2152 17.6 13.9152L20.1 15.3152C20.6 15.6152 21.4 15.4152 21.6 14.8152C21.9 13.9152 22.1 12.9152 22.1 11.8152C22.1 7.01519 18.8 3.11521 14.3 2.01521C13.7 1.91521 13.1 2.31521 13.1 3.01521V5.91517H13Z"
+                                                                fill="currentColor"/>
+                                                            <path opacity="0.3"
+                                                                  d="M19.1 17.0152C19.7 17.3152 19.8 18.1152 19.3 18.5152C17.5 20.5152 14.9 21.7152 12 21.7152C9.1 21.7152 6.50001 20.5152 4.70001 18.5152C4.30001 18.0152 4.39999 17.3152 4.89999 17.0152L7.39999 15.6152C8.49999 16.9152 10.2 17.8152 12 17.8152C13.8 17.8152 15.5 17.0152 16.6 15.6152L19.1 17.0152ZM6.39999 13.9151C6.19999 13.2151 6 12.5152 6 11.8152C6 8.81517 8.2 6.41515 11 5.91515V3.01519C11 2.41519 10.4 1.91519 9.79999 2.01519C5.29999 3.01519 2 7.01517 2 11.8152C2 12.8152 2.2 13.8152 2.5 14.8152C2.7 15.4152 3.4 15.7152 4 15.3152L6.39999 13.9151Z"
+                                                                  fill="currentColor"/>
+                                                        </svg>
+                                                    </span>
+                                                    <!--end::Svg Icon-->
+                                                </span>
+                                                <span class="menu-title">مرکز پشتیبانی</span>
+                                                <span class="menu-arrow"></span>
+                                            </span>
+                                    <!--end:Menu link-->
+                                    <!--begin:Menu sub-->
+                                    <div
+                                        class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link"
+                                               href="../../demo1/dist/apps/support-center/overview.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">بررسی اجمالی</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
+                                             data-kt-menu-placement="left-start"
+                                             class="menu-item menu-lg-down-accordion">
+                                            <!--begin:Menu link-->
+                                            <span class="menu-link">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                        <span class="menu-title">تیکت ها</span>
+                                                        <span class="menu-arrow"></span>
+                                                    </span>
+                                            <!--end:Menu link-->
+                                            <!--begin:Menu sub-->
+                                            <div
+                                                class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/support-center/tickets/list.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title">تیکت لیست</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/support-center/tickets/view.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title">تیکت نمایش</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                            </div>
+                                            <!--end:Menu sub-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
+                                             data-kt-menu-placement="left-start"
+                                             class="menu-item menu-lg-down-accordion">
+                                            <!--begin:Menu link-->
+                                            <span class="menu-link">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                        <span class="menu-title">آموزشها</span>
+                                                        <span class="menu-arrow"></span>
+                                                    </span>
+                                            <!--end:Menu link-->
+                                            <!--begin:Menu sub-->
+                                            <div
+                                                class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/support-center/tutorials/list.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title">آموزشها لیست</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/support-center/tutorials/post.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title">پست های آموزشی</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                            </div>
+                                            <!--end:Menu sub-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link"
+                                               href="../../demo1/dist/apps/support-center/faq.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">سوالات متداول</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link"
+                                               href="../../demo1/dist/apps/support-center/licenses.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">لاینسس شده</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link"
+                                               href="../../demo1/dist/apps/support-center/contact.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">تماس با ما</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                    </div>
+                                    <!--end:Menu sub-->
+                                </div>
+                                <!--end:Menu item-->
+                                <!--begin:Menu item-->
+                                <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
+                                     data-kt-menu-placement="left-start" class="menu-item menu-lg-down-accordion">
+                                    <!--begin:Menu link-->
+                                    <span class="menu-link">
+                                                <span class="menu-icon">
+                                                    <!--begin::Svg Icon | path: icons/duotune/general/gen051.svg-->
+                                                    <span class="svg-icon svg-icon-3">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path opacity="0.3"
+                                                                  d="M20.5543 4.37824L12.1798 2.02473C12.0626 1.99176 11.9376 1.99176 11.8203 2.02473L3.44572 4.37824C3.18118 4.45258 3 4.6807 3 4.93945V13.569C3 14.6914 3.48509 15.8404 4.4417 16.984C5.17231 17.8575 6.18314 18.7345 7.446 19.5909C9.56752 21.0295 11.6566 21.912 11.7445 21.9488C11.8258 21.9829 11.9129 22 12.0001 22C12.0872 22 12.1744 21.983 12.2557 21.9488C12.3435 21.912 14.4326 21.0295 16.5541 19.5909C17.8169 18.7345 18.8277 17.8575 19.5584 16.984C20.515 15.8404 21 14.6914 21 13.569V4.93945C21 4.6807 20.8189 4.45258 20.5543 4.37824Z"
+                                                                  fill="currentColor"/>
+                                                            <path
+                                                                d="M14.854 11.321C14.7568 11.2282 14.6388 11.1818 14.4998 11.1818H14.3333V10.2272C14.3333 9.61741 14.1041 9.09378 13.6458 8.65628C13.1875 8.21876 12.639 8 12 8C11.361 8 10.8124 8.21876 10.3541 8.65626C9.89574 9.09378 9.66663 9.61739 9.66663 10.2272V11.1818H9.49999C9.36115 11.1818 9.24306 11.2282 9.14583 11.321C9.0486 11.4138 9 11.5265 9 11.6591V14.5227C9 14.6553 9.04862 14.768 9.14583 14.8609C9.24306 14.9536 9.36115 15 9.49999 15H14.5C14.6389 15 14.7569 14.9536 14.8542 14.8609C14.9513 14.768 15 14.6553 15 14.5227V11.6591C15.0001 11.5265 14.9513 11.4138 14.854 11.321ZM13.3333 11.1818H10.6666V10.2272C10.6666 9.87594 10.7969 9.57597 11.0573 9.32743C11.3177 9.07886 11.6319 8.9546 12 8.9546C12.3681 8.9546 12.6823 9.07884 12.9427 9.32743C13.2031 9.57595 13.3333 9.87594 13.3333 10.2272V11.1818Z"
+                                                                fill="currentColor"/>
+                                                        </svg>
+                                                    </span>
+                                                    <!--end::Svg Icon-->
+                                                </span>
+                                                <span class="menu-title">کاربر مدیریت</span>
+                                                <span class="menu-arrow"></span>
+                                            </span>
+                                    <!--end:Menu link-->
+                                    <!--begin:Menu sub-->
+                                    <div
+                                        class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
+                                        <!--begin:Menu item-->
+                                        <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
+                                             data-kt-menu-placement="left-start"
+                                             class="menu-item menu-lg-down-accordion">
+                                            <!--begin:Menu link-->
+                                            <span class="menu-link">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                        <span class="menu-title">کاربران</span>
+                                                        <span class="menu-arrow"></span>
+                                                    </span>
+                                            <!--end:Menu link-->
+                                            <!--begin:Menu sub-->
+                                            <div
+                                                class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/user-management/users/list.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title">کاربران لیست</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/user-management/users/view.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title">نمایش کاربر</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                            </div>
+                                            <!--end:Menu sub-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
+                                             data-kt-menu-placement="left-start"
+                                             class="menu-item menu-lg-down-accordion">
+                                            <!--begin:Menu link-->
+                                            <span class="menu-link">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                        <span class="menu-title">سطح دسترسی</span>
+                                                        <span class="menu-arrow"></span>
+                                                    </span>
+                                            <!--end:Menu link-->
+                                            <!--begin:Menu sub-->
+                                            <div
+                                                class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/user-management/roles/list.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title">سطح دسترسی لیست</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/user-management/roles/view.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title">نمایش سطح دسترسی</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                            </div>
+                                            <!--end:Menu sub-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link"
+                                               href="../../demo1/dist/apps/user-management/permissions.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">مجوزها</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                    </div>
+                                    <!--end:Menu sub-->
+                                </div>
+                                <!--end:Menu item-->
+                                <!--begin:Menu item-->
+                                <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
+                                     data-kt-menu-placement="left-start" class="menu-item menu-lg-down-accordion">
+                                    <!--begin:Menu link-->
+                                    <span class="menu-link">
+                                                <span class="menu-icon">
+                                                    <!--begin::Svg Icon | path: icons/duotune/electronics/elc002.svg-->
+                                                    <span class="svg-icon svg-icon-3">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M6 21C6 21.6 6.4 22 7 22H17C17.6 22 18 21.6 18 21V20H6V21Z"
+                                                                fill="currentColor"/>
+                                                            <path opacity="0.3"
+                                                                  d="M17 2H7C6.4 2 6 2.4 6 3V20H18V3C18 2.4 17.6 2 17 2Z"
+                                                                  fill="currentColor"/>
+                                                            <path
+                                                                d="M12 4C11.4 4 11 3.6 11 3V2H13V3C13 3.6 12.6 4 12 4Z"
+                                                                fill="currentColor"/>
+                                                        </svg>
+                                                    </span>
+                                                    <!--end::Svg Icon-->
+                                                </span>
+                                                <span class="menu-title">تماس با ما</span>
+                                                <span class="menu-arrow"></span>
+                                            </span>
+                                    <!--end:Menu link-->
+                                    <!--begin:Menu sub-->
+                                    <div
+                                        class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link"
+                                               href="../../demo1/dist/apps/contacts/getting-started.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">شروع شدن</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link"
+                                               href="../../demo1/dist/apps/contacts/add-contact.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title"> افزودن تماس با ما</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link"
+                                               href="../../demo1/dist/apps/contacts/edit-contact.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title"> تماس با ما</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link"
+                                               href="../../demo1/dist/apps/contacts/view-contact.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">نمایش تماس با ما</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                    </div>
+                                    <!--end:Menu sub-->
+                                </div>
+                                <!--end:Menu item-->
+                                <!--begin:Menu item-->
+                                <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
+                                     data-kt-menu-placement="left-start" class="menu-item menu-lg-down-accordion">
+                                    <!--begin:Menu link-->
+                                    <span class="menu-link">
+                                                <span class="menu-icon">
+                                                    <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm002.svg-->
+                                                    <span class="svg-icon svg-icon-3">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M21 10H13V11C13 11.6 12.6 12 12 12C11.4 12 11 11.6 11 11V10H3C2.4 10 2 10.4 2 11V13H22V11C22 10.4 21.6 10 21 10Z"
+                                                                fill="currentColor"/>
+                                                            <path opacity="0.3"
+                                                                  d="M12 12C11.4 12 11 11.6 11 11V3C11 2.4 11.4 2 12 2C12.6 2 13 2.4 13 3V11C13 11.6 12.6 12 12 12Z"
+                                                                  fill="currentColor"/>
+                                                            <path opacity="0.3"
+                                                                  d="M18.1 21H5.9C5.4 21 4.9 20.6 4.8 20.1L3 13H21L19.2 20.1C19.1 20.6 18.6 21 18.1 21ZM13 18V15C13 14.4 12.6 14 12 14C11.4 14 11 14.4 11 15V18C11 18.6 11.4 19 12 19C12.6 19 13 18.6 13 18ZM17 18V15C17 14.4 16.6 14 16 14C15.4 14 15 14.4 15 15V18C15 18.6 15.4 19 16 19C16.6 19 17 18.6 17 18ZM9 18V15C9 14.4 8.6 14 8 14C7.4 14 7 14.4 7 15V18C7 18.6 7.4 19 8 19C8.6 19 9 18.6 9 18Z"
+                                                                  fill="currentColor"/>
+                                                        </svg>
+                                                    </span>
+                                                    <!--end::Svg Icon-->
+                                                </span>
+                                                <span class="menu-title">اشتراک ها</span>
+                                                <span class="menu-arrow"></span>
+                                            </span>
+                                    <!--end:Menu link-->
+                                    <!--begin:Menu sub-->
+                                    <div
+                                        class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link"
+                                               href="../../demo1/dist/apps/subscriptions/getting-started.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">شروع شدن</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link"
+                                               href="../../demo1/dist/apps/subscriptions/list.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">لیست اشتراک</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link"
+                                               href="../../demo1/dist/apps/subscriptions/add.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">افزودن اشتراک</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link"
+                                               href="../../demo1/dist/apps/subscriptions/view.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">نمایش اشتراک ها</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                    </div>
+                                    <!--end:Menu sub-->
+                                </div>
+                                <!--end:Menu item-->
+                                <!--begin:Menu item-->
+                                <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
+                                     data-kt-menu-placement="left-start" class="menu-item menu-lg-down-accordion">
+                                    <!--begin:Menu link-->
+                                    <span class="menu-link">
+                                                <span class="menu-icon">
+                                                    <!--begin::Svg Icon | path: icons/duotune/finance/fin006.svg-->
+                                                    <span class="svg-icon svg-icon-3">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path opacity="0.3"
+                                                                  d="M20 15H4C2.9 15 2 14.1 2 13V7C2 6.4 2.4 6 3 6H21C21.6 6 22 6.4 22 7V13C22 14.1 21.1 15 20 15ZM13 12H11C10.5 12 10 12.4 10 13V16C10 16.5 10.4 17 11 17H13C13.6 17 14 16.6 14 16V13C14 12.4 13.6 12 13 12Z"
+                                                                  fill="currentColor"/>
+                                                            <path
+                                                                d="M14 6V5H10V6H8V5C8 3.9 8.9 3 10 3H14C15.1 3 16 3.9 16 5V6H14ZM20 15H14V16C14 16.6 13.5 17 13 17H11C10.5 17 10 16.6 10 16V15H4C3.6 15 3.3 14.9 3 14.7V18C3 19.1 3.9 20 5 20H19C20.1 20 21 19.1 21 18V14.7C20.7 14.9 20.4 15 20 15Z"
+                                                                fill="currentColor"/>
+                                                        </svg>
+                                                    </span>
+                                                    <!--end::Svg Icon-->
+                                                </span>
+                                                <span class="menu-title">مشتریان</span>
+                                                <span class="menu-arrow"></span>
+                                            </span>
+                                    <!--end:Menu link-->
+                                    <!--begin:Menu sub-->
+                                    <div
+                                        class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link"
+                                               href="../../demo1/dist/apps/customers/getting-started.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">شروع شدن</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="../../demo1/dist/apps/customers/list.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">لیست مشتریان</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="../../demo1/dist/apps/customers/view.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">جزییات مشتریان</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                    </div>
+                                    <!--end:Menu sub-->
+                                </div>
+                                <!--end:Menu item-->
+                                <!--begin:Menu item-->
+                                <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
+                                     data-kt-menu-placement="left-start" class="menu-item menu-lg-down-accordion">
+                                    <!--begin:Menu link-->
+                                    <span class="menu-link">
+                                                <span class="menu-icon">
+                                                    <!--begin::Svg Icon | path: icons/duotune/finance/fin002.svg-->
+                                                    <span class="svg-icon svg-icon-3">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M22 7H2V11H22V7Z" fill="currentColor"/>
+                                                            <path opacity="0.3"
+                                                                  d="M21 19H3C2.4 19 2 18.6 2 18V6C2 5.4 2.4 5 3 5H21C21.6 5 22 5.4 22 6V18C22 18.6 21.6 19 21 19ZM14 14C14 13.4 13.6 13 13 13H5C4.4 13 4 13.4 4 14C4 14.6 4.4 15 5 15H13C13.6 15 14 14.6 14 14ZM16 15.5C16 16.3 16.7 17 17.5 17H18.5C19.3 17 20 16.3 20 15.5C20 14.7 19.3 14 18.5 14H17.5C16.7 14 16 14.7 16 15.5Z"
+                                                                  fill="currentColor"/>
+                                                        </svg>
+                                                    </span>
+                                                    <!--end::Svg Icon-->
+                                                </span>
+                                                <span class="menu-title">فاکتور مدیریت</span>
+                                                <span class="menu-arrow"></span>
+                                            </span>
+                                    <!--end:Menu link-->
+                                    <!--begin:Menu sub-->
+                                    <div
+                                        class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
+                                        <!--begin:Menu item-->
+                                        <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
+                                             data-kt-menu-placement="left-start"
+                                             class="menu-item menu-lg-down-accordion">
+                                            <!--begin:Menu link-->
+                                            <span class="menu-link">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                        <span class="menu-title">پروفایل</span>
+                                                        <span class="menu-arrow"></span>
+                                                    </span>
+                                            <!--end:Menu link-->
+                                            <!--begin:Menu sub-->
+                                            <div
+                                                class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/invoices/view/invoice-1.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title">فاکتور1</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/invoices/view/invoice-2.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title">فاکتور2</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                                <!--begin:Menu item-->
+                                                <div class="menu-item">
+                                                    <!--begin:Menu link-->
+                                                    <a class="menu-link"
+                                                       href="../../demo1/dist/apps/invoices/view/invoice-3.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span>
+                                                        <span class="menu-title">فاکتور 3</span>
+                                                    </a>
+                                                    <!--end:Menu link-->
+                                                </div>
+                                                <!--end:Menu item-->
+                                            </div>
+                                            <!--end:Menu sub-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="../../demo1/dist/apps/invoices/create.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">ساختن فاکتور</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                    </div>
+                                    <!--end:Menu sub-->
+                                </div>
+                                <!--end:Menu item-->
+                                <!--begin:Menu item-->
+                                <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
+                                     data-kt-menu-placement="left-start" class="menu-item menu-lg-down-accordion">
+                                    <!--begin:Menu link-->
+                                    <span class="menu-link">
+                                                <span class="menu-icon">
+                                                    <!--begin::Svg Icon | path: icons/duotune/files/fil025.svg-->
+                                                    <span class="svg-icon svg-icon-3">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path opacity="0.3"
+                                                                  d="M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2Z"
+                                                                  fill="currentColor"/>
+                                                            <path d="M20 8L14 2V6C14 7.10457 14.8954 8 16 8H20Z"
+                                                                  fill="currentColor"/>
+                                                            <path
+                                                                d="M10.3629 14.0084L8.92108 12.6429C8.57518 12.3153 8.03352 12.3153 7.68761 12.6429C7.31405 12.9967 7.31405 13.5915 7.68761 13.9453L10.2254 16.3488C10.6111 16.714 11.215 16.714 11.6007 16.3488L16.3124 11.8865C16.6859 11.5327 16.6859 10.9379 16.3124 10.5841C15.9665 10.2565 15.4248 10.2565 15.0789 10.5841L11.4631 14.0084C11.1546 14.3006 10.6715 14.3006 10.3629 14.0084Z"
+                                                                fill="currentColor"/>
+                                                        </svg>
+                                                    </span>
+                                                    <!--end::Svg Icon-->
+                                                </span>
+                                                <span class="menu-title">مدیر پرونده</span>
+                                                <span class="menu-arrow"></span>
+                                            </span>
+                                    <!--end:Menu link-->
+                                    <!--begin:Menu sub-->
+                                    <div
+                                        class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link"
+                                               href="../../demo1/dist/apps/file-manager/folders.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">پوشه ها</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link"
+                                               href="../../demo1/dist/apps/file-manager/files.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">فایل ها</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link"
+                                               href="../../demo1/dist/apps/file-manager/blank.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">دایرکتوری خالی</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link"
+                                               href="../../demo1/dist/apps/file-manager/settings.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">تنظیمات</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                    </div>
+                                    <!--end:Menu sub-->
+                                </div>
+                                <!--end:Menu item-->
+                                <!--begin:Menu item-->
+                                <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
+                                     data-kt-menu-placement="left-start" class="menu-item menu-lg-down-accordion">
+                                    <!--begin:Menu link-->
+                                    <span class="menu-link">
+                                                <span class="menu-icon">
+                                                    <!--begin::Svg Icon | path: icons/duotune/communication/com011.svg-->
+                                                    <span class="svg-icon svg-icon-3">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path opacity="0.3"
+                                                                  d="M21 19H3C2.4 19 2 18.6 2 18V6C2 5.4 2.4 5 3 5H21C21.6 5 22 5.4 22 6V18C22 18.6 21.6 19 21 19Z"
+                                                                  fill="currentColor"/>
+                                                            <path
+                                                                d="M21 5H2.99999C2.69999 5 2.49999 5.10005 2.29999 5.30005L11.2 13.3C11.7 13.7 12.4 13.7 12.8 13.3L21.7 5.30005C21.5 5.10005 21.3 5 21 5Z"
+                                                                fill="currentColor"/>
+                                                        </svg>
+                                                    </span>
+                                                    <!--end::Svg Icon-->
+                                                </span>
+                                                <span class="menu-title">صندوق پیام</span>
+                                                <span class="menu-arrow"></span>
+                                            </span>
+                                    <!--end:Menu link-->
+                                    <!--begin:Menu sub-->
+                                    <div
+                                        class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="../../demo1/dist/apps/inbox/listing.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">پیام ها</span>
+                                                <span class="menu-badge">
+                                                            <span class="badge badge-light-success">3</span>
+                                                        </span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="../../demo1/dist/apps/inbox/compose.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">ارسال</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="../../demo1/dist/apps/inbox/reply.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">نمایش & پاسخ</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                    </div>
+                                    <!--end:Menu sub-->
+                                </div>
+                                <!--end:Menu item-->
+                                <!--begin:Menu item-->
+                                <div data-kt-menu-trigger="{default:'click', lg: 'hover'}"
+                                     data-kt-menu-placement="left-start" class="menu-item menu-lg-down-accordion">
+                                    <!--begin:Menu link-->
+                                    <span class="menu-link">
+                                                <span class="menu-icon">
+                                                    <!--begin::Svg Icon | path: icons/duotune/communication/com012.svg-->
+                                                    <span class="svg-icon svg-icon-3">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path opacity="0.3"
+                                                                  d="M20 3H4C2.89543 3 2 3.89543 2 5V16C2 17.1046 2.89543 18 4 18H4.5C5.05228 18 5.5 18.4477 5.5 19V21.5052C5.5 22.1441 6.21212 22.5253 6.74376 22.1708L11.4885 19.0077C12.4741 18.3506 13.6321 18 14.8167 18H20C21.1046 18 22 17.1046 22 16V5C22 3.89543 21.1046 3 20 3Z"
+                                                                  fill="currentColor"/>
+                                                            <rect x="6" y="12" width="7" height="2" rx="1"
+                                                                  fill="currentColor"/>
+                                                            <rect x="6" y="7" width="12" height="2" rx="1"
+                                                                  fill="currentColor"/>
+                                                        </svg>
+                                                    </span>
+                                                    <!--end::Svg Icon-->
+                                                </span>
+                                                <span class="menu-title">چت</span>
+                                                <span class="menu-arrow"></span>
+                                            </span>
+                                    <!--end:Menu link-->
+                                    <!--begin:Menu sub-->
+                                    <div
+                                        class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-active-bg px-lg-2 py-lg-4 w-lg-225px">
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="../../demo1/dist/apps/chat/private.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">خصوصی چت</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="../../demo1/dist/apps/chat/group.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">گروه چت</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                        <!--begin:Menu item-->
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link" href="../../demo1/dist/apps/chat/drawer.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span>
+                                                <span class="menu-title">کشو چت</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
+                                        <!--end:Menu item-->
+                                    </div>
+                                    <!--end:Menu sub-->
+                                </div>
+                                <!--end:Menu item-->
+                                <!--begin:Menu item-->
+                                <div class="menu-item">
+                                    <!--begin:Menu link-->
+                                    <a class="menu-link" href="../../demo1/dist/apps/calendar.html">
+                                                <span class="menu-icon">
+                                                    <!--begin::Svg Icon | path: icons/duotune/general/gen014.svg-->
+                                                    <span class="svg-icon svg-icon-2">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path opacity="0.3"
+                                                                  d="M21 22H3C2.4 22 2 21.6 2 21V5C2 4.4 2.4 4 3 4H21C21.6 4 22 4.4 22 5V21C22 21.6 21.6 22 21 22Z"
+                                                                  fill="currentColor"/>
+                                                            <path
+                                                                d="M6 6C5.4 6 5 5.6 5 5V3C5 2.4 5.4 2 6 2C6.6 2 7 2.4 7 3V5C7 5.6 6.6 6 6 6ZM11 5V3C11 2.4 10.6 2 10 2C9.4 2 9 2.4 9 3V5C9 5.6 9.4 6 10 6C10.6 6 11 5.6 11 5ZM15 5V3C15 2.4 14.6 2 14 2C13.4 2 13 2.4 13 3V5C13 5.6 13.4 6 14 6C14.6 6 15 5.6 15 5ZM19 5V3C19 2.4 18.6 2 18 2C17.4 2 17 2.4 17 3V5C17 5.6 17.4 6 18 6C18.6 6 19 5.6 19 5Z"
+                                                                fill="currentColor"/>
+                                                            <path
+                                                                d="M8.8 13.1C9.2 13.1 9.5 13 9.7 12.8C9.9 12.6 10.1 12.3 10.1 11.9C10.1 11.6 10 11.3 9.8 11.1C9.6 10.9 9.3 10.8 9 10.8C8.8 10.8 8.59999 10.8 8.39999 10.9C8.19999 11 8.1 11.1 8 11.2C7.9 11.3 7.8 11.4 7.7 11.6C7.6 11.8 7.5 11.9 7.5 12.1C7.5 12.2 7.4 12.2 7.3 12.3C7.2 12.4 7.09999 12.4 6.89999 12.4C6.69999 12.4 6.6 12.3 6.5 12.2C6.4 12.1 6.3 11.9 6.3 11.7C6.3 11.5 6.4 11.3 6.5 11.1C6.6 10.9 6.8 10.7 7 10.5C7.2 10.3 7.49999 10.1 7.89999 10C8.29999 9.90003 8.60001 9.80003 9.10001 9.80003C9.50001 9.80003 9.80001 9.90003 10.1 10C10.4 10.1 10.7 10.3 10.9 10.4C11.1 10.5 11.3 10.8 11.4 11.1C11.5 11.4 11.6 11.6 11.6 11.9C11.6 12.3 11.5 12.6 11.3 12.9C11.1 13.2 10.9 13.5 10.6 13.7C10.9 13.9 11.2 14.1 11.4 14.3C11.6 14.5 11.8 14.7 11.9 15C12 15.3 12.1 15.5 12.1 15.8C12.1 16.2 12 16.5 11.9 16.8C11.8 17.1 11.5 17.4 11.3 17.7C11.1 18 10.7 18.2 10.3 18.3C9.9 18.4 9.5 18.5 9 18.5C8.5 18.5 8.1 18.4 7.7 18.2C7.3 18 7 17.8 6.8 17.6C6.6 17.4 6.4 17.1 6.3 16.8C6.2 16.5 6.10001 16.3 6.10001 16.1C6.10001 15.9 6.2 15.7 6.3 15.6C6.4 15.5 6.6 15.4 6.8 15.4C6.9 15.4 7.00001 15.4 7.10001 15.5C7.20001 15.6 7.3 15.6 7.3 15.7C7.5 16.2 7.7 16.6 8 16.9C8.3 17.2 8.6 17.3 9 17.3C9.2 17.3 9.5 17.2 9.7 17.1C9.9 17 10.1 16.8 10.3 16.6C10.5 16.4 10.5 16.1 10.5 15.8C10.5 15.3 10.4 15 10.1 14.7C9.80001 14.4 9.50001 14.3 9.10001 14.3C9.00001 14.3 8.9 14.3 8.7 14.3C8.5 14.3 8.39999 14.3 8.39999 14.3C8.19999 14.3 7.99999 14.2 7.89999 14.1C7.79999 14 7.7 13.8 7.7 13.7C7.7 13.5 7.79999 13.4 7.89999 13.2C7.99999 13 8.2 13 8.5 13H8.8V13.1ZM15.3 17.5V12.2C14.3 13 13.6 13.3 13.3 13.3C13.1 13.3 13 13.2 12.9 13.1C12.8 13 12.7 12.8 12.7 12.6C12.7 12.4 12.8 12.3 12.9 12.2C13 12.1 13.2 12 13.6 11.8C14.1 11.6 14.5 11.3 14.7 11.1C14.9 10.9 15.2 10.6 15.5 10.3C15.8 10 15.9 9.80003 15.9 9.70003C15.9 9.60003 16.1 9.60004 16.3 9.60004C16.5 9.60004 16.7 9.70003 16.8 9.80003C16.9 9.90003 17 10.2 17 10.5V17.2C17 18 16.7 18.4 16.2 18.4C16 18.4 15.8 18.3 15.6 18.2C15.4 18.1 15.3 17.8 15.3 17.5Z"
+                                                                fill="currentColor"/>
+                                                        </svg>
+                                                    </span>
+                                                    <!--end::Svg Icon-->
+                                                </span>
+                                        <span class="menu-title">تقویم</span>
+                                    </a>
+                                    <!--end:Menu link-->
+                                </div>
+                                <!--end:Menu item-->
                             </div>
-                            <!--end:Menu item-->
+                            <!--end:Menu sub-->
+                        </div>--}}
+                        <!--end:Menu item-->
                             <!--begin:Menu item-->
-                            <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
-                                 data-kt-menu-placement="bottom-end"
-                                 class="menu-item menu-lg-down-accordion me-0 me-lg-2">
-                                <!--begin:Menu link-->
-                                <span class="menu-link">
-											<span class="menu-title">قالب بندی ها</span>
-											<span class="menu-arrow d-lg-none"></span>
-										</span>
-                                <!--end:Menu link-->
-                                <!--begin:Menu sub-->
-                                <div
-                                    class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0 w-100 w-lg-850px">
-                                    <!--begin:داشبورد ها menu-->
-                                    <div class="menu-active-bg pt-1 pb-3 px-3 py-lg-6 px-lg-6"
-                                         data-kt-menu-dismiss="true">
-                                        <!--begin:Row-->
-                                        <div class="row">
-                                            <!--begin:Col-->
-                                            <div class="col-lg-6">
-                                                <!--begin:Row-->
-                                                <div class="row">
-                                                    <!--begin:Col-->
-                                                    <div class="col-lg-6 mb-3">
-                                                        <!--begin:Heading-->
-                                                        <h4 class="fs-6 fs-lg-4 text-gray-800 fw-bold mt-3 mb-3 ms-4">
-                                                            قالب بندی ها</h4>
-                                                        <!--end:Heading-->
-                                                        <!--begin:Menu item-->
-                                                        <div class="menu-item p-0 m-0">
-                                                            <!--begin:Menu link-->
-                                                            <a href="../../demo1/dist/layouts/light-sidebar.html"
-                                                               class="menu-link">
-																		<span class="menu-bullet">
-																			<span
-                                                                                class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
-																		</span>
-                                                                <span class="menu-title">ساید بار روشن</span>
-                                                            </a>
-                                                            <!--end:Menu link-->
-                                                        </div>
-                                                        <!--end:Menu item-->
-                                                        <!--begin:Menu item-->
-                                                        <div class="menu-item p-0 m-0">
-                                                            <!--begin:Menu link-->
-                                                            <a href="../../demo1/dist/layouts/dark-sidebar.html"
-                                                               class="menu-link">
-																		<span class="menu-bullet">
-																			<span
-                                                                                class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
-																		</span>
-                                                                <span class="menu-title">سایدبار تیره</span>
-                                                            </a>
-                                                            <!--end:Menu link-->
-                                                        </div>
-                                                        <!--end:Menu item-->
-                                                        <!--begin:Menu item-->
-                                                        <div class="menu-item p-0 m-0">
-                                                            <!--begin:Menu link-->
-                                                            <a href="../../demo1/dist/layouts/light-header.html"
-                                                               class="menu-link">
-																		<span class="menu-bullet">
-																			<span
-                                                                                class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
-																		</span>
-                                                                <span class="menu-title">هدر روشن</span>
-                                                            </a>
-                                                            <!--end:Menu link-->
-                                                        </div>
-                                                        <!--end:Menu item-->
-                                                        <!--begin:Menu item-->
-                                                        <div class="menu-item p-0 m-0">
-                                                            <!--begin:Menu link-->
-                                                            <a href="../../demo1/dist/layouts/dark-header.html"
-                                                               class="menu-link">
-																		<span class="menu-bullet">
-																			<span
-                                                                                class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
-																		</span>
-                                                                <span class="menu-title">هدر تیره</span>
-                                                            </a>
-                                                            <!--end:Menu link-->
-                                                        </div>
-                                                        <!--end:Menu item-->
+                        {{--<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
+                             data-kt-menu-placement="bottom-end"
+                             class="menu-item menu-lg-down-accordion me-0 me-lg-2">
+                            <!--begin:Menu link-->
+                            <span class="menu-link">
+                                        <span class="menu-title">قالب بندی ها</span>
+                                        <span class="menu-arrow d-lg-none"></span>
+                                    </span>
+                            <!--end:Menu link-->
+                            <!--begin:Menu sub-->
+                            <div
+                                class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0 w-100 w-lg-850px">
+                                <!--begin:داشبورد ها menu-->
+                                <div class="menu-active-bg pt-1 pb-3 px-3 py-lg-6 px-lg-6"
+                                     data-kt-menu-dismiss="true">
+                                    <!--begin:Row-->
+                                    <div class="row">
+                                        <!--begin:Col-->
+                                        <div class="col-lg-6">
+                                            <!--begin:Row-->
+                                            <div class="row">
+                                                <!--begin:Col-->
+                                                <div class="col-lg-6 mb-3">
+                                                    <!--begin:Heading-->
+                                                    <h4 class="fs-6 fs-lg-4 text-gray-800 fw-bold mt-3 mb-3 ms-4">
+                                                        قالب بندی ها</h4>
+                                                    <!--end:Heading-->
+                                                    <!--begin:Menu item-->
+                                                    <div class="menu-item p-0 m-0">
+                                                        <!--begin:Menu link-->
+                                                        <a href="../../demo1/dist/layouts/light-sidebar.html"
+                                                           class="menu-link">
+                                                                    <span class="menu-bullet">
+                                                                        <span
+                                                                            class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
+                                                                    </span>
+                                                            <span class="menu-title">ساید بار روشن</span>
+                                                        </a>
+                                                        <!--end:Menu link-->
                                                     </div>
-                                                    <!--end:Col-->
-                                                    <!--begin:Col-->
-                                                    <div class="col-lg-6 mb-3">
-                                                        <!--begin:Heading-->
-                                                        <h4 class="fs-6 fs-lg-4 text-gray-800 fw-bold mt-3 mb-3 ms-4">
-                                                            نوار ابزار</h4>
-                                                        <!--end:Heading-->
-                                                        <!--begin:Menu item-->
-                                                        <div class="menu-item p-0 m-0">
-                                                            <!--begin:Menu link-->
-                                                            <a href="../../demo1/dist/toolbars/classic.html"
-                                                               class="menu-link">
-																		<span class="menu-bullet">
-																			<span
-                                                                                class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
-																		</span>
-                                                                <span class="menu-title">کلاسیک</span>
-                                                            </a>
-                                                            <!--end:Menu link-->
-                                                        </div>
-                                                        <!--end:Menu item-->
-                                                        <!--begin:Menu item-->
-                                                        <div class="menu-item p-0 m-0">
-                                                            <!--begin:Menu link-->
-                                                            <a href="../../demo1/dist/toolbars/saas.html"
-                                                               class="menu-link">
-																		<span class="menu-bullet">
-																			<span
-                                                                                class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
-																		</span>
-                                                                <span class="menu-title">ساس</span>
-                                                            </a>
-                                                            <!--end:Menu link-->
-                                                        </div>
-                                                        <!--end:Menu item-->
-                                                        <!--begin:Menu item-->
-                                                        <div class="menu-item p-0 m-0">
-                                                            <!--begin:Menu link-->
-                                                            <a href="../../demo1/dist/toolbars/accounting.html"
-                                                               class="menu-link">
-																		<span class="menu-bullet">
-																			<span
-                                                                                class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
-																		</span>
-                                                                <span class="menu-title">اکانتینگ</span>
-                                                            </a>
-                                                            <!--end:Menu link-->
-                                                        </div>
-                                                        <!--end:Menu item-->
-                                                        <!--begin:Menu item-->
-                                                        <div class="menu-item p-0 m-0">
-                                                            <!--begin:Menu link-->
-                                                            <a href="../../demo1/dist/toolbars/extended.html"
-                                                               class="menu-link">
-																		<span class="menu-bullet">
-																			<span
-                                                                                class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
-																		</span>
-                                                                <span class="menu-title">تمدید شده</span>
-                                                            </a>
-                                                            <!--end:Menu link-->
-                                                        </div>
-                                                        <!--end:Menu item-->
-                                                        <!--begin:Menu item-->
-                                                        <div class="menu-item p-0 m-0">
-                                                            <!--begin:Menu link-->
-                                                            <a href="../../demo1/dist/toolbars/reports.html"
-                                                               class="menu-link">
-																		<span class="menu-bullet">
-																			<span
-                                                                                class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
-																		</span>
-                                                                <span class="menu-title">گزارشات</span>
-                                                            </a>
-                                                            <!--end:Menu link-->
-                                                        </div>
-                                                        <!--end:Menu item-->
+                                                    <!--end:Menu item-->
+                                                    <!--begin:Menu item-->
+                                                    <div class="menu-item p-0 m-0">
+                                                        <!--begin:Menu link-->
+                                                        <a href="../../demo1/dist/layouts/dark-sidebar.html"
+                                                           class="menu-link">
+                                                                    <span class="menu-bullet">
+                                                                        <span
+                                                                            class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
+                                                                    </span>
+                                                            <span class="menu-title">سایدبار تیره</span>
+                                                        </a>
+                                                        <!--end:Menu link-->
                                                     </div>
-                                                    <!--end:Col-->
+                                                    <!--end:Menu item-->
+                                                    <!--begin:Menu item-->
+                                                    <div class="menu-item p-0 m-0">
+                                                        <!--begin:Menu link-->
+                                                        <a href="../../demo1/dist/layouts/light-header.html"
+                                                           class="menu-link">
+                                                                    <span class="menu-bullet">
+                                                                        <span
+                                                                            class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
+                                                                    </span>
+                                                            <span class="menu-title">هدر روشن</span>
+                                                        </a>
+                                                        <!--end:Menu link-->
+                                                    </div>
+                                                    <!--end:Menu item-->
+                                                    <!--begin:Menu item-->
+                                                    <div class="menu-item p-0 m-0">
+                                                        <!--begin:Menu link-->
+                                                        <a href="../../demo1/dist/layouts/dark-header.html"
+                                                           class="menu-link">
+                                                                    <span class="menu-bullet">
+                                                                        <span
+                                                                            class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
+                                                                    </span>
+                                                            <span class="menu-title">هدر تیره</span>
+                                                        </a>
+                                                        <!--end:Menu link-->
+                                                    </div>
+                                                    <!--end:Menu item-->
                                                 </div>
-                                                <!--end:Row-->
-                                                <div class="separator separator-dashed mx-lg-5 mt-2 mb-6"></div>
-                                                <!--begin:قالب بندی سازنده-->
-                                                <div
-                                                    class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mb-5 mb-lg-0 mx-lg-5">
-                                                    <div class="d-flex flex-column me-5">
-                                                        <div class="fs-6 fw-bold text-gray-800">قالب بندی سازنده</div>
-                                                        <div class="fs-7 fw-semibold text-muted">سفارشی کردن، نمایش و
-                                                            صادرات
-                                                        </div>
+                                                <!--end:Col-->
+                                                <!--begin:Col-->
+                                                <div class="col-lg-6 mb-3">
+                                                    <!--begin:Heading-->
+                                                    <h4 class="fs-6 fs-lg-4 text-gray-800 fw-bold mt-3 mb-3 ms-4">
+                                                        نوار ابزار</h4>
+                                                    <!--end:Heading-->
+                                                    <!--begin:Menu item-->
+                                                    <div class="menu-item p-0 m-0">
+                                                        <!--begin:Menu link-->
+                                                        <a href="../../demo1/dist/toolbars/classic.html"
+                                                           class="menu-link">
+                                                                    <span class="menu-bullet">
+                                                                        <span
+                                                                            class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
+                                                                    </span>
+                                                            <span class="menu-title">کلاسیک</span>
+                                                        </a>
+                                                        <!--end:Menu link-->
                                                     </div>
-                                                    <a href="Https://preview.keenthemes.com/metronic8/demo1/layout-builder.html"
-                                                       class="btn btn-sm btn-primary fw-bold">سازنده</a>
+                                                    <!--end:Menu item-->
+                                                    <!--begin:Menu item-->
+                                                    <div class="menu-item p-0 m-0">
+                                                        <!--begin:Menu link-->
+                                                        <a href="../../demo1/dist/toolbars/saas.html"
+                                                           class="menu-link">
+                                                                    <span class="menu-bullet">
+                                                                        <span
+                                                                            class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
+                                                                    </span>
+                                                            <span class="menu-title">ساس</span>
+                                                        </a>
+                                                        <!--end:Menu link-->
+                                                    </div>
+                                                    <!--end:Menu item-->
+                                                    <!--begin:Menu item-->
+                                                    <div class="menu-item p-0 m-0">
+                                                        <!--begin:Menu link-->
+                                                        <a href="../../demo1/dist/toolbars/accounting.html"
+                                                           class="menu-link">
+                                                                    <span class="menu-bullet">
+                                                                        <span
+                                                                            class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
+                                                                    </span>
+                                                            <span class="menu-title">اکانتینگ</span>
+                                                        </a>
+                                                        <!--end:Menu link-->
+                                                    </div>
+                                                    <!--end:Menu item-->
+                                                    <!--begin:Menu item-->
+                                                    <div class="menu-item p-0 m-0">
+                                                        <!--begin:Menu link-->
+                                                        <a href="../../demo1/dist/toolbars/extended.html"
+                                                           class="menu-link">
+                                                                    <span class="menu-bullet">
+                                                                        <span
+                                                                            class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
+                                                                    </span>
+                                                            <span class="menu-title">تمدید شده</span>
+                                                        </a>
+                                                        <!--end:Menu link-->
+                                                    </div>
+                                                    <!--end:Menu item-->
+                                                    <!--begin:Menu item-->
+                                                    <div class="menu-item p-0 m-0">
+                                                        <!--begin:Menu link-->
+                                                        <a href="../../demo1/dist/toolbars/reports.html"
+                                                           class="menu-link">
+                                                                    <span class="menu-bullet">
+                                                                        <span
+                                                                            class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
+                                                                    </span>
+                                                            <span class="menu-title">گزارشات</span>
+                                                        </a>
+                                                        <!--end:Menu link-->
+                                                    </div>
+                                                    <!--end:Menu item-->
                                                 </div>
-                                                <!--end:قالب بندی سازنده-->
+                                                <!--end:Col-->
                                             </div>
-                                            <!--end:Col-->
-                                            <!--begin:Col-->
-                                            <div class="col-lg-6 mb-3 py-lg-3 pe-lg-8 d-flex align-items-center">
-                                                <img src="{{asset("admin/media/stock/900x600/45.jpg")}}"
-                                                     class="rounded mw-100" alt=""/>
+                                            <!--end:Row-->
+                                            <div class="separator separator-dashed mx-lg-5 mt-2 mb-6"></div>
+                                            <!--begin:قالب بندی سازنده-->
+                                            <div
+                                                class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mb-5 mb-lg-0 mx-lg-5">
+                                                <div class="d-flex flex-column me-5">
+                                                    <div class="fs-6 fw-bold text-gray-800">قالب بندی سازنده</div>
+                                                    <div class="fs-7 fw-semibold text-muted">سفارشی کردن، نمایش و
+                                                        صادرات
+                                                    </div>
+                                                </div>
+                                                <a href="Https://preview.keenthemes.com/metronic8/demo1/layout-builder.html"
+                                                   class="btn btn-sm btn-primary fw-bold">سازنده</a>
                                             </div>
-                                            <!--end:Col-->
+                                            <!--end:قالب بندی سازنده-->
                                         </div>
-                                        <!--end:Row-->
+                                        <!--end:Col-->
+                                        <!--begin:Col-->
+                                        <div class="col-lg-6 mb-3 py-lg-3 pe-lg-8 d-flex align-items-center">
+                                            <img src="{{asset("admin/media/stock/900x600/45.jpg")}}"
+                                                 class="rounded mw-100" alt=""/>
+                                        </div>
+                                        <!--end:Col-->
                                     </div>
-                                    <!--end:داشبورد ها menu-->
+                                    <!--end:Row-->
                                 </div>
-                                <!--end:Menu sub-->
+                                <!--end:داشبورد ها menu-->
                             </div>
-                            <!--end:Menu item-->
+                            <!--end:Menu sub-->
+                        </div>--}}
+                        <!--end:Menu item-->
                             <!--begin:Menu item-->
                             <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
                                  data-kt-menu-placement="bottom-end"
@@ -4522,1040 +4522,1040 @@
                         </div>
                         <!--end::جستجو-->
                         <!--begin::فعالیت ها-->
-                        <div class="app-navbar-item ms-1 ms-md-3">
-                            <!--begin::کشو toggle-->
-                            <div
-                                class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-30px h-30px w-md-40px h-md-40px"
-                                id="kt_activities_toggle">
-                                <!--begin::Svg Icon | path: icons/duotune/general/gen032.svg-->
-                                <span class="svg-icon svg-icon-2 svg-icon-md-1">
-											<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-												<rect x="8" y="9" width="3" height="10" rx="1.5" fill="currentColor"/>
-												<rect opacity="0.5" x="13" y="5" width="3" height="14" rx="1.5"
-                                                      fill="currentColor"/>
-												<rect x="18" y="11" width="3" height="8" rx="1.5" fill="currentColor"/>
-												<rect x="3" y="13" width="3" height="6" rx="1.5" fill="currentColor"/>
-											</svg>
-										</span>
-                                <!--end::Svg Icon-->
-                            </div>
-                            <!--end::کشو toggle-->
+                    {{--<div class="app-navbar-item ms-1 ms-md-3">
+                        <!--begin::کشو toggle-->
+                        <div
+                            class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-30px h-30px w-md-40px h-md-40px"
+                            id="kt_activities_toggle">
+                            <!--begin::Svg Icon | path: icons/duotune/general/gen032.svg-->
+                            <span class="svg-icon svg-icon-2 svg-icon-md-1">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="8" y="9" width="3" height="10" rx="1.5" fill="currentColor"/>
+                                            <rect opacity="0.5" x="13" y="5" width="3" height="14" rx="1.5"
+                                                  fill="currentColor"/>
+                                            <rect x="18" y="11" width="3" height="8" rx="1.5" fill="currentColor"/>
+                                            <rect x="3" y="13" width="3" height="6" rx="1.5" fill="currentColor"/>
+                                        </svg>
+                                    </span>
+                            <!--end::Svg Icon-->
                         </div>
-                        <!--end::فعالیت ها-->
+                        <!--end::کشو toggle-->
+                    </div>--}}
+                    <!--end::فعالیت ها-->
                         <!--begin::اعلان ها-->
-                        <div class="app-navbar-item ms-1 ms-md-3">
-                            <!--begin::Menu- wrapper-->
-                            <div
-                                class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-30px h-30px w-md-40px h-md-40px"
-                                data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent"
-                                data-kt-menu-placement="bottom-end">
-                                <!--begin::Svg Icon | path: icons/duotune/general/gen022.svg-->
-                                <span class="svg-icon svg-icon-2 svg-icon-md-1">
-											<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-												<path
-                                                    d="M11.2929 2.70711C11.6834 2.31658 12.3166 2.31658 12.7071 2.70711L15.2929 5.29289C15.6834 5.68342 15.6834 6.31658 15.2929 6.70711L12.7071 9.29289C12.3166 9.68342 11.6834 9.68342 11.2929 9.29289L8.70711 6.70711C8.31658 6.31658 8.31658 5.68342 8.70711 5.29289L11.2929 2.70711Z"
-                                                    fill="currentColor"/>
-												<path
-                                                    d="M11.2929 14.7071C11.6834 14.3166 12.3166 14.3166 12.7071 14.7071L15.2929 17.2929C15.6834 17.6834 15.6834 18.3166 15.2929 18.7071L12.7071 21.2929C12.3166 21.6834 11.6834 21.6834 11.2929 21.2929L8.70711 18.7071C8.31658 18.3166 8.31658 17.6834 8.70711 17.2929L11.2929 14.7071Z"
-                                                    fill="currentColor"/>
-												<path opacity="0.3"
-                                                      d="M5.29289 8.70711C5.68342 8.31658 6.31658 8.31658 6.70711 8.70711L9.29289 11.2929C9.68342 11.6834 9.68342 12.3166 9.29289 12.7071L6.70711 15.2929C6.31658 15.6834 5.68342 15.6834 5.29289 15.2929L2.70711 12.7071C2.31658 12.3166 2.31658 11.6834 2.70711 11.2929L5.29289 8.70711Z"
-                                                      fill="currentColor"/>
-												<path opacity="0.3"
-                                                      d="M17.2929 8.70711C17.6834 8.31658 18.3166 8.31658 18.7071 8.70711L21.2929 11.2929C21.6834 11.6834 21.6834 12.3166 21.2929 12.7071L18.7071 15.2929C18.3166 15.6834 17.6834 15.6834 17.2929 15.2929L14.7071 12.7071C14.3166 12.3166 14.3166 11.6834 14.7071 11.2929L17.2929 8.70711Z"
-                                                      fill="currentColor"/>
-											</svg>
-										</span>
-                                <!--end::Svg Icon-->
+                    {{--<div class="app-navbar-item ms-1 ms-md-3">
+                        <!--begin::Menu- wrapper-->
+                        <div
+                            class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-30px h-30px w-md-40px h-md-40px"
+                            data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent"
+                            data-kt-menu-placement="bottom-end">
+                            <!--begin::Svg Icon | path: icons/duotune/general/gen022.svg-->
+                            <span class="svg-icon svg-icon-2 svg-icon-md-1">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M11.2929 2.70711C11.6834 2.31658 12.3166 2.31658 12.7071 2.70711L15.2929 5.29289C15.6834 5.68342 15.6834 6.31658 15.2929 6.70711L12.7071 9.29289C12.3166 9.68342 11.6834 9.68342 11.2929 9.29289L8.70711 6.70711C8.31658 6.31658 8.31658 5.68342 8.70711 5.29289L11.2929 2.70711Z"
+                                                fill="currentColor"/>
+                                            <path
+                                                d="M11.2929 14.7071C11.6834 14.3166 12.3166 14.3166 12.7071 14.7071L15.2929 17.2929C15.6834 17.6834 15.6834 18.3166 15.2929 18.7071L12.7071 21.2929C12.3166 21.6834 11.6834 21.6834 11.2929 21.2929L8.70711 18.7071C8.31658 18.3166 8.31658 17.6834 8.70711 17.2929L11.2929 14.7071Z"
+                                                fill="currentColor"/>
+                                            <path opacity="0.3"
+                                                  d="M5.29289 8.70711C5.68342 8.31658 6.31658 8.31658 6.70711 8.70711L9.29289 11.2929C9.68342 11.6834 9.68342 12.3166 9.29289 12.7071L6.70711 15.2929C6.31658 15.6834 5.68342 15.6834 5.29289 15.2929L2.70711 12.7071C2.31658 12.3166 2.31658 11.6834 2.70711 11.2929L5.29289 8.70711Z"
+                                                  fill="currentColor"/>
+                                            <path opacity="0.3"
+                                                  d="M17.2929 8.70711C17.6834 8.31658 18.3166 8.31658 18.7071 8.70711L21.2929 11.2929C21.6834 11.6834 21.6834 12.3166 21.2929 12.7071L18.7071 15.2929C18.3166 15.6834 17.6834 15.6834 17.2929 15.2929L14.7071 12.7071C14.3166 12.3166 14.3166 11.6834 14.7071 11.2929L17.2929 8.70711Z"
+                                                  fill="currentColor"/>
+                                        </svg>
+                                    </span>
+                            <!--end::Svg Icon-->
+                        </div>
+                        <!--begin::Menu-->
+                        <div class="menu menu-sub menu-sub-dropdown menu-column w-350px w-lg-375px"
+                             data-kt-menu="true">
+                            <!--begin::Heading-->
+                            <div class="d-flex flex-column bgi-no-repeat rounded-top"
+                                 style="background-image:url('assets/media/misc/menu-header-bg.jpg')">
+                                <!--begin::Title-->
+                                <h3 class="text-white fw-semibold px-9 mt-10 mb-6">اعلان ها
+                                    <span class="fs-8 opacity-75 ps-3">24 گزارش</span></h3>
+                                <!--end::Title-->
+                                <!--begin::Tabs-->
+                                <ul class="nav nav-line-tabs nav-line-tabs-2x nav-stretch fw-semibold px-9">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white opacity-75 opacity-state-100 pb-4"
+                                           data-bs-toggle="tab" href="#kt_topbar_notifications_1">هشدارها</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white opacity-75 opacity-state-100 pb-4 active"
+                                           data-bs-toggle="tab" href="#kt_topbar_notifications_2">بروزرسانی ها</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white opacity-75 opacity-state-100 pb-4"
+                                           data-bs-toggle="tab" href="#kt_topbar_notifications_3">گزارش</a>
+                                    </li>
+                                </ul>
+                                <!--end::Tabs-->
                             </div>
-                            <!--begin::Menu-->
-                            <div class="menu menu-sub menu-sub-dropdown menu-column w-350px w-lg-375px"
-                                 data-kt-menu="true">
-                                <!--begin::Heading-->
-                                <div class="d-flex flex-column bgi-no-repeat rounded-top"
-                                     style="background-image:url('assets/media/misc/menu-header-bg.jpg')">
-                                    <!--begin::Title-->
-                                    <h3 class="text-white fw-semibold px-9 mt-10 mb-6">اعلان ها
-                                        <span class="fs-8 opacity-75 ps-3">24 گزارش</span></h3>
-                                    <!--end::Title-->
-                                    <!--begin::Tabs-->
-                                    <ul class="nav nav-line-tabs nav-line-tabs-2x nav-stretch fw-semibold px-9">
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white opacity-75 opacity-state-100 pb-4"
-                                               data-bs-toggle="tab" href="#kt_topbar_notifications_1">هشدارها</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white opacity-75 opacity-state-100 pb-4 active"
-                                               data-bs-toggle="tab" href="#kt_topbar_notifications_2">بروزرسانی ها</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white opacity-75 opacity-state-100 pb-4"
-                                               data-bs-toggle="tab" href="#kt_topbar_notifications_3">گزارش</a>
-                                        </li>
-                                    </ul>
-                                    <!--end::Tabs-->
-                                </div>
-                                <!--end::Heading-->
-                                <!--begin::Tab content-->
-                                <div class="tab-content">
-                                    <!--begin::Tab panel-->
-                                    <div class="tab-pane fade" id="kt_topbar_notifications_1" role="tabpanel">
-                                        <!--begin::آیتمs-->
-                                        <div class="scroll-y mh-325px my-5 px-8">
-                                            <!--begin::آیتم-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center">
-                                                    <!--begin::Symbol-->
-                                                    <div class="symbol symbol-35px me-4">
-																<span class="symbol-label bg-light-primary">
-																	<!--begin::Svg Icon | path: icons/duotune/technology/teh008.svg-->
-																	<span class="svg-icon svg-icon-2 svg-icon-primary">
-																		<svg width="24" height="24" viewBox="0 0 24 24"
-                                                                             fill="none"
-                                                                             xmlns="http://www.w3.org/2000/svg">
-																			<path opacity="0.3"
-                                                                                  d="M11 6.5C11 9 9 11 6.5 11C4 11 2 9 2 6.5C2 4 4 2 6.5 2C9 2 11 4 11 6.5ZM17.5 2C15 2 13 4 13 6.5C13 9 15 11 17.5 11C20 11 22 9 22 6.5C22 4 20 2 17.5 2ZM6.5 13C4 13 2 15 2 17.5C2 20 4 22 6.5 22C9 22 11 20 11 17.5C11 15 9 13 6.5 13ZM17.5 13C15 13 13 15 13 17.5C13 20 15 22 17.5 22C20 22 22 20 22 17.5C22 15 20 13 17.5 13Z"
-                                                                                  fill="currentColor"/>
-																			<path
-                                                                                d="M17.5 16C17.5 16 17.4 16 17.5 16L16.7 15.3C16.1 14.7 15.7 13.9 15.6 13.1C15.5 12.4 15.5 11.6 15.6 10.8C15.7 9.99999 16.1 9.19998 16.7 8.59998L17.4 7.90002H17.5C18.3 7.90002 19 7.20002 19 6.40002C19 5.60002 18.3 4.90002 17.5 4.90002C16.7 4.90002 16 5.60002 16 6.40002V6.5L15.3 7.20001C14.7 7.80001 13.9 8.19999 13.1 8.29999C12.4 8.39999 11.6 8.39999 10.8 8.29999C9.99999 8.19999 9.20001 7.80001 8.60001 7.20001L7.89999 6.5V6.40002C7.89999 5.60002 7.19999 4.90002 6.39999 4.90002C5.59999 4.90002 4.89999 5.60002 4.89999 6.40002C4.89999 7.20002 5.59999 7.90002 6.39999 7.90002H6.5L7.20001 8.59998C7.80001 9.19998 8.19999 9.99999 8.29999 10.8C8.39999 11.5 8.39999 12.3 8.29999 13.1C8.19999 13.9 7.80001 14.7 7.20001 15.3L6.5 16H6.39999C5.59999 16 4.89999 16.7 4.89999 17.5C4.89999 18.3 5.59999 19 6.39999 19C7.19999 19 7.89999 18.3 7.89999 17.5V17.4L8.60001 16.7C9.20001 16.1 9.99999 15.7 10.8 15.6C11.5 15.5 12.3 15.5 13.1 15.6C13.9 15.7 14.7 16.1 15.3 16.7L16 17.4V17.5C16 18.3 16.7 19 17.5 19C18.3 19 19 18.3 19 17.5C19 16.7 18.3 16 17.5 16Z"
-                                                                                fill="currentColor"/>
-																		</svg>
-																	</span>
-                                                                    <!--end::Svg Icon-->
-																</span>
-                                                    </div>
-                                                    <!--end::Symbol-->
-                                                    <!--begin::Title-->
-                                                    <div class="mb-0 me-2">
-                                                        <a href="#"
-                                                           class="fs-6 text-gray-800 text-hover-primary fw-bold">پروژه
-                                                            آلیس</a>
-                                                        <div class="text-gray-400 fs-7">توسعه فاز 1</div>
-                                                    </div>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Tags-->
-                                                <span class="badge badge-light fs-8">1 ساعت</span>
-                                                <!--end::Tags-->
-                                            </div>
-                                            <!--end::آیتم-->
-                                            <!--begin::آیتم-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center">
-                                                    <!--begin::Symbol-->
-                                                    <div class="symbol symbol-35px me-4">
-																<span class="symbol-label bg-light-danger">
-																	<!--begin::Svg Icon | path: icons/duotune/general/gen044.svg-->
-																	<span class="svg-icon svg-icon-2 svg-icon-danger">
-																		<svg width="24" height="24" viewBox="0 0 24 24"
-                                                                             fill="none"
-                                                                             xmlns="http://www.w3.org/2000/svg">
-																			<rect opacity="0.3" x="2" y="2" width="20"
-                                                                                  height="20" rx="10"
-                                                                                  fill="currentColor"/>
-																			<rect x="11" y="14" width="7" height="2"
-                                                                                  rx="1" transform="rotate(-90 11 14)"
-                                                                                  fill="currentColor"/>
-																			<rect x="11" y="17" width="2" height="2"
-                                                                                  rx="1" transform="rotate(-90 11 17)"
-                                                                                  fill="currentColor"/>
-																		</svg>
-																	</span>
-                                                                    <!--end::Svg Icon-->
-																</span>
-                                                    </div>
-                                                    <!--end::Symbol-->
-                                                    <!--begin::Title-->
-                                                    <div class="mb-0 me-2">
-                                                        <a href="#"
-                                                           class="fs-6 text-gray-800 text-hover-primary fw-bold">منابع
-                                                            انسانی محرمانه</a>
-                                                        <div class="text-gray-400 fs-7">اسناد محرمانه کارکنان</div>
-                                                    </div>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Tags-->
-                                                <span class="badge badge-light fs-8">2 ساعت</span>
-                                                <!--end::Tags-->
-                                            </div>
-                                            <!--end::آیتم-->
-                                            <!--begin::آیتم-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center">
-                                                    <!--begin::Symbol-->
-                                                    <div class="symbol symbol-35px me-4">
-																<span class="symbol-label bg-light-warning">
-																	<!--begin::Svg Icon | path: icons/duotune/finance/fin006.svg-->
-																	<span class="svg-icon svg-icon-2 svg-icon-warning">
-																		<svg width="24" height="24" viewBox="0 0 24 24"
-                                                                             fill="none"
-                                                                             xmlns="http://www.w3.org/2000/svg">
-																			<path opacity="0.3"
-                                                                                  d="M20 15H4C2.9 15 2 14.1 2 13V7C2 6.4 2.4 6 3 6H21C21.6 6 22 6.4 22 7V13C22 14.1 21.1 15 20 15ZM13 12H11C10.5 12 10 12.4 10 13V16C10 16.5 10.4 17 11 17H13C13.6 17 14 16.6 14 16V13C14 12.4 13.6 12 13 12Z"
-                                                                                  fill="currentColor"/>
-																			<path
-                                                                                d="M14 6V5H10V6H8V5C8 3.9 8.9 3 10 3H14C15.1 3 16 3.9 16 5V6H14ZM20 15H14V16C14 16.6 13.5 17 13 17H11C10.5 17 10 16.6 10 16V15H4C3.6 15 3.3 14.9 3 14.7V18C3 19.1 3.9 20 5 20H19C20.1 20 21 19.1 21 18V14.7C20.7 14.9 20.4 15 20 15Z"
-                                                                                fill="currentColor"/>
-																		</svg>
-																	</span>
-                                                                    <!--end::Svg Icon-->
-																</span>
-                                                    </div>
-                                                    <!--end::Symbol-->
-                                                    <!--begin::Title-->
-                                                    <div class="mb-0 me-2">
-                                                        <a href="#"
-                                                           class="fs-6 text-gray-800 text-hover-primary fw-bold">کمپانی
-                                                            HR</a>
-                                                        <div class="text-gray-400 fs-7">مشخصات کارکنان را شریک کنید
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Tags-->
-                                                <span class="badge badge-light fs-8">5 ساعت</span>
-                                                <!--end::Tags-->
-                                            </div>
-                                            <!--end::آیتم-->
-                                            <!--begin::آیتم-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center">
-                                                    <!--begin::Symbol-->
-                                                    <div class="symbol symbol-35px me-4">
-																<span class="symbol-label bg-light-success">
-																	<!--begin::Svg Icon | path: icons/duotune/files/fil023.svg-->
-																	<span class="svg-icon svg-icon-2 svg-icon-success">
-																		<svg width="24" height="24" viewBox="0 0 24 24"
-                                                                             fill="none"
-                                                                             xmlns="http://www.w3.org/2000/svg">
-																			<path opacity="0.3"
-                                                                                  d="M5 15C3.3 15 2 13.7 2 12C2 10.3 3.3 9 5 9H5.10001C5.00001 8.7 5 8.3 5 8C5 5.2 7.2 3 10 3C11.9 3 13.5 4 14.3 5.5C14.8 5.2 15.4 5 16 5C17.7 5 19 6.3 19 8C19 8.4 18.9 8.7 18.8 9C18.9 9 18.9 9 19 9C20.7 9 22 10.3 22 12C22 13.7 20.7 15 19 15H5ZM5 12.6H13L9.7 9.29999C9.3 8.89999 8.7 8.89999 8.3 9.29999L5 12.6Z"
-                                                                                  fill="currentColor"/>
-																			<path
-                                                                                d="M17 17.4V12C17 11.4 16.6 11 16 11C15.4 11 15 11.4 15 12V17.4H17Z"
-                                                                                fill="currentColor"/>
-																			<path opacity="0.3"
-                                                                                  d="M12 17.4H20L16.7 20.7C16.3 21.1 15.7 21.1 15.3 20.7L12 17.4Z"
-                                                                                  fill="currentColor"/>
-																			<path
-                                                                                d="M8 12.6V18C8 18.6 8.4 19 9 19C9.6 19 10 18.6 10 18V12.6H8Z"
-                                                                                fill="currentColor"/>
-																		</svg>
-																	</span>
-                                                                    <!--end::Svg Icon-->
-																</span>
-                                                    </div>
-                                                    <!--end::Symbol-->
-                                                    <!--begin::Title-->
-                                                    <div class="mb-0 me-2">
-                                                        <a href="#"
-                                                           class="fs-6 text-gray-800 text-hover-primary fw-bold">پروژه
-                                                            ریداکس</a>
-                                                        <div class="text-gray-400 fs-7">تم ادمین جدید</div>
-                                                    </div>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Tags-->
-                                                <span class="badge badge-light fs-8">2 روز</span>
-                                                <!--end::Tags-->
-                                            </div>
-                                            <!--end::آیتم-->
-                                            <!--begin::آیتم-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center">
-                                                    <!--begin::Symbol-->
-                                                    <div class="symbol symbol-35px me-4">
-																<span class="symbol-label bg-light-primary">
-																	<!--begin::Svg Icon | path: icons/duotune/maps/map001.svg-->
-																	<span class="svg-icon svg-icon-2 svg-icon-primary">
-																		<svg width="24" height="24" viewBox="0 0 24 24"
-                                                                             fill="none"
-                                                                             xmlns="http://www.w3.org/2000/svg">
-																			<path opacity="0.3"
-                                                                                  d="M6 22H4V3C4 2.4 4.4 2 5 2C5.6 2 6 2.4 6 3V22Z"
-                                                                                  fill="currentColor"/>
-																			<path
-                                                                                d="M18 14H4V4H18C18.8 4 19.2 4.9 18.7 5.5L16 9L18.8 12.5C19.3 13.1 18.8 14 18 14Z"
-                                                                                fill="currentColor"/>
-																		</svg>
-																	</span>
-                                                                    <!--end::Svg Icon-->
-																</span>
-                                                    </div>
-                                                    <!--end::Symbol-->
-                                                    <!--begin::Title-->
-                                                    <div class="mb-0 me-2">
-                                                        <a href="#"
-                                                           class="fs-6 text-gray-800 text-hover-primary fw-bold">پروژه
-                                                            بریفینگ</a>
-                                                        <div class="text-gray-400 fs-7">به روز رسانی وضعیت راه اندازی
-                                                            محصول
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Tags-->
-                                                <span class="badge badge-light fs-8">21 دی</span>
-                                                <!--end::Tags-->
-                                            </div>
-                                            <!--end::آیتم-->
-                                            <!--begin::آیتم-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center">
-                                                    <!--begin::Symbol-->
-                                                    <div class="symbol symbol-35px me-4">
-																<span class="symbol-label bg-light-info">
-																	<!--begin::Svg Icon | path: icons/duotune/general/gen006.svg-->
-																	<span class="svg-icon svg-icon-2 svg-icon-info">
-																		<svg width="24" height="24" viewBox="0 0 24 24"
-                                                                             fill="none"
-                                                                             xmlns="http://www.w3.org/2000/svg">
-																			<path opacity="0.3"
-                                                                                  d="M22 5V19C22 19.6 21.6 20 21 20H19.5L11.9 12.4C11.5 12 10.9 12 10.5 12.4L3 20C2.5 20 2 19.5 2 19V5C2 4.4 2.4 4 3 4H21C21.6 4 22 4.4 22 5ZM7.5 7C6.7 7 6 7.7 6 8.5C6 9.3 6.7 10 7.5 10C8.3 10 9 9.3 9 8.5C9 7.7 8.3 7 7.5 7Z"
-                                                                                  fill="currentColor"/>
-																			<path
-                                                                                d="M19.1 10C18.7 9.60001 18.1 9.60001 17.7 10L10.7 17H2V19C2 19.6 2.4 20 3 20H21C21.6 20 22 19.6 22 19V12.9L19.1 10Z"
-                                                                                fill="currentColor"/>
-																		</svg>
-																	</span>
-                                                                    <!--end::Svg Icon-->
-																</span>
-                                                    </div>
-                                                    <!--end::Symbol-->
-                                                    <!--begin::Title-->
-                                                    <div class="mb-0 me-2">
-                                                        <a href="#"
-                                                           class="fs-6 text-gray-800 text-hover-primary fw-bold">دارایی
-                                                            های بنر</a>
-                                                        <div class="text-gray-400 fs-7">مجموعه ای از تصویر بنرها</div>
-                                                    </div>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Tags-->
-                                                <span class="badge badge-light fs-8">21 دی</span>
-                                                <!--end::Tags-->
-                                            </div>
-                                            <!--end::آیتم-->
-                                            <!--begin::آیتم-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center">
-                                                    <!--begin::Symbol-->
-                                                    <div class="symbol symbol-35px me-4">
-																<span class="symbol-label bg-light-warning">
-																	<!--begin::Svg Icon | path: icons/duotune/art/art002.svg-->
-																	<span class="svg-icon svg-icon-2 svg-icon-warning">
-																		<svg width="24" height="25" viewBox="0 0 24 25"
-                                                                             fill="none"
-                                                                             xmlns="http://www.w3.org/2000/svg">
-																			<path opacity="0.3"
-                                                                                  d="M8.9 21L7.19999 22.6999C6.79999 23.0999 6.2 23.0999 5.8 22.6999L4.1 21H8.9ZM4 16.0999L2.3 17.8C1.9 18.2 1.9 18.7999 2.3 19.1999L4 20.9V16.0999ZM19.3 9.1999L15.8 5.6999C15.4 5.2999 14.8 5.2999 14.4 5.6999L9 11.0999V21L19.3 10.6999C19.7 10.2999 19.7 9.5999 19.3 9.1999Z"
-                                                                                  fill="currentColor"/>
-																			<path
-                                                                                d="M21 15V20C21 20.6 20.6 21 20 21H11.8L18.8 14H20C20.6 14 21 14.4 21 15ZM10 21V4C10 3.4 9.6 3 9 3H4C3.4 3 3 3.4 3 4V21C3 21.6 3.4 22 4 22H9C9.6 22 10 21.6 10 21ZM7.5 18.5C7.5 19.1 7.1 19.5 6.5 19.5C5.9 19.5 5.5 19.1 5.5 18.5C5.5 17.9 5.9 17.5 6.5 17.5C7.1 17.5 7.5 17.9 7.5 18.5Z"
-                                                                                fill="currentColor"/>
-																		</svg>
-																	</span>
-                                                                    <!--end::Svg Icon-->
-																</span>
-                                                    </div>
-                                                    <!--end::Symbol-->
-                                                    <!--begin::Title-->
-                                                    <div class="mb-0 me-2">
-                                                        <a href="#"
-                                                           class="fs-6 text-gray-800 text-hover-primary fw-bold">نماد
-                                                            دارایی ها</a>
-                                                        <div class="text-gray-400 fs-7">مجموعه ای از ایکون ها</div>
-                                                    </div>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Tags-->
-                                                <span class="badge badge-light fs-8">20 اسفند</span>
-                                                <!--end::Tags-->
-                                            </div>
-                                            <!--end::آیتم-->
-                                        </div>
-                                        <!--end::آیتمs-->
-                                        <!--begin::نمایش more-->
-                                        <div class="py-3 text-center border-top">
-                                            <a href="../../demo1/dist/pages/user-profile/activity.html"
-                                               class="btn btn-color-gray-600 btn-active-color-primary">نمایش همه
-                                                <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
-                                                <span class="svg-icon svg-icon-5">
-														<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                             xmlns="http://www.w3.org/2000/svg">
-															<rect opacity="0.5" x="18" y="13" width="13" height="2"
-                                                                  rx="1" transform="rotate(-180 18 13)"
-                                                                  fill="currentColor"/>
-															<path
-                                                                d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z"
-                                                                fill="currentColor"/>
-														</svg>
-													</span>
-                                                <!--end::Svg Icon--></a>
-                                        </div>
-                                        <!--end::نمایش more-->
-                                    </div>
-                                    <!--end::Tab panel-->
-                                    <!--begin::Tab panel-->
-                                    <div class="tab-pane fade show active" id="kt_topbar_notifications_2"
-                                         role="tabpanel">
-                                        <!--begin::Wrapper-->
-                                        <div class="d-flex flex-column px-9">
+                            <!--end::Heading-->
+                            <!--begin::Tab content-->
+                            <div class="tab-content">
+                                <!--begin::Tab panel-->
+                                <div class="tab-pane fade" id="kt_topbar_notifications_1" role="tabpanel">
+                                    <!--begin::آیتمs-->
+                                    <div class="scroll-y mh-325px my-5 px-8">
+                                        <!--begin::آیتم-->
+                                        <div class="d-flex flex-stack py-4">
                                             <!--begin::Section-->
-                                            <div class="pt-10 pb-0">
+                                            <div class="d-flex align-items-center">
+                                                <!--begin::Symbol-->
+                                                <div class="symbol symbol-35px me-4">
+                                                            <span class="symbol-label bg-light-primary">
+                                                                <!--begin::Svg Icon | path: icons/duotune/technology/teh008.svg-->
+                                                                <span class="svg-icon svg-icon-2 svg-icon-primary">
+                                                                    <svg width="24" height="24" viewBox="0 0 24 24"
+                                                                         fill="none"
+                                                                         xmlns="http://www.w3.org/2000/svg">
+                                                                        <path opacity="0.3"
+                                                                              d="M11 6.5C11 9 9 11 6.5 11C4 11 2 9 2 6.5C2 4 4 2 6.5 2C9 2 11 4 11 6.5ZM17.5 2C15 2 13 4 13 6.5C13 9 15 11 17.5 11C20 11 22 9 22 6.5C22 4 20 2 17.5 2ZM6.5 13C4 13 2 15 2 17.5C2 20 4 22 6.5 22C9 22 11 20 11 17.5C11 15 9 13 6.5 13ZM17.5 13C15 13 13 15 13 17.5C13 20 15 22 17.5 22C20 22 22 20 22 17.5C22 15 20 13 17.5 13Z"
+                                                                              fill="currentColor"/>
+                                                                        <path
+                                                                            d="M17.5 16C17.5 16 17.4 16 17.5 16L16.7 15.3C16.1 14.7 15.7 13.9 15.6 13.1C15.5 12.4 15.5 11.6 15.6 10.8C15.7 9.99999 16.1 9.19998 16.7 8.59998L17.4 7.90002H17.5C18.3 7.90002 19 7.20002 19 6.40002C19 5.60002 18.3 4.90002 17.5 4.90002C16.7 4.90002 16 5.60002 16 6.40002V6.5L15.3 7.20001C14.7 7.80001 13.9 8.19999 13.1 8.29999C12.4 8.39999 11.6 8.39999 10.8 8.29999C9.99999 8.19999 9.20001 7.80001 8.60001 7.20001L7.89999 6.5V6.40002C7.89999 5.60002 7.19999 4.90002 6.39999 4.90002C5.59999 4.90002 4.89999 5.60002 4.89999 6.40002C4.89999 7.20002 5.59999 7.90002 6.39999 7.90002H6.5L7.20001 8.59998C7.80001 9.19998 8.19999 9.99999 8.29999 10.8C8.39999 11.5 8.39999 12.3 8.29999 13.1C8.19999 13.9 7.80001 14.7 7.20001 15.3L6.5 16H6.39999C5.59999 16 4.89999 16.7 4.89999 17.5C4.89999 18.3 5.59999 19 6.39999 19C7.19999 19 7.89999 18.3 7.89999 17.5V17.4L8.60001 16.7C9.20001 16.1 9.99999 15.7 10.8 15.6C11.5 15.5 12.3 15.5 13.1 15.6C13.9 15.7 14.7 16.1 15.3 16.7L16 17.4V17.5C16 18.3 16.7 19 17.5 19C18.3 19 19 18.3 19 17.5C19 16.7 18.3 16 17.5 16Z"
+                                                                            fill="currentColor"/>
+                                                                    </svg>
+                                                                </span>
+                                                                <!--end::Svg Icon-->
+                                                            </span>
+                                                </div>
+                                                <!--end::Symbol-->
                                                 <!--begin::Title-->
-                                                <h3 class="text-dark text-center fw-bold">دسترسی حرفه ای را دریافت
-                                                    کنید</h3>
+                                                <div class="mb-0 me-2">
+                                                    <a href="#"
+                                                       class="fs-6 text-gray-800 text-hover-primary fw-bold">پروژه
+                                                        آلیس</a>
+                                                    <div class="text-gray-400 fs-7">توسعه فاز 1</div>
+                                                </div>
                                                 <!--end::Title-->
-                                                <!--begin::Text-->
-                                                <div class="text-center text-gray-600 fw-semibold pt-1">رئوس مطالب شما
-                                                    را صادق نگه می دارد. آنها جلوی شگفت انگیز بودن شما درمورد رانندگی را
-                                                    می گیرند
-                                                </div>
-                                                <!--end::Text-->
-                                                <!--begin::Actions-->
-                                                <div class="text-center mt-5 mb-9">
-                                                    <a href="#" class="btn btn-sm btn-primary px-6"
-                                                       data-bs-toggle="modal" data-bs-target="#kt_modal_upgrade_plan">ارتقا
-                                                        دهید</a>
-                                                </div>
-                                                <!--end::Actions-->
                                             </div>
                                             <!--end::Section-->
-                                            <!--begin::Illustration-->
-                                            <div class="text-center px-4">
-                                                <img class="mw-100 mh-200px" alt="image"
-                                                     src="{{asset("admin/media/illustrations/sketchy-1/1.png")}}"/>
-                                            </div>
-                                            <!--end::Illustration-->
+                                            <!--begin::Tags-->
+                                            <span class="badge badge-light fs-8">1 ساعت</span>
+                                            <!--end::Tags-->
                                         </div>
-                                        <!--end::Wrapper-->
+                                        <!--end::آیتم-->
+                                        <!--begin::آیتم-->
+                                        <div class="d-flex flex-stack py-4">
+                                            <!--begin::Section-->
+                                            <div class="d-flex align-items-center">
+                                                <!--begin::Symbol-->
+                                                <div class="symbol symbol-35px me-4">
+                                                            <span class="symbol-label bg-light-danger">
+                                                                <!--begin::Svg Icon | path: icons/duotune/general/gen044.svg-->
+                                                                <span class="svg-icon svg-icon-2 svg-icon-danger">
+                                                                    <svg width="24" height="24" viewBox="0 0 24 24"
+                                                                         fill="none"
+                                                                         xmlns="http://www.w3.org/2000/svg">
+                                                                        <rect opacity="0.3" x="2" y="2" width="20"
+                                                                              height="20" rx="10"
+                                                                              fill="currentColor"/>
+                                                                        <rect x="11" y="14" width="7" height="2"
+                                                                              rx="1" transform="rotate(-90 11 14)"
+                                                                              fill="currentColor"/>
+                                                                        <rect x="11" y="17" width="2" height="2"
+                                                                              rx="1" transform="rotate(-90 11 17)"
+                                                                              fill="currentColor"/>
+                                                                    </svg>
+                                                                </span>
+                                                                <!--end::Svg Icon-->
+                                                            </span>
+                                                </div>
+                                                <!--end::Symbol-->
+                                                <!--begin::Title-->
+                                                <div class="mb-0 me-2">
+                                                    <a href="#"
+                                                       class="fs-6 text-gray-800 text-hover-primary fw-bold">منابع
+                                                        انسانی محرمانه</a>
+                                                    <div class="text-gray-400 fs-7">اسناد محرمانه کارکنان</div>
+                                                </div>
+                                                <!--end::Title-->
+                                            </div>
+                                            <!--end::Section-->
+                                            <!--begin::Tags-->
+                                            <span class="badge badge-light fs-8">2 ساعت</span>
+                                            <!--end::Tags-->
+                                        </div>
+                                        <!--end::آیتم-->
+                                        <!--begin::آیتم-->
+                                        <div class="d-flex flex-stack py-4">
+                                            <!--begin::Section-->
+                                            <div class="d-flex align-items-center">
+                                                <!--begin::Symbol-->
+                                                <div class="symbol symbol-35px me-4">
+                                                            <span class="symbol-label bg-light-warning">
+                                                                <!--begin::Svg Icon | path: icons/duotune/finance/fin006.svg-->
+                                                                <span class="svg-icon svg-icon-2 svg-icon-warning">
+                                                                    <svg width="24" height="24" viewBox="0 0 24 24"
+                                                                         fill="none"
+                                                                         xmlns="http://www.w3.org/2000/svg">
+                                                                        <path opacity="0.3"
+                                                                              d="M20 15H4C2.9 15 2 14.1 2 13V7C2 6.4 2.4 6 3 6H21C21.6 6 22 6.4 22 7V13C22 14.1 21.1 15 20 15ZM13 12H11C10.5 12 10 12.4 10 13V16C10 16.5 10.4 17 11 17H13C13.6 17 14 16.6 14 16V13C14 12.4 13.6 12 13 12Z"
+                                                                              fill="currentColor"/>
+                                                                        <path
+                                                                            d="M14 6V5H10V6H8V5C8 3.9 8.9 3 10 3H14C15.1 3 16 3.9 16 5V6H14ZM20 15H14V16C14 16.6 13.5 17 13 17H11C10.5 17 10 16.6 10 16V15H4C3.6 15 3.3 14.9 3 14.7V18C3 19.1 3.9 20 5 20H19C20.1 20 21 19.1 21 18V14.7C20.7 14.9 20.4 15 20 15Z"
+                                                                            fill="currentColor"/>
+                                                                    </svg>
+                                                                </span>
+                                                                <!--end::Svg Icon-->
+                                                            </span>
+                                                </div>
+                                                <!--end::Symbol-->
+                                                <!--begin::Title-->
+                                                <div class="mb-0 me-2">
+                                                    <a href="#"
+                                                       class="fs-6 text-gray-800 text-hover-primary fw-bold">کمپانی
+                                                        HR</a>
+                                                    <div class="text-gray-400 fs-7">مشخصات کارکنان را شریک کنید
+                                                    </div>
+                                                </div>
+                                                <!--end::Title-->
+                                            </div>
+                                            <!--end::Section-->
+                                            <!--begin::Tags-->
+                                            <span class="badge badge-light fs-8">5 ساعت</span>
+                                            <!--end::Tags-->
+                                        </div>
+                                        <!--end::آیتم-->
+                                        <!--begin::آیتم-->
+                                        <div class="d-flex flex-stack py-4">
+                                            <!--begin::Section-->
+                                            <div class="d-flex align-items-center">
+                                                <!--begin::Symbol-->
+                                                <div class="symbol symbol-35px me-4">
+                                                            <span class="symbol-label bg-light-success">
+                                                                <!--begin::Svg Icon | path: icons/duotune/files/fil023.svg-->
+                                                                <span class="svg-icon svg-icon-2 svg-icon-success">
+                                                                    <svg width="24" height="24" viewBox="0 0 24 24"
+                                                                         fill="none"
+                                                                         xmlns="http://www.w3.org/2000/svg">
+                                                                        <path opacity="0.3"
+                                                                              d="M5 15C3.3 15 2 13.7 2 12C2 10.3 3.3 9 5 9H5.10001C5.00001 8.7 5 8.3 5 8C5 5.2 7.2 3 10 3C11.9 3 13.5 4 14.3 5.5C14.8 5.2 15.4 5 16 5C17.7 5 19 6.3 19 8C19 8.4 18.9 8.7 18.8 9C18.9 9 18.9 9 19 9C20.7 9 22 10.3 22 12C22 13.7 20.7 15 19 15H5ZM5 12.6H13L9.7 9.29999C9.3 8.89999 8.7 8.89999 8.3 9.29999L5 12.6Z"
+                                                                              fill="currentColor"/>
+                                                                        <path
+                                                                            d="M17 17.4V12C17 11.4 16.6 11 16 11C15.4 11 15 11.4 15 12V17.4H17Z"
+                                                                            fill="currentColor"/>
+                                                                        <path opacity="0.3"
+                                                                              d="M12 17.4H20L16.7 20.7C16.3 21.1 15.7 21.1 15.3 20.7L12 17.4Z"
+                                                                              fill="currentColor"/>
+                                                                        <path
+                                                                            d="M8 12.6V18C8 18.6 8.4 19 9 19C9.6 19 10 18.6 10 18V12.6H8Z"
+                                                                            fill="currentColor"/>
+                                                                    </svg>
+                                                                </span>
+                                                                <!--end::Svg Icon-->
+                                                            </span>
+                                                </div>
+                                                <!--end::Symbol-->
+                                                <!--begin::Title-->
+                                                <div class="mb-0 me-2">
+                                                    <a href="#"
+                                                       class="fs-6 text-gray-800 text-hover-primary fw-bold">پروژه
+                                                        ریداکس</a>
+                                                    <div class="text-gray-400 fs-7">تم ادمین جدید</div>
+                                                </div>
+                                                <!--end::Title-->
+                                            </div>
+                                            <!--end::Section-->
+                                            <!--begin::Tags-->
+                                            <span class="badge badge-light fs-8">2 روز</span>
+                                            <!--end::Tags-->
+                                        </div>
+                                        <!--end::آیتم-->
+                                        <!--begin::آیتم-->
+                                        <div class="d-flex flex-stack py-4">
+                                            <!--begin::Section-->
+                                            <div class="d-flex align-items-center">
+                                                <!--begin::Symbol-->
+                                                <div class="symbol symbol-35px me-4">
+                                                            <span class="symbol-label bg-light-primary">
+                                                                <!--begin::Svg Icon | path: icons/duotune/maps/map001.svg-->
+                                                                <span class="svg-icon svg-icon-2 svg-icon-primary">
+                                                                    <svg width="24" height="24" viewBox="0 0 24 24"
+                                                                         fill="none"
+                                                                         xmlns="http://www.w3.org/2000/svg">
+                                                                        <path opacity="0.3"
+                                                                              d="M6 22H4V3C4 2.4 4.4 2 5 2C5.6 2 6 2.4 6 3V22Z"
+                                                                              fill="currentColor"/>
+                                                                        <path
+                                                                            d="M18 14H4V4H18C18.8 4 19.2 4.9 18.7 5.5L16 9L18.8 12.5C19.3 13.1 18.8 14 18 14Z"
+                                                                            fill="currentColor"/>
+                                                                    </svg>
+                                                                </span>
+                                                                <!--end::Svg Icon-->
+                                                            </span>
+                                                </div>
+                                                <!--end::Symbol-->
+                                                <!--begin::Title-->
+                                                <div class="mb-0 me-2">
+                                                    <a href="#"
+                                                       class="fs-6 text-gray-800 text-hover-primary fw-bold">پروژه
+                                                        بریفینگ</a>
+                                                    <div class="text-gray-400 fs-7">به روز رسانی وضعیت راه اندازی
+                                                        محصول
+                                                    </div>
+                                                </div>
+                                                <!--end::Title-->
+                                            </div>
+                                            <!--end::Section-->
+                                            <!--begin::Tags-->
+                                            <span class="badge badge-light fs-8">21 دی</span>
+                                            <!--end::Tags-->
+                                        </div>
+                                        <!--end::آیتم-->
+                                        <!--begin::آیتم-->
+                                        <div class="d-flex flex-stack py-4">
+                                            <!--begin::Section-->
+                                            <div class="d-flex align-items-center">
+                                                <!--begin::Symbol-->
+                                                <div class="symbol symbol-35px me-4">
+                                                            <span class="symbol-label bg-light-info">
+                                                                <!--begin::Svg Icon | path: icons/duotune/general/gen006.svg-->
+                                                                <span class="svg-icon svg-icon-2 svg-icon-info">
+                                                                    <svg width="24" height="24" viewBox="0 0 24 24"
+                                                                         fill="none"
+                                                                         xmlns="http://www.w3.org/2000/svg">
+                                                                        <path opacity="0.3"
+                                                                              d="M22 5V19C22 19.6 21.6 20 21 20H19.5L11.9 12.4C11.5 12 10.9 12 10.5 12.4L3 20C2.5 20 2 19.5 2 19V5C2 4.4 2.4 4 3 4H21C21.6 4 22 4.4 22 5ZM7.5 7C6.7 7 6 7.7 6 8.5C6 9.3 6.7 10 7.5 10C8.3 10 9 9.3 9 8.5C9 7.7 8.3 7 7.5 7Z"
+                                                                              fill="currentColor"/>
+                                                                        <path
+                                                                            d="M19.1 10C18.7 9.60001 18.1 9.60001 17.7 10L10.7 17H2V19C2 19.6 2.4 20 3 20H21C21.6 20 22 19.6 22 19V12.9L19.1 10Z"
+                                                                            fill="currentColor"/>
+                                                                    </svg>
+                                                                </span>
+                                                                <!--end::Svg Icon-->
+                                                            </span>
+                                                </div>
+                                                <!--end::Symbol-->
+                                                <!--begin::Title-->
+                                                <div class="mb-0 me-2">
+                                                    <a href="#"
+                                                       class="fs-6 text-gray-800 text-hover-primary fw-bold">دارایی
+                                                        های بنر</a>
+                                                    <div class="text-gray-400 fs-7">مجموعه ای از تصویر بنرها</div>
+                                                </div>
+                                                <!--end::Title-->
+                                            </div>
+                                            <!--end::Section-->
+                                            <!--begin::Tags-->
+                                            <span class="badge badge-light fs-8">21 دی</span>
+                                            <!--end::Tags-->
+                                        </div>
+                                        <!--end::آیتم-->
+                                        <!--begin::آیتم-->
+                                        <div class="d-flex flex-stack py-4">
+                                            <!--begin::Section-->
+                                            <div class="d-flex align-items-center">
+                                                <!--begin::Symbol-->
+                                                <div class="symbol symbol-35px me-4">
+                                                            <span class="symbol-label bg-light-warning">
+                                                                <!--begin::Svg Icon | path: icons/duotune/art/art002.svg-->
+                                                                <span class="svg-icon svg-icon-2 svg-icon-warning">
+                                                                    <svg width="24" height="25" viewBox="0 0 24 25"
+                                                                         fill="none"
+                                                                         xmlns="http://www.w3.org/2000/svg">
+                                                                        <path opacity="0.3"
+                                                                              d="M8.9 21L7.19999 22.6999C6.79999 23.0999 6.2 23.0999 5.8 22.6999L4.1 21H8.9ZM4 16.0999L2.3 17.8C1.9 18.2 1.9 18.7999 2.3 19.1999L4 20.9V16.0999ZM19.3 9.1999L15.8 5.6999C15.4 5.2999 14.8 5.2999 14.4 5.6999L9 11.0999V21L19.3 10.6999C19.7 10.2999 19.7 9.5999 19.3 9.1999Z"
+                                                                              fill="currentColor"/>
+                                                                        <path
+                                                                            d="M21 15V20C21 20.6 20.6 21 20 21H11.8L18.8 14H20C20.6 14 21 14.4 21 15ZM10 21V4C10 3.4 9.6 3 9 3H4C3.4 3 3 3.4 3 4V21C3 21.6 3.4 22 4 22H9C9.6 22 10 21.6 10 21ZM7.5 18.5C7.5 19.1 7.1 19.5 6.5 19.5C5.9 19.5 5.5 19.1 5.5 18.5C5.5 17.9 5.9 17.5 6.5 17.5C7.1 17.5 7.5 17.9 7.5 18.5Z"
+                                                                            fill="currentColor"/>
+                                                                    </svg>
+                                                                </span>
+                                                                <!--end::Svg Icon-->
+                                                            </span>
+                                                </div>
+                                                <!--end::Symbol-->
+                                                <!--begin::Title-->
+                                                <div class="mb-0 me-2">
+                                                    <a href="#"
+                                                       class="fs-6 text-gray-800 text-hover-primary fw-bold">نماد
+                                                        دارایی ها</a>
+                                                    <div class="text-gray-400 fs-7">مجموعه ای از ایکون ها</div>
+                                                </div>
+                                                <!--end::Title-->
+                                            </div>
+                                            <!--end::Section-->
+                                            <!--begin::Tags-->
+                                            <span class="badge badge-light fs-8">20 اسفند</span>
+                                            <!--end::Tags-->
+                                        </div>
+                                        <!--end::آیتم-->
                                     </div>
-                                    <!--end::Tab panel-->
-                                    <!--begin::Tab panel-->
-                                    <div class="tab-pane fade" id="kt_topbar_notifications_3" role="tabpanel">
-                                        <!--begin::آیتمs-->
-                                        <div class="scroll-y mh-325px my-5 px-8">
-                                            <!--begin::آیتم-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center me-2">
-                                                    <!--begin::Code-->
-                                                    <span class="w-70px badge badge-light-success me-4">200</span>
-                                                    <!--end::Code-->
-                                                    <!--begin::Title-->
-                                                    <a href="#" class="text-gray-800 text-hover-primary fw-semibold">سفارش
-                                                        جدید</a>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Tags-->
-                                                <span class="badge badge-light fs-8">فقط</span>
-                                                <!--end::Tags-->
-                                            </div>
-                                            <!--end::آیتم-->
-                                            <!--begin::آیتم-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center me-2">
-                                                    <!--begin::Code-->
-                                                    <span class="w-70px badge badge-light-danger me-4">500</span>
-                                                    <!--end::Code-->
-                                                    <!--begin::Title-->
-                                                    <a href="#" class="text-gray-800 text-hover-primary fw-semibold">مشتری
-                                                        جدید</a>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Tags-->
-                                                <span class="badge badge-light fs-8">2 ساعت</span>
-                                                <!--end::Tags-->
-                                            </div>
-                                            <!--end::آیتم-->
-                                            <!--begin::آیتم-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center me-2">
-                                                    <!--begin::Code-->
-                                                    <span class="w-70px badge badge-light-success me-4">200</span>
-                                                    <!--end::Code-->
-                                                    <!--begin::Title-->
-                                                    <a href="#" class="text-gray-800 text-hover-primary fw-semibold">پردازش
-                                                        درگاه</a>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Tags-->
-                                                <span class="badge badge-light fs-8">5 ساعت</span>
-                                                <!--end::Tags-->
-                                            </div>
-                                            <!--end::آیتم-->
-                                            <!--begin::آیتم-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center me-2">
-                                                    <!--begin::Code-->
-                                                    <span class="w-70px badge badge-light-warning me-4">300</span>
-                                                    <!--end::Code-->
-                                                    <!--begin::Title-->
-                                                    <a href="#" class="text-gray-800 text-hover-primary fw-semibold">جستجوی
-                                                        کوئری</a>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Tags-->
-                                                <span class="badge badge-light fs-8">2 روز</span>
-                                                <!--end::Tags-->
-                                            </div>
-                                            <!--end::آیتم-->
-                                            <!--begin::آیتم-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center me-2">
-                                                    <!--begin::Code-->
-                                                    <span class="w-70px badge badge-light-success me-4">200</span>
-                                                    <!--end::Code-->
-                                                    <!--begin::Title-->
-                                                    <a href="#" class="text-gray-800 text-hover-primary fw-semibold">ارتباط
-                                                        کلید دسترسی</a>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Tags-->
-                                                <span class="badge badge-light fs-8">1 هفته</span>
-                                                <!--end::Tags-->
-                                            </div>
-                                            <!--end::آیتم-->
-                                            <!--begin::آیتم-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center me-2">
-                                                    <!--begin::Code-->
-                                                    <span class="w-70px badge badge-light-success me-4">200</span>
-                                                    <!--end::Code-->
-                                                    <!--begin::Title-->
-                                                    <a href="#" class="text-gray-800 text-hover-primary fw-semibold">بازیابی
-                                                        دیتابیس</a>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Tags-->
-                                                <span class="badge badge-light fs-8">اسفند 5</span>
-                                                <!--end::Tags-->
-                                            </div>
-                                            <!--end::آیتم-->
-                                            <!--begin::آیتم-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center me-2">
-                                                    <!--begin::Code-->
-                                                    <span class="w-70px badge badge-light-warning me-4">300</span>
-                                                    <!--end::Code-->
-                                                    <!--begin::Title-->
-                                                    <a href="#" class="text-gray-800 text-hover-primary fw-semibold">بروزرسانی
-                                                        سیستم</a>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Tags-->
-                                                <span class="badge badge-light fs-8">اردیبهشت 15</span>
-                                                <!--end::Tags-->
-                                            </div>
-                                            <!--end::آیتم-->
-                                            <!--begin::آیتم-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center me-2">
-                                                    <!--begin::Code-->
-                                                    <span class="w-70px badge badge-light-warning me-4">300</span>
-                                                    <!--end::Code-->
-                                                    <!--begin::Title-->
-                                                    <a href="#" class="text-gray-800 text-hover-primary fw-semibold">اپدیت
-                                                        سیستم عامل سرور</a>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Tags-->
-                                                <span class="badge badge-light fs-8">فروردین 3</span>
-                                                <!--end::Tags-->
-                                            </div>
-                                            <!--end::آیتم-->
-                                            <!--begin::آیتم-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center me-2">
-                                                    <!--begin::Code-->
-                                                    <span class="w-70px badge badge-light-warning me-4">300</span>
-                                                    <!--end::Code-->
-                                                    <!--begin::Title-->
-                                                    <a href="#" class="text-gray-800 text-hover-primary fw-semibold">برگشت
-                                                        کلید دسترسی</a>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Tags-->
-                                                <span class="badge badge-light fs-8">خرداد 30</span>
-                                                <!--end::Tags-->
-                                            </div>
-                                            <!--end::آیتم-->
-                                            <!--begin::آیتم-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center me-2">
-                                                    <!--begin::Code-->
-                                                    <span class="w-70px badge badge-light-danger me-4">500</span>
-                                                    <!--end::Code-->
-                                                    <!--begin::Title-->
-                                                    <a href="#" class="text-gray-800 text-hover-primary fw-semibold">روند
-                                                        بازپرداخت</a>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Tags-->
-                                                <span class="badge badge-light fs-8">تیر 10</span>
-                                                <!--end::Tags-->
-                                            </div>
-                                            <!--end::آیتم-->
-                                            <!--begin::آیتم-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center me-2">
-                                                    <!--begin::Code-->
-                                                    <span class="w-70px badge badge-light-danger me-4">500</span>
-                                                    <!--end::Code-->
-                                                    <!--begin::Title-->
-                                                    <a href="#" class="text-gray-800 text-hover-primary fw-semibold">روند
-                                                        برداشت</a>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Tags-->
-                                                <span class="badge badge-light fs-8">شهریور 10</span>
-                                                <!--end::Tags-->
-                                            </div>
-                                            <!--end::آیتم-->
-                                            <!--begin::آیتم-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center me-2">
-                                                    <!--begin::Code-->
-                                                    <span class="w-70px badge badge-light-danger me-4">500</span>
-                                                    <!--end::Code-->
-                                                    <!--begin::Title-->
-                                                    <a href="#" class="text-gray-800 text-hover-primary fw-semibold">وظایف
-                                                        نامه</a>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Tags-->
-                                                <span class="badge badge-light fs-8">آذر 10</span>
-                                                <!--end::Tags-->
-                                            </div>
-                                            <!--end::آیتم-->
-                                        </div>
-                                        <!--end::آیتمs-->
-                                        <!--begin::نمایش more-->
-                                        <div class="py-3 text-center border-top">
-                                            <a href="../../demo1/dist/pages/user-profile/activity.html"
-                                               class="btn btn-color-gray-600 btn-active-color-primary">نمایش همه
-                                                <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
-                                                <span class="svg-icon svg-icon-5">
-														<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                             xmlns="http://www.w3.org/2000/svg">
-															<rect opacity="0.5" x="18" y="13" width="13" height="2"
-                                                                  rx="1" transform="rotate(-180 18 13)"
-                                                                  fill="currentColor"/>
-															<path
-                                                                d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z"
-                                                                fill="currentColor"/>
-														</svg>
-													</span>
-                                                <!--end::Svg Icon--></a>
-                                        </div>
-                                        <!--end::نمایش more-->
+                                    <!--end::آیتمs-->
+                                    <!--begin::نمایش more-->
+                                    <div class="py-3 text-center border-top">
+                                        <a href="../../demo1/dist/pages/user-profile/activity.html"
+                                           class="btn btn-color-gray-600 btn-active-color-primary">نمایش همه
+                                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
+                                            <span class="svg-icon svg-icon-5">
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <rect opacity="0.5" x="18" y="13" width="13" height="2"
+                                                              rx="1" transform="rotate(-180 18 13)"
+                                                              fill="currentColor"/>
+                                                        <path
+                                                            d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z"
+                                                            fill="currentColor"/>
+                                                    </svg>
+                                                </span>
+                                            <!--end::Svg Icon--></a>
                                     </div>
-                                    <!--end::Tab panel-->
+                                    <!--end::نمایش more-->
                                 </div>
-                                <!--end::Tab content-->
+                                <!--end::Tab panel-->
+                                <!--begin::Tab panel-->
+                                <div class="tab-pane fade show active" id="kt_topbar_notifications_2"
+                                     role="tabpanel">
+                                    <!--begin::Wrapper-->
+                                    <div class="d-flex flex-column px-9">
+                                        <!--begin::Section-->
+                                        <div class="pt-10 pb-0">
+                                            <!--begin::Title-->
+                                            <h3 class="text-dark text-center fw-bold">دسترسی حرفه ای را دریافت
+                                                کنید</h3>
+                                            <!--end::Title-->
+                                            <!--begin::Text-->
+                                            <div class="text-center text-gray-600 fw-semibold pt-1">رئوس مطالب شما
+                                                را صادق نگه می دارد. آنها جلوی شگفت انگیز بودن شما درمورد رانندگی را
+                                                می گیرند
+                                            </div>
+                                            <!--end::Text-->
+                                            <!--begin::Actions-->
+                                            <div class="text-center mt-5 mb-9">
+                                                <a href="#" class="btn btn-sm btn-primary px-6"
+                                                   data-bs-toggle="modal" data-bs-target="#kt_modal_upgrade_plan">ارتقا
+                                                    دهید</a>
+                                            </div>
+                                            <!--end::Actions-->
+                                        </div>
+                                        <!--end::Section-->
+                                        <!--begin::Illustration-->
+                                        <div class="text-center px-4">
+                                            <img class="mw-100 mh-200px" alt="image"
+                                                 src="{{asset("admin/media/illustrations/sketchy-1/1.png")}}"/>
+                                        </div>
+                                        <!--end::Illustration-->
+                                    </div>
+                                    <!--end::Wrapper-->
+                                </div>
+                                <!--end::Tab panel-->
+                                <!--begin::Tab panel-->
+                                <div class="tab-pane fade" id="kt_topbar_notifications_3" role="tabpanel">
+                                    <!--begin::آیتمs-->
+                                    <div class="scroll-y mh-325px my-5 px-8">
+                                        <!--begin::آیتم-->
+                                        <div class="d-flex flex-stack py-4">
+                                            <!--begin::Section-->
+                                            <div class="d-flex align-items-center me-2">
+                                                <!--begin::Code-->
+                                                <span class="w-70px badge badge-light-success me-4">200</span>
+                                                <!--end::Code-->
+                                                <!--begin::Title-->
+                                                <a href="#" class="text-gray-800 text-hover-primary fw-semibold">سفارش
+                                                    جدید</a>
+                                                <!--end::Title-->
+                                            </div>
+                                            <!--end::Section-->
+                                            <!--begin::Tags-->
+                                            <span class="badge badge-light fs-8">فقط</span>
+                                            <!--end::Tags-->
+                                        </div>
+                                        <!--end::آیتم-->
+                                        <!--begin::آیتم-->
+                                        <div class="d-flex flex-stack py-4">
+                                            <!--begin::Section-->
+                                            <div class="d-flex align-items-center me-2">
+                                                <!--begin::Code-->
+                                                <span class="w-70px badge badge-light-danger me-4">500</span>
+                                                <!--end::Code-->
+                                                <!--begin::Title-->
+                                                <a href="#" class="text-gray-800 text-hover-primary fw-semibold">مشتری
+                                                    جدید</a>
+                                                <!--end::Title-->
+                                            </div>
+                                            <!--end::Section-->
+                                            <!--begin::Tags-->
+                                            <span class="badge badge-light fs-8">2 ساعت</span>
+                                            <!--end::Tags-->
+                                        </div>
+                                        <!--end::آیتم-->
+                                        <!--begin::آیتم-->
+                                        <div class="d-flex flex-stack py-4">
+                                            <!--begin::Section-->
+                                            <div class="d-flex align-items-center me-2">
+                                                <!--begin::Code-->
+                                                <span class="w-70px badge badge-light-success me-4">200</span>
+                                                <!--end::Code-->
+                                                <!--begin::Title-->
+                                                <a href="#" class="text-gray-800 text-hover-primary fw-semibold">پردازش
+                                                    درگاه</a>
+                                                <!--end::Title-->
+                                            </div>
+                                            <!--end::Section-->
+                                            <!--begin::Tags-->
+                                            <span class="badge badge-light fs-8">5 ساعت</span>
+                                            <!--end::Tags-->
+                                        </div>
+                                        <!--end::آیتم-->
+                                        <!--begin::آیتم-->
+                                        <div class="d-flex flex-stack py-4">
+                                            <!--begin::Section-->
+                                            <div class="d-flex align-items-center me-2">
+                                                <!--begin::Code-->
+                                                <span class="w-70px badge badge-light-warning me-4">300</span>
+                                                <!--end::Code-->
+                                                <!--begin::Title-->
+                                                <a href="#" class="text-gray-800 text-hover-primary fw-semibold">جستجوی
+                                                    کوئری</a>
+                                                <!--end::Title-->
+                                            </div>
+                                            <!--end::Section-->
+                                            <!--begin::Tags-->
+                                            <span class="badge badge-light fs-8">2 روز</span>
+                                            <!--end::Tags-->
+                                        </div>
+                                        <!--end::آیتم-->
+                                        <!--begin::آیتم-->
+                                        <div class="d-flex flex-stack py-4">
+                                            <!--begin::Section-->
+                                            <div class="d-flex align-items-center me-2">
+                                                <!--begin::Code-->
+                                                <span class="w-70px badge badge-light-success me-4">200</span>
+                                                <!--end::Code-->
+                                                <!--begin::Title-->
+                                                <a href="#" class="text-gray-800 text-hover-primary fw-semibold">ارتباط
+                                                    کلید دسترسی</a>
+                                                <!--end::Title-->
+                                            </div>
+                                            <!--end::Section-->
+                                            <!--begin::Tags-->
+                                            <span class="badge badge-light fs-8">1 هفته</span>
+                                            <!--end::Tags-->
+                                        </div>
+                                        <!--end::آیتم-->
+                                        <!--begin::آیتم-->
+                                        <div class="d-flex flex-stack py-4">
+                                            <!--begin::Section-->
+                                            <div class="d-flex align-items-center me-2">
+                                                <!--begin::Code-->
+                                                <span class="w-70px badge badge-light-success me-4">200</span>
+                                                <!--end::Code-->
+                                                <!--begin::Title-->
+                                                <a href="#" class="text-gray-800 text-hover-primary fw-semibold">بازیابی
+                                                    دیتابیس</a>
+                                                <!--end::Title-->
+                                            </div>
+                                            <!--end::Section-->
+                                            <!--begin::Tags-->
+                                            <span class="badge badge-light fs-8">اسفند 5</span>
+                                            <!--end::Tags-->
+                                        </div>
+                                        <!--end::آیتم-->
+                                        <!--begin::آیتم-->
+                                        <div class="d-flex flex-stack py-4">
+                                            <!--begin::Section-->
+                                            <div class="d-flex align-items-center me-2">
+                                                <!--begin::Code-->
+                                                <span class="w-70px badge badge-light-warning me-4">300</span>
+                                                <!--end::Code-->
+                                                <!--begin::Title-->
+                                                <a href="#" class="text-gray-800 text-hover-primary fw-semibold">بروزرسانی
+                                                    سیستم</a>
+                                                <!--end::Title-->
+                                            </div>
+                                            <!--end::Section-->
+                                            <!--begin::Tags-->
+                                            <span class="badge badge-light fs-8">اردیبهشت 15</span>
+                                            <!--end::Tags-->
+                                        </div>
+                                        <!--end::آیتم-->
+                                        <!--begin::آیتم-->
+                                        <div class="d-flex flex-stack py-4">
+                                            <!--begin::Section-->
+                                            <div class="d-flex align-items-center me-2">
+                                                <!--begin::Code-->
+                                                <span class="w-70px badge badge-light-warning me-4">300</span>
+                                                <!--end::Code-->
+                                                <!--begin::Title-->
+                                                <a href="#" class="text-gray-800 text-hover-primary fw-semibold">اپدیت
+                                                    سیستم عامل سرور</a>
+                                                <!--end::Title-->
+                                            </div>
+                                            <!--end::Section-->
+                                            <!--begin::Tags-->
+                                            <span class="badge badge-light fs-8">فروردین 3</span>
+                                            <!--end::Tags-->
+                                        </div>
+                                        <!--end::آیتم-->
+                                        <!--begin::آیتم-->
+                                        <div class="d-flex flex-stack py-4">
+                                            <!--begin::Section-->
+                                            <div class="d-flex align-items-center me-2">
+                                                <!--begin::Code-->
+                                                <span class="w-70px badge badge-light-warning me-4">300</span>
+                                                <!--end::Code-->
+                                                <!--begin::Title-->
+                                                <a href="#" class="text-gray-800 text-hover-primary fw-semibold">برگشت
+                                                    کلید دسترسی</a>
+                                                <!--end::Title-->
+                                            </div>
+                                            <!--end::Section-->
+                                            <!--begin::Tags-->
+                                            <span class="badge badge-light fs-8">خرداد 30</span>
+                                            <!--end::Tags-->
+                                        </div>
+                                        <!--end::آیتم-->
+                                        <!--begin::آیتم-->
+                                        <div class="d-flex flex-stack py-4">
+                                            <!--begin::Section-->
+                                            <div class="d-flex align-items-center me-2">
+                                                <!--begin::Code-->
+                                                <span class="w-70px badge badge-light-danger me-4">500</span>
+                                                <!--end::Code-->
+                                                <!--begin::Title-->
+                                                <a href="#" class="text-gray-800 text-hover-primary fw-semibold">روند
+                                                    بازپرداخت</a>
+                                                <!--end::Title-->
+                                            </div>
+                                            <!--end::Section-->
+                                            <!--begin::Tags-->
+                                            <span class="badge badge-light fs-8">تیر 10</span>
+                                            <!--end::Tags-->
+                                        </div>
+                                        <!--end::آیتم-->
+                                        <!--begin::آیتم-->
+                                        <div class="d-flex flex-stack py-4">
+                                            <!--begin::Section-->
+                                            <div class="d-flex align-items-center me-2">
+                                                <!--begin::Code-->
+                                                <span class="w-70px badge badge-light-danger me-4">500</span>
+                                                <!--end::Code-->
+                                                <!--begin::Title-->
+                                                <a href="#" class="text-gray-800 text-hover-primary fw-semibold">روند
+                                                    برداشت</a>
+                                                <!--end::Title-->
+                                            </div>
+                                            <!--end::Section-->
+                                            <!--begin::Tags-->
+                                            <span class="badge badge-light fs-8">شهریور 10</span>
+                                            <!--end::Tags-->
+                                        </div>
+                                        <!--end::آیتم-->
+                                        <!--begin::آیتم-->
+                                        <div class="d-flex flex-stack py-4">
+                                            <!--begin::Section-->
+                                            <div class="d-flex align-items-center me-2">
+                                                <!--begin::Code-->
+                                                <span class="w-70px badge badge-light-danger me-4">500</span>
+                                                <!--end::Code-->
+                                                <!--begin::Title-->
+                                                <a href="#" class="text-gray-800 text-hover-primary fw-semibold">وظایف
+                                                    نامه</a>
+                                                <!--end::Title-->
+                                            </div>
+                                            <!--end::Section-->
+                                            <!--begin::Tags-->
+                                            <span class="badge badge-light fs-8">آذر 10</span>
+                                            <!--end::Tags-->
+                                        </div>
+                                        <!--end::آیتم-->
+                                    </div>
+                                    <!--end::آیتمs-->
+                                    <!--begin::نمایش more-->
+                                    <div class="py-3 text-center border-top">
+                                        <a href="../../demo1/dist/pages/user-profile/activity.html"
+                                           class="btn btn-color-gray-600 btn-active-color-primary">نمایش همه
+                                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
+                                            <span class="svg-icon svg-icon-5">
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <rect opacity="0.5" x="18" y="13" width="13" height="2"
+                                                              rx="1" transform="rotate(-180 18 13)"
+                                                              fill="currentColor"/>
+                                                        <path
+                                                            d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z"
+                                                            fill="currentColor"/>
+                                                    </svg>
+                                                </span>
+                                            <!--end::Svg Icon--></a>
+                                    </div>
+                                    <!--end::نمایش more-->
+                                </div>
+                                <!--end::Tab panel-->
                             </div>
-                            <!--end::Menu-->
-                            <!--end::Menu wrapper-->
+                            <!--end::Tab content-->
                         </div>
-                        <!--end::اعلان ها-->
+                        <!--end::Menu-->
+                        <!--end::Menu wrapper-->
+                    </div>--}}
+                    <!--end::اعلان ها-->
                         <!--begin::چت-->
-                        <div class="app-navbar-item ms-1 ms-md-3">
-                            <!--begin::Menu wrapper-->
-                            <div
-                                class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-30px h-30px w-md-40px h-md-40px position-relative"
-                                id="kt_drawer_chat_toggle">
-                                <!--begin::Svg Icon | path: icons/duotune/communication/com012.svg-->
-                                <span class="svg-icon svg-icon-2 svg-icon-md-1">
-											<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-												<path opacity="0.3"
-                                                      d="M20 3H4C2.89543 3 2 3.89543 2 5V16C2 17.1046 2.89543 18 4 18H4.5C5.05228 18 5.5 18.4477 5.5 19V21.5052C5.5 22.1441 6.21212 22.5253 6.74376 22.1708L11.4885 19.0077C12.4741 18.3506 13.6321 18 14.8167 18H20C21.1046 18 22 17.1046 22 16V5C22 3.89543 21.1046 3 20 3Z"
-                                                      fill="currentColor"/>
-												<rect x="6" y="12" width="7" height="2" rx="1" fill="currentColor"/>
-												<rect x="6" y="7" width="12" height="2" rx="1" fill="currentColor"/>
-											</svg>
-										</span>
-                                <!--end::Svg Icon-->
-                                <span
-                                    class="bullet bullet-dot bg-success h-6px w-6px position-absolute translate-middle top-0 start-50 animation-blink"></span>
-                            </div>
-                            <!--end::Menu wrapper-->
+                    {{--<div class="app-navbar-item ms-1 ms-md-3">
+                        <!--begin::Menu wrapper-->
+                        <div
+                            class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-30px h-30px w-md-40px h-md-40px position-relative"
+                            id="kt_drawer_chat_toggle">
+                            <!--begin::Svg Icon | path: icons/duotune/communication/com012.svg-->
+                            <span class="svg-icon svg-icon-2 svg-icon-md-1">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path opacity="0.3"
+                                                  d="M20 3H4C2.89543 3 2 3.89543 2 5V16C2 17.1046 2.89543 18 4 18H4.5C5.05228 18 5.5 18.4477 5.5 19V21.5052C5.5 22.1441 6.21212 22.5253 6.74376 22.1708L11.4885 19.0077C12.4741 18.3506 13.6321 18 14.8167 18H20C21.1046 18 22 17.1046 22 16V5C22 3.89543 21.1046 3 20 3Z"
+                                                  fill="currentColor"/>
+                                            <rect x="6" y="12" width="7" height="2" rx="1" fill="currentColor"/>
+                                            <rect x="6" y="7" width="12" height="2" rx="1" fill="currentColor"/>
+                                        </svg>
+                                    </span>
+                            <!--end::Svg Icon-->
+                            <span
+                                class="bullet bullet-dot bg-success h-6px w-6px position-absolute translate-middle top-0 start-50 animation-blink"></span>
                         </div>
-                        <!--end::چت-->
+                        <!--end::Menu wrapper-->
+                    </div>--}}
+                    <!--end::چت-->
                         <!--begin::من apps links-->
-                        <div class="app-navbar-item ms-1 ms-md-3">
-                            <!--begin::Menu wrapper-->
-                            <div
-                                class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-30px h-30px w-md-40px h-md-40px"
-                                data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent"
-                                data-kt-menu-placement="bottom-end">
-                                <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
-                                <span class="svg-icon svg-icon-2 svg-icon-md-1">
-											<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
-												<rect x="2" y="2" width="9" height="9" rx="2" fill="currentColor"/>
-												<rect opacity="0.3" x="13" y="2" width="9" height="9" rx="2"
-                                                      fill="currentColor"/>
-												<rect opacity="0.3" x="13" y="13" width="9" height="9" rx="2"
-                                                      fill="currentColor"/>
-												<rect opacity="0.3" x="2" y="13" width="9" height="9" rx="2"
-                                                      fill="currentColor"/>
-											</svg>
-										</span>
-                                <!--end::Svg Icon-->
-                            </div>
-                            <!--begin::من apps-->
-                            <div class="menu menu-sub menu-sub-dropdown menu-column w-100 w-sm-350px"
-                                 data-kt-menu="true">
-                                <!--begin::کارت-->
-                                <div class="card">
-                                    <!--begin::کارت header-->
-                                    <div class="card-header">
-                                        <!--begin::کارت title-->
-                                        <div class="card-title">من اپلیکیشن ها</div>
-                                        <!--end::کارت title-->
-                                        <!--begin::کارت toolbar-->
-                                        <div class="card-toolbar">
-                                            <!--begin::Menu-->
-                                            <button type="button"
-                                                    class="btn btn-sm btn-icon btn-active-light-primary me-n3"
-                                                    data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
-                                                    data-kt-menu-placement="bottom-end">
-                                                <!--begin::Svg Icon | path: icons/duotune/general/gen019.svg-->
-                                                <span class="svg-icon svg-icon-2">
-															<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                                 xmlns="http://www.w3.org/2000/svg">
-																<path
-                                                                    d="M17.5 11H6.5C4 11 2 9 2 6.5C2 4 4 2 6.5 2H17.5C20 2 22 4 22 6.5C22 9 20 11 17.5 11ZM15 6.5C15 7.9 16.1 9 17.5 9C18.9 9 20 7.9 20 6.5C20 5.1 18.9 4 17.5 4C16.1 4 15 5.1 15 6.5Z"
-                                                                    fill="currentColor"/>
-																<path opacity="0.3"
-                                                                      d="M17.5 22H6.5C4 22 2 20 2 17.5C2 15 4 13 6.5 13H17.5C20 13 22 15 22 17.5C22 20 20 22 17.5 22ZM4 17.5C4 18.9 5.1 20 6.5 20C7.9 20 9 18.9 9 17.5C9 16.1 7.9 15 6.5 15C5.1 15 4 16.1 4 17.5Z"
-                                                                      fill="currentColor"/>
-															</svg>
-														</span>
-                                                <!--end::Svg Icon-->
-                                            </button>
-                                            <!--begin::Menu 3-->
-                                            <div
-                                                class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px py-3"
-                                                data-kt-menu="true">
-                                                <!--begin::Heading-->
-                                                <div class="menu-item px-3">
-                                                    <div class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">
-                                                        پرداخت ها
-                                                    </div>
-                                                </div>
-                                                <!--end::Heading-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="#" class="menu-link px-3">ساختن فاکتور</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="#" class="menu-link flex-stack px-3">ساختن پرداخت
-                                                        <i class="fas fa-exclamation-circle ms-2 fs-7"
-                                                           data-bs-toggle="tooltip"
-                                                           title="یک نام هدف برای استفاده و مرجع امکانات مشخص کنید"></i></a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="#" class="menu-link px-3">فاکتور را ایجاد کنید</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3" data-kt-menu-trigger="hover"
-                                                     data-kt-menu-placement="right-end">
-                                                    <a href="#" class="menu-link px-3">
-                                                        <span class="menu-title">اشتراک</span>
-                                                        <span class="menu-arrow"></span>
-                                                    </a>
-                                                    <!--begin::Menu sub-->
-                                                    <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                                        <!--begin::Menu item-->
-                                                        <div class="menu-item px-3">
-                                                            <a href="#" class="menu-link px-3">پلان ها</a>
-                                                        </div>
-                                                        <!--end::Menu item-->
-                                                        <!--begin::Menu item-->
-                                                        <div class="menu-item px-3">
-                                                            <a href="#" class="menu-link px-3">صورتحساب</a>
-                                                        </div>
-                                                        <!--end::Menu item-->
-                                                        <!--begin::Menu item-->
-                                                        <div class="menu-item px-3">
-                                                            <a href="#" class="menu-link px-3">بیانه ها</a>
-                                                        </div>
-                                                        <!--end::Menu item-->
-                                                        <!--begin::Menu separator-->
-                                                        <div class="separator my-2"></div>
-                                                        <!--end::Menu separator-->
-                                                        <!--begin::Menu item-->
-                                                        <div class="menu-item px-3">
-                                                            <div class="menu-content px-3">
-                                                                <!--begin::Switch-->
-                                                                <label
-                                                                    class="form-check form-switch form-check-custom form-check-solid">
-                                                                    <!--begin::Input-->
-                                                                    <input class="form-check-input w-30px h-20px"
-                                                                           type="checkbox" value="1" checked="checked"
-                                                                           name="notifications"/>
-                                                                    <!--end::Input-->
-                                                                    <!--end::Tags-->
-                                                                    <span
-                                                                        class="form-check-label text-muted fs-6">وضعیت</span>
-                                                                    <!--end::Tags-->
-                                                                </label>
-                                                                <!--end::Switch-->
-                                                            </div>
-                                                        </div>
-                                                        <!--end::Menu item-->
-                                                    </div>
-                                                    <!--end::Menu sub-->
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3 my-1">
-                                                    <a href="#" class="menu-link px-3">تنظیمات</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                            </div>
-                                            <!--end::Menu 3-->
-                                            <!--end::Menu-->
-                                        </div>
-                                        <!--end::کارت toolbar-->
-                                    </div>
-                                    <!--end::کارت header-->
-                                    <!--begin::کارت body-->
-                                    <div class="card-body py-5">
-                                        <!--begin::Scroll-->
-                                        <div class="mh-450px scroll-y me-n5 pe-5">
-                                            <!--begin::Row-->
-                                            <div class="row g-2">
-                                                <!--begin::Col-->
-                                                <div class="col-4">
-                                                    <a href="#"
-                                                       class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                        <img src="{{asset("admin/media/svg/brand-logos/amazon.svg")}}"
-                                                             class="w-25px h-25px mb-2" alt=""/>
-                                                        <span class="fw-semibold">AWS</span>
-                                                    </a>
-                                                </div>
-                                                <!--end::Col-->
-                                                <!--begin::Col-->
-                                                <div class="col-4">
-                                                    <a href="#"
-                                                       class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                        <img
-                                                            src="{{asset("admin/media/svg/brand-logos/angular-icon-1.svg")}}"
-                                                            class="w-25px h-25px mb-2" alt=""/>
-                                                        <span class="fw-semibold">AngularJS</span>
-                                                    </a>
-                                                </div>
-                                                <!--end::Col-->
-                                                <!--begin::Col-->
-                                                <div class="col-4">
-                                                    <a href="#"
-                                                       class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                        <img src="{{asset("admin/media/svg/brand-logos/atica.svg")}}"
-                                                             class="w-25px h-25px mb-2" alt=""/>
-                                                        <span class="fw-semibold">Atica</span>
-                                                    </a>
-                                                </div>
-                                                <!--end::Col-->
-                                                <!--begin::Col-->
-                                                <div class="col-4">
-                                                    <a href="#"
-                                                       class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                        <img
-                                                            src="{{asset("admin/media/svg/brand-logos/beats-electronics.svg")}}"
-                                                            class="w-25px h-25px mb-2" alt=""/>
-                                                        <span class="fw-semibold">Music</span>
-                                                    </a>
-                                                </div>
-                                                <!--end::Col-->
-                                                <!--begin::Col-->
-                                                <div class="col-4">
-                                                    <a href="#"
-                                                       class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                        <img
-                                                            src="{{asset("admin/media/svg/brand-logos/codeigniter.svg")}}"
-                                                            class="w-25px h-25px mb-2" alt=""/>
-                                                        <span class="fw-semibold">Codeigniter</span>
-                                                    </a>
-                                                </div>
-                                                <!--end::Col-->
-                                                <!--begin::Col-->
-                                                <div class="col-4">
-                                                    <a href="#"
-                                                       class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                        <img
-                                                            src="{{asset("admin/media/svg/brand-logos/bootstrap-4.svg")}}"
-                                                            class="w-25px h-25px mb-2" alt=""/>
-                                                        <span class="fw-semibold">Bootstrap</span>
-                                                    </a>
-                                                </div>
-                                                <!--end::Col-->
-                                                <!--begin::Col-->
-                                                <div class="col-4">
-                                                    <a href="#"
-                                                       class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                        <img
-                                                            src="{{asset("admin/media/svg/brand-logos/google-tag-manager.svg")}}"
-                                                            class="w-25px h-25px mb-2" alt=""/>
-                                                        <span class="fw-semibold">GTM</span>
-                                                    </a>
-                                                </div>
-                                                <!--end::Col-->
-                                                <!--begin::Col-->
-                                                <div class="col-4">
-                                                    <a href="#"
-                                                       class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                        <img src="{{asset("admin/media/svg/brand-logos/disqus.svg")}}"
-                                                             class="w-25px h-25px mb-2" alt=""/>
-                                                        <span class="fw-semibold">Disqus</span>
-                                                    </a>
-                                                </div>
-                                                <!--end::Col-->
-                                                <!--begin::Col-->
-                                                <div class="col-4">
-                                                    <a href="#"
-                                                       class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                        <img
-                                                            src="{{asset("admin/media/svg/brand-logos/dribbble-icon-1.svg")}}"
-                                                            class="w-25px h-25px mb-2" alt=""/>
-                                                        <span class="fw-semibold">Dribble</span>
-                                                    </a>
-                                                </div>
-                                                <!--end::Col-->
-                                                <!--begin::Col-->
-                                                <div class="col-4">
-                                                    <a href="#"
-                                                       class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                        <img
-                                                            src="{{asset("admin/media/svg/brand-logos/google-play-store.svg")}}"
-                                                            class="w-25px h-25px mb-2" alt=""/>
-                                                        <span class="fw-semibold">Play فروشگاه</span>
-                                                    </a>
-                                                </div>
-                                                <!--end::Col-->
-                                                <!--begin::Col-->
-                                                <div class="col-4">
-                                                    <a href="#"
-                                                       class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                        <img
-                                                            src="{{asset("admin/media/svg/brand-logos/google-podcasts.svg")}}"
-                                                            class="w-25px h-25px mb-2" alt=""/>
-                                                        <span class="fw-semibold">پادکستs</span>
-                                                    </a>
-                                                </div>
-                                                <!--end::Col-->
-                                                <!--begin::Col-->
-                                                <div class="col-4">
-                                                    <a href="#"
-                                                       class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                        <img src="{{asset("admin/media/svg/brand-logos/figma-1.svg")}}"
-                                                             class="w-25px h-25px mb-2" alt=""/>
-                                                        <span class="fw-semibold">Figma</span>
-                                                    </a>
-                                                </div>
-                                                <!--end::Col-->
-                                                <!--begin::Col-->
-                                                <div class="col-4">
-                                                    <a href="#"
-                                                       class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                        <img src="{{asset("admin/media/svg/brand-logos/github.svg")}}"
-                                                             class="w-25px h-25px mb-2" alt=""/>
-                                                        <span class="fw-semibold">گیت هاب</span>
-                                                    </a>
-                                                </div>
-                                                <!--end::Col-->
-                                                <!--begin::Col-->
-                                                <div class="col-4">
-                                                    <a href="#"
-                                                       class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                        <img src="{{asset("admin/media/svg/brand-logos/gitlab.svg")}}"
-                                                             class="w-25px h-25px mb-2" alt=""/>
-                                                        <span class="fw-semibold">Gitlab</span>
-                                                    </a>
-                                                </div>
-                                                <!--end::Col-->
-                                                <!--begin::Col-->
-                                                <div class="col-4">
-                                                    <a href="#"
-                                                       class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                        <img
-                                                            src="{{asset("admin/media/svg/brand-logos/instagram-2-1.svg")}}"
-                                                            class="w-25px h-25px mb-2" alt=""/>
-                                                        <span class="fw-semibold">اینستاگرام</span>
-                                                    </a>
-                                                </div>
-                                                <!--end::Col-->
-                                                <!--begin::Col-->
-                                                <div class="col-4">
-                                                    <a href="#"
-                                                       class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
-                                                        <img
-                                                            src="{{asset("admin/media/svg/brand-logos/pinterest-p.svg")}}"
-                                                            class="w-25px h-25px mb-2" alt=""/>
-                                                        <span class="fw-semibold">Pinterest</span>
-                                                    </a>
-                                                </div>
-                                                <!--end::Col-->
-                                            </div>
-                                            <!--end::Row-->
-                                        </div>
-                                        <!--end::Scroll-->
-                                    </div>
-                                    <!--end::کارت body-->
-                                </div>
-                                <!--end::کارت-->
-                            </div>
-                            <!--end::من apps-->
-                            <!--end::Menu wrapper-->
+                    {{--<div class="app-navbar-item ms-1 ms-md-3">
+                        <!--begin::Menu wrapper-->
+                        <div
+                            class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-30px h-30px w-md-40px h-md-40px"
+                            data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent"
+                            data-kt-menu-placement="bottom-end">
+                            <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
+                            <span class="svg-icon svg-icon-2 svg-icon-md-1">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="2" y="2" width="9" height="9" rx="2" fill="currentColor"/>
+                                            <rect opacity="0.3" x="13" y="2" width="9" height="9" rx="2"
+                                                  fill="currentColor"/>
+                                            <rect opacity="0.3" x="13" y="13" width="9" height="9" rx="2"
+                                                  fill="currentColor"/>
+                                            <rect opacity="0.3" x="2" y="13" width="9" height="9" rx="2"
+                                                  fill="currentColor"/>
+                                        </svg>
+                                    </span>
+                            <!--end::Svg Icon-->
                         </div>
-                        <!--end::من apps links-->
+                        <!--begin::من apps-->
+                        <div class="menu menu-sub menu-sub-dropdown menu-column w-100 w-sm-350px"
+                             data-kt-menu="true">
+                            <!--begin::کارت-->
+                            <div class="card">
+                                <!--begin::کارت header-->
+                                <div class="card-header">
+                                    <!--begin::کارت title-->
+                                    <div class="card-title">من اپلیکیشن ها</div>
+                                    <!--end::کارت title-->
+                                    <!--begin::کارت toolbar-->
+                                    <div class="card-toolbar">
+                                        <!--begin::Menu-->
+                                        <button type="button"
+                                                class="btn btn-sm btn-icon btn-active-light-primary me-n3"
+                                                data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
+                                                data-kt-menu-placement="bottom-end">
+                                            <!--begin::Svg Icon | path: icons/duotune/general/gen019.svg-->
+                                            <span class="svg-icon svg-icon-2">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M17.5 11H6.5C4 11 2 9 2 6.5C2 4 4 2 6.5 2H17.5C20 2 22 4 22 6.5C22 9 20 11 17.5 11ZM15 6.5C15 7.9 16.1 9 17.5 9C18.9 9 20 7.9 20 6.5C20 5.1 18.9 4 17.5 4C16.1 4 15 5.1 15 6.5Z"
+                                                                fill="currentColor"/>
+                                                            <path opacity="0.3"
+                                                                  d="M17.5 22H6.5C4 22 2 20 2 17.5C2 15 4 13 6.5 13H17.5C20 13 22 15 22 17.5C22 20 20 22 17.5 22ZM4 17.5C4 18.9 5.1 20 6.5 20C7.9 20 9 18.9 9 17.5C9 16.1 7.9 15 6.5 15C5.1 15 4 16.1 4 17.5Z"
+                                                                  fill="currentColor"/>
+                                                        </svg>
+                                                    </span>
+                                            <!--end::Svg Icon-->
+                                        </button>
+                                        <!--begin::Menu 3-->
+                                        <div
+                                            class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px py-3"
+                                            data-kt-menu="true">
+                                            <!--begin::Heading-->
+                                            <div class="menu-item px-3">
+                                                <div class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">
+                                                    پرداخت ها
+                                                </div>
+                                            </div>
+                                            <!--end::Heading-->
+                                            <!--begin::Menu item-->
+                                            <div class="menu-item px-3">
+                                                <a href="#" class="menu-link px-3">ساختن فاکتور</a>
+                                            </div>
+                                            <!--end::Menu item-->
+                                            <!--begin::Menu item-->
+                                            <div class="menu-item px-3">
+                                                <a href="#" class="menu-link flex-stack px-3">ساختن پرداخت
+                                                    <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                                       data-bs-toggle="tooltip"
+                                                       title="یک نام هدف برای استفاده و مرجع امکانات مشخص کنید"></i></a>
+                                            </div>
+                                            <!--end::Menu item-->
+                                            <!--begin::Menu item-->
+                                            <div class="menu-item px-3">
+                                                <a href="#" class="menu-link px-3">فاکتور را ایجاد کنید</a>
+                                            </div>
+                                            <!--end::Menu item-->
+                                            <!--begin::Menu item-->
+                                            <div class="menu-item px-3" data-kt-menu-trigger="hover"
+                                                 data-kt-menu-placement="right-end">
+                                                <a href="#" class="menu-link px-3">
+                                                    <span class="menu-title">اشتراک</span>
+                                                    <span class="menu-arrow"></span>
+                                                </a>
+                                                <!--begin::Menu sub-->
+                                                <div class="menu-sub menu-sub-dropdown w-175px py-4">
+                                                    <!--begin::Menu item-->
+                                                    <div class="menu-item px-3">
+                                                        <a href="#" class="menu-link px-3">پلان ها</a>
+                                                    </div>
+                                                    <!--end::Menu item-->
+                                                    <!--begin::Menu item-->
+                                                    <div class="menu-item px-3">
+                                                        <a href="#" class="menu-link px-3">صورتحساب</a>
+                                                    </div>
+                                                    <!--end::Menu item-->
+                                                    <!--begin::Menu item-->
+                                                    <div class="menu-item px-3">
+                                                        <a href="#" class="menu-link px-3">بیانه ها</a>
+                                                    </div>
+                                                    <!--end::Menu item-->
+                                                    <!--begin::Menu separator-->
+                                                    <div class="separator my-2"></div>
+                                                    <!--end::Menu separator-->
+                                                    <!--begin::Menu item-->
+                                                    <div class="menu-item px-3">
+                                                        <div class="menu-content px-3">
+                                                            <!--begin::Switch-->
+                                                            <label
+                                                                class="form-check form-switch form-check-custom form-check-solid">
+                                                                <!--begin::Input-->
+                                                                <input class="form-check-input w-30px h-20px"
+                                                                       type="checkbox" value="1" checked="checked"
+                                                                       name="notifications"/>
+                                                                <!--end::Input-->
+                                                                <!--end::Tags-->
+                                                                <span
+                                                                    class="form-check-label text-muted fs-6">وضعیت</span>
+                                                                <!--end::Tags-->
+                                                            </label>
+                                                            <!--end::Switch-->
+                                                        </div>
+                                                    </div>
+                                                    <!--end::Menu item-->
+                                                </div>
+                                                <!--end::Menu sub-->
+                                            </div>
+                                            <!--end::Menu item-->
+                                            <!--begin::Menu item-->
+                                            <div class="menu-item px-3 my-1">
+                                                <a href="#" class="menu-link px-3">تنظیمات</a>
+                                            </div>
+                                            <!--end::Menu item-->
+                                        </div>
+                                        <!--end::Menu 3-->
+                                        <!--end::Menu-->
+                                    </div>
+                                    <!--end::کارت toolbar-->
+                                </div>
+                                <!--end::کارت header-->
+                                <!--begin::کارت body-->
+                                <div class="card-body py-5">
+                                    <!--begin::Scroll-->
+                                    <div class="mh-450px scroll-y me-n5 pe-5">
+                                        <!--begin::Row-->
+                                        <div class="row g-2">
+                                            <!--begin::Col-->
+                                            <div class="col-4">
+                                                <a href="#"
+                                                   class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
+                                                    <img src="{{asset("admin/media/svg/brand-logos/amazon.svg")}}"
+                                                         class="w-25px h-25px mb-2" alt=""/>
+                                                    <span class="fw-semibold">AWS</span>
+                                                </a>
+                                            </div>
+                                            <!--end::Col-->
+                                            <!--begin::Col-->
+                                            <div class="col-4">
+                                                <a href="#"
+                                                   class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
+                                                    <img
+                                                        src="{{asset("admin/media/svg/brand-logos/angular-icon-1.svg")}}"
+                                                        class="w-25px h-25px mb-2" alt=""/>
+                                                    <span class="fw-semibold">AngularJS</span>
+                                                </a>
+                                            </div>
+                                            <!--end::Col-->
+                                            <!--begin::Col-->
+                                            <div class="col-4">
+                                                <a href="#"
+                                                   class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
+                                                    <img src="{{asset("admin/media/svg/brand-logos/atica.svg")}}"
+                                                         class="w-25px h-25px mb-2" alt=""/>
+                                                    <span class="fw-semibold">Atica</span>
+                                                </a>
+                                            </div>
+                                            <!--end::Col-->
+                                            <!--begin::Col-->
+                                            <div class="col-4">
+                                                <a href="#"
+                                                   class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
+                                                    <img
+                                                        src="{{asset("admin/media/svg/brand-logos/beats-electronics.svg")}}"
+                                                        class="w-25px h-25px mb-2" alt=""/>
+                                                    <span class="fw-semibold">Music</span>
+                                                </a>
+                                            </div>
+                                            <!--end::Col-->
+                                            <!--begin::Col-->
+                                            <div class="col-4">
+                                                <a href="#"
+                                                   class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
+                                                    <img
+                                                        src="{{asset("admin/media/svg/brand-logos/codeigniter.svg")}}"
+                                                        class="w-25px h-25px mb-2" alt=""/>
+                                                    <span class="fw-semibold">Codeigniter</span>
+                                                </a>
+                                            </div>
+                                            <!--end::Col-->
+                                            <!--begin::Col-->
+                                            <div class="col-4">
+                                                <a href="#"
+                                                   class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
+                                                    <img
+                                                        src="{{asset("admin/media/svg/brand-logos/bootstrap-4.svg")}}"
+                                                        class="w-25px h-25px mb-2" alt=""/>
+                                                    <span class="fw-semibold">Bootstrap</span>
+                                                </a>
+                                            </div>
+                                            <!--end::Col-->
+                                            <!--begin::Col-->
+                                            <div class="col-4">
+                                                <a href="#"
+                                                   class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
+                                                    <img
+                                                        src="{{asset("admin/media/svg/brand-logos/google-tag-manager.svg")}}"
+                                                        class="w-25px h-25px mb-2" alt=""/>
+                                                    <span class="fw-semibold">GTM</span>
+                                                </a>
+                                            </div>
+                                            <!--end::Col-->
+                                            <!--begin::Col-->
+                                            <div class="col-4">
+                                                <a href="#"
+                                                   class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
+                                                    <img src="{{asset("admin/media/svg/brand-logos/disqus.svg")}}"
+                                                         class="w-25px h-25px mb-2" alt=""/>
+                                                    <span class="fw-semibold">Disqus</span>
+                                                </a>
+                                            </div>
+                                            <!--end::Col-->
+                                            <!--begin::Col-->
+                                            <div class="col-4">
+                                                <a href="#"
+                                                   class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
+                                                    <img
+                                                        src="{{asset("admin/media/svg/brand-logos/dribbble-icon-1.svg")}}"
+                                                        class="w-25px h-25px mb-2" alt=""/>
+                                                    <span class="fw-semibold">Dribble</span>
+                                                </a>
+                                            </div>
+                                            <!--end::Col-->
+                                            <!--begin::Col-->
+                                            <div class="col-4">
+                                                <a href="#"
+                                                   class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
+                                                    <img
+                                                        src="{{asset("admin/media/svg/brand-logos/google-play-store.svg")}}"
+                                                        class="w-25px h-25px mb-2" alt=""/>
+                                                    <span class="fw-semibold">Play فروشگاه</span>
+                                                </a>
+                                            </div>
+                                            <!--end::Col-->
+                                            <!--begin::Col-->
+                                            <div class="col-4">
+                                                <a href="#"
+                                                   class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
+                                                    <img
+                                                        src="{{asset("admin/media/svg/brand-logos/google-podcasts.svg")}}"
+                                                        class="w-25px h-25px mb-2" alt=""/>
+                                                    <span class="fw-semibold">پادکستs</span>
+                                                </a>
+                                            </div>
+                                            <!--end::Col-->
+                                            <!--begin::Col-->
+                                            <div class="col-4">
+                                                <a href="#"
+                                                   class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
+                                                    <img src="{{asset("admin/media/svg/brand-logos/figma-1.svg")}}"
+                                                         class="w-25px h-25px mb-2" alt=""/>
+                                                    <span class="fw-semibold">Figma</span>
+                                                </a>
+                                            </div>
+                                            <!--end::Col-->
+                                            <!--begin::Col-->
+                                            <div class="col-4">
+                                                <a href="#"
+                                                   class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
+                                                    <img src="{{asset("admin/media/svg/brand-logos/github.svg")}}"
+                                                         class="w-25px h-25px mb-2" alt=""/>
+                                                    <span class="fw-semibold">گیت هاب</span>
+                                                </a>
+                                            </div>
+                                            <!--end::Col-->
+                                            <!--begin::Col-->
+                                            <div class="col-4">
+                                                <a href="#"
+                                                   class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
+                                                    <img src="{{asset("admin/media/svg/brand-logos/gitlab.svg")}}"
+                                                         class="w-25px h-25px mb-2" alt=""/>
+                                                    <span class="fw-semibold">Gitlab</span>
+                                                </a>
+                                            </div>
+                                            <!--end::Col-->
+                                            <!--begin::Col-->
+                                            <div class="col-4">
+                                                <a href="#"
+                                                   class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
+                                                    <img
+                                                        src="{{asset("admin/media/svg/brand-logos/instagram-2-1.svg")}}"
+                                                        class="w-25px h-25px mb-2" alt=""/>
+                                                    <span class="fw-semibold">اینستاگرام</span>
+                                                </a>
+                                            </div>
+                                            <!--end::Col-->
+                                            <!--begin::Col-->
+                                            <div class="col-4">
+                                                <a href="#"
+                                                   class="d-flex flex-column flex-center text-center text-gray-800 text-hover-primary bg-hover-light rounded py-4 px-3 mb-3">
+                                                    <img
+                                                        src="{{asset("admin/media/svg/brand-logos/pinterest-p.svg")}}"
+                                                        class="w-25px h-25px mb-2" alt=""/>
+                                                    <span class="fw-semibold">Pinterest</span>
+                                                </a>
+                                            </div>
+                                            <!--end::Col-->
+                                        </div>
+                                        <!--end::Row-->
+                                    </div>
+                                    <!--end::Scroll-->
+                                </div>
+                                <!--end::کارت body-->
+                            </div>
+                            <!--end::کارت-->
+                        </div>
+                        <!--end::من apps-->
+                        <!--end::Menu wrapper-->
+                    </div>--}}
+                    <!--end::من apps links-->
                         <!--begin::Theme mode-->
                         <div class="app-navbar-item ms-1 ms-md-3">
                             <!--begin::Menu toggle-->
@@ -5740,10 +5740,13 @@
                                         <!--end::Avatar-->
                                         <!--begin::کاربرname-->
                                         <div class="d-flex flex-column">
-                                            <div class="fw-bold d-flex align-items-center fs-5">جلالی
+                                            <div
+                                                class="fw-bold d-flex align-items-center fs-5">{{\Illuminate\Support\Facades\Auth::user()->name??null}}
                                                 <span class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">حرفه ای</span>
                                             </div>
-                                            <a href="#" class="fw-semibold text-muted text-hover-primary fs-7">max@kt.com</a>
+                                            <a href="#" class="fw-semibold text-muted text-hover-primary fs-7">
+                                                {{\Illuminate\Support\Facades\Auth::user()->email??null}}
+                                            </a>
                                         </div>
                                         <!--end::کاربرname-->
                                     </div>
@@ -5906,7 +5909,7 @@
                                 <!--end::Menu item-->
                                 <!--begin::Menu item-->
                                 <div class="menu-item px-5">
-                                    <a href="../../demo1/dist/authentication/layouts/corporate/sign-in.html"
+                                    <a href="{{route("admin.logout")}}"
                                        class="menu-link px-5">خروج</a>
                                 </div>
                                 <!--end::Menu item-->
@@ -5966,7 +5969,7 @@
                                 <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                     <!--begin::آیتم-->
                                     <li class="breadcrumb-item text-muted">
-                                        <a href="{{route("dashboard")}}"
+                                        <a href="{{route("admin.dashboard")}}"
                                            class="text-muted text-hover-primary">داشبورد</a>
                                     </li>
                                     <!--end::آیتم-->
@@ -6038,24 +6041,24 @@
                         class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
                         <!--begin::Copyright-->
                         <div class="text-dark order-2 order-md-1">
-                            <span class="text-muted fw-semibold me-1">2022&copy;</span>
-                            <a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">Keenthemes</a>
+                            <span class="text-muted fw-semibold me-1">2025&copy;</span>
+                            <a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">Babona</a>
                         </div>
                         <!--end::Copyright-->
                         <!--begin::Menu-->
-                        <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
-                            <li class="menu-item">
-                                <a href="https://keenthemes.com" target="_blank" class="menu-link px-2">درباره</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="https://rtl-theme.com" target="_blank" class="menu-link px-2">پشتیبانی</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="https://www.rtl-theme.com/metronic-admin-html-template/" target="_blank"
-                                   class="menu-link px-2">خرید</a>
-                            </li>
-                        </ul>
-                        <!--end::Menu-->
+                    {{--<ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
+                        <li class="menu-item">
+                            <a href="https://keenthemes.com" target="_blank" class="menu-link px-2">درباره</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="https://rtl-theme.com" target="_blank" class="menu-link px-2">پشتیبانی</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="https://www.rtl-theme.com/metronic-admin-html-template/" target="_blank"
+                               class="menu-link px-2">خرید</a>
+                        </li>
+                    </ul>--}}
+                    <!--end::Menu-->
                     </div>
                     <!--end::Footer container-->
                 </div>

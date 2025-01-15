@@ -17,11 +17,12 @@ class DefaultUserSeeder extends Seeder
     {
         foreach ($this->users() as $user) {
             User::query()
-                ->updateOrCreate(["email" => $user["email"], "phone_number" => $user["phone_number"]], $user);
+                ->updateOrCreate(
+                    ["email" => $user["email"], "phone_number" => $user["phone_number"]],
+                    $user
+                );
         }
         //assign users to merchants
-
-        //get users
         $babonaUsers = User::query()
             ->whereIn("name", [
                 "ali",
@@ -47,7 +48,7 @@ class DefaultUserSeeder extends Seeder
                 "zahra",
             ])->get();
         $parsianMerchant = Merchant::query()
-            ->where("name", "parsian_push")
+            ->where("name", "parsian_posh")
             ->first();
         foreach ($parsianUsers as $parsianUser) {
             $parsianUser->merchants()->sync([

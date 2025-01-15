@@ -30,6 +30,13 @@ abstract class RepositoryAbstract
             ->get($pluck);
     }
 
+    public function latest()
+    {
+        return $this->instance::query()
+            ->latest("created_at")
+            ->first();
+    }
+
     public function getById($id, $with = [])
     {
         return $this->instance::query()
@@ -40,7 +47,7 @@ abstract class RepositoryAbstract
             ->first();
     }
 
-    public function getByCondition($condition, $with = [])
+    public function getByCondition(array $condition, $with = [])
     {
         return $this->instance::query()
             ->where($condition)

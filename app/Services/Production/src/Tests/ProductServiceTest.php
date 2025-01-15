@@ -2,16 +2,16 @@
 
 namespace Production\Tests;
 
-use App\Models\Merchant;
 use App\Models\User;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Storage;
-use Production\Entities\Models\Basket;
 use Production\Entities\Models\Category;
 use Production\Entities\Models\Product;
+use Production\Entities\Repositories\basket\BasketRepo;
+use Production\Entities\Repositories\detail\ProductDetailRepo;
 use Production\Entities\Repositories\product\ProductRepo;
 use Production\Production;
 use Tests\TestCase;
@@ -20,22 +20,11 @@ class ProductServiceTest extends TestCase
 {
     public function test_product_service(): void
     {
-//        $this->withoutExceptionHandling();
-
         $currentUser = $this->userLogin($user_id = 1);
 
         $data = $this->prepareDataForCreatingProduct();
 
-        //create fake request data for creating product
-        $thumbnail = UploadedFile::fake()->image("thumbnail.jpg");
-        $file1 = UploadedFile::fake()->image("test1.jpg");
-        $file2 = UploadedFile::fake()->image("test2.jpg");
-        $request = fakeRequest($data, [
-            "thumbnail" => $thumbnail,
-            "images" => [$file1, $file2]
-        ]);
-
-        $this->assertCreateProduct($request, $currentUser);
+        $this->assertCreateProduct($data, $currentUser);
 
         $this->assertListProducts();
 
@@ -43,15 +32,15 @@ class ProductServiceTest extends TestCase
 
         $this->assertAddProductToTheBasket($product);
 
+        $this->assertEditProduct($product, $data, $currentUser);
 
-        //create fake request data for editing product
-        $file = UploadedFile::fake()->image("test.jpg");
-        $fileEdited = UploadedFile::fake()->image("test2_edited.jpg");
-        $request = fakeRequest($data, [
-            "thumbnail" => $file,
-            "images" => [$fileEdited]
-        ]);
-        $this->assertEditProduct($product, $request, $currentUser);
+        $this->assertIncreaseProductCount($currentUser);
+
+        $this->assertDecreaseProductCount($currentUser);
+
+        $this->assertSetBasketBoughtAtCorrectly($currentUser);
+
+        $this->assertRequestReturnProductWorksCorrect($currentUser);
 
         $this->assertDeleteProduct($product);
     }
@@ -68,7 +57,6 @@ class ProductServiceTest extends TestCase
         Artisan::call("migrate:rollback");
         parent::tearDown();
     }
-
 
     private function prepareDataForCreatingProduct(): array
     {
@@ -125,8 +113,17 @@ class ProductServiceTest extends TestCase
         return $data;
     }
 
-    private function assertCreateProduct($request, $currentUser)
+    private function assertCreateProduct($data, $currentUser)
     {
+        //create fake request data for creating product
+        $thumbnail = UploadedFile::fake()->image("thumbnail.jpg");
+        $file1 = UploadedFile::fake()->image("test1.jpg");
+        $file2 = UploadedFile::fake()->image("test2.jpg");
+        $request = fakeRequest($data, [
+            "thumbnail" => $thumbnail,
+            "images" => [$file1, $file2]
+        ]);
+
         //product assertions
         $product = Production::createProduct($request, $currentUser);
         $this->assertTrue($product->exists);
@@ -170,8 +167,16 @@ class ProductServiceTest extends TestCase
         $this->assertTrue(count($products->items()) > 0);
     }
 
-    private function assertEditProduct($product, $request, $currentUser)
+    private function assertEditProduct($product, $data, $currentUser)
     {
+        //create fake request data for editing product
+        $file = UploadedFile::fake()->image("test.jpg");
+        $fileEdited = UploadedFile::fake()->image("test2_edited.jpg");
+        $request = fakeRequest($data, [
+            "thumbnail" => $file,
+            "images" => [$fileEdited]
+        ]);
+
         $request->merge([
             "slug" => "test_edited",
             "style" => "مام استایل ویرایش شده",
@@ -235,8 +240,7 @@ class ProductServiceTest extends TestCase
             "user_id" => 1,
             "bought_at" => now()->format("Y-m-d H:i:s"),
         ];
-        $basket = Basket::query()
-            ->create($basketData);
+        $basket = BasketRepo::store($basketData);
         $product->productDetails()->each(function ($productDetail) use ($basket) {
             $productDetail->baskets()->attach([$basket->id => ["quantity" => 16]]);
         });
@@ -270,5 +274,49 @@ class ProductServiceTest extends TestCase
         return Product::query()
             ->latest("created_at")
             ->first();
+    }
+
+    private function assertIncreaseProductCount(mixed $currentUser): void
+    {
+        $latestProductDetails = ProductDetailRepo::latest();
+        $count = 3;
+        Production::increaseProductDetailsQuantities($latestProductDetails->id, $currentUser, count: $count);
+        $productDetails = ProductDetailRepo::latest();
+        $this->assertEquals(($latestProductDetails->quantity + $count), $productDetails->quantity);
+    }
+
+    private function assertDecreaseProductCount(mixed $currentUser): void
+    {
+        $latestProductDetails = ProductDetailRepo::latest();
+        $count = 3;
+        Production::decreaseProductDetailsQuantities($latestProductDetails->id, $currentUser, count: $count);
+        $productDetails = ProductDetailRepo::latest();
+        $this->assertEquals(($latestProductDetails->quantity - $count), $productDetails->quantity);
+    }
+
+    private function assertSetBasketBoughtAtCorrectly(mixed $currentUser): void
+    {
+        $currentUserBasket = Production::basket($currentUser->id);
+        Production::setBasketBoughtAt($currentUserBasket->id);
+        $currentUserBasketAfterSetBoughtAt = Production::basket($currentUser->id);
+        $this->assertEmpty($currentUserBasketAfterSetBoughtAt->bought_at);
+    }
+
+    private function assertRequestReturnProductWorksCorrect(mixed $currentUser): void
+    {
+        $basket = Production::basket($currentUser->id);
+        Production::setBasketBoughtAt($basket->id);
+        $data = [
+            "reason" => "this product has a big problem",
+            "description" => "I dont want this product",
+            "request_at" => now()->format("Y-m-d H:i:s"),
+            "return_at" => null,
+            "basket_id" => $basket->id,
+        ];
+        $file1 = UploadedFile::fake()->image("img.jpg");
+        $file2 = UploadedFile::fake()->image("img2.jpg");
+        $request = fakeRequest($data, ["attachments" => [$file1, $file2]]);
+        $returnProduct = Production::requestToReturnProduct($request);
+        $this->assertDatabaseHas($returnProduct);
     }
 }
