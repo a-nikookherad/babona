@@ -6401,7 +6401,7 @@
 @stack("scripts_before")
 
 <!--begin::Javascript-->
-<script>var hostUrl = "assets/";</script>
+{{--<script>var hostUrl = "admin/";</script>--}}
 <!--begin::Global Javascript Bundle(mوatory for all pages)-->
 <script src="{{asset("admin/plugins/global/plugins.bundle.js")}}"></script>
 <script src="{{asset("admin/js/scripts.bundle.js")}}"></script>

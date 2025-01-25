@@ -33,7 +33,11 @@ return new class extends Migration {
             ])
                 ->default("customer")
                 ->nullable();
-
+            $table->enum('locale', [
+                "en",
+                "fa",
+            ])
+                ->default("fa");
             $table->unsignedBigInteger("merchant_id")
                 ->nullable();
             $table->foreign("merchant_id")

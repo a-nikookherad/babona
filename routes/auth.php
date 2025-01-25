@@ -3,6 +3,7 @@
 use App\Http\Controllers\v1\Admin\AuthController;
 use Illuminate\Support\Facades\Route;
 
+
 Route::group([
     "prefix" => "admin"
 ], function () {
@@ -15,6 +16,9 @@ Route::group([
     Route::group([
         "middleware" => ["auth:web"]
     ], function () {
+
+        Route::get('locale', [AuthController::class, "locale"])
+            ->name("admin.locale");
 
         Route::view("dashboard", "admin.dashboard")
             ->middleware("can:admin_group")

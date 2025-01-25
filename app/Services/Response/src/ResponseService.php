@@ -13,7 +13,7 @@ class ResponseService
     ];
     private $class;
     private $methods;
-    private $view="";
+    private $view = "";
     private $code = 200;
     private $jsonData;
     private $compactData;

@@ -40,6 +40,8 @@ class DefaultUserSeeder extends Seeder
                     "updated_at" => now(),
                 ]
             ]);
+            $babonaUser->merchant_id = $babonaMerchant->id;
+            $babonaUser->save();
         }
 
         $parsianUsers = User::query()
@@ -58,6 +60,9 @@ class DefaultUserSeeder extends Seeder
                     "updated_at" => now(),
                 ]
             ]);
+
+            $parsianUser->merchant_id = $parsianMerchant->id;
+            $parsianMerchant->save();
         }
     }
 

@@ -5,10 +5,10 @@ use App\Http\Controllers\v1\Production\CategoriesController;
 use App\Http\Controllers\v1\Production\ProductsController;
 use Illuminate\Support\Facades\Route;
 
-\Illuminate\Support\Facades\App::setLocale("fa");
+
 Route::group([
     "prefix" => "admin",
-    "middleware" => ["web"]
+    "middleware" => ["auth:web"]
 ], function () {
 
     Route::group([
@@ -41,7 +41,7 @@ Route::group([
         Route::get("", [ProductsController::class, "index"])
             ->name("production.products.list");
 
-        Route::view("create", "admin.production.product.create")
+        Route::get("create", [ProductsController::class, "create"])
             ->name("production.products.create");
 
         Route::post("", [ProductsController::class, "store"])

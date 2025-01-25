@@ -28,9 +28,10 @@
 @section("content")
 
     <!--begin::Form-->
-    <form id="kt_ecommerce_add_product_form" class="form d-flex flex-column flex-lg-row"
-          data-kt-redirect="../../demo1/dist/apps/ecommerce/catalog/products.html">
-        <!--begin::کناری column-->
+    <form id="kt_ecommerce_add_product_form" class="form d-flex flex-column flex-lg-row " enctype="multipart/form-data"
+          data-kt-redirect="{{route("production.products.list")}}" action="{{route("production.products.store")}}">
+    @csrf
+    <!--begin::کناری column-->
         <div class="d-flex flex-column gap-7 gap-lg-10 w-100 w-lg-300px mb-7 me-lg-10">
             <!--begin::Thumbnail settings-->
             <div class="card card-flush py-4">
@@ -38,7 +39,7 @@
                 <div class="card-header">
                     <!--begin::کارت title-->
                     <div class="card-title">
-                        <h2>تصویر شاخص</h2>
+                        <h2 class="required">تصویر شاخص</h2>
                     </div>
                     <!--end::کارت title-->
                 </div>
@@ -48,11 +49,11 @@
                     <!--begin::Image input-->
                     <!--begin::Image input placeholder-->
                     <style>.image-input-placeholder {
-                            background-image: url('assets/media/svg/files/blank-image.svg');
+                            background-image: url('{{asset("admin/media/svg/files/blank-image.svg")}}');
                         }
 
                         [data-theme="dark"] .image-input-placeholder {
-                            background-image: url('assets/media/svg/files/blank-image-dark.svg');
+                            background-image: url('{{asset("admin/media/svg/files/blank-image-dark.svg")}}');
                         }</style>
                     <!--end::Image input placeholder-->
                     <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3"
@@ -65,7 +66,7 @@
                                data-kt-image-input-action="change" data-bs-toggle="tooltip" title="تعویض آواتار">
                             <i class="bi bi-pencil-fill fs-7"></i>
                             <!--begin::Inputs-->
-                            <input type="file" name="avatar" accept=".png, .jpg, .jpeg"/>
+                            <input type="file" id="image-input" name="thumbnail" accept=".png, .jpg, .jpeg" required/>
                             <input type="hidden" name="avatar_remove"/>
                             <!--end::Inputs-->
                         </label>
@@ -115,10 +116,14 @@
                     <select class="form-select mb-2" data-control="select2" data-hide-search="true"
                             data-placeholder="انتخاب " id="kt_ecommerce_add_product_status_select">
                         <option></option>
-                        <option value="published" selected="selected">منتشر شده</option>
-                        <option value="ذخیره شده">ذخیره شده</option>
-                        <option value="scheduled">در انتظار</option>
-                        <option value="inactive">غیرفعال</option>
+                        <option value="{!!\Production\Production::$upcoming!!}"
+                                selected="selected">{!!\Production\Production::$mapStatus[\Production\Production::$upcoming]!!}</option>
+                        <option
+                            value="{{\Production\Production::$waiting}}">{{\Production\Production::$mapStatus[\Production\Production::$waiting]}}</option>
+                        <option
+                            value="{{\Production\Production::$published}}">{{\Production\Production::$mapStatus[\Production\Production::$published]}}</option>
+                        <option
+                            value="{{\Production\Production::$archive}}">{{\Production\Production::$mapStatus[\Production\Production::$archive]}}</option>
                     </select>
                     <!--end::انتخاب2-->
                     <!--begin::توضیحات-->
@@ -129,7 +134,7 @@
                         <label for="kt_ecommerce_add_product_status_datepicker" class="form-label">انتخاب publishing
                             date و time</label>
                         <input class="form-control" id="kt_ecommerce_add_product_status_datepicker"
-                               placeholder="انتخاب تاریخ & time"/>
+                               placeholder="انتخاب تاریخ & زمان"/>
                     </div>
                     <!--end::تاریخpicker-->
                 </div>
@@ -142,7 +147,7 @@
                 <div class="card-header">
                     <!--begin::کارت title-->
                     <div class="card-title">
-                        <h2>محصولات جزییات</h2>
+                        <h2>جزییات محصول</h2>
                     </div>
                     <!--end::کارت title-->
                 </div>
@@ -151,22 +156,23 @@
                 <div class="card-body pt-0">
                     <!--begin::Input group-->
                     <!--begin::Tags-->
-                    <label class="form-label">دسته بندی ها</label>
+                    <label class="form-label required">دسته بندی ها</label>
                     <!--end::Tags-->
                     <!--begin::انتخاب2-->
-                    <select class="form-select mb-2" data-control="select2" data-placeholder="انتخاب "
-                            data-allow-clear="true" multiple="multiple">
+                    <select class="form-select mb-2" data-control="select2" data-placeholder="انتخاب " required
+                            data-allow-clear="false" {{--multiple="multiple"--}} name="category_id">
                         <option></option>
-                        <option value="کامپیوترها">کامپیوترها</option>
-                        <option value="ساعت">ساعت</option>
-                        <option value="هدست">هدست</option>
-                        <option value="کفش">کفش</option>
-                        <option value="دوربین">دوربین</option>
-                        <option value="پیراهن">پیراهن</option>
-                        <option value="چراغ مطالعه">چراغ مطالعه</option>
-                        <option value="کیف">کیف</option>
-                        <option value="شراب ها">شراب ها</option>
-                        <option value="Sوals">Sوals</option>
+                        @foreach($categories as $category)
+                            <option value="{{$category->id}}">{{$category->fa_name}}</option>
+                        @endforeach
+                        {{--                        <option value="ساعت">ساعت</option>
+                                                <option value="هدست">هدست</option>
+                                                <option value="کفش">کفش</option>
+                                                <option value="دوربین">دوربین</option>
+                                                <option value="پیراهن">پیراهن</option>
+                                                <option value="چراغ مطالعه">چراغ مطالعه</option>
+                                                <option value="کیف">کیف</option>
+                                                <option value="شراب ها">شراب ها</option>--}}
                     </select>
                     <!--end::انتخاب2-->
                     <!--begin::توضیحات-->
@@ -174,7 +180,7 @@
                     <!--end::توضیحات-->
                     <!--end::Input group-->
                     <!--begin::Button-->
-                    <a href="../../demo1/dist/apps/ecommerce/catalog/add-category.html"
+                    <a href="{{route("production.categories.create")}}"
                        class="btn btn-light-primary btn-sm mb-10">
                         <!--begin::Svg Icon | path: icons/duotune/arrows/arr087.svg-->
                         <span class="svg-icon svg-icon-2">
@@ -194,7 +200,7 @@
                     <label class="form-label d-block">برچسب ها</label>
                     <!--end::Tags-->
                     <!--begin::Input-->
-                    <input id="kt_ecommerce_add_product_tags" name="kt_ecommerce_add_product_tags"
+                    <input id="kt_ecommerce_add_product_tags" name="tags"
                            class="form-control mb-2" value=""/>
                     <!--end::Input-->
                     <!--begin::توضیحات-->
@@ -206,59 +212,59 @@
             </div>
             <!--end::دسته بندی & tags-->
             <!--begin::هفتهly sales-->
-            <div class="card card-flush py-4">
-                <!--begin::کارت header-->
-                <div class="card-header">
-                    <!--begin::کارت title-->
-                    <div class="card-title">
-                        <h2>فروش هفته</h2>
-                    </div>
-                    <!--end::کارت title-->
+        {{--<div class="card card-flush py-4">
+            <!--begin::کارت header-->
+            <div class="card-header">
+                <!--begin::کارت title-->
+                <div class="card-title">
+                    <h2>فروش هفته</h2>
                 </div>
-                <!--end::کارت header-->
-                <!--begin::کارت body-->
-                <div class="card-body pt-0">
-                    <span
-                        class="text-muted">اطلاعاتی موجود نیست. پس از انتشار محصول، داده های فروش شروع به ضبط می کنند.</span>
-                </div>
-                <!--end::کارت body-->
+                <!--end::کارت title-->
             </div>
-            <!--end::هفتهly sales-->
+            <!--end::کارت header-->
+            <!--begin::کارت body-->
+            <div class="card-body pt-0">
+                <span
+                    class="text-muted">اطلاعاتی موجود نیست. پس از انتشار محصول، داده های فروش شروع به ضبط می کنند.</span>
+            </div>
+            <!--end::کارت body-->
+        </div>--}}
+        <!--end::هفتهly sales-->
             <!--begin::Template settings-->
-            <div class="card card-flush py-4">
-                <!--begin::کارت header-->
-                <div class="card-header">
-                    <!--begin::کارت title-->
-                    <div class="card-title">
-                        <h2>قالب محصول</h2>
-                    </div>
-                    <!--end::کارت title-->
+        {{--<div class="card card-flush py-4">
+            <!--begin::کارت header-->
+            <div class="card-header">
+                <!--begin::کارت title-->
+                <div class="card-title">
+                    <h2>قالب محصول</h2>
                 </div>
-                <!--end::کارت header-->
-                <!--begin::کارت body-->
-                <div class="card-body pt-0">
-                    <!--begin::انتخاب store template-->
-                    <label for="kt_ecommerce_add_product_store_template" class="form-label">انتخاب بک قالب</label>
-                    <!--end::انتخاب store template-->
-                    <!--begin::انتخاب2-->
-                    <select class="form-select mb-2" data-control="select2" data-hide-search="true"
-                            data-placeholder="انتخاب " id="kt_ecommerce_add_product_store_template">
-                        <option></option>
-                        <option value="default" selected="selected">قالب پیش فرض</option>
-                        <option value="electronics">الکترونیک</option>
-                        <option value="office">اداری</option>
-                        <option value="fashion">فشن</option>
-                    </select>
-                    <!--end::انتخاب2-->
-                    <!--begin::توضیحات-->
-                    <div class="text-muted fs-7">اختصاص دادن یک الگو از موضوع فعلی شما برای تعریف نحوه نمایش یک محصول
-                        واحد.
-                    </div>
-                    <!--end::توضیحات-->
-                </div>
-                <!--end::کارت body-->
+                <!--end::کارت title-->
             </div>
-            <!--end::Template settings-->
+            <!--end::کارت header-->
+            <!--begin::کارت body-->
+            <div class="card-body pt-0">
+                <!--begin::انتخاب store template-->
+                <label for="kt_ecommerce_add_product_store_template" class="form-label">انتخاب بک قالب</label>
+                <!--end::انتخاب store template-->
+                <!--begin::انتخاب2-->
+                <select class="form-select mb-2" data-control="select2" data-hide-search="true"
+                        data-placeholder="انتخاب " id="kt_ecommerce_add_product_store_template">
+                    <option></option>
+                    <option value="default" selected="selected">قالب پیش فرض</option>
+                    <option value="electronics">الکترونیک</option>
+                    <option value="office">اداری</option>
+                    <option value="fashion">فشن</option>
+                </select>
+                <!--end::انتخاب2-->
+                <!--begin::توضیحات-->
+                <div class="text-muted fs-7">اختصاص دادن یک الگو از موضوع فعلی شما برای تعریف نحوه نمایش یک محصول
+                    واحد.
+                </div>
+                <!--end::توضیحات-->
+            </div>
+            <!--end::کارت body-->
+        </div>--}}
+        <!--end::Template settings-->
         </div>
         <!--end::کناری column-->
         <!--begin::Main column-->
@@ -295,36 +301,47 @@
                             <!--end::کارت header-->
                             <!--begin::کارت body-->
                             <div class="card-body pt-0">
-                                <!--begin::Input group-->
-                                <div class="mb-10 fv-row">
+                                <x-admin.text-box name="slug" label="نامک محصول" required="1">
+                                    نامک محصول مورد نیاز است و باید منحصر به فرد باشد.
+                                </x-admin.text-box>
+
+                                <x-admin.text-box name="fa_name" label="نام محصول" required="1">
+                                    نام محصول مورد نیاز است و توصیه می شود در قالب "نام مدل برند" باشد.
+                                </x-admin.text-box>
+
+                                <x-admin.text-box name="material" label="جنس محصول">
+                                    جنس محصول را وارد کنید(برای مثال کتان).
+                                </x-admin.text-box>
+
+                                <x-admin.text-box name="style" label="استایل محصول">
+                                    استایل محصول را وارد کنید(برای مثال بگ استایل).
+                                </x-admin.text-box>
+
+                                <div class="mb-6">
                                     <!--begin::Tags-->
-                                    <label class="required form-label">محصولات نام</label>
-                                    <!--end::Tags-->
-                                    <!--begin::Input-->
-                                    <input type="text" name="product_name" class="form-control mb-2"
-                                           placeholder="نام محصول" value=""/>
-                                    <!--end::Input-->
-                                    <!--begin::توضیحات-->
-                                    <div class="text-muted fs-7">نام محصول مورد نیاز است و توصیه می شود منحصر به فرد
-                                        باشد.
-                                    </div>
-                                    <!--end::توضیحات-->
-                                </div>
-                                <!--end::Input group-->
-                                <!--begin::Input group-->
-                                <div>
-                                    <!--begin::Tags-->
-                                    <label class="form-label">توضیحات</label>
+                                    <label class="form-label" for="kt_ecommerce_add_product_brief">توصیف مختصر</label>
                                     <!--end::Tags-->
                                     <!--begin::or-->
-                                    <div id="kt_ecommerce_add_product_description"
-                                         name="kt_ecommerce_add_product_description" class="min-h-200px mb-2"></div>
+                                    <textarea id="kt_ecommerce_add_product_brief"
+                                              name="brief" class="w-100 min-h-150px mb-2"></textarea>
+                                    <!--end::or-->
+                                    <!--begin::توضیحات-->
+                                    <div class="text-muted fs-7">توضیح مختصری را برای محصول تنظیم کنید.</div>
+                                    <!--end::توضیحات-->
+                                </div>
+
+                                <div class="mt-6">
+                                    <!--begin::Tags-->
+                                    <label class="form-label" for="kt_ecommerce_add_product_description">توضیحات</label>
+                                    <!--end::Tags-->
+                                    <!--begin::or-->
+                                    <textarea id="kt_ecommerce_add_product_description"
+                                              name="description" class="w-100 min-h-150px mb-2"></textarea>
                                     <!--end::or-->
                                     <!--begin::توضیحات-->
                                     <div class="text-muted fs-7">برای دید بهتر، توضیحاتی را برای محصول تنظیم کنید.</div>
                                     <!--end::توضیحات-->
                                 </div>
-                                <!--end::Input group-->
                             </div>
                             <!--end::کارت header-->
                         </div>
@@ -333,8 +350,8 @@
                         <div class="card card-flush py-4">
                             <!--begin::کارت header-->
                             <div class="card-header">
-                                <div class="card-title">
-                                    <h2>رسانه</h2>
+                                <div class="card-title required">
+                                    <h2>گالری عکس محصول</h2>
                                 </div>
                             </div>
                             <!--end::کارت header-->
@@ -343,7 +360,8 @@
                                 <!--begin::Input group-->
                                 <div class="fv-row mb-2">
                                     <!--begin::Dropzone-->
-                                    <div class="dropzone" id="kt_ecommerce_add_product_media">
+                                    <div class="dropzone"
+                                         id="dropzone-previews"{{--id="kt_ecommerce_add_product_media"--}}>
                                         <!--begin::Message-->
                                         <div class="dz-message needsclick">
                                             <!--begin::Icon-->
@@ -354,7 +372,7 @@
                                                 <h3 class="fs-5 fw-bold text-gray-900 mb-1">پرونده ها را اینجا رها کنید
                                                     یا برای بارگذاری کلیک کنید.</h3>
                                                 <span
-                                                    class="fs-7 fw-semibold text-gray-400">اپلود فایل بیش از 10 تا</span>
+                                                    class="fs-7 fw-semibold text-gray-400">آپلود فایل تا 5 عدد.</span>
                                             </div>
                                             <!--end::Info-->
                                         </div>
@@ -363,7 +381,7 @@
                                 </div>
                                 <!--end::Input group-->
                                 <!--begin::توضیحات-->
-                                <div class="text-muted fs-7">گالری رسانه محصول را تنظیم کنید.</div>
+                                <div class="text-muted fs-7">لطفا عکس های مربوط به گالری محصول را انتخاب کنید.</div>
                                 <!--end::توضیحات-->
                             </div>
                             <!--end::کارت header-->
@@ -491,70 +509,71 @@
                                     <!--begin::Slider-->
                                     <div class="d-flex flex-column text-center mb-5">
                                         <div class="d-flex align-items-start justify-content-center mb-7">
+                                            <span class="fw-bold fs-4 mt-1 ms-2">%</span>
                                             <span class="fw-bold fs-3x"
                                                   id="kt_ecommerce_add_product_discount_label">0</span>
-                                            <span class="fw-bold fs-4 mt-1 ms-2">%</span>
                                         </div>
-                                        <div id="kt_ecommerce_add_product_discount_slider" class="noUi-sm"></div>
+                                        <div id="kt_ecommerce_add_product_discount_slider"
+                                             class="noUi-sm bg-primary"></div>
+                                        <input type="hidden" name="discount_percentage" id="discount_percentage" />
                                     </div>
                                     <!--end::Slider-->
                                     <!--begin::توضیحات-->
-                                    <div class="text-muted fs-7">درصد تخفیف را برای اعمال این محصول تعیین کنید.</div>
+                                    <div class="text-muted fs-7">درصد تخفیف را برای این محصول تعیین کنید.</div>
                                     <!--end::توضیحات-->
                                 </div>
                                 <!--end::Input group-->
                                 <!--begin::Input group-->
                                 <div class="d-none mb-10 fv-row" id="kt_ecommerce_add_product_discount_fixed">
                                     <!--begin::Tags-->
-                                    <label class="form-label">ثابت قیمت با تخفیف</label>
+                                    <label class="form-label">میزان تخفیف را وارد کنید.</label>
                                     <!--end::Tags-->
                                     <!--begin::Input-->
-                                    <input type="text" name="dicsounted_price" class="form-control mb-2"
-                                           placeholder="قیمت تخفیف"/>
+                                    <input type="number" id="kt_discount_value" name="discount" class="form-control mb-2"
+                                           placeholder="میزان تخفیف"/>
                                     <!--end::Input-->
                                     <!--begin::توضیحات-->
-                                    <div class="text-muted fs-7">قیمت محصول با تخفیف را تعیین کنید. محصول با قیمت ثابت
-                                        تعیین شده کاهش می یابد
+                                    <div class="text-muted fs-7">میزان تخفیف این محصول را به تومان وارد کنید.
                                     </div>
                                     <!--end::توضیحات-->
                                 </div>
                                 <!--end::Input group-->
                                 <!--begin::Tax-->
-                                <div class="d-flex flex-wrap gap-5">
-                                    <!--begin::Input group-->
-                                    <div class="fv-row w-100 flex-md-root">
-                                        <!--begin::Tags-->
-                                        <label class="required form-label">کلاس مالیات</label>
-                                        <!--end::Tags-->
-                                        <!--begin::انتخاب2-->
-                                        <select class="form-select mb-2" name="tax" data-control="select2"
-                                                data-hide-search="true" data-placeholder="انتخاب ">
-                                            <option></option>
-                                            <option value="0">Tax رایگان</option>
-                                            <option value="1">Taxable Goods</option>
-                                            <option value="2">دانلودable محصولات</option>
-                                        </select>
-                                        <!--end::انتخاب2-->
-                                        <!--begin::توضیحات-->
-                                        <div class="text-muted fs-7">طبقه مالیات محصول را تنظیم کنید.</div>
-                                        <!--end::توضیحات-->
-                                    </div>
-                                    <!--end::Input group-->
-                                    <!--begin::Input group-->
-                                    <div class="fv-row w-100 flex-md-root">
-                                        <!--begin::Tags-->
-                                        <label class="form-label">مقدار (%)</label>
-                                        <!--end::Tags-->
-                                        <!--begin::Input-->
-                                        <input type="text" class="form-control mb-2" value=""/>
-                                        <!--end::Input-->
-                                        <!--begin::توضیحات-->
-                                        <div class="text-muted fs-7">مالیات بر ارزش افزوده محصول را تنظیم کنید.</div>
-                                        <!--end::توضیحات-->
-                                    </div>
-                                    <!--end::Input group-->
+                            {{--<div class="d-flex flex-wrap gap-5">
+                                <!--begin::Input group-->
+                                <div class="fv-row w-100 flex-md-root">
+                                    <!--begin::Tags-->
+                                    <label class="required form-label">کلاس مالیات</label>
+                                    <!--end::Tags-->
+                                    <!--begin::انتخاب2-->
+                                    <select class="form-select mb-2" name="tax" data-control="select2"
+                                            data-hide-search="true" data-placeholder="انتخاب ">
+                                        <option></option>
+                                        <option value="0">بدون مالیات</option>
+                                        <option value="1">ارزش افزوده</option>
+--}}{{--                                            <option value="2"></option>--}}{{--
+                                    </select>
+                                    <!--end::انتخاب2-->
+                                    <!--begin::توضیحات-->
+                                    <div class="text-muted fs-7">طبقه مالیات محصول را تنظیم کنید.</div>
+                                    <!--end::توضیحات-->
                                 </div>
-                                <!--end:Tax-->
+                                <!--end::Input group-->
+                                <!--begin::Input group-->
+                                <div class="fv-row w-100 flex-md-root">
+                                    <!--begin::Tags-->
+                                    <label class="form-label">مقدار (%)</label>
+                                    <!--end::Tags-->
+                                    <!--begin::Input-->
+                                    <input type="text" class="form-control mb-2" value=""/>
+                                    <!--end::Input-->
+                                    <!--begin::توضیحات-->
+                                    <div class="text-muted fs-7">مالیات بر ارزش افزوده محصول را تنظیم کنید.</div>
+                                    <!--end::توضیحات-->
+                                </div>
+                                <!--end::Input group-->
+                            </div>--}}
+                            <!--end:Tax-->
                             </div>
                             <!--end::کارت header-->
                         </div>
@@ -579,67 +598,68 @@
                                 <!--begin::Input group-->
                                 <div class="mb-10 fv-row">
                                     <!--begin::Tags-->
-                                    <label class="required form-label">کد محصول</label>
+                                    <label class="form-label">کد محصول</label>
                                     <!--end::Tags-->
                                     <!--begin::Input-->
-                                    <input type="text" name="sku" class="form-control mb-2"
-                                           placeholder="کد محصول را وارد کنید" value=""/>
+                                    <input type="text" name="code" class="form-control mb-2"
+                                           placeholder="کد را وارد کنید" value=""/>
                                     <!--end::Input-->
                                     <!--begin::توضیحات-->
-                                    <div class="text-muted fs-7">کد محصول را وارد کنید</div>
+                                    <div class="text-muted fs-7">کد محصول را وارد کنید.</div>
                                     <!--end::توضیحات-->
                                 </div>
                                 <!--end::Input group-->
                                 <!--begin::Input group-->
                                 <div class="mb-10 fv-row">
                                     <!--begin::Tags-->
-                                    <label class="required form-label">بارکد</label>
+                                    <label class="form-label">بارکد</label>
                                     <!--end::Tags-->
                                     <!--begin::Input-->
-                                    <input type="text" name="sku" class="form-control mb-2" placeholder="شماره بارکد"
+                                    <input type="text" name="barcode" class="form-control mb-2"
+                                           placeholder="شماره بارکد"
                                            value=""/>
                                     <!--end::Input-->
                                     <!--begin::توضیحات-->
-                                    <div class="text-muted fs-7">شماره بارکد را وارد کنید</div>
+                                    <div class="text-muted fs-7">شماره بارکد را وارد کنید.</div>
                                     <!--end::توضیحات-->
                                 </div>
                                 <!--end::Input group-->
                                 <!--begin::Input group-->
-                                <div class="mb-10 fv-row">
+                                {{--<div class="--}}{{--mb-10--}}{{-- fv-row">
                                     <!--begin::Tags-->
-                                    <label class="required form-label">تعداد</label>
+                                    <label class="required form-label">تعداد محصول</label>
                                     <!--end::Tags-->
                                     <!--begin::Input-->
                                     <div class="d-flex gap-3">
-                                        <input type="number" name="shelf" class="form-control mb-2"
-                                               placeholder="روی طبقه" value=""/>
-                                        <input type="number" name="warehouse" class="form-control mb-2"
-                                               placeholder="در انبار"/>
+                                        --}}{{--<input type="number" name="shelf" class="form-control mb-2"
+                                               placeholder="در مغازه" value=""/>--}}{{--
+                                        <input type="number" name="quantity" class="form-control mb-2"
+                                            --}}{{--placeholder="در انبار"--}}{{--/>
                                     </div>
                                     <!--end::Input-->
                                     <!--begin::توضیحات-->
-                                    <div class="text-muted fs-7">مقدار محصول را وارد کنید</div>
+                                    <div class="text-muted fs-7">تعداد محصول ورودی به انبار.</div>
                                     <!--end::توضیحات-->
-                                </div>
+                                </div>--}}
                                 <!--end::Input group-->
                                 <!--begin::Input group-->
-                                <div class="fv-row">
-                                    <!--begin::Tags-->
-                                    <label class="form-label">همه چگونه برگشت سفارش می دهد</label>
-                                    <!--end::Tags-->
-                                    <!--begin::Input-->
-                                    <div class="form-check form-check-custom form-check-solid mb-2">
-                                        <input class="form-check-input" type="checkbox" value=""/>
-                                        <label class="form-check-label">بله</label>
-                                    </div>
-                                    <!--end::Input-->
-                                    <!--begin::توضیحات-->
-                                    <div class="text-muted fs-7">به مشتریان اجازه دهید محصولاتی را خریداری کنند که
-                                        موجودی آنها تمام شده است.
-                                    </div>
-                                    <!--end::توضیحات-->
+                            {{--<div class="fv-row">
+                                <!--begin::Tags-->
+                                <label class="form-label">همه چگونه برگشت سفارش می دهد</label>
+                                <!--end::Tags-->
+                                <!--begin::Input-->
+                                <div class="form-check form-check-custom form-check-solid mb-2">
+                                    <input class="form-check-input" type="checkbox" value=""/>
+                                    <label class="form-check-label">بله</label>
                                 </div>
-                                <!--end::Input group-->
+                                <!--end::Input-->
+                                <!--begin::توضیحات-->
+                                <div class="text-muted fs-7">به مشتریان اجازه دهید محصولاتی را خریداری کنند که
+                                    موجودی آنها تمام شده است.
+                                </div>
+                                <!--end::توضیحات-->
+                            </div>--}}
+                            <!--end::Input group-->
                             </div>
                             <!--end::کارت header-->
                         </div>
@@ -658,32 +678,59 @@
                                 <!--begin::Input group-->
                                 <div class="" data-kt-ecommerce-catalog-add-product="auto-options">
                                     <!--begin::Tags-->
-                                    <label class="form-label">افزودن محصول متغیرها</label>
+                                    <label class="required form-label">افزودن متغییر های محصول</label>
                                     <!--end::Tags-->
                                     <!--begin::Repeater-->
-                                    <div id="kt_ecommerce_add_product_options">
+                                    <div id="kt_ecommerce_add_product_options" class="w-100">
                                         <!--begin::Form group-->
-                                        <div class="form-group">
-                                            <div data-repeater-list="kt_ecommerce_add_product_options"
+                                        <div class="form-group w-100">
+                                            <div data-repeater-list="product_details"
                                                  class="d-flex flex-column gap-3">
                                                 <div data-repeater-item=""
-                                                     class="form-group d-flex flex-wrap align-items-center gap-5">
+                                                     class="form-group d-flex flex-row align-items-center gap-5 w-100">
                                                     <!--begin::انتخاب2-->
-                                                    <div class="w-100 w-md-200px">
-                                                        <select class="form-select" name="product_option"
+                                                    <div class="w-25">
+                                                        <select class="form-select" disabled name="color"
                                                                 data-placeholder="یک متغییر انتخاب کنبد"
                                                                 data-kt-ecommerce-catalog-add-product="product_option">
                                                             <option></option>
-                                                            <option value="color">Color</option>
-                                                            <option value="size">Size</option>
-                                                            <option value="material">Material</option>
-                                                            <option value="style">Style</option>
+                                                            <option value="color" selected>Color</option>
+{{--                                                            <option value="size">Size</option>--}}
+                                                            {{--                                                            <option value="material">Material</option>--}}
+                                                            {{--                                                            <option value="style">Style</option>--}}
                                                         </select>
+                                                        <input type="color" class="form-control my-2 mw-100 w-100"
+                                                               name="color" placeholder="مقدار"/>
+                                                    </div>
+                                                    <div class="w-25">
+                                                        <select class="form-select" disabled name="size"
+                                                                data-placeholder="یک متغییر انتخاب کنبد"
+                                                                data-kt-ecommerce-catalog-add-product="product_option">
+                                                            <option></option>
+{{--                                                            <option value="color">Color</option>--}}
+                                                            <option value="size" selected>Size</option>
+                                                            {{--                                                            <option value="material">Material</option>--}}
+                                                            {{--                                                            <option value="style">Style</option>--}}
+                                                        </select>
+                                                        <input type="text" class="form-control mw-100 w-100" max="50"
+                                                               name="size" placeholder="سایز"/>
+                                                    </div>
+                                                    <div class="w-25">
+                                                        <select class="form-select" disabled name="quantity"
+                                                                data-placeholder="یک متغییر انتخاب کنبد"
+                                                                data-kt-ecommerce-catalog-add-product="product_option">
+                                                            <option></option>
+                                                            {{--                                                            <option value="color">Color</option>--}}
+                                                            <option value="quantity" selected>quantity</option>
+                                                            {{--                                                            <option value="material">Material</option>--}}
+                                                            {{--                                                            <option value="style">Style</option>--}}
+                                                        </select>
+                                                        <input type="number" class="form-control mw-100 w-100"
+                                                               name="quantity" placeholder="تعداد"/>
                                                     </div>
                                                     <!--end::انتخاب2-->
                                                     <!--begin::Input-->
-                                                    <input type="text" class="form-control mw-100 w-200px"
-                                                           name="product_option_value" placeholder="متغیر"/>
+
                                                     <!--end::Input-->
                                                     <button type="button" data-repeater-delete=""
                                                             class="btn btn-sm btn-icon btn-light-danger">
@@ -715,7 +762,7 @@
                                         </div>
                                         <!--end::Form group-->
                                         <!--begin::Form group-->
-                                        <div class="form-group mt-5">
+                                        <div class="form-group mt-5 w-100">
                                             <button type="button" data-repeater-create=""
                                                     class="btn btn-sm btn-light-primary">
                                                 <!--begin::Svg Icon | path: icons/duotune/arrows/arr087.svg-->
@@ -830,11 +877,11 @@
                                 <!--begin::Input group-->
                                 <div class="mb-10">
                                     <!--begin::Tags-->
-                                    <label class="form-label">برچسب متا تایتل</label>
+                                    <label class="form-label">برچسب اَبر عنوان</label>
                                     <!--end::Tags-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control mb-2" name="meta_title"
-                                           placeholder="نام متا تگ"/>
+                                    <input type="text" class="form-control mb-2" name="meta_tag_title"
+                                           placeholder="متا تگ"/>
                                     <!--end::Input-->
                                     <!--begin::توضیحات-->
                                     <div class="text-muted fs-7">یک عنوان متا تگ تنظیم کنید. توصیه می شود کلمات کلیدی
@@ -849,9 +896,9 @@
                                     <label class="form-label">توضیحات متا تگ</label>
                                     <!--end::Tags-->
                                     <!--begin::or-->
-                                    <div id="kt_ecommerce_add_product_meta_description"
-                                         name="kt_ecommerce_add_product_meta_description"
-                                         class="min-h-100px mb-2"></div>
+                                    <textarea id="kt_ecommerce_add_product_meta_description"
+                                              name="meta_tag_description"
+                                              class="w-100 min-h-150px mb-2"></textarea>
                                     <!--end::or-->
                                     <!--begin::توضیحات-->
                                     <div class="text-muted fs-7">برای افزایش رتبه سئو، توضیحات متا تگ را برای محصول
@@ -867,12 +914,12 @@
                                     <!--end::Tags-->
                                     <!--begin::or-->
                                     <input id="kt_ecommerce_add_product_meta_keywords"
-                                           name="kt_ecommerce_add_product_meta_keywords" class="form-control mb-2"/>
+                                           name="meta_tag_keywords" class="form-control mb-2"/>
                                     <!--end::or-->
                                     <!--begin::توضیحات-->
                                     <div class="text-muted fs-7">لیستی از کلمات کلیدی که محصول به آنها مرتبط است تنظیم
                                         کنید. شهریور کلمات کلیدی را با اضافه کردن کاما مرتب کنید
-                                        <code>,</code>between each keyword.
+                                        <code>,</code>بین هر کلمه کلیدی.
                                     </div>
                                     <!--end::توضیحات-->
                                 </div>
@@ -888,7 +935,7 @@
             <!--end::Tab content-->
             <div class="d-flex justify-content-end">
                 <!--begin::Button-->
-                <a href="../../demo1/dist/apps/ecommerce/catalog/products.html" id="kt_ecommerce_add_product_cancel"
+                <a href="{{route("production.products.list")}}" id="kt_ecommerce_add_product_cancel"
                    class="btn btn-light me-5">انصراف</a>
                 <!--end::Button-->
                 <!--begin::Button-->
@@ -907,21 +954,24 @@
 
 @endsection
 @push("styles_before")
-    {{--    <link rel="stylesheet" href="{{asset("admin/plugins/custom/dropzone/dropzone.min.css")}}" type="text/css"/>--}}
+    <link href="{{asset("admin/plugins/custom/datatables/datatables.bundle.css")}}" rel="stylesheet" type="text/css"/>
 @endpush
 @push("scripts_before")
-    <script>var hostUrl = "admin/";</script>
-{{--    <script src="{{asset("admin/plugins/custom/tinymce/tinymce.bundle.js")}}"></script>--}}
-    {{--    <script src="{{asset("admin/plugins/custom/dropzone/dropzone.min.js")}}"></script>--}}
+    <script>
+        var hostUrl = "admin/";
+        var productStoreLink = "{{route("production.products.store")}}";
+        var whiteList = @php echo json_encode($tags->toArray()); @endphp
+    </script>
 @endpush
 @push("scripts_after")
+    <script src="{{asset("admin/plugins/custom/tinymce/tinymce.bundle.js")}}"></script>
     <script src="{{asset("admin/plugins/custom/datatables/datatables.bundle.js")}}"></script>
     <script src="{{asset("admin/plugins/custom/formrepeater/formrepeater.bundle.js")}}"></script>
-    {{--    <script src="{{asset("admin/js/custom/apps/ecommerce/catalog/save-product.js")}}"></script>--}}
-    {{--    <script src="{{asset("admin/js/widgets.bundle.js")}}"></script>--}}
-    {{--    <script src="{{asset("admin/js/custom/widgets.js")}}"></script>--}}
-    {{--    <script src="{{asset("admin/js/custom/apps/chat/chat.js")}}"></script>--}}
-    {{--    <script src="{{asset("admin/js/custom/utilities/modals/upgrade-plan.js")}}"></script>--}}
-    {{--    <script src="{{asset("admin/js/custom/utilities/modals/create-app.js")}}"></script>--}}
-    {{--    <script src="{{asset("admin/js/custom/utilities/modals/users-search.js")}}"></script>--}}
+    <script src="{{asset("admin/js/custom/apps/ecommerce/catalog/save-product.js")}}"></script>
+    <script src="{{asset("admin/js/widgets.bundle.js")}}"></script>
+    <script src="{{asset("admin/js/custom/widgets.js")}}"></script>
+    <script src="{{asset("admin/js/custom/apps/chat/chat.js")}}"></script>
+    <script src="{{asset("admin/js/custom/utilities/modals/upgrade-plan.js")}}"></script>
+    <script src="{{asset("admin/js/custom/utilities/modals/create-app.js")}}"></script>
+    <script src="{{asset("admin/js/custom/utilities/modals/users-search.js")}}"></script>
 @endpush

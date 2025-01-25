@@ -6,10 +6,10 @@
     <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
         <!--begin::Logo image-->
         <a href="../../demo1/dist/index.html">
-            <img alt="Logo" src="{{asset("admin/media/logos/default-dark.svg")}}"
-                 class="h-25px app-sidebar-logo-default"/>
-            <img alt="Logo" src="{{asset("admin/media/logos/default-small.svg")}}"
-                 class="h-20px app-sidebar-logo-minimize"/>
+{{--            <img alt="Logo" src="{{asset("admin/media/logos/default-dark.svg")}}" class="h-25px app-sidebar-logo-default"/>--}}
+            <img alt="Logo" src="{{asset("admin/media/logos/babona_dark.png")}}" class="h-225px app-sidebar-logo-default"/>
+{{--            <img alt="Logo" src="{{asset("admin/media/logos/default-small.svg")}}" class="h-20px app-sidebar-logo-minimize"/>--}}
+            <img alt="Logo" src="{{asset("admin/media/logos/babona_light.png")}}" class="h-20px app-sidebar-logo-minimize"/>
         </a>
         <!--end::Logo image-->
         <!--begin::Sidebar toggle-->
@@ -124,7 +124,7 @@
 												</span>
                                                 <!--end::Svg Icon-->
 											</span>
-											<span class="menu-title">تجارت الکترونیک</span>
+											<span class="menu-title">فروشگاه</span>
 											<span class="menu-arrow"></span>
 										</span>
                     <!--end:Menu link-->
@@ -207,7 +207,7 @@
                         </div>
                         <!--end:Menu item-->
                         <!--begin:Menu item-->
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        {{--<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                             <!--begin:Menu link-->
                             <span class="menu-link">
 													<span class="menu-bullet">
@@ -273,10 +273,10 @@
                                 <!--end:Menu item-->
                             </div>
                             <!--end:Menu sub-->
-                        </div>
+                        </div>--}}
                         <!--end:Menu item-->
                         <!--begin:Menu item-->
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        {{--<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                             <!--begin:Menu link-->
                             <span class="menu-link">
 													<span class="menu-bullet">
@@ -316,10 +316,10 @@
                                 <!--end:Menu item-->
                             </div>
                             <!--end:Menu sub-->
-                        </div>
+                        </div>--}}
                         <!--end:Menu item-->
                         <!--begin:Menu item-->
-                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        {{--<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                             <!--begin:Menu link-->
                             <span class="menu-link">
 													<span class="menu-bullet">
@@ -398,7 +398,7 @@
                                 <!--end:Menu item-->
                             </div>
                             <!--end:Menu sub-->
-                        </div>
+                        </div>--}}
                         <!--end:Menu item-->
                         <!--begin:Menu item-->
                         <div class="menu-item">
@@ -599,7 +599,7 @@
 												</span>
                                                 <!--end::Svg Icon-->
 											</span>
-											<span class="menu-title">کاربر مدیریت</span>
+											<span class="menu-title">مدیریت کاربران</span>
 											<span class="menu-arrow"></span>
 										</span>
                     <!--end:Menu link-->
@@ -626,7 +626,7 @@
 															<span class="menu-bullet">
 																<span class="bullet bullet-dot"></span>
 															</span>
-                                        <span class="menu-title">کاربران لیست</span>
+                                        <span class="menu-title">لیست کاربران</span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>

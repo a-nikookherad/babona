@@ -5848,7 +5848,7 @@
                                     <div class="menu-sub menu-sub-dropdown w-175px py-4">
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
-                                            <a href="../../demo1/dist/account/settings.html"
+                                            <a href="{{route("admin.locale",["locale"=>"en"])}}"
                                                class="menu-link d-flex px-5 active">
 													<span class="symbol symbol-20px me-4">
 														<img class="rounded-1"
@@ -5859,42 +5859,12 @@
                                         <!--end::Menu item-->
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
-                                            <a href="../../demo1/dist/account/settings.html"
+                                            <a href="{{route("admin.locale",["locale"=>"fa"])}}"
                                                class="menu-link d-flex px-5">
 													<span class="symbol symbol-20px me-4">
 														<img class="rounded-1"
-                                                             src="{{asset("admin/media/flags/spain.svg")}}" alt=""/>
-													</span>اسپانیایی</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="../../demo1/dist/account/settings.html"
-                                               class="menu-link d-flex px-5">
-													<span class="symbol symbol-20px me-4">
-														<img class="rounded-1"
-                                                             src="{{asset("admin/media/flags/germany.svg")}}" alt=""/>
-													</span>آلمانی</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="../../demo1/dist/account/settings.html"
-                                               class="menu-link d-flex px-5">
-													<span class="symbol symbol-20px me-4">
-														<img class="rounded-1"
-                                                             src="{{asset("admin/media/flags/japan.svg")}}" alt=""/>
-													</span>ژاپنی</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="../../demo1/dist/account/settings.html"
-                                               class="menu-link d-flex px-5">
-													<span class="symbol symbol-20px me-4">
-														<img class="rounded-1"
-                                                             src="{{asset("admin/media/flags/france.svg")}}" alt=""/>
-													</span>فرانسه</a>
+                                                             src="{{asset("admin/media/flags/iran.svg")}}" alt=""/>
+													</span>فارسی</a>
                                         </div>
                                         <!--end::Menu item-->
                                     </div>

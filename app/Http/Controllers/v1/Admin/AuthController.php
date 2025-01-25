@@ -20,6 +20,15 @@ class AuthController extends Controller
         return view('admin.auth.sign-in');
     }
 
+    public function locale()
+    {
+        $lang = request()->get("locale", "fa");
+        $user = auth()->user();
+        $user->locale = $lang;
+        $user->save();
+        return redirect()->back()->with("success", __("messages.locale_changed_successfully"));
+    }
+
     public function authenticate(LoginRequest $request)
     {
         // Check user exists or not

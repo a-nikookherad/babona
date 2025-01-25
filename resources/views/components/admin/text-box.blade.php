@@ -1,6 +1,7 @@
 @props([
+    "id"=>$name,
     "name"=>"name",
-    "label"=>"default",
+    "label"=>"name",
     "required"=>0,
 ])
 
@@ -10,7 +11,8 @@
     <label class="{{$required?"required":""}} form-label">{{$label}}</label>
     <!--end::Tags-->
     <!--begin::Input-->
-    <input type="text" name="{{$name}}" {{$required?"required":""}} class="form-control mb-2 @error($name) is-invalid @enderror"
+    <input type="text" id="{{$id}}" name="{{$name}}"
+           {{--{{$required?"required":""}}--}} class="form-control mb-2 @error($name) is-invalid @enderror"
            placeholder="{{$label}}" value=""/>
     <!--end::Input-->
 @if ($slot->isNotEmpty())

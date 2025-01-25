@@ -23,12 +23,18 @@ use Illuminate\Support\Facades\Facade;
  * @method static ProductionService increaseProductDetailsQuantities($productDetails_id, $currentUser, $count = 1)
  * @method static ProductionService decreaseProductDetailsQuantities($productDetails_id, $currentUser, $count = 1)
  *
+ * @method static ProductionService tags()
+ *
  * @method static ProductionService basket($user_id)
  * @method static ProductionService addToTheBasket($user_id, $productDetails)
  * @method static ProductionService setBasketBoughtAt($basket_id)
  */
 class Production extends Facade
 {
+    public static string $upcoming = "upcoming";
+    public static string $waiting = "waiting";
+    public static string $published = "published";
+    public static string $archive = "archive";
     public static $mapStatus = [
         "upcoming" => "پیش رو",
         "waiting" => "درانتظار",

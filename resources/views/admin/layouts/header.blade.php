@@ -24,7 +24,6 @@
 <!--begin::Vendor Stylesheets(used for this page only)-->
     {{--    <link href="{{asset("admin/plugins/custom/fullcalendar/fullcalendar.bundle.css")}}" rel="stylesheet"
               type="text/css"/>--}}
-    {{--    <link href="{{asset("admin/plugins/custom/datatables/datatables.bundle.css")}}" rel="stylesheet" type="text/css"/>--}}
 <!--end::Vendor Stylesheets-->
 
     <!--begin::Global Stylesheets Bundle(mوatory for all pages)-->

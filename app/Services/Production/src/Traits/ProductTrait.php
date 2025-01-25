@@ -97,9 +97,46 @@ trait ProductTrait
         }
     }
 
+    private function getProductData($request): mixed
+    {
+        $productData = $request->only([
+            "slug",
+            "name",
+            "fa_name",
+            "material",
+            "style",
+            "code",
+            "barcode",
+            "status",
+            "brief",
+            "description",
+            "jsonld",
+            "meta_tag_title",
+            "meta_tag_description",
+            "meta_tag_keywords",
+            "category_id",
+        ]);
+        return $productData;
+    }
+
     private function handleProductDetails($request, $product, $currentUser): void
     {
+        switch ($request->discount_option) {
+            case 2:
+                $discount = $request->discount_percentage;
+                break;
+            case 3:
+                $discount = $request->discount / $request->price;
+                break;
+            default:
+                $discount = 0;
+
+        }
         foreach ($request->product_details as $productDetail) {
+            $productDetail = array_merge($productDetail, [
+                "price" => $request->price,
+                "discount" => $discount,
+            ]);
             $condition = [
                 ["size", "=", $productDetail["size"]],
                 ["color", "=", $productDetail["color"]],
@@ -191,34 +228,12 @@ trait ProductTrait
         }
     }
 
-    private function getProductData($request): mixed
-    {
-        $productData = $request->only([
-            "slug",
-            "name",
-            "fa_name",
-            "material",
-            "style",
-            "code",
-            "barcode",
-            "status",
-            "brief",
-            "description",
-            "jsonld",
-            "meta_tag_title",
-            "meta_tag_description",
-            "meta_tag_keywords",
-            "category_id",
-        ]);
-        return $productData;
-    }
-
     private function handleProductTags($request, $product): void
     {
-        if ($request->filled("tags")) {
-            foreach ($request->tags as $tag) {
-                tempTags($product)->unTag($tag["name"]);
-                tempTags($product)->tagIt($tag["name"], now()->addDays(7), ["description" => $tag["description"]]);
+        if (json_decode($request->filled("tags"))) {
+            foreach (json_decode($request->tags, true) as $key => $tag) {
+                tempTags($product)->unTag($tag["name"]??$tag);
+                tempTags($product)->tagIt($tag["name"]??$tag, now()->addDays(7), ["description" => $tag["description"]??"Product's tags"]);
             }
         }
     }

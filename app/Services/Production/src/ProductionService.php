@@ -2,7 +2,7 @@
 
 namespace Production;
 
-use Production\Entities\Repositories\product\ProductRepo;
+use Imanghafoori\Tags\Models\TempTag;
 use Production\Traits\BasketTrait;
 use Production\Traits\CategoryTrait;
 use Production\Traits\ProductDetailTrait;
@@ -12,5 +12,10 @@ class ProductionService
 {
     use CategoryTrait, ProductTrait, ProductDetailTrait, BasketTrait;
 
-
+    public function tags()
+    {
+        return TempTag::query()
+            ->distinct()
+            ->pluck('title');
+    }
 }

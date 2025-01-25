@@ -4,6 +4,7 @@ namespace App\Http\Controllers\v1\Production;
 
 use App\Http\Requests\production\Products\ProductCreateRequest;
 use App\Http\Requests\production\Products\ProductUpdateRequest;
+use Illuminate\Http\Request;
 use Production\Production;
 use Response\Response;
 
@@ -21,18 +22,28 @@ class ProductsController
             ->success(__("list_of_products"));
     }
 
-    public function store(ProductCreateRequest $request)
+    public function create()
     {
-        $product = Production::createProduct($request);
+        $categories = Production::categories();
+        $tags = Production::tags();
+        return Response::view("admin.production.product.create", compact("categories", "tags"))
+            ->jsonData($categories)
+            ->success(__("product_list"));
+    }
+
+    public function store(Request $request)
+    {
+        $currentUser=auth()->user();
+        $product = Production::createProduct($request,$currentUser);
         if (!$product->exists) {
             return Response::code(400)
                 ->redirect(route("production.products.list"))
-                ->failed(__("product_didnt_create_successfully"));
+                ->failed(__("messages.product_didnt_create_successfully"));
         }
         return Response::redirect(route("production.products.list"))
             ->jsonData($product)
             ->code(201)
-            ->success(__("product_created_successfully"));
+            ->success(__("messages.product_created_successfully"));
     }
 
     public function edit($id)
