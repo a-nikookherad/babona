@@ -34,10 +34,13 @@
                                                                 fill="currentColor"/>
 														</svg>
 													</span>
-                    <form action="{{route("production.products.list")}}">
+                    <form
+                        action="{{route("production.products.list")}}">
                         <!--end::Svg Icon-->
+                        <input type="hidden" name="filter[status]" value="{{request("filter.status","published")}}"/>
                         <input type="text" name="filter[search]" data-kt-ecommerce-product-filter="search"
-                               class="form-control form-control-solid w-250px ps-14" placeholder="جستجو محصولات"/>
+                               class="form-control form-control-solid w-250px ps-14" placeholder="جستجو محصولات"
+                               value="{{request("filter.search")}}"/>
                     </form>
                 </div>
                 <!--end::جستجو-->
@@ -47,15 +50,20 @@
             <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
                 <div class="w-100 mw-150px">
                     <form action="{{route("production.products.list")}}">
+                        <input type="hidden" name="filter[search]" value="{{request("filter.search")}}"/>
                         <!--begin::انتخاب2-->
                         <select name="filter[status]" onchange="this.form.submit()"
                                 class="form-select form-select-solid"
                                 data-control="select2" data-hide-search="true"
                                 {{--data-placeholder="وضعیت"--}} data-kt-ecommerce-product-filter="status">
                             <option>همه</option>
-                            <option value="published">منتشر شده</option>
-                            <option value="waiting">در انتظار</option>
-                            <option value="archive">غیرفعال</option>
+                            @foreach(\Production\Production::$mapStatus as $latin=>$persian)
+
+                                <option
+                                    value="{{$latin}}" @if($latin==request("filter.status")){{"selected"}}@endif>{{$persian}}</option>
+                            @endforeach
+                            {{--                            <option value="waiting">در انتظار</option>--}}
+                            {{--                            <option value="archive">غیرفعال</option>--}}
                         </select>
                         <!--end::انتخاب2-->
                     </form>
@@ -84,12 +92,12 @@
                                         </th>--}}
                     <th class="w-10px pe-2">#</th>
                     <th class="min-w-200px">محصولات</th>
-                    <th class="text-end min-w-100px">کد</th>
-                    <th class="text-end min-w-70px">تعداد</th>
+                    <th class="text-center min-w-100px">رنگ</th>
+                    <th class="text-center min-w-100px">سایز</th>
+                    <th class="text-center min-w-70px">تعداد</th>
                     <th class="text-end min-w-100px">قیمت</th>
-                    <th class="text-end min-w-100px">رتبه بندی</th>
                     <th class="text-end min-w-100px">وضعیت</th>
-                    <th class="text-end min-w-70px">عملیات</th>
+                    <th class="text-center min-w-70px">عملیات</th>
                 </tr>
                 <!--end::Table row-->
                 </thead>
@@ -119,7 +127,7 @@
                                                 $thumbnail='assets/media/svg/files/blank-image.svg';
                                                 if ($product->thumbnail){
                                                     $thumbnail=$product->thumbnail;
-                                                    $thumbnail=$thumbnail->path.DIRECTORY_SEPARATOR.$thumbnail->full_name;
+                                                    $thumbnail="storage/".$thumbnail->path."/".$thumbnail->full_name;
 
                                                 }
                                             @endphp
@@ -137,13 +145,21 @@
                                     </div>
                                 </td>
                                 <!--end::دسته بندی=-->
-                                <!--begin::SKU=-->
-                                <td class="text-end pe-0">
-                                    <span class="fw-bold">{{$product->code}}</span>
+                                <!--begin::color=-->
+                                <td class="d-flex flex-center">
+                                    <div
+                                        style="width:30px;height:30px;background-color:{{$productDetails->color}}">
+                                    </div>
+                                    {{--<span class="fw-bold">{{$product->code}}</span>--}}
                                 </td>
-                                <!--end::SKU=-->
+                                <!--end::color=-->
+
+                                <td class="text-center pe-0" data-order="20">
+                                    <span class="fw-bold ms-3">{{$productDetails->size}}</span>
+                                </td>
+
                                 <!--begin::تعداد=-->
-                                <td class="text-end pe-0" data-order="30">
+                                <td class="text-center pe-0" data-order="30">
                                     <span class="fw-bold ms-3">{{$productDetails->quantity}}</span>
                                 </td>
                                 <!--end::تعداد=-->
@@ -156,76 +172,76 @@
                                 </td>
                                 <!--end::قیمت=-->
                                 <!--begin::rating-->
-                                <td class="text-end pe-0" data-order="rating-4">
-                                    <div class="rating justify-content-end">
-                                        <div class="rating-label checked">
-                                            <!--begin::Svg Icon | path: icons/duotune/general/gen029.svg-->
-                                            <span class="svg-icon svg-icon-2">
-																		<svg width="24" height="24" viewBox="0 0 24 24"
-                                                                             fill="none"
-                                                                             xmlns="http://www.w3.org/2000/svg">
-																			<path
-                                                                                d="M11.1359 4.48359C11.5216 3.82132 12.4784 3.82132 12.8641 4.48359L15.011 8.16962C15.1523 8.41222 15.3891 8.58425 15.6635 8.64367L19.8326 9.54646C20.5816 9.70867 20.8773 10.6186 20.3666 11.1901L17.5244 14.371C17.3374 14.5803 17.2469 14.8587 17.2752 15.138L17.7049 19.382C17.7821 20.1445 17.0081 20.7069 16.3067 20.3978L12.4032 18.6777C12.1463 18.5645 11.8537 18.5645 11.5968 18.6777L7.69326 20.3978C6.99192 20.7069 6.21789 20.1445 6.2951 19.382L6.7248 15.138C6.75308 14.8587 6.66264 14.5803 6.47558 14.371L3.63339 11.1901C3.12273 10.6186 3.41838 9.70867 4.16744 9.54646L8.3365 8.64367C8.61089 8.58425 8.84767 8.41222 8.98897 8.16962L11.1359 4.48359Z"
-                                                                                fill="currentColor"/>
-																		</svg>
-																	</span>
-                                            <!--end::Svg Icon-->
-                                        </div>
-                                        <div class="rating-label checked">
-                                            <!--begin::Svg Icon | path: icons/duotune/general/gen029.svg-->
-                                            <span class="svg-icon svg-icon-2">
-																		<svg width="24" height="24" viewBox="0 0 24 24"
-                                                                             fill="none"
-                                                                             xmlns="http://www.w3.org/2000/svg">
-																			<path
-                                                                                d="M11.1359 4.48359C11.5216 3.82132 12.4784 3.82132 12.8641 4.48359L15.011 8.16962C15.1523 8.41222 15.3891 8.58425 15.6635 8.64367L19.8326 9.54646C20.5816 9.70867 20.8773 10.6186 20.3666 11.1901L17.5244 14.371C17.3374 14.5803 17.2469 14.8587 17.2752 15.138L17.7049 19.382C17.7821 20.1445 17.0081 20.7069 16.3067 20.3978L12.4032 18.6777C12.1463 18.5645 11.8537 18.5645 11.5968 18.6777L7.69326 20.3978C6.99192 20.7069 6.21789 20.1445 6.2951 19.382L6.7248 15.138C6.75308 14.8587 6.66264 14.5803 6.47558 14.371L3.63339 11.1901C3.12273 10.6186 3.41838 9.70867 4.16744 9.54646L8.3365 8.64367C8.61089 8.58425 8.84767 8.41222 8.98897 8.16962L11.1359 4.48359Z"
-                                                                                fill="currentColor"/>
-																		</svg>
-																	</span>
-                                            <!--end::Svg Icon-->
-                                        </div>
-                                        <div class="rating-label checked">
-                                            <!--begin::Svg Icon | path: icons/duotune/general/gen029.svg-->
-                                            <span class="svg-icon svg-icon-2">
-																		<svg width="24" height="24" viewBox="0 0 24 24"
-                                                                             fill="none"
-                                                                             xmlns="http://www.w3.org/2000/svg">
-																			<path
-                                                                                d="M11.1359 4.48359C11.5216 3.82132 12.4784 3.82132 12.8641 4.48359L15.011 8.16962C15.1523 8.41222 15.3891 8.58425 15.6635 8.64367L19.8326 9.54646C20.5816 9.70867 20.8773 10.6186 20.3666 11.1901L17.5244 14.371C17.3374 14.5803 17.2469 14.8587 17.2752 15.138L17.7049 19.382C17.7821 20.1445 17.0081 20.7069 16.3067 20.3978L12.4032 18.6777C12.1463 18.5645 11.8537 18.5645 11.5968 18.6777L7.69326 20.3978C6.99192 20.7069 6.21789 20.1445 6.2951 19.382L6.7248 15.138C6.75308 14.8587 6.66264 14.5803 6.47558 14.371L3.63339 11.1901C3.12273 10.6186 3.41838 9.70867 4.16744 9.54646L8.3365 8.64367C8.61089 8.58425 8.84767 8.41222 8.98897 8.16962L11.1359 4.48359Z"
-                                                                                fill="currentColor"/>
-																		</svg>
-																	</span>
-                                            <!--end::Svg Icon-->
-                                        </div>
-                                        <div class="rating-label checked">
-                                            <!--begin::Svg Icon | path: icons/duotune/general/gen029.svg-->
-                                            <span class="svg-icon svg-icon-2">
-																		<svg width="24" height="24" viewBox="0 0 24 24"
-                                                                             fill="none"
-                                                                             xmlns="http://www.w3.org/2000/svg">
-																			<path
-                                                                                d="M11.1359 4.48359C11.5216 3.82132 12.4784 3.82132 12.8641 4.48359L15.011 8.16962C15.1523 8.41222 15.3891 8.58425 15.6635 8.64367L19.8326 9.54646C20.5816 9.70867 20.8773 10.6186 20.3666 11.1901L17.5244 14.371C17.3374 14.5803 17.2469 14.8587 17.2752 15.138L17.7049 19.382C17.7821 20.1445 17.0081 20.7069 16.3067 20.3978L12.4032 18.6777C12.1463 18.5645 11.8537 18.5645 11.5968 18.6777L7.69326 20.3978C6.99192 20.7069 6.21789 20.1445 6.2951 19.382L6.7248 15.138C6.75308 14.8587 6.66264 14.5803 6.47558 14.371L3.63339 11.1901C3.12273 10.6186 3.41838 9.70867 4.16744 9.54646L8.3365 8.64367C8.61089 8.58425 8.84767 8.41222 8.98897 8.16962L11.1359 4.48359Z"
-                                                                                fill="currentColor"/>
-																		</svg>
-																	</span>
-                                            <!--end::Svg Icon-->
-                                        </div>
-                                        <div class="rating-label">
-                                            <!--begin::Svg Icon | path: icons/duotune/general/gen029.svg-->
-                                            <span class="svg-icon svg-icon-2">
-																		<svg width="24" height="24" viewBox="0 0 24 24"
-                                                                             fill="none"
-                                                                             xmlns="http://www.w3.org/2000/svg">
-																			<path
-                                                                                d="M11.1359 4.48359C11.5216 3.82132 12.4784 3.82132 12.8641 4.48359L15.011 8.16962C15.1523 8.41222 15.3891 8.58425 15.6635 8.64367L19.8326 9.54646C20.5816 9.70867 20.8773 10.6186 20.3666 11.1901L17.5244 14.371C17.3374 14.5803 17.2469 14.8587 17.2752 15.138L17.7049 19.382C17.7821 20.1445 17.0081 20.7069 16.3067 20.3978L12.4032 18.6777C12.1463 18.5645 11.8537 18.5645 11.5968 18.6777L7.69326 20.3978C6.99192 20.7069 6.21789 20.1445 6.2951 19.382L6.7248 15.138C6.75308 14.8587 6.66264 14.5803 6.47558 14.371L3.63339 11.1901C3.12273 10.6186 3.41838 9.70867 4.16744 9.54646L8.3365 8.64367C8.61089 8.58425 8.84767 8.41222 8.98897 8.16962L11.1359 4.48359Z"
-                                                                                fill="currentColor"/>
-																		</svg>
-																	</span>
-                                            <!--end::Svg Icon-->
-                                        </div>
+                            {{--<td class="text-end pe-0" data-order="rating-4">
+                                <div class="rating justify-content-end">
+                                    <div class="rating-label checked">
+                                        <!--begin::Svg Icon | path: icons/duotune/general/gen029.svg-->
+                                        <span class="svg-icon svg-icon-2">
+                                                                    <svg width="24" height="24" viewBox="0 0 24 24"
+                                                                         fill="none"
+                                                                         xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M11.1359 4.48359C11.5216 3.82132 12.4784 3.82132 12.8641 4.48359L15.011 8.16962C15.1523 8.41222 15.3891 8.58425 15.6635 8.64367L19.8326 9.54646C20.5816 9.70867 20.8773 10.6186 20.3666 11.1901L17.5244 14.371C17.3374 14.5803 17.2469 14.8587 17.2752 15.138L17.7049 19.382C17.7821 20.1445 17.0081 20.7069 16.3067 20.3978L12.4032 18.6777C12.1463 18.5645 11.8537 18.5645 11.5968 18.6777L7.69326 20.3978C6.99192 20.7069 6.21789 20.1445 6.2951 19.382L6.7248 15.138C6.75308 14.8587 6.66264 14.5803 6.47558 14.371L3.63339 11.1901C3.12273 10.6186 3.41838 9.70867 4.16744 9.54646L8.3365 8.64367C8.61089 8.58425 8.84767 8.41222 8.98897 8.16962L11.1359 4.48359Z"
+                                                                            fill="currentColor"/>
+                                                                    </svg>
+                                                                </span>
+                                        <!--end::Svg Icon-->
                                     </div>
-                                </td>
-                                <!--end::rating-->
+                                    <div class="rating-label checked">
+                                        <!--begin::Svg Icon | path: icons/duotune/general/gen029.svg-->
+                                        <span class="svg-icon svg-icon-2">
+                                                                    <svg width="24" height="24" viewBox="0 0 24 24"
+                                                                         fill="none"
+                                                                         xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M11.1359 4.48359C11.5216 3.82132 12.4784 3.82132 12.8641 4.48359L15.011 8.16962C15.1523 8.41222 15.3891 8.58425 15.6635 8.64367L19.8326 9.54646C20.5816 9.70867 20.8773 10.6186 20.3666 11.1901L17.5244 14.371C17.3374 14.5803 17.2469 14.8587 17.2752 15.138L17.7049 19.382C17.7821 20.1445 17.0081 20.7069 16.3067 20.3978L12.4032 18.6777C12.1463 18.5645 11.8537 18.5645 11.5968 18.6777L7.69326 20.3978C6.99192 20.7069 6.21789 20.1445 6.2951 19.382L6.7248 15.138C6.75308 14.8587 6.66264 14.5803 6.47558 14.371L3.63339 11.1901C3.12273 10.6186 3.41838 9.70867 4.16744 9.54646L8.3365 8.64367C8.61089 8.58425 8.84767 8.41222 8.98897 8.16962L11.1359 4.48359Z"
+                                                                            fill="currentColor"/>
+                                                                    </svg>
+                                                                </span>
+                                        <!--end::Svg Icon-->
+                                    </div>
+                                    <div class="rating-label checked">
+                                        <!--begin::Svg Icon | path: icons/duotune/general/gen029.svg-->
+                                        <span class="svg-icon svg-icon-2">
+                                                                    <svg width="24" height="24" viewBox="0 0 24 24"
+                                                                         fill="none"
+                                                                         xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M11.1359 4.48359C11.5216 3.82132 12.4784 3.82132 12.8641 4.48359L15.011 8.16962C15.1523 8.41222 15.3891 8.58425 15.6635 8.64367L19.8326 9.54646C20.5816 9.70867 20.8773 10.6186 20.3666 11.1901L17.5244 14.371C17.3374 14.5803 17.2469 14.8587 17.2752 15.138L17.7049 19.382C17.7821 20.1445 17.0081 20.7069 16.3067 20.3978L12.4032 18.6777C12.1463 18.5645 11.8537 18.5645 11.5968 18.6777L7.69326 20.3978C6.99192 20.7069 6.21789 20.1445 6.2951 19.382L6.7248 15.138C6.75308 14.8587 6.66264 14.5803 6.47558 14.371L3.63339 11.1901C3.12273 10.6186 3.41838 9.70867 4.16744 9.54646L8.3365 8.64367C8.61089 8.58425 8.84767 8.41222 8.98897 8.16962L11.1359 4.48359Z"
+                                                                            fill="currentColor"/>
+                                                                    </svg>
+                                                                </span>
+                                        <!--end::Svg Icon-->
+                                    </div>
+                                    <div class="rating-label checked">
+                                        <!--begin::Svg Icon | path: icons/duotune/general/gen029.svg-->
+                                        <span class="svg-icon svg-icon-2">
+                                                                    <svg width="24" height="24" viewBox="0 0 24 24"
+                                                                         fill="none"
+                                                                         xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M11.1359 4.48359C11.5216 3.82132 12.4784 3.82132 12.8641 4.48359L15.011 8.16962C15.1523 8.41222 15.3891 8.58425 15.6635 8.64367L19.8326 9.54646C20.5816 9.70867 20.8773 10.6186 20.3666 11.1901L17.5244 14.371C17.3374 14.5803 17.2469 14.8587 17.2752 15.138L17.7049 19.382C17.7821 20.1445 17.0081 20.7069 16.3067 20.3978L12.4032 18.6777C12.1463 18.5645 11.8537 18.5645 11.5968 18.6777L7.69326 20.3978C6.99192 20.7069 6.21789 20.1445 6.2951 19.382L6.7248 15.138C6.75308 14.8587 6.66264 14.5803 6.47558 14.371L3.63339 11.1901C3.12273 10.6186 3.41838 9.70867 4.16744 9.54646L8.3365 8.64367C8.61089 8.58425 8.84767 8.41222 8.98897 8.16962L11.1359 4.48359Z"
+                                                                            fill="currentColor"/>
+                                                                    </svg>
+                                                                </span>
+                                        <!--end::Svg Icon-->
+                                    </div>
+                                    <div class="rating-label">
+                                        <!--begin::Svg Icon | path: icons/duotune/general/gen029.svg-->
+                                        <span class="svg-icon svg-icon-2">
+                                                                    <svg width="24" height="24" viewBox="0 0 24 24"
+                                                                         fill="none"
+                                                                         xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M11.1359 4.48359C11.5216 3.82132 12.4784 3.82132 12.8641 4.48359L15.011 8.16962C15.1523 8.41222 15.3891 8.58425 15.6635 8.64367L19.8326 9.54646C20.5816 9.70867 20.8773 10.6186 20.3666 11.1901L17.5244 14.371C17.3374 14.5803 17.2469 14.8587 17.2752 15.138L17.7049 19.382C17.7821 20.1445 17.0081 20.7069 16.3067 20.3978L12.4032 18.6777C12.1463 18.5645 11.8537 18.5645 11.5968 18.6777L7.69326 20.3978C6.99192 20.7069 6.21789 20.1445 6.2951 19.382L6.7248 15.138C6.75308 14.8587 6.66264 14.5803 6.47558 14.371L3.63339 11.1901C3.12273 10.6186 3.41838 9.70867 4.16744 9.54646L8.3365 8.64367C8.61089 8.58425 8.84767 8.41222 8.98897 8.16962L11.1359 4.48359Z"
+                                                                            fill="currentColor"/>
+                                                                    </svg>
+                                                                </span>
+                                        <!--end::Svg Icon-->
+                                    </div>
+                                </div>
+                            </td>--}}
+                            <!--end::rating-->
                                 <!--begin::وضعیت=-->
                                 <td class="text-end pe-0"
                                     data-order="{{$product->status?\Production\Production::$mapStatus[$product->status]:"تایین نشده"}}">
@@ -315,7 +331,7 @@
                 class="col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end">
                 <div class="dataTables_paginate paging_simple_numbers"
                      id="kt_ecommerce_category_table_paginate">
-                    {{$products->links()}}
+                    {{$products->withQueryString()->links()}}
                 </div>
             </div>
         </div>

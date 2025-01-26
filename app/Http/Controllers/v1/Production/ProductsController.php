@@ -12,14 +12,20 @@ class ProductsController
 {
     public function index()
     {
-        $filter = function ($query) {
-            return $query->where("status", request("status", "published"));
+        $filter = \request()->get("filter", []);
+        $filter = function ($query) use ($filter) {
+            $search = empty($filter["search"]) ? null : "%" . $filter["search"] . "%";
+            $status = !isset($filter["status"]) ? "published" : $filter["status"];
+            return $query->where("status", $status)
+                ->when($search, function ($query) use ($search) {
+                    return $query->where("fa_name", "like", $search);
+                });
         };
         $products = Production::products($filter, request("per_page", 10));
         return Response::view("admin.production.product.list", compact("products"))
             ->jsonData($products)
             ->code(200)
-            ->success(__("list_of_products"));
+            ->success(__("messages.list_of_products"));
     }
 
     public function create()
@@ -28,13 +34,13 @@ class ProductsController
         $tags = Production::tags();
         return Response::view("admin.production.product.create", compact("categories", "tags"))
             ->jsonData($categories)
-            ->success(__("product_list"));
+            ->success(__("messages.product_list"));
     }
 
     public function store(Request $request)
     {
-        $currentUser=auth()->user();
-        $product = Production::createProduct($request,$currentUser);
+        $currentUser = auth()->user();
+        $product = Production::createProduct($request, $currentUser);
         if (!$product->exists) {
             return Response::code(400)
                 ->redirect(route("production.products.list"))
@@ -52,12 +58,12 @@ class ProductsController
         if (!$product->exits) {
             return Response::redirect(route("production.products.list"))
                 ->code(400)
-                ->failed(__("something_went_wrong"));
+                ->failed(__("messages.something_went_wrong"));
         }
         return Response::view("admin.production.product.edit", compact("product"))
             ->jsonData($product)
             ->code(200)
-            ->success(__("get_product_successfully"));
+            ->success(__("messages.get_product_successfully"));
     }
 
     public function update(ProductUpdateRequest $request, $id)
@@ -68,12 +74,12 @@ class ProductsController
             return Response::redirect("production.products.list")
                 ->jsonData($product)
                 ->code(202)
-                ->success(__("product_updated_successfully"));
+                ->success(__("messages.product_updated_successfully"));
         }
         return Response::jsonData($product)
             ->code(400)
             ->redirect(route("production.products.list"))
-            ->failed(__("something_went_wrong"));
+            ->failed(__("messages.something_went_wrong"));
     }
 
     public function destroy($id)
@@ -81,6 +87,6 @@ class ProductsController
         Production::destroyProduct($id);
         return Response::view("Production::admin.product.list")
             ->code(204)
-            ->success(__("operation_was_success"));
+            ->success(__("messages.operation_was_success"));
     }
 }
