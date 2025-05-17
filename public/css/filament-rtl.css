@@ -1,0 +1,21 @@
+html, body {
+    direction: rtl !important;
+    text-align: right !important;
+    font-family: "Vazirmatn", sans-serif;
+}
+
+.filament-sidebar {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+.filament-header,
+.filament-main {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+.filament-main nav,
+.filament-sidebar nav {
+    flex-direction: row-reverse !important;
+}

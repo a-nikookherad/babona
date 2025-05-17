@@ -3,12 +3,15 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Gate;
 
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
@@ -54,4 +57,15 @@ class User extends Authenticatable
         return $this->belongsToMany(Merchant::class, "user_merchants", "user_id", "merchant_id");
     }
 
+    public function isSuperAdmin()
+    {
+        return Gate::allows("super_admin");
+    }
+
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return true;
+
+        return $this->isSuperAdmin();
+    }
 }

@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group([
-    "prefix" => "admin",
+    //todo remove 1 its because work with filament
+    "prefix" => "admin1",
     "middleware" => ["auth:web"]
 ], function () {
 

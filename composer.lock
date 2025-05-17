@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5ece3e19602781946fd8c1dda77701d3",
+    "content-hash": "fd94e607a41be09408eb85e4a407a29d",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -2034,10 +2034,10 @@
             "dist": {
                 "type": "path",
                 "url": "./app/Services/Taggable",
-                "reference": "142812950ea92bd621237f33d6b9f32a323492f5"
+                "reference": "7ecb4c6b9461ab9060203bc6b8fdd0951e96a753"
             },
             "require": {
-                "laravel/framework": "^11.9",
+                "laravel/framework": "^12.9",
                 "php": ">=7.1.3"
             },
             "type": "library",
@@ -2134,20 +2134,20 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v11.44.7",
+            "version": "v12.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "00bc6ac91a6d577bf051c18ddaa638c0d221e1c7"
+                "reference": "84b142958d1638a7e89de94ce75c2821c601d3d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/00bc6ac91a6d577bf051c18ddaa638c0d221e1c7",
-                "reference": "00bc6ac91a6d577bf051c18ddaa638c0d221e1c7",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/84b142958d1638a7e89de94ce75c2821c601d3d7",
+                "reference": "84b142958d1638a7e89de94ce75c2821c601d3d7",
                 "shasum": ""
             },
             "require": {
-                "brick/math": "^0.9.3|^0.10.2|^0.11|^0.12",
+                "brick/math": "^0.11|^0.12",
                 "composer-runtime-api": "^2.2",
                 "doctrine/inflector": "^2.0.5",
                 "dragonmantank/cron-expression": "^3.4",
@@ -2162,32 +2162,32 @@
                 "fruitcake/php-cors": "^1.3",
                 "guzzlehttp/guzzle": "^7.8.2",
                 "guzzlehttp/uri-template": "^1.0",
-                "laravel/prompts": "^0.1.18|^0.2.0|^0.3.0",
+                "laravel/prompts": "^0.3.0",
                 "laravel/serializable-closure": "^1.3|^2.0",
-                "league/commonmark": "^2.6",
+                "league/commonmark": "^2.7",
                 "league/flysystem": "^3.25.1",
                 "league/flysystem-local": "^3.25.1",
                 "league/uri": "^7.5.1",
                 "monolog/monolog": "^3.0",
-                "nesbot/carbon": "^2.72.6|^3.8.4",
+                "nesbot/carbon": "^3.8.4",
                 "nunomaduro/termwind": "^2.0",
                 "php": "^8.2",
                 "psr/container": "^1.1.1|^2.0.1",
                 "psr/log": "^1.0|^2.0|^3.0",
                 "psr/simple-cache": "^1.0|^2.0|^3.0",
                 "ramsey/uuid": "^4.7",
-                "symfony/console": "^7.0.3",
-                "symfony/error-handler": "^7.0.3",
-                "symfony/finder": "^7.0.3",
+                "symfony/console": "^7.2.0",
+                "symfony/error-handler": "^7.2.0",
+                "symfony/finder": "^7.2.0",
                 "symfony/http-foundation": "^7.2.0",
-                "symfony/http-kernel": "^7.0.3",
-                "symfony/mailer": "^7.0.3",
-                "symfony/mime": "^7.0.3",
+                "symfony/http-kernel": "^7.2.0",
+                "symfony/mailer": "^7.2.0",
+                "symfony/mime": "^7.2.0",
                 "symfony/polyfill-php83": "^1.31",
-                "symfony/process": "^7.0.3",
-                "symfony/routing": "^7.0.3",
-                "symfony/uid": "^7.0.3",
-                "symfony/var-dumper": "^7.0.3",
+                "symfony/process": "^7.2.0",
+                "symfony/routing": "^7.2.0",
+                "symfony/uid": "^7.2.0",
+                "symfony/var-dumper": "^7.2.0",
                 "tijsverkoyen/css-to-inline-styles": "^2.2.5",
                 "vlucas/phpdotenv": "^5.6.1",
                 "voku/portable-ascii": "^2.0.2"
@@ -2251,17 +2251,17 @@
                 "league/flysystem-read-only": "^3.25.1",
                 "league/flysystem-sftp-v3": "^3.25.1",
                 "mockery/mockery": "^1.6.10",
-                "orchestra/testbench-core": "^9.11.2",
-                "pda/pheanstalk": "^5.0.6",
+                "orchestra/testbench-core": "^10.0.0",
+                "pda/pheanstalk": "^5.0.6|^7.0.0",
                 "php-http/discovery": "^1.15",
                 "phpstan/phpstan": "^2.0",
-                "phpunit/phpunit": "^10.5.35|^11.3.6|^12.0.1",
-                "predis/predis": "^2.3",
+                "phpunit/phpunit": "^10.5.35|^11.5.3|^12.0.1",
+                "predis/predis": "^2.3|^3.0",
                 "resend/resend-php": "^0.10.0",
-                "symfony/cache": "^7.0.3",
-                "symfony/http-client": "^7.0.3",
-                "symfony/psr-http-message-bridge": "^7.0.3",
-                "symfony/translation": "^7.0.3"
+                "symfony/cache": "^7.2.0",
+                "symfony/http-client": "^7.2.0",
+                "symfony/psr-http-message-bridge": "^7.2.0",
+                "symfony/translation": "^7.2.0"
             },
             "suggest": {
                 "ably/ably-php": "Required to use the Ably broadcast driver (^1.0).",
@@ -2287,22 +2287,22 @@
                 "mockery/mockery": "Required to use mocking (^1.6).",
                 "pda/pheanstalk": "Required to use the beanstalk queue driver (^5.0).",
                 "php-http/discovery": "Required to use PSR-7 bridging features (^1.15).",
-                "phpunit/phpunit": "Required to use assertions and run tests (^10.5.35|^11.3.6|^12.0.1).",
-                "predis/predis": "Required to use the predis connector (^2.3).",
+                "phpunit/phpunit": "Required to use assertions and run tests (^10.5.35|^11.5.3|^12.0.1).",
+                "predis/predis": "Required to use the predis connector (^2.3|^3.0).",
                 "psr/http-message": "Required to allow Storage::put to accept a StreamInterface (^1.0).",
                 "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (^6.0|^7.0).",
                 "resend/resend-php": "Required to enable support for the Resend mail transport (^0.10.0).",
-                "symfony/cache": "Required to PSR-6 cache bridge (^7.0).",
-                "symfony/filesystem": "Required to enable support for relative symbolic links (^7.0).",
-                "symfony/http-client": "Required to enable support for the Symfony API mail transports (^7.0).",
-                "symfony/mailgun-mailer": "Required to enable support for the Mailgun mail transport (^7.0).",
-                "symfony/postmark-mailer": "Required to enable support for the Postmark mail transport (^7.0).",
-                "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^7.0)."
+                "symfony/cache": "Required to PSR-6 cache bridge (^7.2).",
+                "symfony/filesystem": "Required to enable support for relative symbolic links (^7.2).",
+                "symfony/http-client": "Required to enable support for the Symfony API mail transports (^7.2).",
+                "symfony/mailgun-mailer": "Required to enable support for the Mailgun mail transport (^7.2).",
+                "symfony/postmark-mailer": "Required to enable support for the Postmark mail transport (^7.2).",
+                "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^7.2)."
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "11.x-dev"
+                    "dev-master": "12.x-dev"
                 }
             },
             "autoload": {
@@ -2345,7 +2345,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2025-04-25T12:40:47+00:00"
+            "time": "2025-05-13T17:50:51+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -3804,10 +3804,10 @@
             "dist": {
                 "type": "path",
                 "url": "./app/Services/Address",
-                "reference": "02dd7b33b52730f2504a7baba7e16f217fd505e3"
+                "reference": "314f5ac98889006e76a2152fdac113bb02e7310f"
             },
             "require": {
-                "laravel/framework": "^11.9",
+                "laravel/framework": "^12.0",
                 "php": ">=8.1"
             },
             "type": "library",
@@ -3834,10 +3834,10 @@
             "dist": {
                 "type": "path",
                 "url": "./app/Services/Attachment",
-                "reference": "cc9cf8be2d365a72ce5ee39e1be6e7523ac25cb0"
+                "reference": "21169f3d3120593e3e9cd5775cf8b8aa26483277"
             },
             "require": {
-                "laravel/framework": "^11.9",
+                "laravel/framework": "^12.0",
                 "php": ">=8.1"
             },
             "type": "library",
@@ -3863,10 +3863,10 @@
             "dist": {
                 "type": "path",
                 "url": "./app/Services/Cashier",
-                "reference": "e931ed2b46a0931432045814f1a93015aa9775cc"
+                "reference": "ba55e10bdea3e1d95bbd78b37baac4b14f1d16dd"
             },
             "require": {
-                "laravel/framework": "^11.9",
+                "laravel/framework": "^12.0",
                 "php": ">=8.1"
             },
             "type": "library",
@@ -3893,10 +3893,10 @@
             "dist": {
                 "type": "path",
                 "url": "./app/Services/Finance",
-                "reference": "a16dd852b40f227db9a9768e8e98a7ccb7c2b1cb"
+                "reference": "efb01ffee17ac74ffb6357669952c7e69e76cb77"
             },
             "require": {
-                "laravel/framework": "^11.9",
+                "laravel/framework": "^12.0",
                 "morilog/jalali": "3.*",
                 "php": ">=8.1"
             },
@@ -3924,10 +3924,10 @@
             "dist": {
                 "type": "path",
                 "url": "./app/Services/Loyalty",
-                "reference": "3f1727f9a9eeaf0eca76295c529dcebe84a9865d"
+                "reference": "0d00d752a9c1bbd13f5dd1bea1ecd5fe1e9191e1"
             },
             "require": {
-                "laravel/framework": "^11.9",
+                "laravel/framework": "^12.0",
                 "php": ">=8.1"
             },
             "type": "library",
@@ -3954,11 +3954,11 @@
             "dist": {
                 "type": "path",
                 "url": "./app/Services/Production",
-                "reference": "14e4d261bfec2a1110881ccf70e929026f45bc2a"
+                "reference": "220a37e0072cb0559f1657ba650deb4c6bc25da1"
             },
             "require": {
                 "imanghafoori/taggable": "*",
-                "laravel/framework": "^11.9",
+                "laravel/framework": "^12.0",
                 "morilog/jalali": "3.*",
                 "nikookherad/attachment": "*",
                 "nikookherad/response": "*",
@@ -3988,10 +3988,10 @@
             "dist": {
                 "type": "path",
                 "url": "./app/Services/Response",
-                "reference": "5c34930a65b4e56f7baaf55ad9edac1eb8a72428"
+                "reference": "8be3f82c4492eadb5b4ce591b602d636262d822c"
             },
             "require": {
-                "laravel/framework": "^11.9",
+                "laravel/framework": "^12.0",
                 "php": ">=8.1"
             },
             "type": "library",
@@ -4017,10 +4017,10 @@
             "dist": {
                 "type": "path",
                 "url": "./app/Services/Shipping",
-                "reference": "d3449f209ce9c12b964da0e07991d7aa33ae7a95"
+                "reference": "3d1fd7d7c0658bdc2454a045281eac035b8af126"
             },
             "require": {
-                "laravel/framework": "^11.9",
+                "laravel/framework": "^12.0",
                 "nikookherad/address": "*",
                 "php": ">=8.1"
             },

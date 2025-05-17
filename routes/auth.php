@@ -5,7 +5,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group([
-    "prefix" => "admin"
+    //todo remove 1 this is for work with filament
+    "prefix" => "admin1"
 ], function () {
     Route::get('login', [AuthController::class, "login"])
         ->name("login");

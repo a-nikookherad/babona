@@ -73,7 +73,7 @@ class DefaultUserSeeder extends Seeder
                 "name" => "business",
                 "family" => "admin",
                 "phone_number" => "09121111111",
-                "email" => "super_admin@babona.com",
+                "email" => "super_admin@babona.ir",
                 "email_verified_at" => now()->format("Y:m:d H:i:s"),
                 "password" => Hash::make("babona_super_admin"),
                 "role" => "super_admin"
@@ -82,7 +82,7 @@ class DefaultUserSeeder extends Seeder
                 "name" => "ali",
                 "family" => "nikookherad",
                 "phone_number" => "09375727006",
-                "email" => "admin@babona.com",
+                "email" => "admin@babona.ir",
                 "email_verified_at" => now()->format("Y:m:d H:i:s"),
                 "password" => Hash::make("babona_ali"),
                 "role" => "admin"
@@ -91,7 +91,7 @@ class DefaultUserSeeder extends Seeder
                 "name" => "akbar",
                 "family" => "joftan",
                 "phone_number" => "09191528636",
-                "email" => "akbar@babona.com",
+                "email" => "akbar@babona.ir",
                 "email_verified_at" => now()->format("Y:m:d H:i:s"),
                 "password" => Hash::make("babona_akbar"),
                 "role" => "admin"
@@ -100,7 +100,7 @@ class DefaultUserSeeder extends Seeder
                 "name" => "kimia",
                 "family" => "mosavi",
                 "phone_number" => "09365208668",
-                "email" => "kimia@babona.com",
+                "email" => "kimia@babona.ir",
                 "email_verified_at" => now()->format("Y:m:d H:i:s"),
                 "password" => Hash::make("babona_kimia"),
                 "role" => "admin"
@@ -109,7 +109,7 @@ class DefaultUserSeeder extends Seeder
                 "name" => "alireza",
                 "family" => "abbasi",
                 "phone_number" => "09360551701",
-                "email" => "alireza@babona.com",
+                "email" => "alireza@babona.ir",
                 "email_verified_at" => now()->format("Y:m:d H:i:s"),
                 "password" => Hash::make("babona_alireza"),
                 "role" => "admin"
@@ -118,7 +118,7 @@ class DefaultUserSeeder extends Seeder
                 "name" => "zahra",
                 "family" => "ghanbari",
                 "phone_number" => "09198528034",
-                "email" => "zahra@babona.com",
+                "email" => "zahra@babona.ir",
                 "email_verified_at" => now()->format("Y:m:d H:i:s"),
                 "password" => Hash::make("babona_zahra"),
                 "role" => "admin"
