@@ -72,5 +72,9 @@ return [
     'links' => [
         public_path('storage') => storage_path('app/public'),
     ],
-    'public_storage' => env("PUBLIC_STORAGE", "storage")
+    'public_storage' => env("PUBLIC_STORAGE", "storage"),
+    "product_thumbnail_path" => env("product_thumbnail_path", "products/thumbnail"),
+    "product_attachments_path" => env("product_attachments_path", "products/attachments"),
+    "user_avatar_path" => env("user_avatar_path", "users/avatar"),
+    "merchant_image_path" => env("merchant_image_path", "merchants/image"),
 ];

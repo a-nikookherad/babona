@@ -54,7 +54,9 @@ class User extends Authenticatable implements FilamentUser
 
     public function merchants(): BelongsToMany
     {
-        return $this->belongsToMany(Merchant::class, "user_merchants", "user_id", "merchant_id");
+        return $this->belongsToMany(Merchant::class, "user_merchant", "user_id", "merchant_id")
+            ->withPivot('role')
+            ->withTimestamps();
     }
 
     public function isSuperAdmin()
@@ -64,8 +66,11 @@ class User extends Authenticatable implements FilamentUser
 
     public function canAccessPanel(Panel $panel): bool
     {
-        return true;
-
         return $this->isSuperAdmin();
+    }
+
+    public function avatar()
+    {
+        return $this->morphOne(File::class, "attachable");
     }
 }

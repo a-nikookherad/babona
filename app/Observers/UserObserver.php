@@ -3,7 +3,6 @@
 namespace App\Observers;
 
 use App\Models\User;
-use Finance\Finance;
 
 class UserObserver
 {
@@ -12,7 +11,7 @@ class UserObserver
      */
     public function created(User $user): void
     {
-        Finance::createAccounts($user);
+        /*Finance::createAccounts($user);*/
     }
 
     /**

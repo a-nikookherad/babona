@@ -3,7 +3,7 @@
 namespace Address;
 
 use Address\Entities\Repositories\Address\AddressRepo;
-use App\Services\Address\src\Entities\Repositories\City\CityRepo;
+use App\Infrastructure\Repositories\City\CityRepo;
 use App\Services\Address\src\Entities\Repositories\State\StateRepo;
 
 class AddressService

@@ -13,19 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-        /*
-          User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-            ]);*/
         $this->call([
-            \Address\Seeders\DatabaseSeeder::class,
             MerchantSeeder::class,
             DefaultUserSeeder::class,
-//            BankSeeder::class,
-            \Finance\Database\Seeders\DatabaseSeeder::class,
-            \Production\Database\Seeders\DatabaseSeeder::class,
         ]);
     }
 }

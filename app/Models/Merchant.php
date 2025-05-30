@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Database\Factories\MerchantFactory;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
 
 class Merchant extends Model
 {
@@ -13,9 +14,8 @@ class Merchant extends Model
 
     protected $fillable = [
         "name",
+        "fa_name",
         "brand",
-        "description",
-        "static_costs",
     ];
 
     public static function newFactory()
@@ -25,6 +25,13 @@ class Merchant extends Model
 
     public function users(): BelongsToMany
     {
-        return $this->belongsToMany(User::class, "user_merchants", "merchant_id", "user_id");
+        return $this->belongsToMany(User::class, "user_merchant", "merchant_id", "user_id")
+            ->withPivot('role')
+            ->withTimestamps();
+    }
+
+    public function image(): MorphOne
+    {
+        return $this->morphOne(File::class, "attachable");
     }
 }

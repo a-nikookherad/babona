@@ -2,14 +2,11 @@
 
 namespace App\Providers;
 
-use Address\Entities\Models\Address;
+use App\Models\Address;
 use App\Models\Merchant;
 use App\Models\User;
 use Finance\Entities\Models\Account;
 use Illuminate\Support\ServiceProvider;
-use Production\Entities\Models\Basket;
-use Production\Entities\Models\Product;
-use Production\Entities\Models\ProductDetail;
 
 class RelationshipServiceProvider extends ServiceProvider
 {

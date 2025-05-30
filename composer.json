@@ -8,13 +8,9 @@
         "php": "^8.2",
         "filament/filament": "^3.3",
         "laravel/framework": "^12.0",
+        "morilog/jalali": "3.*",
         "laravel/tinker": "^2.9",
-        "nikookherad/address": "*",
-        "nikookherad/cashier": "*",
-        "nikookherad/finance": "*",
-        "nikookherad/loyalty": "*",
-        "nikookherad/production": "*",
-        "nikookherad/shipping": "*"
+        "imanghafoori/taggable": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -55,19 +51,7 @@
         },
         {
             "type": "path",
-            "url": "./app/Services/Production"
-        },
-        {
-            "type": "path",
             "url": "./app/Services/Response"
-        },
-        {
-            "type": "path",
-            "url": "./app/Services/Attachment"
-        },
-        {
-            "type": "path",
-            "url": "./app/Services/Address"
         },
         {
             "type": "path",
