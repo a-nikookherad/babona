@@ -249,7 +249,7 @@ class ProductResource extends Resource
         return [
             Forms\Components\Grid::make(1)
                 ->schema([
-                    Forms\Components\Repeater::make("inventory")
+                    Forms\Components\Repeater::make("product_details")
                         ->label(trans("product.product_details_section"))
                         ->schema([
                             Forms\Components\TextInput::make('size')
