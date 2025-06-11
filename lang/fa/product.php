@@ -9,6 +9,7 @@ return [
     "style" => "استایل(مدل)",
     "size" => "سایز",
     "inventory" => "انبارداری",
+    "inventory_location" => "آدرس انبار",
     "color" => "رنگ",
     "price" => "قیمت",
     "gross_price" => "قیمت تمام شده",

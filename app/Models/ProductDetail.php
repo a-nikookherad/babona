@@ -2,12 +2,12 @@
 
 namespace App\Models;
 
+use Database\Factories\ProductDetailFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Production\Database\Factories\ProductDetailFactory;
 
 class ProductDetail extends Model
 {
@@ -43,6 +43,11 @@ class ProductDetail extends Model
     public function product(): BelongsTo
     {
         return $this->belongsTo(Product::class, "product_id");
+    }
+
+    public function inventories(): BelongsTo
+    {
+        return $this->hasMany(Inventory::class, "product_detail_id");
     }
 
     public function baskets(): BelongsToMany

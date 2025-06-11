@@ -5,6 +5,7 @@ namespace App\Filament\Admin\Resources\ProductResource\Pages;
 use App\Filament\Admin\Resources\ProductResource;
 use App\Filament\Traits\SaveImage;
 use App\Models\File;
+use App\Models\Inventory;
 use App\Models\Product;
 use App\Models\ProductDetail;
 use Filament\Actions;
@@ -24,6 +25,8 @@ class CreateProduct extends CreateRecord
 
     protected function handleRecordCreation(array $data): Product
     {
+
+
         $product = Product::create($data);
         $productDetails = new ProductDetail();
         $productDetails->size = $data["size"];
@@ -39,13 +42,60 @@ class CreateProduct extends CreateRecord
         $productDetails->product_id = "";
         $productDetails->merchant_id = "";
         $productDetails->add_by_user_id = "";
-        if ($data["thumbnail"]) {
-            $this->attachImage($product, $data["thumbnail"], "thumbnail");
-        }
-        foreach ($data['attachments'] ?? [] as $attachment) {
-            $this->attachImage($product, $attachment, 'attachment');
-        }
+        $this->storeThumbnail($data, $product);
+        $this->storeAttachments($data, $product);
+
+        $this->storeProductDetailsAndInventories($data, $product);
 
         return $product;
+    }
+
+    private function storeProductDetailsAndInventories(array $data, $product): void
+    {
+        if (empty($data["product_details"])) {
+            return;
+        }
+
+        foreach ($data["product_details"] as $product_detail) {
+            $productDetails["size"] = $product_detail["size"];
+            $productDetails["color"] = $product_detail["color"];
+            $productDetails["price"] = $product_detail["gross_price"];
+            $productDetails["discount"] = $product_detail["discount"];
+            $productDetails["discount_expired_at"] = $product_detail["discount_expired_at"];
+            $productDetails["product_id"] = $product->id;
+            $productDetails["merchant_id"] = $product_detail["merchant_id"];
+            $productDetails["add_by_user_id"] = $product_detail["add_by_user_id"];
+            $productDetails = ProductDetail::query()
+                ->create($productDetails);
+            $inventory["stock"] = $product_detail["stock"];
+            $inventory["price"] = $product_detail["price"];
+            $inventory["location"] = $product_detail["location"];
+            $inventory["minimum_stock"] = 3;
+            $inventory["add_by_user_id"] = $product_detail[""];
+            $inventory["merchant_id"] = $product_detail[""];
+            $inventory["product_detail_id"] = $productDetails->id;
+            Inventory::query()
+                ->create($inventory);
+        }
+    }
+
+    private function storeThumbnail($data, $product): void
+    {
+        if (empty($data["thumbnail"])) {
+            return;
+        }
+
+        $this->attachImage($product, $data["thumbnail"], "thumbnail");
+    }
+
+    private function storeAttachments($data, $product): void
+    {
+        if (empty($data["attachments"])) {
+            return;
+        }
+
+        foreach ($data["attachments"] as $attachment) {
+            $this->attachImage($product, $attachment, 'attachment');
+        }
     }
 }

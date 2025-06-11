@@ -4,6 +4,7 @@ namespace App\Filament\Admin\Resources;
 
 use App\Filament\Admin\Resources\CategoryResource\Pages;
 use App\Filament\Admin\Resources\CategoryResource\RelationManagers;
+use App\Filament\Enums\CategoryStatusEnum;
 use App\Infrastructure\Helpers\PersianSlug;
 use App\Models\Category;
 use Filament\Forms;
@@ -54,8 +55,9 @@ class CategoryResource extends Resource
                     })
                     ->maxLength(255),
 
-                Forms\Components\TextInput::make('status')
+                Forms\Components\Select::make('status')
                     ->label(trans("category.status"))
+                    ->options(CategoryStatusEnum::class)
                     ->required(),
 //                Forms\Components\TextInput::make('jsonld'),
                 Forms\Components\Select::make('parent_id')
@@ -73,26 +75,38 @@ class CategoryResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('slug')
+                    ->label(trans("category.slug"))
                     ->searchable(),
                 Tables\Columns\TextColumn::make('name')
+                    ->label(trans("category.name"))
                     ->searchable(),
                 Tables\Columns\TextColumn::make('fa_name')
+                    ->label(trans("category.fa_name"))
                     ->searchable(),
                 Tables\Columns\TextColumn::make('description')
+                    ->label(trans("category.description"))
+                    ->limit(50)
                     ->searchable(),
-                Tables\Columns\TextColumn::make('status'),
+                Tables\Columns\SelectColumn::make('status')
+                    ->label(trans("category.status"))
+                    ->options(CategoryStatusEnum::class)
+                    ->disabled(),
                 Tables\Columns\TextColumn::make('parent.name')
+                    ->label(trans("category.parent_id"))
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('deleted_at')
+                    ->label(trans("category.deleted_at"))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label(trans("category.created_at"))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
+                    ->label(trans("category.updated_at"))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
@@ -103,6 +117,7 @@ class CategoryResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

@@ -250,7 +250,7 @@ class ProductResource extends Resource
         return [
             Forms\Components\Grid::make(1)
                 ->schema([
-                    Forms\Components\Repeater::make("inventory")
+                    Forms\Components\Repeater::make("product_details")
                         ->label(trans("product.product_details_section"))
                         ->schema([
                             Forms\Components\TextInput::make('size')
@@ -269,8 +269,8 @@ class ProductResource extends Resource
                             Forms\Components\ColorPicker::make("color")
                                 ->label(trans("product.color"))
                                 ->inlineLabel(),
-                            Forms\Components\TextInput::make("price")
-                                ->label(trans("product.price"))
+                            Forms\Components\TextInput::make("gross_price")
+                                ->label(trans("product.gross_price"))
                                 ->inlineLabel()
                                 ->numeric()
                                 ->required(),
@@ -292,10 +292,13 @@ class ProductResource extends Resource
                                         ->maxLength(255)
                                         ->numeric(),
                                     Forms\Components\TextInput::make("price")
-                                        ->label(trans("product.gross_price"))
+                                        ->label(trans("product.price"))
                                         ->inlineLabel()
                                         ->numeric()
                                         ->required(),
+                                    Forms\Components\Textarea::make("location")
+                                        ->label(trans("product.inventory_location"))
+                                        ->columnSpanFull()
                                 ])
 
                         ])
